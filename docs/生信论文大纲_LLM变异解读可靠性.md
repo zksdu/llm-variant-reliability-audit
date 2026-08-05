@@ -115,11 +115,66 @@
 
 ## 八、下一步（TODO）
 
-- [ ] 下载 ClinVar variant_summary + ClinGen 数据
-- [ ] 构建时间盲法测试集（需模型训练截止日期清单）
-- [ ] 写数据预处理脚本（变异 → prompt 输入格式）
-- [ ] 小规模验证（100 变异 × 3 模型，$20-50）
-- [ ] 搭好后再扩全量
+- [x] 下载 ClinVar variant_summary（用户迅雷，441MB 完整）
+- [x] 解析 9,029,235 行（修复 #AlleleID 表头解析 bug）
+- [x] 构建时间盲法测试集 5,000 变异（LastEvaluated ≥ 2026-01，DeepSeek V4 截止 2025-12）
+- [x] Pilot 实验：100 变异 × 3 模型（deepseek-v4-pro / chat / coder，300/300 成功）
+- [x] 共识 + 金标准 A（ReviewStatus 分层）分析
+- [ ] 全量扩展：5,000 变异 × 3 模型（15,000 次调用）
+- [ ] 金标准 A 全量子集分析（严档 expert panel ~103 个）
+- [ ] 论文 Results 正式草稿
+
+---
+
+## 九、Pilot 实验结果（100 变异 × 3 模型，2026-08-04）
+
+### 设置
+- 测试集：时间盲法 100 变异（Pathogenic 48 / Benign 52），ClinVar LastEvaluated ≥ 2026-01
+- 模型：deepseek-v4-pro（max_tokens=8192）、deepseek-chat、deepseek-coder（temperature=0）
+- 提示词：ACMG/AMP 2015 五分类 JSON 输出（变异名/HGVS/基因，**无 gnomAD AF**——variant_summary 无此列）
+
+### 结果 1：全对全准确率（VUS 计为错误）——临床可用性口径
+
+| 方法 | 准确率 |
+|---|---|
+| deepseek-v4-pro | 59.0% |
+| deepseek-chat | 50.0% |
+| deepseek-coder | 49.0% |
+| 3 模型共识 | 49.0% |
+
+### 结果 2：明确表态时准确率（排除 VUS 弃权）——可靠性口径
+
+| 方法 | 表态数/100 | 准确率 |
+|---|---|---|
+| deepseek-v4-pro | 68 | 86.8% |
+| deepseek-chat | 50 | **100.0%** |
+| deepseek-coder | 49 | **100.0%** |
+| 3 模型共识 | 49 | **100.0%** |
+
+### 结果 3：混淆矩阵（共识，金标准 P/B 各 48/52）
+
+| | 金标准=P | 金标准=B |
+|---|---|---|
+| 模型=P | 44 | 0 |
+| 模型=B | 0 | 5 |
+| 模型=VUS | 4 | 47 |
+
+→ Pathogenic 敏感度 91.7%（44/48）；**Benign 敏感度仅 9.6%（5/52）**；
+→ 误报为 P 的 Benign = 0（无假阳性）。
+
+### 核心发现（Pilot 叙事，待全量确认）
+
+1. **表态即正确**：LLM 敢下结论时准确率 86.8-100%，无一例把 Benign 误判为 Pathogenic（假阳性=0）——决策支持场景下"AI 输出 P"高度可信
+2. **系统性 Benign 弃权**：90.4% 的 Benign 变异被归为 VUS；模型对"阴性"极度保守
+3. **无 AF 信息的场景缺陷**：prompt 未提供等位基因频率（BA1/BS1 规则无法应用），这是 Benign 弃权的主因之一——后续实验应加 gnomAD AF 对照
+4. **共识无增益**：3 模型 VUS 弃权模式高度相关（都保守），多数投票无法挽救 → 提示"共识提升"需模型多样性
+5. **置信度虚高**：平均置信度 0.74-0.78 与 49-59% 全对全准确率不匹配（校准差）
+
+### 数据修复记录
+- variant_summary 表头首列为 `#AlleleID`（带 `#`），preprocess 早期版本未剥离 → AlleleID 全空
+- 修复：`header = [h.lstrip("#") for h in header]` + 流式重建 temporal（rebuild_temporal.py）
+- 实验 CSV 主键按 (GeneSymbol, ClinicalSignificance) 双重校验逐变异恢复（restore_alleleids.py，100/100 通过）
+- 采样脚本补单变异去重（原注释承诺去重但未实现；ClinVar 同 AlleleID 多行 ~4.9%）
 
 ---
 

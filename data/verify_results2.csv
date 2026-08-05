@@ -1,0 +1,11 @@
+AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,references,parse_error,time_s,notes
+,SMAD4,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Howe JR, et al., Science, 1998, PMID: 9537325;Gallione CJ, et al., Lancet, 2004, PMID: 15031030",,15.58,
+,MYBPC3,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015;Kelly MA et al., Genet Med, 2018",,104.43,
+,NDUFS7,deepseek-v4-pro,Benign,Uncertain significance,0.6,PM2;PP3,,,78.41,
+,FLCN,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, Genet Med, 2015;Nickerson ML, Cancer Cell, 2002;Karczewski KJ, Nature, 2020",,42.25,
+,SZT2,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al. Genet Med. 2015;17(5):405-24. PMID: 25741868.;Basel-Vanagaite L, et al. Brain. 2013;136(Pt 10):3084-95. PMID: 24091540.",,28.63,
+,GLA,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS3;PS4;PM2;PM1;PP3,"Eng CM, Resnick-Silverman LA, Niehaus DJ, Astrin KH, Desnick RJ. Fabry disease: twenty-three mutations within the alpha-galactosidase A gene. Am J Hum Genet. 1993;53(6):1186-97.;Shabbeer J, Yasuda M, Benson SD, Desnick RJ. Fabry disease: identification of 50 novel alpha-galactosidase A mutations causing the classic phenotype. Mol Genet Metab. 2006;87(1):46-53.;Topaloglu AK, Ashley GA, Tong B, et al. Twenty novel mutations in the alpha-galactosidase A gene causing Fabry disease. Mol Med. 1999;5(12):806-11.",,23.76,
+,UNC13D,deepseek-v4-pro,Benign,Likely benign,0.9,BP4;BP7,"Richards S et al., Genet Med, 2015, 17(5):405-24",,33.8,
+,UBE3B,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genet Med, 2015;Basel-Vanagaite L et al., Am J Hum Genet, 2012",,44.23,
+,PNPLA8,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., Genet Med, 2015",,34.61,
+,SCRIB,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S et al., Genet Med, 2015, PMID: 25741868",,30.82,

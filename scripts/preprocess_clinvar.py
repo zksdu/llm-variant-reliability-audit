@@ -89,6 +89,8 @@ def main():
         reader = csv.reader(f, delimiter="\t")
         header = next(reader)  # 表头
         # 建列名索引（容忍列顺序变化）
+        # ⚠️ ClinVar 表头第一列带 '#' 注释符（'#AlleleID'），须剥离才能匹配 FIELDS
+        header = [h.lstrip("#").strip() for h in header]
         col_idx = {name: i for i, name in enumerate(header)}
         print(f"  列数: {len(header)}")
         for i, raw in enumerate(reader):

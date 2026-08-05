@@ -29,6 +29,7 @@ import time
 import argparse
 import re
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 复用软件工程项目的 DeepSeek 基建（call_llm / .env 加载）
 SE_PROJECT = Path(__file__).parent.parent.parent / "SCI_Paper_Project"
@@ -133,6 +134,12 @@ def main():
     ap.add_argument("--limit", type=int, default=None, help="只跑前 N 个变异（调试）")
     ap.add_argument("--dry-run", action="store_true", help="只打印 prompt 不调用")
     ap.add_argument("--out", default=str(OUT_CSV), help="结果 CSV")
+    ap.add_argument("--workers", type=int, default=4,
+                    help="并发线程数（v4-pro 每次调用 40-100s，建议 4-8）")
+    ap.add_argument("--resume", action="store_true",
+                    help="断点续跑：跳过输出 CSV 中已完成的 (AlleleID, model)")
+    ap.add_argument("--timeout", type=int, default=900,
+                    help="单次任务外部超时（秒，超时记为 error 不中断整体）")
     args = ap.parse_args()
 
     if not LLM_AVAILABLE:
@@ -161,55 +168,100 @@ def main():
     # 结果文件
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    f_out = out_path.open("w", encoding="utf-8", newline="")
+
+    # 断点续跑：收集已完成 (AlleleID, model)
+    # ⚠️ resume 必须以追加模式打开（"w" 会覆盖清空已有结果！）
+    done = set()
+    need_header = True
+    if args.resume and out_path.exists():
+        with out_path.open("r", encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                aid, m = row.get("AlleleID", ""), row.get("model", "")
+                if aid and m:
+                    done.add((aid, m))
+        print(f"续跑模式：已跳过 {len(done)} 条已完成记录")
+        need_header = False  # 文件已有表头，追加时不重复写
+
+    # 任务清单
+    tasks = []
+    for var in variants:
+        aid = var.get("AlleleID", "")
+        for model in models:
+            if (aid, model) in done:
+                continue
+            tasks.append((var, model))
+    print(f"待执行: {len(tasks)} 条")
+
+    if args.dry_run:
+        for var, model in tasks[:5]:
+            print(f"\n--- {var.get('AlleleID')} / {model} (DRY) ---")
+            print(build_variant_prompt(var))
+        print(f"\n（dry-run 仅展示前 5 条，共 {len(tasks)} 条）")
+        return
+
+    f_out = out_path.open("a" if args.resume and out_path.exists()
+                          else "w", encoding="utf-8", newline="")
     writer = csv.writer(f_out)
-    writer.writerow(["AlleleID", "GeneSymbol", "model", "prompt_class",
-                     "llm_class", "confidence", "acmg_rules",
-                     "references", "parse_error", "time_s",
-                     "notes"])
+    if need_header:
+        writer.writerow(["AlleleID", "GeneSymbol", "model", "prompt_class",
+                         "llm_class", "confidence", "acmg_rules",
+                         "references", "parse_error", "time_s",
+                         "notes"])
+
+    def work(item):
+        """单次分类任务（线程内执行）。返回 (行, 错误或None)。"""
+        var, model = item
+        t0 = time.time()
+        try:
+            # 推理模型（deepseek-v4* / mimo* / qwen* / glm* / kimi*）：思考+输出共享
+            # max_tokens 预算，需调高（1024 会被 reasoning 耗尽导致 content 为空）
+            mt = 8192 if (model.startswith("deepseek-v4")
+                          or model.startswith("mimo")
+                          or model.startswith("qwen")
+                          or model.startswith("glm")
+                          or model.startswith("kimi")) else 1024
+            output = call_llm(model, build_variant_prompt(var), max_tokens=mt)
+            elapsed = round(time.time() - t0, 2)
+            parsed = parse_llm_json(output)
+            return ([var.get("AlleleID", ""), var.get("GeneSymbol", ""),
+                     model, var.get("ClinicalSignificance", ""),
+                     classify_class(parsed),
+                     parsed.get("confidence", ""),
+                     ";".join(parsed.get("acmg_rules", []) or []),
+                     ";".join(parsed.get("references", []) or []),
+                     parsed.get("parse_error", ""),
+                     elapsed, ""], None)
+        except Exception as e:  # noqa: BLE001
+            elapsed = round(time.time() - t0, 2)
+            return ([var.get("AlleleID", ""), var.get("GeneSymbol", ""),
+                     model, var.get("ClinicalSignificance", ""),
+                     "error", "", "", "", "", elapsed, str(e)[:100]], e)
 
     n_done = 0
     n_error = 0
-    for i, var in enumerate(variants, 1):
-        aid = var.get("AlleleID", "")
-        gene = var.get("GeneSymbol", "")
-        for model in models:
-            prompt = build_variant_prompt(var)
-            if args.dry_run:
-                print(f"\n--- {aid} / {model} (DRY) ---")
-                print(prompt)
-                continue
-            t0 = time.time()
+    with ThreadPoolExecutor(max_workers=args.workers) as ex:
+        futs = {ex.submit(work, t): t for t in tasks}
+        for fut in as_completed(futs):
             try:
-                # v4 系列推理模型：思考+输出共享 max_tokens 预算，需调高
-                # （1024 会被 reasoning 耗尽导致 content 为空，实测 8192 足够）
-                mt = 8192 if model.startswith("deepseek-v4") else 1024
-                output = call_llm(model, prompt, max_tokens=mt)
-                elapsed = round(time.time() - t0, 2)
-                parsed = parse_llm_json(output)
-                cls = classify_class(parsed)
-                writer.writerow([
-                    aid, gene, model,
-                    var.get("ClinicalSignificance", ""),
-                    cls,
-                    parsed.get("confidence", ""),
-                    ";".join(parsed.get("acmg_rules", []) or []),
-                    ";".join(parsed.get("references", []) or []),
-                    parsed.get("parse_error", ""),
-                    elapsed, ""
-                ])
-                f_out.flush()
-                n_done += 1
-                print(f"  [{i}/{len(variants)}] ✓ {aid}/{model}: "
-                      f"{cls} ({elapsed}s)")
-            except Exception as e:  # noqa: BLE001
+                row, err = fut.result(timeout=args.timeout + 60)
+            except Exception as e:  # 外部超时等：拿不到结果，记 error 行
+                var, model = futs[fut]
+                row = [var.get("AlleleID", ""), var.get("GeneSymbol", ""),
+                       model, var.get("ClinicalSignificance", ""),
+                       "error", "", "", "", "", "",
+                       f"外部超时(>{args.timeout}s)"]
+                err = e
+            writer.writerow(row)
+            f_out.flush()
+            if err:
                 n_error += 1
-                print(f"  [{i}/{len(variants)}] ✗ {aid}/{model}: "
-                      f"{type(e).__name__}: {str(e)[:80]}", file=sys.stderr)
-                writer.writerow([aid, gene, model,
-                                 var.get("ClinicalSignificance", ""),
-                                 "error", "", "", "", "", "", str(e)[:100]])
-                f_out.flush()
+                print(f"  ✗ {row[0]}/{row[2]}: "
+                      f"{type(err).__name__}: {str(err)[:80]}",
+                      file=sys.stderr)
+            else:
+                n_done += 1
+                if n_done % 50 == 0:
+                    print(f"  ... {n_done} 完成")
 
     f_out.close()
     print(f"\n完成: {n_done} / 失败 {n_error}")

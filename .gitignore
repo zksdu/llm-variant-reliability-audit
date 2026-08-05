@@ -44,3 +44,27 @@ Thumbs.db
 data/*.gz
 data/*.csv
 data/*.tsv
+
+# ============================================================
+# ClinVar 原始/中间产物（体积巨大：3.7G/3.5G/422M，不入库）
+# ============================================================
+data/clinvar_parsed.csv
+data/clinvar_testset.csv
+data/variant_summary.txt.gz
+
+# 旧版本备份（含空 AlleleID 数据，不入库避免混淆）
+backup/
+
+# ============================================================
+# 小型结果/测试集 CSV 白名单（覆盖上面的 data/*.csv 排除）
+# ============================================================
+!data/clinvar_testset_temporal.csv
+!data/experiment_results_variant.csv
+!data/consensus_analysis.md
+!data/variant_classification_results_v4.csv
+!data/variant_classification_results_cc.csv
+!data/variant_classification_results_kimi.csv
+!data/variant_classification_results_mimo.csv
+!data/variant_classification_results_qwen.csv
+!data/verify_results.csv
+!data/verify_results2.csv

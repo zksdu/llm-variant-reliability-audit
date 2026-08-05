@@ -50,6 +50,7 @@ def bin_class(cls: str):
 
 def load_results(path):
     """读 LLM 分类结果，按 (AlleleID, model) 组织。"""
+    path = Path(path)
     if not path.exists():
         raise SystemExit(f"✗ 找不到 {path}")
     results = defaultdict(dict)  # allele_id -> {model: class}
@@ -64,16 +65,19 @@ def load_results(path):
 
 
 def load_gold(path):
-    """读测试集金标准（ClinicalSignificance 列）。"""
+    """读测试集金标准（ClinicalSignificance + ReviewStatus 列）。"""
+    path = Path(path)
     gold = {}
+    review = {}  # allele_id -> ReviewStatus（金标准 A 分层用）
     if not path.exists():
-        return gold
+        return gold, review
     with path.open("r", encoding="utf-8", newline="") as f:
         for row in csv.DictReader(f):
             aid = row.get("AlleleID", "").strip()
             if aid:
                 gold[aid] = row.get("ClinicalSignificance", "").strip()
-    return gold
+                review[aid] = row.get("ReviewStatus", "").strip()
+    return gold, review
 
 
 def consensus(classes: list):
@@ -89,8 +93,9 @@ def consensus(classes: list):
     return top[0][0]
 
 
-def acc(preds, gold):
-    """准确率：二分类后与金标准比对（P vs B 二分类）。"""
+def acc(preds, gold, review=None, rset=None):
+    """准确率：二分类后与金标准比对（P vs B 二分类）。
+    review/rset：金标准 A 分层——只统计 ReviewStatus ∈ rset 的变异。"""
     if not preds:
         return None, 0, 0
     correct = 0
@@ -98,6 +103,9 @@ def acc(preds, gold):
     for aid, cls in preds.items():
         if aid not in gold:
             continue
+        if rset is not None:
+            if review is None or review.get(aid, "") not in rset:
+                continue
         pc = bin_class(cls)
         gc = bin_class(gold[aid])
         if gc in ("P", "B"):  # 金标准只取明确 P/B
@@ -107,35 +115,53 @@ def acc(preds, gold):
     return (correct / total if total else None), correct, total
 
 
+# 金标准 A：ClinVar 审核可靠性分层
+#   严档：专家评审（expert panel / practice guideline）——最高可信度
+#   宽档：严档 ∪ 多提交者无冲突（multiple submitters, no conflicts）
+GOLD_A_STRICT = {"reviewed by expert panel", "practice guideline"}
+GOLD_A_BROAD = GOLD_A_STRICT | {"criteria provided, multiple submitters, no conflicts"}
+
+
 def main():
     ap = argparse.ArgumentParser(description="共识 + 金标准分析")
     ap.add_argument("--results", default=str(RESULTS_CSV))
     ap.add_argument("--gold", default=str(TEST_SET))
+    ap.add_argument("--models", default="deepseek-v4-pro,deepseek-chat,deepseek-coder",
+                    help="逗号分隔模型列表（共识投票用）")
     args = ap.parse_args()
 
     results = load_results(args.results)
-    gold = load_gold(args.gold)
+    gold, review = load_gold(args.gold)
     print(f"LLM 结果: {len(results)} 个变异")
     print(f"金标准: {len(gold)} 个变异（测试集）")
 
-    # 只有 3 模型都有的变异才做共识
-    models = ["deepseek-v4-pro", "deepseek-chat", "deepseek-coder"]
+    # 只有全部指定模型都有的变异才做共识
+    models = [m.strip() for m in args.models.split(",") if m.strip()]
     full = {aid: d for aid, d in results.items()
             if all(m in d for m in models)}
-    print(f"3 模型齐全: {len(full)} 个变异")
+    print(f"{len(models)} 模型齐全: {len(full)} 个变异")
+
+    # 金标准 A 子集规模统计
+    n_strict = sum(1 for aid in full if review.get(aid, "") in GOLD_A_STRICT)
+    n_broad = sum(1 for aid in full if review.get(aid, "") in GOLD_A_BROAD)
+    print(f"金标准 A 子集（专家评审）: 严 {n_strict} / 宽 {n_broad}")
 
     lines = []
     lines.append("# 共识分析结果（LLM 变异分类）\n")
     lines.append(f"数据: {len(full)} 变异 × {len(models)} 模型\n")
-    lines.append("## 1. 单模型 vs 共识准确率（二分类 P/B）\n")
-    lines.append("| 方法 | 准确率 | 正确/总数 |")
-    lines.append("|---|---|---|")
+    lines.append("## 1. 准确率（二分类 P/B）\n")
+    lines.append("| 方法 | 金标准 | 准确率 | 正确/总数 |")
+    lines.append("|---|---|---|---|")
 
-    # 单模型
+    # 单模型 × 金标准分层（rset=None=全体，GOLD_A_STRICT=严，GOLD_A_BROAD=宽）
+    def acc_cell(preds, rset=None):
+        a, c, t = acc(preds, gold, review, rset)
+        return f"{a*100:.1f}% | {c}/{t}" if a else "n/a"
     for m in models:
         preds = {aid: d[m] for aid, d in full.items()}
-        a, c, t = acc(preds, gold)
-        lines.append(f"| {m} | {a*100:.1f}% | {c}/{t} |" if a else f"| {m} | n/a |")
+        lines.append(f"| {m} | 全体 | {acc_cell(preds)} |")
+        lines.append(f"| | 金A严 | {acc_cell(preds, GOLD_A_STRICT)} |")
+        lines.append(f"| | 金A宽 | {acc_cell(preds, GOLD_A_BROAD)} |")
 
     # 共识（多数投票）
     cons_preds = {}
@@ -143,15 +169,60 @@ def main():
         cls = consensus([d[m] for m in models])
         if cls and cls != "tie":
             cons_preds[aid] = cls
-    a, c, t = acc(cons_preds, gold)
-    lines.append(f"| **3 模型共识** | **{a*100:.1f}%** | {c}/{t} |" if a else "| 共识 | n/a |")
+    lines.append(f"| **3 模型共识** | 全体 | {acc_cell(cons_preds)} |")
+    lines.append(f"| | 金A严 | {acc_cell(cons_preds, GOLD_A_STRICT)} |")
+    lines.append(f"| | 金A宽 | {acc_cell(cons_preds, GOLD_A_BROAD)} |")
 
     # 共识 + 弃权（分歧时弃权，即 tie 排除）
     a2, c2, t2 = acc(cons_preds, gold)  # 同上（tie 已排除）
     tie_count = sum(1 for aid, d in full.items()
                     if consensus([d[m] for m in models]) == "tie")
-    lines.append(f"| 共识+弃权（排除 {tie_count} 分歧） | {a2*100:.1f}% | {c2}/{t2} |"
-                 if a2 else "")
+    lines.append(f"| 共识+弃权（排除 {tie_count} 分歧） | 全体 | "
+                 f"{a2*100:.1f}% | {c2}/{t2} |" if a2 else
+                 "| 共识+弃权 | n/a |")
+    lines.append("")
+    lines.append("> 金A严 = ReviewStatus∈{expert panel, practice guideline}；"
+                 "金A宽 = 金A严 ∪ {multiple submitters, no conflicts}。\n")
+
+    # 明确表态口径：模型输出 P/B 时的条件准确率（排除 VUS 的"弃权"）
+    lines.append("## 1b. 明确表态时的准确率（排除 VUS 弃权）\n")
+    lines.append("| 方法 | 表态数/100 | 准确率 | 正确/总数 |")
+    lines.append("|---|---|---|---|")
+    for m in models:
+        spoke = {aid: d[m] for aid, d in full.items()
+                 if bin_class(d[m]) in ("P", "B")}
+        a, c, t = acc(spoke, gold)
+        lines.append(f"| {m} | {len(spoke)} | {a*100:.1f}% | {c}/{t} |"
+                     if a else f"| {m} | {len(spoke)} | n/a |")
+    spoke_c = {aid: cls for aid, cls in cons_preds.items()
+               if bin_class(cls) in ("P", "B")}
+    a, c, t = acc(spoke_c, gold)
+    lines.append(f"| **3 模型共识** | {len(spoke_c)} | {a*100:.1f}% | {c}/{t} |"
+                 if a else f"| 共识 | {len(spoke_c)} | n/a |")
+    lines.append("")
+    lines.append("> 明确表态 = 模型未输出 VUS（Uncertain significance）；"
+                 "VUS 视为模型弃权。\n")
+
+    # 混淆矩阵（共识 vs 金标准，三分类 P/B/V）
+    lines.append("## 1c. 混淆矩阵（3 模型共识 vs 金标准）\n")
+    cm = {("P", "P"): 0, ("P", "B"): 0, ("P", "V"): 0,
+          ("B", "P"): 0, ("B", "B"): 0, ("B", "V"): 0,
+          ("V", "P"): 0, ("V", "B"): 0, ("V", "V"): 0}
+    for aid, cls in cons_preds.items():
+        if aid not in gold or bin_class(gold[aid]) not in ("P", "B"):
+            continue
+        pc = bin_class(cls)
+        gc = bin_class(gold[aid])
+        if pc == "O":
+            pc = "V"
+        cm[(pc, gc)] += 1
+    lines.append("|  | 金标准=P | 金标准=B |")
+    lines.append("|---|---|---|")
+    lines.append(f"| 模型=P | {cm[('P','P')]} | {cm[('P','B')]} |")
+    lines.append(f"| 模型=B | {cm[('B','P')]} | {cm[('B','B')]} |")
+    lines.append(f"| 模型=VUS | {cm[('V','P')]} | {cm[('V','B')]} |")
+    lines.append("")
+    lines.append("> 敏感度/特异度、F1 等指标待全量数据后补充。\n")
 
     # 共识错误案例分析
     lines.append("\n## 2. 共识错误的案例\n")
