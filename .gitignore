@@ -68,3 +68,10 @@ backup/
 !data/variant_classification_results_qwen.csv
 !data/verify_results.csv
 !data/verify_results2.csv
+!data/expert_panel_candidates.csv
+!data/conflicting_candidates.csv
+!data/clinvar_testset_af.csv
+!data/clinvar_testset_af_only.csv
+!data/af_results_on.csv
+!data/expert_panel_results.csv
+!data/variant_classification_results_all.csv

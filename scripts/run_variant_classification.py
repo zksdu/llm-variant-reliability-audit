@@ -56,10 +56,15 @@ ACMG_CLASSES = [
 ]
 
 
-def build_variant_prompt(variant: dict) -> str:
+def build_variant_prompt(variant: dict, af_mode: str = "auto") -> str:
     """
     构造 ACMG 分类 prompt。
     输入变异记录 → 输出：分类 + 依据的 ACMG 规则 + 参考文献（用于 RQ4 引用验证）。
+
+    af_mode（AF 对照实验用）：
+      - auto：有 AF 列且非空则加入
+      - on：  强制加入（无值则注明缺失）
+      - off： 强制不加（无 AF 基线，主实验默认）
     """
     name = variant.get("Name", "")          # 如 NM_000059.3:c.123A>G
     gene = variant.get("GeneSymbol", "")
@@ -69,8 +74,18 @@ def build_variant_prompt(variant: dict) -> str:
     alt = variant.get("AlternateAllele", "")
     hgvs_c = variant.get("HGVS_cDNA", "")
     hgvs_p = variant.get("HGVS_Protein", "")
-    # 当前 ClinVar variant_summary 无 gnomAD AF 列；人群频率需另查 gnomAD API
-    # （本实验首版不含 AF，论文中作为局限声明；后续可加 gnomAD 查询）
+
+    # 人群频率（AF 对照实验：clinvar_testset_af.csv 由 annotate_af.py 产出）
+    afs = []
+    for k, label in (("AF_ESP", "ESP"), ("AF_EXAC", "ExAC"), ("AF_TGP", "1000G")):
+        v = str(variant.get(k, "") or "").strip()
+        if v and v.lower() not in ("na", "none"):
+            afs.append(f"{label}={v}")
+    has_af = bool(afs)
+    af_block = ""
+    if af_mode == "on" or (af_mode == "auto" and has_af):
+        af_block = (f"Population allele frequencies (ACMG BA1/BS1/PM2 evidence):\n"
+                    f"{'; '.join(afs) if afs else 'not available in source database'}\n")
 
     prompt = (
         "You are a clinical geneticist. Classify the pathogenicity of the following "
@@ -80,6 +95,7 @@ def build_variant_prompt(variant: dict) -> str:
         f"Genomic: chr{chrm}:{start} {ref}>{alt}\n"
         f"HGVS cDNA: {hgvs_c or 'N/A'}\n"
         f"HGVS protein: {hgvs_p or 'N/A'}\n"
+        f"{af_block}"
         "\nOutput STRICTLY in this JSON format (no extra text):\n"
         '{"classification": "Pathogenic|Likely pathogenic|Uncertain significance|'
         'Likely benign|Benign",\n'
@@ -140,6 +156,9 @@ def main():
                     help="断点续跑：跳过输出 CSV 中已完成的 (AlleleID, model)")
     ap.add_argument("--timeout", type=int, default=900,
                     help="单次任务外部超时（秒，超时记为 error 不中断整体）")
+    ap.add_argument("--af-mode", default="auto",
+                    choices=["auto", "on", "off"],
+                    help="AF 对照：auto=有AF列则带 / on=强制带 / off=强制不带")
     args = ap.parse_args()
 
     if not LLM_AVAILABLE:
@@ -220,7 +239,8 @@ def main():
                           or model.startswith("qwen")
                           or model.startswith("glm")
                           or model.startswith("kimi")) else 1024
-            output = call_llm(model, build_variant_prompt(var), max_tokens=mt)
+            output = call_llm(model, build_variant_prompt(var, args.af_mode),
+                              max_tokens=mt)
             elapsed = round(time.time() - t0, 2)
             parsed = parse_llm_json(output)
             return ([var.get("AlleleID", ""), var.get("GeneSymbol", ""),

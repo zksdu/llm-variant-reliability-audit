@@ -1,24 +1,24 @@
 # 共识分析结果（LLM 变异分类）
 
-数据: 100 变异 × 3 模型
+数据: 5000 变异 × 3 模型
 
 ## 1. 准确率（二分类 P/B）
 
 | 方法 | 金标准 | 准确率 | 正确/总数 |
 |---|---|---|---|
-| deepseek-v4-pro | 全体 | 59.0% | 59/100 |
-| | 金A严 | 100.0% | 1/1 |
-| | 金A宽 | 46.4% | 26/56 |
-| deepseek-chat | 全体 | 50.0% | 50/100 |
-| | 金A严 | n/a |
-| | 金A宽 | 35.7% | 20/56 |
-| deepseek-coder | 全体 | 49.0% | 49/100 |
-| | 金A严 | n/a |
-| | 金A宽 | 33.9% | 19/56 |
-| **3 模型共识** | 全体 | 49.0% | 49/100 |
-| | 金A严 | n/a |
-| | 金A宽 | 33.9% | 19/56 |
-| 共识+弃权（排除 0 分歧） | 全体 | 49.0% | 49/100 |
+| deepseek-chat | 全体 | 49.4% | 2468/4999 |
+| | 金A严 | 69.0% | 69/100 |
+| | 金A宽 | 42.5% | 1331/3130 |
+| deepseek-coder | 全体 | 49.2% | 2461/4999 |
+| | 金A严 | 68.0% | 68/100 |
+| | 金A宽 | 42.4% | 1327/3130 |
+| kimi-k2.6 | 全体 | 67.0% | 3347/4999 |
+| | 金A严 | 90.0% | 90/100 |
+| | 金A宽 | 63.7% | 1995/3130 |
+| **3 模型共识** | 全体 | 49.4% | 2456/4968 |
+| | 金A严 | 69.0% | 69/100 |
+| | 金A宽 | 42.6% | 1324/3108 |
+| 共识+弃权（排除 31 分歧） | 全体 | 49.4% | 2456/4968 |
 
 > 金A严 = ReviewStatus∈{expert panel, practice guideline}；金A宽 = 金A严 ∪ {multiple submitters, no conflicts}。
 
@@ -26,10 +26,10 @@
 
 | 方法 | 表态数/100 | 准确率 | 正确/总数 |
 |---|---|---|---|
-| deepseek-v4-pro | 68 | 86.8% | 59/68 |
-| deepseek-chat | 50 | 100.0% | 50/50 |
-| deepseek-coder | 49 | 100.0% | 49/49 |
-| **3 模型共识** | 49 | 100.0% | 49/49 |
+| deepseek-chat | 2505 | 98.6% | 2468/2504 |
+| deepseek-coder | 2495 | 98.7% | 2461/2494 |
+| kimi-k2.6 | 3422 | 97.8% | 3347/3421 |
+| **3 模型共识** | 2491 | 98.6% | 2456/2490 |
 
 > 明确表态 = 模型未输出 VUS（Uncertain significance）；VUS 视为模型弃权。
 
@@ -37,27 +37,27 @@
 
 |  | 金标准=P | 金标准=B |
 |---|---|---|
-| 模型=P | 44 | 0 |
-| 模型=B | 0 | 5 |
-| 模型=VUS | 4 | 47 |
+| 模型=P | 2212 | 33 |
+| 模型=B | 1 | 244 |
+| 模型=VUS | 286 | 2192 |
 
 > 敏感度/特异度、F1 等指标待全量数据后补充。
 
 
 ## 2. 共识错误的案例
 
-- 142201: 共识=Uncertain significance 金标准=Benign
-- 256446: 共识=Uncertain significance 金标准=Benign
-- 1648511: 共识=Uncertain significance 金标准=Benign
-- 2828605: 共识=Uncertain significance 金标准=Benign
-- 195656: 共识=Uncertain significance 金标准=Pathogenic
-（共 51 个错误）
+- 1595058: 共识=Uncertain significance 金标准=Benign
+- 1523421: 共识=Uncertain significance 金标准=Benign
+- 1245256: 共识=Uncertain significance 金标准=Benign
+- 1153278: 共识=Uncertain significance 金标准=Benign
+- 1196263: 共识=Uncertain significance 金标准=Benign
+（共 2512 个错误）
 
 ## 3. 校准（置信度 vs 准确率）
 
-- deepseek-v4-pro: 平均置信度 0.74
 - deepseek-chat: 平均置信度 0.78
 - deepseek-coder: 平均置信度 0.78
+- kimi-k2.6: 平均置信度 0.73
 
 > 注：Brier score 等严格校准指标待全量数据后补充
 
