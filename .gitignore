@@ -66,6 +66,7 @@ backup/
 !data/variant_classification_results_kimi.csv
 !data/variant_classification_results_mimo.csv
 !data/variant_classification_results_qwen.csv
+!data/experiment_results_all6.csv
 !data/verify_results.csv
 !data/verify_results2.csv
 !data/expert_panel_candidates.csv
