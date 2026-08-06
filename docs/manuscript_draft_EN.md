@@ -1,10 +1,10 @@
 # Manuscript Draft (Assembled)
 
-**Title (candidate):** When Data Leakage Is Controlled: A Multi-Vendor Reliability Evaluation of LLM-Based ACMG/AMP Variant Classification
+**Title (candidate):** When Data Leakage Is Controlled: A Multi-Vendor Reliability Audit of LLM-Based ACMG/AMP Variant Classification
 
 **Target:** Briefings in Bioinformatics / GPB (CAS Q1)
 
-> Assembled 2026-08-06 from section drafts. All experimental numbers final (30,000 evaluations).
+> Assembled 2026-08-06 from section drafts. All experimental numbers final (30,000 evaluations + consistency re-runs). Statistical results (Wilson CI, McNemar) included.
 
 ---
 
@@ -19,13 +19,13 @@
 
 **Background.** Large language models (LLMs) are increasingly proposed for clinical variant interpretation using ACMG/AMP guidelines. Reported accuracies are difficult to interpret because LLM training corpora include public variant databases (ClinVar, ClinGen): high scores may reflect memorization of ground-truth labels rather than genuine clinical reasoning.
 
-**Objective.** To evaluate the reliability of LLM-based variant classification under strict temporal data-leakage control, across multiple vendors and evidence conditions.
+**Objective.** To audit the reliability of LLM-based variant classification under controlled label leakage (temporal blinding), across multiple vendors and evidence conditions — establishing under which operational conditions an LLM's output can be trusted.
 
 **Methods.** We constructed a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026, beyond the training cutoff of all evaluated models) and evaluated 6 LLMs from 4 vendors (DeepSeek v4-pro/chat/coder, Kimi-K2.6, MiMo V2.5 Pro, Qwen3.7-max) — 30,000 variant-model evaluations in total. We report dual metrics: all-inclusive accuracy (VUS = error; clinical usability) and conditional accuracy when the model commits (reliability). Independent validation used 900 expert-panel-reviewed variants; ablation studies tested the effect of allele-frequency evidence, behavior on variants with conflicting expert classifications (n=300), and functional-effect variants from MaveDB (n=300).
 
-**Results.** New-generation models achieved 61.8–71.6% all-inclusive accuracy under temporal blinding, rising to 86–93% on expert-panel gold standard. Conditional accuracy when committing was 97.8–98.7% for conservative models (false-positive rate ≤ 0.6%) but only 81.2–85.2% for reasoning models. Providing allele frequencies raised Benign sensitivity from 11.0% to 68.8% (chat) and roughly tripled all-inclusive accuracy. On conflicting variants, models spontaneously raised abstention by 22–39 pp; on evidence-free functional variants, abstention reached 73–93% with chance-level conditional agreement.
+**Results.** New-generation models achieved 61.8–71.6% all-inclusive accuracy under temporal blinding, rising to 86–93% on expert-panel gold standard. Conditional accuracy when committing was 97.8–98.7% for conservative models (false-positive rate ≤ 0.6%) but only 81.2–85.2% for reasoning models. Providing allele frequencies raised Benign sensitivity from 11.0% to 68.8% (chat) and roughly tripled all-inclusive accuracy. On conflicting variants, models spontaneously raised abstention by 22–39 pp; on evidence-free functional variants, abstention reached 73–93% with chance-level conditional agreement. At temperature 0, chat-style models reproduced outputs exactly (100%) while a reasoning model changed its binary call on 36% of re-run variants, including Benign↔Pathogenic flips.
 
-**Conclusion.** LLM variant interpretation is reliable when (i) the right model is chosen — vendor differences (up to +22 pp) exceed ensemble gains, and majority voting can *reduce* accuracy; (ii) complete evidence (allele frequency) is provided; and (iii) abstention is treated as a trustworthy signal for human review. We recommend LLMs as decision-support for Pathogenic calls and mandatory human review of Uncertain/abstained outputs, and we provide the first multi-vendor, temporally controlled benchmark of this capability.
+**Conclusion.** Under label-leakage control, LLM variant interpretation is a qualified yes: reliable when (i) the right model is chosen — vendor differences (up to +22 pp) exceed ensemble gains, and majority voting can *reduce* accuracy; (ii) complete evidence (allele frequency) is provided; and (iii) abstention is treated as a trustworthy signal for human review. We provide the first multi-vendor, temporally controlled reliability audit of this capability, and recommend that (i) published accuracies report model identity, blinding status, and evidence conditions; (ii) clinical pilots adopt "Pathogenic calls auto-flag, Uncertain calls auto-escalate" operating policies; and (iii) future audits extend to non-Chinese vendors and additional task types.
 
 ---
 
@@ -38,9 +38,9 @@
 - **MaveDB** (Ensembl-mapped release; 3,158,202 scored variants), used for the functional-effect triangulation experiment; gene symbols resolved via mygene.info (RefSeq accession → symbol).
 - All data are public; download URLs in Data Availability.
 
-### 2.2 Temporally blinded test set (leakage control)
+### 2.2 Temporally blinded test set (label-leakage control)
 
-The central design decision: LLM training corpora contain ClinVar history, so evaluation must use variants whose labels were produced **after** the model training cutoff.
+The central design decision: LLM training corpora contain ClinVar history, so evaluation must use variants whose **gold-standard labels** were produced **after** the model training cutoff. This controls the label-memorization channel specifically; prior *evidence* (literature, submissions) may still be present in training data, and we therefore frame the study as a reliability audit under controlled label leakage rather than a generalization test (see Discussion).
 
 - Model cutoffs (verified 2026-08): DeepSeek V4 ~Dec 2025; Kimi/GLM/MiMo/Qwen families ≤ 2025. We conservatively require **LastEvaluated ≥ 2026-01-01**.
 - Eligibility: unambiguous clinical classification (Pathogenic or Benign only; "Likely" and compound terms excluded from the P/B gold standard), a HGVS name, and no conflicting classification.
@@ -51,8 +51,7 @@ The central design decision: LLM training corpora contain ClinVar history, so ev
 ### 2.3 Gold standards
 
 - **Primary**: ClinVar aggregate classification (Pathogenic/Benign binary).
-- **Gold standard A (expert panel)**: ReviewStatus ∈ {reviewed by expert panel, practice guideline} — classifications produced by ClinGen variant-curation expert panels / guideline committees. Independent validation set: 900 such variants (P: 647, B: 252; all ≥ 2026-04), plus a strict subset of 100 within the main test set.
-- **Gold standard A (broad)**: expert-panel ∪ {multiple submitters, no conflicts}.
+- **Gold standard A (expert panel)**: ReviewStatus ∈ {reviewed by expert panel, practice guideline} — classifications produced by ClinGen variant-curation expert panels / guideline committees. Dedicated validation set: 900 such variants (P: 647, B: 252; all ≥ 2026-04). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); the dedicated-set analysis therefore reports **800 exclusive variants (797 evaluable)** for strict independence, with the full 900 as a robustness check. Gold standard A (broad): expert-panel ∪ {multiple submitters, no conflicts}.
 - **Triangulation sets**: conflicting-interpretation variants (44,815 candidates; 300 sampled) and MaveDB functional extremes (150 loss-of-function: score ≤ −0.8; 150 normal: score ≥ 0.5).
 
 ### 2.4 Models
@@ -80,9 +79,9 @@ Each variant was presented as a clinical-geneticist task: variant name (HGVS), g
 - **Conditional accuracy**: accuracy restricted to committed calls (P or B) — the reliability-of-expression view.
 - **Abstention rate**: fraction of VUS outputs.
 - **Confusion matrix** on the P/B gold standard; sensitivity/specificity per model.
-- **Consensus**: majority vote across models; ties excluded (reported separately).
+- **Consensus**: majority vote across models on the three-way (P/B/VUS) semantics — semantically close classes (e.g., Pathogenic vs. Likely pathogenic) do not split votes; ties excluded (reported separately).
 - Expert-panel stratification (gold A strict/broad) applied to every model and the consensus.
-- Statistical comparisons: two-proportion z-tests (to be added with CIs; all main effects exceed 10 pp on n ≥ 900 and are significant at p < 0.001).
+- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Model-output determinism checked by re-running 50 variants × 3 models (temperature 0) and measuring classification agreement.
 
 ### 2.7 Sub-experiments
 
@@ -116,15 +115,15 @@ Two problems undermine these numbers. First, **training-data leakage**: LLM corp
 
 Recent work has begun to address the first problem: ClawBench [5] proposed temporal blinding — evaluating only variants whose labels postdate the model's training cutoff — but did not scale to multiple vendors. AI-CURA [4] demonstrated clinical-grade performance but without leakage control. No study to date has combined strict temporal blinding, multi-vendor coverage, and independent expert-panel validation at scale.
 
-Here we report the first such evaluation: 6 LLMs from 4 vendors, 30,000 variant-model evaluations on a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026), with an independent 900-variant expert-panel validation set and three triangulation sub-experiments (allele-frequency ablation, conflicting-interpretation variants, and functional-effect variants). We address three questions: (RQ1) How reliable is LLM variant classification under leakage control? (RQ2) Do multi-model consensus and model choice improve reliability? (RQ3) How does reliability depend on the evidence available to the model?
+Here we report the first such audit: 6 LLMs from 4 vendors, 30,000 variant-model evaluations on a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026), with an independent 900-variant expert-panel validation set and three triangulation sub-experiments (allele-frequency ablation, conflicting-interpretation variants, and functional-effect variants). We address three questions: (RQ1) How reliable is LLM variant classification under label-leakage control? (RQ2) Do multi-model consensus and model choice improve reliability? (RQ3) How does reliability depend on the evidence available to the model?
 
-We find that leakage control reveals a large vendor gap (up to +22 pp), that the "when the model speaks it is right" property holds only for conservative models, that majority voting can reduce accuracy, and that model reliability tracks evidence availability — abstention is a calibrated, trustworthy signal rather than noise.
+We find that label-leakage control reveals a large vendor gap (up to +22 pp), that the "when the model speaks it is right" property holds only for conservative models, that majority voting can reduce accuracy, and that model reliability tracks evidence availability — abstention is a calibrated, trustworthy signal rather than noise. We frame this work as a **reliability audit** rather than a generalization study: temporal blinding removes the label-memorization channel, but prior *evidence* (literature, submissions) may remain in training data; our goal is therefore to establish under which operational conditions an LLM's output can be trusted, not to claim de novo generalization from sequence alone.
 
 ## 5. Discussion (draft)
 
 ### 5.1 Principal findings
 
-Under strict temporal blinding, new-generation LLMs classify 62–72% of variants correctly (all-inclusive), rising to 86–93% on expert-panel-reviewed variants. When conservative models commit to a call, they are right 97.8–98.7% of the time with a false-positive rate below 0.6%. These are substantially lower than unblinded reports (~96% [4]) but reflect true generalization rather than memorization.
+Under label-leakage control (temporal blinding of the gold-standard label), new-generation LLMs classify 62–72% of variants correctly (all-inclusive), rising to 86–93% on expert-panel-reviewed variants. When conservative models commit to a call, they are right 97.8–98.7% of the time with a false-positive rate below 0.6%. These are substantially lower than unblinded reports (~96% [4]); interpreted as a reliability audit, they define the *operational envelope* in which an LLM's output can be trusted, rather than a ceiling on generalization: label memorization is controlled, and remaining performance reflects the evidence the model actually reasons with.
 
 ### 5.2 Vendor choice matters more than ensemble size
 
@@ -134,13 +133,17 @@ The gap between the best and worst model (+22.4 pp all-inclusive; +25 pp expert-
 
 Three independent experiments converge: models abstain more when evidence is missing (AF ablation: abstention falls 80%→33% once allele frequencies are provided), when experts disagree (conflicting variants: +22–39 pp abstention without being told), and when the task has no clinical evidence at all (MaveDB functional task: 73–93% abstention). LLMs behave like evidence-aware decision systems: they express uncertainty where evidence is weak and commit where it is strong. Clinically, this makes abstention a **trustworthy triage signal** — "the model said Uncertain, therefore review by a human" is a safe operating policy, and our data show the model is disproportionately Uncertain precisely when human review is needed.
 
+### 5.3b Reproducibility as a reliability property
+
+At temperature 0, chat-style models are exactly reproducible (100% over 50 re-runs), but the reasoning model V4-pro changed its binary call on 36% of re-run variants, including direct Benign↔Pathogenic flips. Average accuracy alone is therefore insufficient to audit a model for clinical use: a non-deterministic model cannot be deployed regardless of its mean performance, and reported single-run accuracies for such models are themselves noisy. The audit framing makes this explicit: determinism, like accuracy and abstention calibration, is a measured property we report per model rather than assume.
+
 ### 5.4 The information-deficit explanation of Benign underperformance
 
 The most striking baseline result — Benign sensitivity of 9.6–43% — is largely explained by missing allele-frequency evidence. With AF provided, Benign sensitivity rises by up to +57.8 pp and all-inclusive accuracy roughly triples. ACMG rules BA1/BS1 (population frequency) are among the strongest Benign evidence; omitting them cripples the Benign side of the classification. Practical implication: any LLM-based variant interpretation pipeline must integrate population-frequency databases; performance numbers reported without AF are systematically pessimistic about Benign recall.
 
 ### 5.5 Relation to prior work
 
-AI-CURA [4] demonstrated expert-consistency without leakage control; our temporally blinded numbers (62–72%) suggest a substantial part of unblinded performance may be memorization. ClawBench [5] introduced temporal blinding but reported single-family results; we extend to four vendors and add independent gold standards. Our conditional-accuracy framing (speak vs. abstain) is, to our knowledge, new to this literature and reconciles the "impressive when confident" and "unusable overall" observations in prior reports.
+AI-CURA [4] demonstrated expert-consistency without leakage control; our label-blinded numbers (62–72%) suggest that a substantial part of unblinded performance may be label memorization. ClawBench [5] introduced temporal blinding but reported single-family results; we extend to four vendors and add independent gold standards. Our conditional-accuracy framing (speak vs. abstain) is, to our knowledge, new to this literature and reconciles the "impressive when confident" and "unusable overall" observations in prior reports. Positioning: whereas AI-CURA asks "can LLMs classify variants?", we ask "under which auditable conditions can an LLM's classification be trusted?" — the audit framing keeps our claims within what temporal blinding can actually establish.
 
 ### 5.6 Limitations
 
@@ -148,7 +151,7 @@ AI-CURA [4] demonstrated expert-consistency without leakage control; our tempora
 
 ### 5.7 Conclusion
 
-Under leakage control, LLM variant interpretation is a qualified yes: reliable when the model is chosen on blinded evidence (vendor gap +22 pp), given complete evidence (AF mandatory; +58 pp Benign sensitivity), and deployed with abstention as a human-review trigger. We provide the first multi-vendor, temporally controlled, independently validated benchmark, and recommend that (i) published accuracies report model identity, blinding status, and evidence conditions; (ii) clinical pilots adopt "Pathogenic calls auto-flag, Uncertain calls auto-escalate" operating policies; and (iii) future evaluations extend to non-Chinese vendors and additional task types.
+Under label-leakage control, LLM variant interpretation passes reliability audit under three conditions: the model is chosen on blinded evidence (vendor gap up to +22 pp; majority voting can hurt), complete evidence is provided (AF mandatory; +58 pp Benign sensitivity), and abstention is deployed as a human-review trigger. We provide the first multi-vendor, temporally controlled, independently validated reliability audit, and recommend that (i) published accuracies report model identity, blinding status, and evidence conditions; (ii) clinical pilots adopt "Pathogenic calls auto-flag, Uncertain calls auto-escalate" operating policies; and (iii) future audits extend to non-Chinese vendors and additional task types.
 
 ---
 
@@ -162,7 +165,7 @@ Under leakage control, LLM variant interpretation is a qualified yes: reliable w
 
 # Results (Draft) — English Manuscript Section
 
-> Working title: *When Data Leakage Is Controlled: A Multi-Vendor Reliability Evaluation of LLM-Based ACMG/AMP Variant Classification*
+> Working title: *When Data Leakage Is Controlled: A Multi-Vendor Reliability Audit of LLM-Based ACMG/AMP Variant Classification*
 > Status: Draft for internal review. All numbers from final full-scale experiments (2026-08-06).
 
 ---
@@ -187,27 +190,31 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 | DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 3,807 | **93.0%** |
 | DeepSeek chat | DeepSeek | 49.4% | 98.6% | 2,505 | 69.0% |
 | DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,495 | 68.0% |
-| 6-model majority | — | 57.2% | 98.2% | 2,647 | 93.5% |
+| 6-model majority | — | 64.1% | 98.3% | 2,915 | 93.5% |
 
-**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.6 to +22.4 percentage points (pp)** in all-inclusive accuracy. The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
+> Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528).
+
+**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.6 to +22.4 percentage points (pp)** in all-inclusive accuracy (all pairwise McNemar p < 10⁻⁸⁶; Kimi vs. MiMo: p = 0.11, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
 
 **Finding 2 (Conditional reliability is not universal).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit to a call, with near-zero false positives (0.6% of all evaluations). In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable — the property "when the model speaks, it is right" holds **only for conservative models**, not for reasoning models.
 
-**Finding 3 (Majority voting can hurt).** Six-model majority voting (57.2%) underperformed the best single model (Qwen3.7-max, 71.6%) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees unanimously (2,647 variants), conditional accuracy reaches 98.2%.
+**Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,915 variants), conditional accuracy reaches 98.3%.
 
 ### 3.3 Independent gold standard: ClinGen expert-panel review
 
-We constructed an independent validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated ≥ 2026-04, P: n=647, B: n=252).
+We constructed a dedicated validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated ≥ 2026-04, P: n=647, B: n=252). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); to guarantee independence, Table 2 reports the **800 exclusive variants** (797 evaluable; P: 563, B: 234).
 
-**Table 2. Expert-panel validation (n = 900; 3 models).**
+**Table 2. Expert-panel validation (n = 797 exclusive variants; 3 models).**
 
 | Model | All-inclusive Acc. | Conditional Acc. |
 |---|---|---|
-| Kimi-K2.6 | **74.7%** | 91.2% |
-| DeepSeek chat | 45.7% | 95.6% |
-| DeepSeek coder | 46.0% | 95.4% |
+| Kimi-K2.6 | **72.8%** | 90.6% |
+| DeepSeek chat | 42.9% | 95.0% |
+| DeepSeek coder | 43.3% | 94.8% |
 
-The vendor gap **widens** under the strongest gold standard (+29.0 pp for Kimi vs. chat, vs. +17.6 pp on the general test set), indicating that model choice has a *larger* clinical impact than generic benchmarks suggest. A "always-Pathogenic" baseline would score 72% on this P-enriched set; Kimi's 74.7% exceeds it, whereas DeepSeek's ~46% reflects abstention-driven loss rather than misclassification.
+> Results on the full 900 (including the shared 100) are qualitatively identical: Kimi 74.7% / chat 45.7% / coder 46.0% (robustness check).
+
+The vendor gap **widens** under the strongest gold standard (+29.9 pp for Kimi vs. chat, vs. +17.6 pp on the general test set), indicating that model choice has a *larger* clinical impact than generic benchmarks suggest. A "always-Pathogenic" baseline would score ~71% on this P-enriched set; Kimi's 72.8% exceeds it, whereas DeepSeek's ~43% reflects abstention-driven loss rather than misclassification (conditional accuracy 94.8–95.0%).
 
 ### 3.4 Triangulation: evidence availability drives reliability
 
@@ -244,3 +251,17 @@ Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy
 - Expert disagreement: models raise abstention +22–39 pp without being told
 - No-evidence (functional) task: 73–93% abstention; ≈50% conditional directional agreement
 - Clinical implication: LLM variant interpretation requires (i) model selection (vendor matters more than ensemble size), (ii) complete evidence (AF mandatory), and (iii) treating abstention as a trustworthy triage signal for human review.
+
+### 3.6 Output determinism (reproducibility audit)
+
+Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
+
+**Table 3. Re-run consistency (n = 50 variants × 3 models).**
+
+| Model | Exact-class agreement | Binary (P/B) agreement |
+|---|---|---|
+| DeepSeek chat | 50/50 (100.0%) | 50/50 (100.0%) |
+| Kimi-K2.6 | 49/50 (98.0%) | 50/50 (100.0%) |
+| DeepSeek V4-pro | 31/50 (62.0%) | **32/50 (64.0%)** |
+
+**Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.

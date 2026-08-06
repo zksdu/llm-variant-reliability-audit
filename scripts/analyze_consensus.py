@@ -37,8 +37,10 @@ BENIGN = {"Benign", "Likely benign"}
 
 
 def bin_class(cls: str):
-    """LLM/金标准分类 → 二分类（P/B/VUS/other）。"""
+    """LLM/金标准分类 → 二分类（P/B/VUS/other）。已二分类的输入幂等。"""
     c = str(cls).strip()
+    if c in ("P", "B", "V", "O"):
+        return c
     if c in PATHO:
         return "P"
     if c in BENIGN:
@@ -164,19 +166,21 @@ def main():
         lines.append(f"| | 金A宽 | {acc_cell(preds, GOLD_A_BROAD)} |")
 
     # 共识（多数投票）
+    # ⚠️ 投票在二分类语义（P/B/V）上进行：五分类里 Pathogenic vs Likely
+    #    pathogenic 是语义相近的票，不应导致平票（与 statistics_analysis 一致）
     cons_preds = {}
     for aid, d in full.items():
-        cls = consensus([d[m] for m in models])
+        cls = consensus([bin_class(d[m]) for m in models])
         if cls and cls != "tie":
             cons_preds[aid] = cls
-    lines.append(f"| **3 模型共识** | 全体 | {acc_cell(cons_preds)} |")
+    lines.append(f"| **{len(models)} 模型共识** | 全体 | {acc_cell(cons_preds)} |")
     lines.append(f"| | 金A严 | {acc_cell(cons_preds, GOLD_A_STRICT)} |")
     lines.append(f"| | 金A宽 | {acc_cell(cons_preds, GOLD_A_BROAD)} |")
 
     # 共识 + 弃权（分歧时弃权，即 tie 排除）
     a2, c2, t2 = acc(cons_preds, gold)  # 同上（tie 已排除）
     tie_count = sum(1 for aid, d in full.items()
-                    if consensus([d[m] for m in models]) == "tie")
+                    if consensus([bin_class(d[m]) for m in models]) == "tie")
     lines.append(f"| 共识+弃权（排除 {tie_count} 分歧） | 全体 | "
                  f"{a2*100:.1f}% | {c2}/{t2} |" if a2 else
                  "| 共识+弃权 | n/a |")
@@ -197,7 +201,7 @@ def main():
     spoke_c = {aid: cls for aid, cls in cons_preds.items()
                if bin_class(cls) in ("P", "B")}
     a, c, t = acc(spoke_c, gold)
-    lines.append(f"| **3 模型共识** | {len(spoke_c)} | {a*100:.1f}% | {c}/{t} |"
+    lines.append(f"| **{len(models)} 模型共识** | {len(spoke_c)} | {a*100:.1f}% | {c}/{t} |"
                  if a else f"| 共识 | {len(spoke_c)} | n/a |")
     lines.append("")
     lines.append("> 明确表态 = 模型未输出 VUS（Uncertain significance）；"

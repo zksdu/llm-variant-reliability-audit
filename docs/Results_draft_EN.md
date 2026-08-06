@@ -1,6 +1,6 @@
 # Results (Draft) — English Manuscript Section
 
-> Working title: *When Data Leakage Is Controlled: A Multi-Vendor Reliability Evaluation of LLM-Based ACMG/AMP Variant Classification*
+> Working title: *When Data Leakage Is Controlled: A Multi-Vendor Reliability Audit of LLM-Based ACMG/AMP Variant Classification*
 > Status: Draft for internal review. All numbers from final full-scale experiments (2026-08-06).
 
 ---
@@ -25,27 +25,31 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 | DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 3,807 | **93.0%** |
 | DeepSeek chat | DeepSeek | 49.4% | 98.6% | 2,505 | 69.0% |
 | DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,495 | 68.0% |
-| 6-model majority | — | 57.2% | 98.2% | 2,647 | 93.5% |
+| 6-model majority | — | 64.1% | 98.3% | 2,915 | 93.5% |
 
-**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.6 to +22.4 percentage points (pp)** in all-inclusive accuracy. The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
+> Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528).
+
+**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.6 to +22.4 percentage points (pp)** in all-inclusive accuracy (all pairwise McNemar p < 10⁻⁸⁶; Kimi vs. MiMo: p = 0.11, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
 
 **Finding 2 (Conditional reliability is not universal).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit to a call, with near-zero false positives (0.6% of all evaluations). In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable — the property "when the model speaks, it is right" holds **only for conservative models**, not for reasoning models.
 
-**Finding 3 (Majority voting can hurt).** Six-model majority voting (57.2%) underperformed the best single model (Qwen3.7-max, 71.6%) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees unanimously (2,647 variants), conditional accuracy reaches 98.2%.
+**Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,915 variants), conditional accuracy reaches 98.3%.
 
 ### 3.3 Independent gold standard: ClinGen expert-panel review
 
-We constructed an independent validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated ≥ 2026-04, P: n=647, B: n=252).
+We constructed a dedicated validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated ≥ 2026-04, P: n=647, B: n=252). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); to guarantee independence, Table 2 reports the **800 exclusive variants** (797 evaluable; P: 563, B: 234).
 
-**Table 2. Expert-panel validation (n = 900; 3 models).**
+**Table 2. Expert-panel validation (n = 797 exclusive variants; 3 models).**
 
 | Model | All-inclusive Acc. | Conditional Acc. |
 |---|---|---|
-| Kimi-K2.6 | **74.7%** | 91.2% |
-| DeepSeek chat | 45.7% | 95.6% |
-| DeepSeek coder | 46.0% | 95.4% |
+| Kimi-K2.6 | **72.8%** | 90.6% |
+| DeepSeek chat | 42.9% | 95.0% |
+| DeepSeek coder | 43.3% | 94.8% |
 
-The vendor gap **widens** under the strongest gold standard (+29.0 pp for Kimi vs. chat, vs. +17.6 pp on the general test set), indicating that model choice has a *larger* clinical impact than generic benchmarks suggest. A "always-Pathogenic" baseline would score 72% on this P-enriched set; Kimi's 74.7% exceeds it, whereas DeepSeek's ~46% reflects abstention-driven loss rather than misclassification.
+> Results on the full 900 (including the shared 100) are qualitatively identical: Kimi 74.7% / chat 45.7% / coder 46.0% (robustness check).
+
+The vendor gap **widens** under the strongest gold standard (+29.9 pp for Kimi vs. chat, vs. +17.6 pp on the general test set), indicating that model choice has a *larger* clinical impact than generic benchmarks suggest. A "always-Pathogenic" baseline would score ~71% on this P-enriched set; Kimi's 72.8% exceeds it, whereas DeepSeek's ~43% reflects abstention-driven loss rather than misclassification (conditional accuracy 94.8–95.0%).
 
 ### 3.4 Triangulation: evidence availability drives reliability
 
@@ -82,3 +86,17 @@ Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy
 - Expert disagreement: models raise abstention +22–39 pp without being told
 - No-evidence (functional) task: 73–93% abstention; ≈50% conditional directional agreement
 - Clinical implication: LLM variant interpretation requires (i) model selection (vendor matters more than ensemble size), (ii) complete evidence (AF mandatory), and (iii) treating abstention as a trustworthy triage signal for human review.
+
+### 3.6 Output determinism (reproducibility audit)
+
+Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
+
+**Table 3. Re-run consistency (n = 50 variants × 3 models).**
+
+| Model | Exact-class agreement | Binary (P/B) agreement |
+|---|---|---|
+| DeepSeek chat | 50/50 (100.0%) | 50/50 (100.0%) |
+| Kimi-K2.6 | 49/50 (98.0%) | 50/50 (100.0%) |
+| DeepSeek V4-pro | 31/50 (62.0%) | **32/50 (64.0%)** |
+
+**Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.

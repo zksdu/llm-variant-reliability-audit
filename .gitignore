@@ -80,3 +80,6 @@ backup/
 !data/conflicting_sample_300.csv
 !data/mavedb_results.csv
 !data/mavedb_testset.csv
+!data/consistency_50.csv
+!data/consistency_results.csv
+!data/statistics_analysis.md

@@ -8,13 +8,13 @@
 
 **Background.** Large language models (LLMs) are increasingly proposed for clinical variant interpretation using ACMG/AMP guidelines. Reported accuracies are difficult to interpret because LLM training corpora include public variant databases (ClinVar, ClinGen): high scores may reflect memorization of ground-truth labels rather than genuine clinical reasoning.
 
-**Objective.** To evaluate the reliability of LLM-based variant classification under strict temporal data-leakage control, across multiple vendors and evidence conditions.
+**Objective.** To audit the reliability of LLM-based variant classification under controlled label leakage (temporal blinding), across multiple vendors and evidence conditions — establishing under which operational conditions an LLM's output can be trusted.
 
 **Methods.** We constructed a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026, beyond the training cutoff of all evaluated models) and evaluated 6 LLMs from 4 vendors (DeepSeek v4-pro/chat/coder, Kimi-K2.6, MiMo V2.5 Pro, Qwen3.7-max) — 30,000 variant-model evaluations in total. We report dual metrics: all-inclusive accuracy (VUS = error; clinical usability) and conditional accuracy when the model commits (reliability). Independent validation used 900 expert-panel-reviewed variants; ablation studies tested the effect of allele-frequency evidence, behavior on variants with conflicting expert classifications (n=300), and functional-effect variants from MaveDB (n=300).
 
-**Results.** New-generation models achieved 61.8–71.6% all-inclusive accuracy under temporal blinding, rising to 86–93% on expert-panel gold standard. Conditional accuracy when committing was 97.8–98.7% for conservative models (false-positive rate ≤ 0.6%) but only 81.2–85.2% for reasoning models. Providing allele frequencies raised Benign sensitivity from 11.0% to 68.8% (chat) and roughly tripled all-inclusive accuracy. On conflicting variants, models spontaneously raised abstention by 22–39 pp; on evidence-free functional variants, abstention reached 73–93% with chance-level conditional agreement.
+**Results.** New-generation models achieved 61.8–71.6% all-inclusive accuracy under temporal blinding, rising to 86–93% on expert-panel gold standard. Conditional accuracy when committing was 97.8–98.7% for conservative models (false-positive rate ≤ 0.6%) but only 81.2–85.2% for reasoning models. Providing allele frequencies raised Benign sensitivity from 11.0% to 68.8% (chat) and roughly tripled all-inclusive accuracy. On conflicting variants, models spontaneously raised abstention by 22–39 pp; on evidence-free functional variants, abstention reached 73–93% with chance-level conditional agreement. At temperature 0, chat-style models reproduced outputs exactly (100%) while a reasoning model changed its binary call on 36% of re-run variants, including Benign↔Pathogenic flips.
 
-**Conclusion.** LLM variant interpretation is reliable when (i) the right model is chosen — vendor differences (up to +22 pp) exceed ensemble gains, and majority voting can *reduce* accuracy; (ii) complete evidence (allele frequency) is provided; and (iii) abstention is treated as a trustworthy signal for human review. We recommend LLMs as decision-support for Pathogenic calls and mandatory human review of Uncertain/abstained outputs, and we provide the first multi-vendor, temporally controlled benchmark of this capability.
+**Conclusion.** Under label-leakage control, LLM variant interpretation is a qualified yes: reliable when (i) the right model is chosen — vendor differences (up to +22 pp) exceed ensemble gains, and majority voting can *reduce* accuracy; (ii) complete evidence (allele frequency) is provided; and (iii) abstention is treated as a trustworthy signal for human review. We provide the first multi-vendor, temporally controlled reliability audit of this capability, and recommend that (i) published accuracies report model identity, blinding status, and evidence conditions; (ii) clinical pilots adopt "Pathogenic calls auto-flag, Uncertain calls auto-escalate" operating policies; and (iii) future audits extend to non-Chinese vendors and additional task types.
 
 ---
 
@@ -27,9 +27,9 @@
 - **MaveDB** (Ensembl-mapped release; 3,158,202 scored variants), used for the functional-effect triangulation experiment; gene symbols resolved via mygene.info (RefSeq accession → symbol).
 - All data are public; download URLs in Data Availability.
 
-### 2.2 Temporally blinded test set (leakage control)
+### 2.2 Temporally blinded test set (label-leakage control)
 
-The central design decision: LLM training corpora contain ClinVar history, so evaluation must use variants whose labels were produced **after** the model training cutoff.
+The central design decision: LLM training corpora contain ClinVar history, so evaluation must use variants whose **gold-standard labels** were produced **after** the model training cutoff. This controls the label-memorization channel specifically; prior *evidence* (literature, submissions) may still be present in training data, and we therefore frame the study as a reliability audit under controlled label leakage rather than a generalization test (see Discussion).
 
 - Model cutoffs (verified 2026-08): DeepSeek V4 ~Dec 2025; Kimi/GLM/MiMo/Qwen families ≤ 2025. We conservatively require **LastEvaluated ≥ 2026-01-01**.
 - Eligibility: unambiguous clinical classification (Pathogenic or Benign only; "Likely" and compound terms excluded from the P/B gold standard), a HGVS name, and no conflicting classification.
@@ -40,8 +40,7 @@ The central design decision: LLM training corpora contain ClinVar history, so ev
 ### 2.3 Gold standards
 
 - **Primary**: ClinVar aggregate classification (Pathogenic/Benign binary).
-- **Gold standard A (expert panel)**: ReviewStatus ∈ {reviewed by expert panel, practice guideline} — classifications produced by ClinGen variant-curation expert panels / guideline committees. Independent validation set: 900 such variants (P: 647, B: 252; all ≥ 2026-04), plus a strict subset of 100 within the main test set.
-- **Gold standard A (broad)**: expert-panel ∪ {multiple submitters, no conflicts}.
+- **Gold standard A (expert panel)**: ReviewStatus ∈ {reviewed by expert panel, practice guideline} — classifications produced by ClinGen variant-curation expert panels / guideline committees. Dedicated validation set: 900 such variants (P: 647, B: 252; all ≥ 2026-04). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); the dedicated-set analysis therefore reports **800 exclusive variants (797 evaluable)** for strict independence, with the full 900 as a robustness check. Gold standard A (broad): expert-panel ∪ {multiple submitters, no conflicts}.
 - **Triangulation sets**: conflicting-interpretation variants (44,815 candidates; 300 sampled) and MaveDB functional extremes (150 loss-of-function: score ≤ −0.8; 150 normal: score ≥ 0.5).
 
 ### 2.4 Models
@@ -69,9 +68,9 @@ Each variant was presented as a clinical-geneticist task: variant name (HGVS), g
 - **Conditional accuracy**: accuracy restricted to committed calls (P or B) — the reliability-of-expression view.
 - **Abstention rate**: fraction of VUS outputs.
 - **Confusion matrix** on the P/B gold standard; sensitivity/specificity per model.
-- **Consensus**: majority vote across models; ties excluded (reported separately).
+- **Consensus**: majority vote across models on the three-way (P/B/VUS) semantics — semantically close classes (e.g., Pathogenic vs. Likely pathogenic) do not split votes; ties excluded (reported separately).
 - Expert-panel stratification (gold A strict/broad) applied to every model and the consensus.
-- Statistical comparisons: two-proportion z-tests (to be added with CIs; all main effects exceed 10 pp on n ≥ 900 and are significant at p < 0.001).
+- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Model-output determinism checked by re-running 50 variants × 3 models (temperature 0) and measuring classification agreement.
 
 ### 2.7 Sub-experiments
 

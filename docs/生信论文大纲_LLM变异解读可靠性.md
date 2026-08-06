@@ -10,10 +10,17 @@
 ## 一、研究定位
 
 ### 标题（候选）
-*When Data Leakage Is Controlled: A Multi-Model Reliability Evaluation of LLM-Based ACMG/AMP Variant Classification*
+*When Data Leakage Is Controlled: A Multi-Model Reliability Audit of LLM-Based ACMG/AMP Variant Classification*
 
 ### 一句话
 当训练数据泄漏被时间盲法控制后，10+ 个 LLM 的 ACMG/AMP 变异致病性分类还可靠吗？
+
+### 叙事定位（2026-08 调整）
+本文定位为**标签泄漏控制下的可靠性审计**，而非泛化能力测试：
+- 时间盲法控制的是"标签记忆"通道（金标准标签晚于模型截止）——可审计、可辩护
+- 但模型仍可能见过该变异的**证据**（文献/历史提交）——所以不宣称"从序列到标签的泛化能力"
+- 审计目标：在什么**操作条件**下 LLM 的输出可信（模型选择、证据完备性、弃权信号）
+- 这个框架比"泛化能力"叙事更严谨、更难被审稿人攻击（证据泄漏是时间盲法公认的边界）
 
 ### 为什么是空白（2026 现状）
 - **顶刊已证明可行**：AI-CURA（DeepSeek-R1 做 ACMG 分类，96% 一致率）2026-06 发表于 *Science Translational Medicine*；ClinVar-BERT 发表于 *Genome Medicine* 2026
