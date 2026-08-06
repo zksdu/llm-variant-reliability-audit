@@ -4,7 +4,7 @@
 
 **Target:** Briefings in Bioinformatics / GPB (CAS Q1)
 
-> Assembled 2026-08-06 from section drafts. All experimental numbers final (30,000 evaluations + consistency re-runs). Statistical results (Wilson CI, McNemar) included.
+> Assembled 2026-08-06 from section drafts. All experimental numbers final (30,000 evaluations + consistency re-runs + cost audit). Statistical results (Wilson CI, McNemar) included.
 
 ---
 
@@ -220,7 +220,7 @@ The vendor gap **widens** under the strongest gold standard (+29.9 pp for Kimi v
 
 Three sub-experiments show that LLM reliability is governed by the *evidence available in the prompt*:
 
-**(a) Allele-frequency (AF) ablation (n = 400 × 3 models).** Adding population allele frequencies (AF_ESP/ExAC/1000G, from ClinVar VCF) to the prompt — the identical variants, models, and otherwise identical prompts — raised Benign sensitivity from 11.0% to 68.8% (chat, **+57.8 pp**), 10.7% to 68.3% (coder), and 43.4% to 81.5% (Kimi); abstention fell from 80% to 33% (chat) and all-inclusive accuracy roughly tripled (19.1%→66.5% for chat; 49.3%→80.8% for Kimi). **The systematic Benign abstention observed in the main experiment is primarily an information-deficit behavior, not model conservatism.**
+**(a) Allele-frequency (AF) ablation (n = 400 × 3 models Benign-enriched + 150 × 2 Pathogenic).** Adding population allele frequencies (AF_ESP/ExAC/1000G, from ClinVar VCF) to the prompt — the identical variants, models, and otherwise identical prompts — raised Benign sensitivity from 11.0% to 68.8% (chat, **+57.8 pp**), 10.7% to 68.3% (coder), and 43.4% to 81.5% (Kimi); abstention fell from 80% to 33% (chat) and all-inclusive accuracy roughly tripled (19.1%→66.5% for chat; 49.3%→80.8% for Kimi). **The systematic Benign abstention observed in the main experiment is primarily an information-deficit behavior, not model conservatism.** The effect is bidirectional: on a Pathogenic-enriched AF subset (n = 150 × 2), adding AF raised accuracy from 44.9% to 64.0% (chat, +19.1 pp) and 47.5% to 85.3% (Kimi, +37.8 pp), with abstention falling from ~50% to 15–36%. Evidence completeness governs reliability on both sides of the P/B axis.
 
 **(b) Conflicting-interpretation variants (n = 300 × 2 models).** On variants where clinical submitters disagree (conflicting classifications), models spontaneously raise abstention by **+22.4 pp (Kimi)** and **+39.1 pp (chat)** compared with the main test set — despite the prompt containing no conflict information. LLMs exhibit evidence-grounded uncertainty calibration: they sense controversy.
 
@@ -252,6 +252,18 @@ Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy
 - No-evidence (functional) task: 73–93% abstention; ≈50% conditional directional agreement
 - Clinical implication: LLM variant interpretation requires (i) model selection (vendor matters more than ensemble size), (ii) complete evidence (AF mandatory), and (iii) treating abstention as a trustworthy triage signal for human review.
 
+### 3.5b Five-class analysis: the "Likely" tier is absent
+
+The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain significance / Likely benign / Benign), and P vs. LP carry different clinical follow-up (e.g., LP requires confirmation). On the expert-panel set (which carries five-class labels; P: 306, LP: 342, LB: 193, B: 59), **none of the evaluated models ever emitted a "Likely" class** — the five-class output collapses to three (P / VUS / B).
+
+| Model | Exact five-class match | Likely-tier output | Cross-semantic errors (P↔B) |
+|---|---|---|---|
+| Kimi-K2.6 | 32.3% | 0/900 | 7.2% |
+| DeepSeek chat | 22.4% | 0/900 | 2.1% |
+| DeepSeek coder | 22.7% | 0/900 | 2.2% |
+
+Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard Likely pathogenic variants were escalated to Pathogenic; 51% of Likely benign were downgraded to Benign by Kimi. Two implications: (i) LLM outputs are usable at the binary-semantics level only — the "Likely" tier carries clinical information the models do not produce; (ii) reported high conditional accuracy on binary P/B evaluation is partly achieved *by* this collapse, which a five-class evaluation would not credit.
+
 ### 3.6 Output determinism (reproducibility audit)
 
 Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
@@ -265,3 +277,20 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 | DeepSeek V4-pro | 31/50 (62.0%) | **32/50 (64.0%)** |
 
 **Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
+
+### 3.7 Cost audit (per-variant token usage and price)
+
+We profiled token usage on 30 variants × 6 models (API-reported usage; official vendor pricing, Aug 2026).
+
+**Table 4. Per-variant token usage, cost, and latency (n = 30 variants).**
+
+| Model | Input tok | Output tok | Cost (¥/variant) | Latency (s) |
+|---|---|---|---|---|
+| DeepSeek chat | 179 | 132 | 0.001 | 2.3 |
+| DeepSeek coder | 179 | 137 | 0.001 | 2.5 |
+| Kimi-K2.6 | 183 | 160 | 0.003 | 5.9 |
+| DeepSeek V4-pro | 179 | 2,728 | 0.017 | 65.9 |
+| Qwen3.7-max | 206 | 1,936 | 0.019 | 37.7 |
+| MiMo V2.5 Pro | 440 | 1,754 | 0.041 | 30.6 |
+
+**Finding 5 (The reasoning-model tax).** Reasoning models generate **13–21× more output tokens** than chat-style models (2,728 vs. 132 for V4-pro vs. chat) because their chain-of-thought is billed as completion tokens. Per-variant cost spans **41×** (MiMo ¥0.041 vs. chat ¥0.001) and latency spans **29×** (65.9 s vs. 2.3 s). Combined with Findings 2 and 4 — reasoning models are *less* accurate when committing (81.2% vs. 98.6%) and *non-deterministic* (64% re-run agreement) — the cost audit shows that the reasoning style purchases none of accuracy, stability, or speed: chat-style models dominate on all axes except raw all-inclusive accuracy, where Kimi (67.0%) matches or exceeds every reasoning model at 1/6–1/14 of the cost. For population-scale variant screening, model choice is therefore also a cost decision: Kimi-class models deliver near-best accuracy at the lowest price.
