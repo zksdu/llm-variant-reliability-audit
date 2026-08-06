@@ -76,3 +76,7 @@ backup/
 !data/af_results_on.csv
 !data/expert_panel_results.csv
 !data/variant_classification_results_all.csv
+!data/conflicting_results.csv
+!data/conflicting_sample_300.csv
+!data/mavedb_results.csv
+!data/mavedb_testset.csv
