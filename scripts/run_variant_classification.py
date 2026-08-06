@@ -190,15 +190,35 @@ def main():
 
     # 断点续跑：收集已完成 (AlleleID, model)
     # ⚠️ resume 必须以追加模式打开（"w" 会覆盖清空已有结果！）
+    # ⚠️ error 行不视为完成（网关超时等失败调用需重试）
     done = set()
     need_header = True
     if args.resume and out_path.exists():
+        good_rows = []
+        n_err = 0
         with out_path.open("r", encoding="utf-8", newline="") as f:
-            for row in csv.DictReader(f):
+            reader = csv.DictReader(f)
+            fieldnames = reader.fieldnames
+            for row in reader:
                 aid, m = row.get("AlleleID", ""), row.get("model", "")
+                if row.get("llm_class") == "error":
+                    n_err += 1
+                    continue
                 if aid and m:
                     done.add((aid, m))
-        print(f"续跑模式：已跳过 {len(done)} 条已完成记录")
+                    good_rows.append(row)
+        if n_err > 0:
+            # 重写文件：只保留成功行，error 行将重新执行
+            tmp = out_path.with_suffix(".csv.tmp")
+            with tmp.open("w", encoding="utf-8", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=fieldnames)
+                w.writeheader()
+                w.writerows(good_rows)
+            tmp.replace(out_path)
+            print(f"续跑模式：清除 {n_err} 条 error 行（将重试），"
+                  f"跳过 {len(done)} 条成功记录")
+        else:
+            print(f"续跑模式：已跳过 {len(done)} 条成功记录")
         need_header = False  # 文件已有表头，追加时不重复写
 
     # 任务清单

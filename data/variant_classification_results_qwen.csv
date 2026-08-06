@@ -253,7 +253,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 360620,PHEX,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Rowe PS, Hum Mutat, 2000, 16(3):197-207;HYP Consortium, Nat Genet, 1995, 11(4):390-395;Tenenhouse HS, Annu Rev Nutr, 2005, 25:21-44",,30.33,
 4930557,DNAI1,qwen3.7-max,Pathogenic,Pathogenic,0.92,PVS1;PM2;PM3,"Zariwala MA et al., Am J Respir Crit Care Med, 2006;Knowles MR et al., N Engl J Med, 2013;Wallmeier J et al., Nat Commun, 2014",,40.94,
 279015,FLVCR1,qwen3.7-max,Benign,Uncertain significance,0.5,BP4,"Richards S, Genet Med, 2015, 17:405-424;Abou Tayoun AN, Genet Med, 2018, 20:1255-1261",,29.73,
-4975648,FH,qwen3.7-max,Pathogenic,error,,,,,373.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 536920,ANKRD11,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Sirmaci A et al., Am J Hum Genet, 2011, 89(3):432-444;Ockeloen CW et al., Eur J Hum Genet, 2015, 23(7):854-862;Richards S et al., Genet Med, 2015, 17(5):405-424",,29.48,
 550291,RORA,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Guissart C et al., Mol Psychiatry, 2018, 23(5):1199-1210;Talkowski ME et al., Cell, 2012, 149(3):525-537;Sarachana T et al., Mol Autism, 2011, 2:7",,37.11,
 32065,GJB2,qwen3.7-max,Pathogenic,Pathogenic,0.82,PS3;PM2;PM3;PP3;PP4,"Snoeckx RL, Hum Mutat, 2005, GJB2 mutations and degree of hearing loss: a multicenter study;Bruzzone R, J Cell Sci, 2003, Functional analysis of connexin26 mutants;ClinVar Variation ID 17548, multiple submitter classifications as Pathogenic/Likely Pathogenic",,73.33,
@@ -703,7 +702,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 101855,SELENON,qwen3.7-max,Benign,Uncertain significance,0.55,PM2;PP2;PP3,"Moghadaszadeh B et al., Nat Genet, 2001;Ferreiro A et al., Hum Mol Genet, 2002;Ferreiro A et al., Neurology, 2004",,60.73,
 238040,RP1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Pierce EA et al., Nat Genet, 1999;Bowne SJ et al., Hum Mol Genet, 2002;Sullivan LS et al., Invest Ophthalmol Vis Sci, 2012",,37.26,
 45551,TTR,qwen3.7-max,Pathogenic,Pathogenic,0.72,PM1;PM2;PP3,"Rowczenio et al., Orphanet J Rare Dis, 2014, 9:12;Ando et al., Orphanet J Rare Dis, 2013, 8:31;Connors et al., Amyloid, 2003, 10(2):102-109",,100.5,
-4964786,COL4A3,qwen3.7-max,Pathogenic,error,,,,,372.99,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 779477,ITGA8,qwen3.7-max,Benign,Uncertain significance,0.4,PM2;PP3,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Khan AO, et al., Hum Mutat, 2020, splice region variant classification considerations",,31.02,
 431772,CEP290,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;Sayer JA et al., Nat Genet, 2006, 38(6):674-681;den Hollander AI et al., Science, 2006, 314(5803):1292-1294;Brancati F et al., Hum Mutat, 2010, 31(7):E1506-E1518",,46.48,
 175984,FBN1,qwen3.7-max,Benign,Uncertain significance,0.55,PM2_supporting;PP3,"Richards S, Genet Med, 2015, 17(5):405-424;Loeys BL, J Med Genet, 2010, 47(10):663-669;Jaganath K, Hum Mutat, 2021, 42(10):1220-1235",,153.4,
@@ -1852,7 +1850,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 1984665,CDC73,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;PVS1,"Richards S, Genet Med, 2015, 17(5):405-424;Carpten JD, Nat Genet, 2002, 32(4):676-680;Abdel-Wahab Z, Clin Cancer Res, 2021, 27(14):3884-3895",,61.4,
 729451,MAMLD1,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;PP3,"Fukami M et al., Nat Genet, 2006, 38(4):431-436;Kalfa N et al., J Urol, 2008, 180(4):1607-1611;Chen Y et al., J Clin Endocrinol Metab, 2012, 97(5):E819-E824",,45.8,
 316039,MUSK,qwen3.7-max,Benign,Likely benign,0.8,BP4;BP7,"Richards S, Genet Med, 2015, 17(5):405-424;ClinGen SVI BP7 specification, 2023",,23.31,
-4844099,NF1,qwen3.7-max,Pathogenic,error,,,,,372.8,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 456302,DCDC2,qwen3.7-max,Benign,Likely benign,0.75,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Iyer J, et al., Hum Mutat, 2023, 44(6):681-695",,30.26,
 18878,IRAK4,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2,"Picard C, Science, 2003, 299:2051;Ku CL, J Exp Med, 2007, 204:1891-1903;Picard C, J Exp Med, 2010, 207:199-212",,24.19,
 1310243,TMEM260,qwen3.7-max,Pathogenic,Uncertain significance,0.3,,"Richards S, Genet Med, 2015, 17(5):405-424;Abou Tayoun AN, Genet Med, 2018, 20(11):1334-1342",,37.74,
@@ -1998,7 +1995,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 1161577,SLC27A4,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Klar J, Am J Hum Genet, 2009, 85(4):521-527;Khnykin D, J Invest Dermatol, 2010, 130(5):1288-1296;Sugiura K, J Dermatol Sci, 2014, 73(1):3-9",,43.01,
 538110,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Fahsold R et al., Am J Hum Genet, 2000, NF1 LOF mechanism;Kehrer-Sawatzki H et al., Hum Mutat, 2017, NF1 splice variants;ClinVar SCV entries for NF1 c.888+1G>A splice site variants",,26.32,
 3411974,COL2A1,qwen3.7-max,Pathogenic,Pathogenic,0.92,PVS1;PM1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Nishimura G et al., J Med Genet, 2005, COL2A1 mutation spectrum;Hoornaert KP et al., Hum Mutat, 2006, COL2A1 type II collagenopathies;Terhal PA et al., Hum Mutat, 2012, COL2A1 database of mutations",,55.05,
-4934949,MSH2,qwen3.7-max,Pathogenic,error,,,,,372.84,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 682754,TRAPPC9,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2;PM3,"Mir A, et al., Am J Hum Genet, 2009, 85(3):394-400;Abou Jamra R, et al., Eur J Hum Genet, 2011, 19(1):78-82;Notarangelo F, et al., Clin Genet, 2017, 91(5):780-784",,49.7,
 1158696,ARHGEF18,qwen3.7-max,Benign,Likely benign,0.6,BP4,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Jaganathan K, et al., Cell, 2019, 176(3):535-548",,38.14,
 251249,FLNB,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, Genet Med, 2015, 17(5):405-424;Abou Tayoun AN, Genet Med, 2018, 20(11):1334-1342",,33.58,
@@ -2413,224 +2409,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 4978866,COL5A2,qwen3.7-max,Pathogenic,Pathogenic,0.78,PM1;PM2;PP2;PP3,"Symoens S et al., Hum Mutat, 2012, 33(6):960-72;Malfait F et al., Hum Mutat, 2007, 28(12):1194-203;Ritelli M et al., Orphanet J Rare Dis, 2013, 8:128",,42.06,
 514270,CHD7,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Vissers et al., Nat Genet, 2004, 36(9):955-7;Bergman et al., Hum Mutat, 2011, 32(5):454-66;Janssen et al., Hum Mutat, 2012, 33(1):152-63",,34.09,
 254230,SMPD1,qwen3.7-max,Benign,Likely benign,0.7,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Schuchman EH, et al., Hum Mutat, 2017, 38(6):629-639",,32.08,
-420674,TP53,qwen3.7-max,Pathogenic,error,,,,,132.26,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-713171,C2CD3,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4986696,RB1,qwen3.7-max,Benign,error,,,,,132.32,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1159204,MRTFA,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-98377,GAA,qwen3.7-max,Benign,error,,,,,132.29,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1166656,SMARCA2,qwen3.7-max,Pathogenic,error,,,,,132.28,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4952377,SDHAF2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1393539,TSC1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-134536,FLNC,qwen3.7-max,Benign,error,,,,,132.29,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4836478,BRCA2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4986982,CTNNA1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1527998,DNAH9,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1531930,POC5,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-703595,SRRM2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2047697,DDX41,qwen3.7-max,Benign,error,,,,,12.02,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-777697,ARHGEF10,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-475863,ATM,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1158679,PALM,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-815738,STK11,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1216383,VPS13D,qwen3.7-max,Benign,error,,,,,12.02,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-966887,NF1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-372273,STT3A,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4959862,CFTR,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-467579,NF1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-29178,MYH3,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-177630,COL11A1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4181888,RPGRIP1L,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1535239,PPP2R5B,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-169933,DCX,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1156675,TH,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1662115,HMCN1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1631921,SCN3A,qwen3.7-max,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-140881,DTNA,qwen3.7-max,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1248534,PRKCSH,qwen3.7-max,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-526003,IL10RA,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1545503,HDAC8,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-285266,ITGA6,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2048116,NIN,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-99165,RYR1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4961197,KMT2D,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1661072,CACNA1H,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2931679,FOCAD,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-221277,MSH6,qwen3.7-max,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1249862,PKD1L1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-245636,LDLR,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-167865,BIN1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-168684,MCPH1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-755143,ITGAM,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-142624,RMRP,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-708315,CCDC88A,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-801094,ABCB4,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3557020,MLH3,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-391527,SCN3A,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-424406,SGPL1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3212982,COL6A3,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3169538,HMOX1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4967671,TMEM127,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4984453,FAM149B1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-609758,HK1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-285029,ACVR1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-230276,P2RX2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-715178,CTU2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1571979,EIF2AK2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2910207,ATM,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-168857,KMT2A,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-403614,DNAAF3,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-311384,AP5Z1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4847289,INPP5E,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-705426,POFUT1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-577948,PHEX,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-333215,FANCI,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-190345,TPRN,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1274151,SLMAP,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4907091,WDR45,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1058915,RAB3GAP1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3392296,MLH3,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4981733,CDKN1B,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-141285,ELP1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1157207,RNF31,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-511253,HMGCL,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4943432,LRRC7,qwen3.7-max,Pathogenic,error,,,,,12.02,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4927684,CFTR,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4974785,BRCA2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4928048,GNE,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-30497,HBB,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-237651,ABCA4,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4850784,RARS2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-168622,CHD7,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1164573,SCARF2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-429997,BRIP1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-27039,G6PC1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1892086,SKIC2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2109738,MAN2B1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-257371,SALL4,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4975651,FH,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1314922,LARP7,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-299693,ANTXR2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4866877,IFT140,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-131896,SMARCA4,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-339597,SPTLC2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2848606,PTEN,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-22858,PTEN,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-574384,NF1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4898657,NPR2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3112497,FLNC,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4844204,ASPM,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4970946,SMARCE1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-140387,CD320,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4945794,MLH1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-722039,GNMT,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-420801,NF1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-496342,SCN5A,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4906410,TTN,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1156682,KCNQ1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-451002,NLRC4,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3121991,DYRK1B,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1157683,LAT,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-840788,BRCA2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1616763,POC5,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-447352,CD247,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-231012,SYNE4,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-371163,SFXN4,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-39291,KIF22,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4960935,OPHN1,qwen3.7-max,Pathogenic,error,,,,,12.03,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4957296,ABCB11,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4837401,FANCE,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4957249,ABCB11,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-425622,PURA,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1553507,MRPS34,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2819913,SLC6A1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-52885,RYR2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-906386,WFS1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-455418,DOCK2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1687492,SLC6A1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1630679,MAMLD1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4959657,CD40,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1064106,NF1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4958623,KIAA0586,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1251096,CEP104,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2977539,MAN2B1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4971044,ATM,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-839965,PFKM,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1572682,NDUFS7,qwen3.7-max,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4803684,CDHR1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-135846,SYNE1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1593844,TYMP,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1652005,POC5,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4966922,SCYL1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1657650,C2CD3,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-335871,AARS1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4837091,GJB1,qwen3.7-max,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4982741,GAA,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1618015,SEC24D,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-701177,TCF7L2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-731013,HERC1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4986922,PALB2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4969943,APC,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1623854,KIF1A,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-132116,PALB2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-250591,COL4A4,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-496140,CDC14A,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4827896,MFRP,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-200154,ASL,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-238294,SZT2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-447190,PLEKHM2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3609157,ATM,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-631127,NGLY1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1934843,PKD2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1157853,ADAMTS18,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1281379,TTN,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-518154,IFT172,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1623240,KIZ,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4836697,GRIN1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-711947,RIGI,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-195608,TRIOBP,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1060283,DNAH5,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2905088,CYP7B1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4795545,PSMB10,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4954662,CHD8,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3540149,PROS1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4898125,ELANE,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-252984,COL1A2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1054199,ALDOB,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4962460,CXCR2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4957357,ATP8B1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4907991,BRCA1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2118376,TRAK1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-703674,CLUAP1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2523685,KCNQ2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-278642,LAMB3,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-763694,HPS3,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2975645,PALB2,qwen3.7-max,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-19820,LDLRAP1,qwen3.7-max,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1631859,ERBB4,qwen3.7-max,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-46972,GNPTAB,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4934380,COL7A1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2797026,APC,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-359643,BRAF,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1601784,IFT57,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-963293,SOS2,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2841693,PMS2,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-3194479,GCK,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4967680,BRCA1,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-325146,KMT2D,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-52959,RYR2,qwen3.7-max,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4958862,ARID1B,qwen3.7-max,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-722559,PKD1L1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1175651,MYO15A,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1608530,JAK3,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-551522,ABCA4,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2751146,APC,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-1521957,SLC41A1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4986614,GALNT12,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-215177,COL11A1,qwen3.7-max,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4854694,COMP,qwen3.7-max,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-2955371,BUB1,qwen3.7-max,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-4971069,UBE3A,qwen3.7-max,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
-730602,COL27A1,qwen3.7-max,Benign,error,,,,,14.07,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Max retries "
 1211612,SPEG,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Agrawal PB, et al., Am J Hum Genet, 2014, 95(5):579-586",,35.72,
 4803428,LPIN2,qwen3.7-max,Pathogenic,Pathogenic,0.6,PVS1;PM2,"Ferguson PJ, Am J Hum Genet, 2005;Herlin T, J Med Genet, 2013",,54.46,
 720560,DNAH1,qwen3.7-max,Benign,Likely benign,0.78,BP4;BP7,"Richards S, Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Wirschell M, Nat Med, 2013, DNAH1 mutations in primary ciliary dyskinesia;Horani A, J Med Genet, 2013, DNAH1 and autosomal recessive PCD",,50.85,
@@ -3545,7 +3323,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 98688,PEX6,qwen3.7-max,Benign,Uncertain significance,0.5,BP7,"Richards S, Genet Med, 2015, Standards and guidelines for the interpretation of sequence variants (ACMG/AMP)",,33.94,
 4949159,CTNND2,qwen3.7-max,Pathogenic,Pathogenic,0.75,PVS1_Strong;PM2_Supporting,"Richards et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Tayoun et al., Genet Med, 2018, PVS1 ClinGen SVI recommendations;ClinGen CTNND2 gene-disease validity curation",,68.59,
 30663,HBA1;HBA2;LOC106804612,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS3;PM2;PM3;PP3;PP5,"Milner PF et al., Nature, 1971, 232:337-339;Hunt JA et al., Nature, 1972, 238:35-37;Weatherall DJ, Blood, 2001, 97:1517-1518;Harteveld CL & Higgs DR, Orphanet J Rare Dis, 2010, 5:13",,59.2,
-1062965,BRCA2,qwen3.7-max,Pathogenic,error,,,,,373.12,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 194829,NCF2,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Matute JD, et al., Blood, 2009, NCF2 and chronic granulomatous disease",,36.84,
 791713,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Fahsold et al., Am J Hum Genet, 2000, 66(4):1221-1228;Cawthon et al., Cell, 1990, 62(1):193-201;ClinVar Variation ID 547832, National Center for Biotechnology Information",,25.12,
 1058658,HSPG2,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Nicole S et al., Am J Hum Genet, 2000, HSPG2 mutations in Schwartz-Jampel syndrome;Stum M et al., Hum Mutat, 2006, HSPG2 loss-of-function variants and phenotypic spectrum",,52.15,
@@ -4251,7 +4028,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 444795,WT1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Pelletier et al., Nature, 1991, Denys-Drash syndrome WT1 mutations;Little et al., Proc Natl Acad Sci USA, 1993, WT1 nonsense mutations in Wilms tumor;Huff V, Am J Hum Genet, 2011, WT1 loss-of-function disease mechanism review",,31.13,
 1155073,C9,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,18.04,
 142349,PDHA1,qwen3.7-max,Benign,Uncertain significance,0.5,,"Richards S, Genet Med, 2015, 17(5):405-424",,18.03,
-4968240,MECP2,qwen3.7-max,Pathogenic,error,,,,,5630.05,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 728619,CEP250,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;BP1,"Khanna H et al., Nat Genet, 2014, 46(10):1122-1130",,45.32,
 4967639,TMEM127,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2,"Qin Y et al., Nat Genet, 2010, 42(3):229-233;Yao L et al., JAMA, 2010, 304(23):2611-2619;Neumann HP et al., J Clin Endocrinol Metab, 2011, 96(11):E1835-E1840",,66.42,
 1158915,CHRNA4,qwen3.7-max,Benign,Uncertain significance,0.3,,"Steinlein OK, et al., Nat Genet, 1995, 11(2):201-3;Hirose S, et al., Neurology, 2000, 55(1):110-6",,24.05,
@@ -4376,7 +4152,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 4973079,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Fahsold R, et al., Am J Hum Genet, 2000;Messiaen LM, et al., Hum Mutat, 2000",,75.12,
 152977,COL27A1,qwen3.7-max,Pathogenic,Pathogenic,0.7,PM1;PM2;PP3,"Gonzales et al., Am J Hum Genet, 2013, 93(4):758-764;Steel et al., J Pediatr Orthop, 1993, 13(4):468-472",,38.41,
 4930080,NOTCH3,qwen3.7-max,Pathogenic,Uncertain significance,0.6,PM2,"Joutel et al., Nature, 1996;Rutten et al., Neurology, 2014;Cho et al., JAMA Neurol, 2019",,89.34,
-3837652,LZTR1,qwen3.7-max,Pathogenic,error,,,,,372.95,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 1171379,SLC36A2,qwen3.7-max,Benign,Likely benign,0.7,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,27.41,
 708410,ADAM17,qwen3.7-max,Benign,Likely benign,0.78,BP4;BP7,"Richards S et al., Genet Med, 2015, 17(5):405-424;Blaydon DC et al., N Engl J Med, 2011, 365(18):1693-1701;Sun M et al., Hum Mutat, 2012, 33(1):152-160",,21.66,
 2821158,MRPS28,qwen3.7-max,Benign,Uncertain significance,0.55,PM5;PM2;PP3,"Smits P, et al., Hum Mol Genet, 2011, 20(17):3234-3242",,55.82,
@@ -4596,7 +4371,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 101350,POMT1,qwen3.7-max,Benign,Uncertain significance,0.55,BP7,"Richards S, Genet Med, 2015, 17(5):405-424;van Reeuwijk J, J Med Genet, 2005, 42(12):907-912;Beltran-Valero de Bernabe D, Am J Hum Genet, 2002, 71(2):365-373",,25.06,
 714388,FMN1,qwen3.7-max,Benign,Uncertain significance,0.5,BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines",,58.63,
 969721,RPGRIP1,qwen3.7-max,Pathogenic,Pathogenic,0.88,PVS1;PM2;PP3,"Richards et al., Genet Med, 2015;Dryja et al., Nat Genet, 2001;Hanein et al., Hum Mutat, 2004",,48.86,
-51766,MYBPC3,qwen3.7-max,Pathogenic,error,,,,,372.94,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 54798,ANKRD1,qwen3.7-max,Benign,Likely benign,0.85,BP4;BP7,"Richards S, Genet Med, 2015, 17(5):405-424;Zolk O, Circulation, 2002, 105(22):2627-2633",,40.74,
 1154924,PCDH12,qwen3.7-max,Benign,Uncertain significance,0.6,BP7,"Richards S et al., Genet Med, 2015, 17(5):405-424",,29.15,
 4225495,MBD4,qwen3.7-max,Pathogenic,Pathogenic,0.88,PVS1;PM2,"Robertson et al., Nat Commun, 2017, 8:1424;Sanders et al., J Med Genet, 2018, 55:764-771;Wong et al., Cancer Discov, 2019, 9:490-505",,54.58,
@@ -4630,7 +4404,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 340119,IGF1R,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation",,29.29,
 4840811,NEB,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Lehtokari VL, et al., Eur J Hum Genet, 2014, 22(3):348-356;Pelin K, et al., Proc Natl Acad Sci USA, 1999, 96(5):2305-2310",,31.52,
 778858,ARMC9,qwen3.7-max,Benign,Uncertain significance,0.5,PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Bachmann-Gagescu R et al., Am J Hum Genet, 2015, ARMC9 and Joubert syndrome",,75.54,
-133578,PALB2,qwen3.7-max,Pathogenic,error,,,,,255.07,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 4967658,BRCA2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genet Med, 2015, 17(5):405-424;Wooster et al., Nature, 1995, 378(6559):789-792;ClinVar Variation ID 38195, multiple submitter reviews",,41.95,
 482070,SPG11,qwen3.7-max,Pathogenic,Pathogenic,0.93,PVS1;PM2,"Stevanin G et al., Nat Genet, 2007, 39(7):857-863;Orlacchio A et al., Brain, 2010, 133(Pt 2):591-598;Pensato V et al., J Neurol, 2014, 261(11):2172-2179",,30.89,
 367282,QARS1,qwen3.7-max,Benign,Uncertain significance,0.4,PM2;PP2,"Zhang et al., Am J Hum Genet, 2014;Kodera et al., Hum Mutat, 2015",,26.33,
@@ -4964,7 +4737,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 305804,ENPP1,qwen3.7-max,Benign,Benign,0.8,BP4;BP7,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Tounsi A et al., Mol Genet Genomic Med, 2020, ENPP1 variants and GACI spectrum;Ideguchi K et al., J Hum Genet, 2000, ENPP1 polymorphisms and OPLL association studies",,24.41,
 252387,CD2AP,qwen3.7-max,Benign,Likely benign,0.75,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,20.9,
 4968675,GLMN,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Brouillard P, Nat Genet, 2002, 30(1):97-101;Brouillard P, Hum Mutat, 2005, 25(4):366-373;Boon LM, Hum Mol Genet, 2003, 12(2):191-198",,28.05,
-4931353,DMD,qwen3.7-max,Pathogenic,error,,,,,372.8,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
 2817519,CATSPER2,qwen3.7-max,Benign,Uncertain significance,0.55,PM2;BP1,"Hildebrand MS, et al., Sci Transl Med, 2020, CATSPER2 and male infertility;ClinGen Male Infertility GCEP, CATSPER2 gene curation, 2022",,21.71,
 1210950,CKAP2L,qwen3.7-max,Benign,Uncertain significance,0.45,PM2,"Richards et al., Genet Med, 2015, ACMG/AMP variant classification guidelines;Hussain et al., Am J Hum Genet, 2014, CKAP2L biallelic mutations cause Filippi syndrome",,36.83,
 1153684,IL12RB2,qwen3.7-max,Benign,Uncertain significance,0.55,PM2;PP2;PP3,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Bustamante J, et al., J Exp Med, 2007, 204(13):3107-3121;Altare F, et al., J Clin Invest, 1998, 102(12):2268-2273",,36.61,
@@ -4999,3 +4771,231 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 641821,BRCA2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Goldgar DE et al., Breast Cancer Res, 2004, 6(6):R635-R643;Tavtigian SV et al., Hum Mutat, 2008, 29(8):1007-1020;ClinVar Variation ID 51586, NCBI, accessed 2024;Easton DF et al., Hum Mutat, 2007, 28(11):1117-1122",,30.98,
 2105453,PRF1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Stepp SE et al., Science, 1999, 286(5446):1957-9;Sieni E et al., Haematologica, 2012, 97(6):835-42;Feldmann J et al., Blood, 2003, 102(9):3242-9",,25.57,
 102338,PKHD1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Ward CJ, et al., Nat Genet, 2002, 30(3):259-269;Bergmann C, et al., Hum Mutat, 2004, 24(6):506-513",,50.43,
+420674,TP53,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Fortuno C et al., Hum Mutat, 2018, TP53 variant curation;Bouaoun L et al., Hum Mutat, 2016, TP53 variations in human cancers",,27.25,
+4934949,MSH2,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, Genet Med, 2015;Peltomaki P, Hum Mutat, 2012;Lynch HT, Nat Rev Dis Primers, 2019;Wijnen J, Nat Genet, 1998",,59.48,
+4986696,RB1,qwen3.7-max,Benign,Uncertain significance,0.55,BP4,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Kato MV, et al., Curr Mol Med, 2007, 7(1):61-71",,52.67,
+98377,GAA,qwen3.7-max,Benign,Likely benign,0.6,BP4;BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Hirschhorn R, et al., J Med Genet, 2000, GAA mutations in Pompe disease",,31.8,
+4844099,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.72,PVS1;PM2,"Richards S et al., Genet Med, 2015;Fahsold R et al., Am J Hum Genet, 2000;Cnossen MC et al., Hum Genet, 1997",,102.55,
+134536,FLNC,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S et al., Genet Med, 2015, 17(5):405-424",,20.21,
+1166656,SMARCA2,qwen3.7-max,Pathogenic,Pathogenic,0.85,PS2;PM1;PM2;PP2;PP3,"Sousa SB et al., Nat Genet, 2012, 44(11):1249-52;Van Houdt JK et al., Nat Genet, 2012, 44(11):1253-6;Bramswig NC et al., Eur J Hum Genet, 2017, 25(3):308-314",,45.4,
+713171,C2CD3,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genetics in Medicine, 2015, 17(5):405-424",,23.59,
+1159204,MRTFA,qwen3.7-max,Benign,Uncertain significance,0.5,,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Lueck CJ, et al., J Biol Chem, 2014, 289(2):1076-1085",,29.66,
+4836478,BRCA2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"ClinVar Variation ID 38195, multiple submitter reviews, 2023;ENIGMA Consortium BRCA2 variant classification, 2022;Tavtigian SV et al., Nature Genetics, 1996, BRCA2 gene characterization",,18.24,
+4952377,SDHAF2,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Hao HX, et al., Science, 2009;Kunst HP, et al., J Clin Endocrinol Metab, 2011",,37.93,
+1393539,TSC1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Henske EP, et al., Nat Rev Dis Primers, 2016, 2:16035;ClinGen SVI Working Group, PVS1 Recommendation, 2018",,50.59,
+1527998,DNAH9,qwen3.7-max,Benign,Likely benign,0.75,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Hornef N, et al., Am J Hum Genet, 2006, 79(1):120-131",,26.4,
+4986982,CTNNA1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;Majoor-Ebeling JE et al., J Med Genet, 2013, 50(12):804-811;van der Post RS et al., J Med Genet, 2015, 52(7):493-498",,34.82,
+4964786,COL4A3,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;Savige J et al., Front Genet, 2014, 5:303;Tay YC et al., J Am Soc Nephrol, 2015, 26(4):937-945;Savige J et al., Hum Mutat, 2013, 34(12):1597-1605",,197.98,
+1531930,POC5,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;PP3,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,21.89,
+703595,SRRM2,qwen3.7-max,Benign,Likely benign,0.7,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,23.1,
+777697,ARHGEF10,qwen3.7-max,Benign,Uncertain significance,0.4,PM2;BP4,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,21.25,
+475863,ATM,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;Shiloh Y et al., Nat Rev Cancer, 2003, 3(3):155-168;ClinGen ATM Loss-of-Function Variant Curation Expert Panel, 2020",,22.68,
+2047697,DDX41,qwen3.7-max,Benign,Uncertain significance,0.6,BP7,"Polprasert C et al., JAMA Oncol, 2015, 1(7):927-935;Lewinsohn M et al., Blood Adv, 2019, 3(24):4238-4249;Li R et al., Blood, 2016, 128(22):2557-2560",,31.0,
+1158679,PALM,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;BP7,"Richards S, Genet Med, 2015, 17(5):405-424;Abou Tayoun AN, Genet Med, 2018, 20(11):1361-1368",,27.78,
+1216383,VPS13D,qwen3.7-max,Benign,Uncertain significance,0.4,BP7,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Gauthier J et al., Am J Hum Genet, 2018, VPS13D and movement disorders",,23.08,
+815738,STK11,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Hemminki A et al., Nature, 1998, 391(6663):184-187;Jenne DE et al., Nat Genet, 1998, 18(1):38-43;ClinVar Variation ID 458932",,26.51,
+467579,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.88,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Tayoun AA, et al., Genet Med, 2018, 20(12):1472-1482;Messiaen LM, et al., Hum Mutat, 2000, 15(6):522-532;Fahsold R, et al., Am J Hum Genet, 2000, 66(3):790-818",,29.89,
+966887,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Richards S, Genet Med, 2015, 17(5):405-424;ClinGen SVI Working Group PVS1 Recommendations, 2018;Fahsold R, Hum Mutat, 2000, 16(1):60-70",,64.22,
+372273,STT3A,qwen3.7-max,Benign,Uncertain significance,0.55,PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;OMIM 615327: Congenital disorder of glycosylation type Iq (STT3A)",,49.89,
+177630,COL11A1,qwen3.7-max,Benign,Likely benign,0.6,BP4;BP7,"Richards S, Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Majava M, Am J Med Genet A, 2007, COL11A1 mutations in Stickler syndrome",,21.99,
+29178,MYH3,qwen3.7-max,Pathogenic,Pathogenic,0.85,PS4;PM1;PM2;PP2;PP3,"Toydemir RM, Nat Genet, 2006, 38(10):1124-6;Alvarado DM, Am J Hum Genet, 2011, 89(1):126-30;Pehlivan T, Am J Med Genet A, 2019, 179(8):1502-1510",,42.89,
+4181888,RPGRIP1L,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Delous M et al., Nature, 2007, RPGRIP1L mutations in Joubert and Meckel syndromes;Arts HH et al., Nat Genet, 2007, RPGRIP1L loss-of-function in ciliopathies",,42.96,
+1535239,PPP2R5B,qwen3.7-max,Benign,Uncertain significance,0.65,PM2;BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines",,24.55,
+169933,DCX,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PS4,"des Portes V, Cell, 1998, 92(4):511-520;Gleeson JG, Cell, 1998, 92(1):63-72;Pilz DT, Am J Med Genet, 1999, 83(3):208-212",,35.09,
+1156675,TH,qwen3.7-max,Benign,Uncertain significance,0.45,,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,26.85,
+4959862,CFTR,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2;PP5,"Richards et al., Genet Med, 2015;Sosnay et al., Nat Genet, 2013;CFTR2 Database, cftr2.org, 2023",,119.25,
+1662115,HMCN1,qwen3.7-max,Benign,Uncertain significance,0.45,,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,31.38,
+4975648,FH,qwen3.7-max,Pathogenic,error,,,,,373.67,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
+1631921,SCN3A,qwen3.7-max,Benign,Uncertain significance,0.45,BP4,"Richards S, et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Lamar T, et al., Am J Hum Genet, 2017, SCN3A-related epileptic encephalopathy",,27.07,
+140881,DTNA,qwen3.7-max,Benign,Likely benign,0.6,BP4;BP7,"Richards S, Genet Med, 2015, 17(5):405-424;O'Leary NA, Nucleic Acids Res, 2016, 44(D1):D733-D745",,22.69,
+1545503,HDAC8,qwen3.7-max,Benign,Uncertain significance,0.3,PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Kaiser FJ et al., Hum Mol Genet, 2014, HDAC8 mutations in Cornelia de Lange syndrome",,19.88,
+1248534,PRKCSH,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;BP1,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Davila S et al., Am J Hum Genet, 2004, PRKCSH and PCLD1;Li A et al., Lancet, 2004, PRKCSH mutations in polycystic liver disease;Waanders E et al., Hum Mutat, 2006, PRKCSH mutation spectrum",,34.96,
+285266,ITGA6,qwen3.7-max,Benign,Likely benign,0.65,BP7;BP4,"Richards S, et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation",,23.16,
+2048116,NIN,qwen3.7-max,Benign,Uncertain significance,0.4,,,,21.39,
+526003,IL10RA,qwen3.7-max,Benign,Pathogenic,0.85,PS3;PS4;PM2;PM3;PP3,"Glocker et al., Nature, 2009, 461(7265):772-6;Moran et al., Gut, 2013, 62(1):62-70;Begue et al., Gut, 2011, 60(9):1211-20;Shouval et al., Gastroenterology, 2014, 147(5):1085-97",,45.68,
+2931679,FOCAD,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,13.8,
+99165,RYR1,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Iyer VA, et al., Mol Genet Genomic Med, 2018, 6(5):814-824",,24.95,
+1661072,CACNA1H,qwen3.7-max,Benign,Uncertain significance,0.35,PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;ClinGen Channelopathy Expert Panel, CACNA1H gene-disease validity evaluation",,25.94,
+1249862,PKD1L1,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,22.14,
+245636,LDLR,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2,"Hobbs HH et al., Hum Mutat, 1992, 1:445-466;Leigh SE et al., Ann Hum Genet, 2008, 72:485-498;Mozas P et al., Hum Mutat, 2000, 16:184-185;ClinVar Variation ID 3744 (LDLR c.564C>A)",,25.93,
+167865,BIN1,qwen3.7-max,Benign,Likely benign,0.75,BP7;BP4,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Tayoun ANA, et al., Genet Med, 2018, 20(1):24-28",,20.8,
+755143,ITGAM,qwen3.7-max,Benign,Likely benign,0.65,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,23.02,
+4961197,KMT2D,qwen3.7-max,Pathogenic,Pathogenic,0.92,PVS1;PM2,"Ng SB, Nature Genetics, 2010, 42(10):790-3;Cheon CK, Journal of Medical Genetics, 2014, 51(11):766-74;Richards S, Genetics in Medicine, 2015, 17(5):405-24",,78.31,
+221277,MSH6,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2,"Wijnen et al., Nat Genet, 1999, MSH6 germline mutations in HNPCC families;Kolodner et al., Cancer Res, 1999, MSH6 mutations in hereditary nonpolyposis colorectal cancer;Plaschke et al., Int J Cancer, 2004, MSH6 pathogenic variants in Lynch syndrome;ClinVar Variation ID: 89653, MSH6 p.Ser564Ter classified as Pathogenic by multiple submitters",,67.11,
+168684,MCPH1,qwen3.7-max,Benign,Likely benign,0.6,BP4,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Jackson AP, et al., Am J Hum Genet, 2002, MCPH1 and primary microcephaly",,51.32,
+708315,CCDC88A,qwen3.7-max,Benign,Uncertain significance,0.45,BP1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Tawara N et al., J Hum Genet, 2018, CCDC88A and SCAR19;Hara T et al., Am J Hum Genet, 2015, CCDC88A loss-of-function in PEHO-like syndrome",,31.45,
+391527,SCN3A,qwen3.7-max,Benign,Likely benign,0.7,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-24",,16.81,
+801094,ABCB4,qwen3.7-max,Pathogenic,Pathogenic,0.92,PVS1;PM2,"Jacquemin E, et al., Gastroenterology, 1997, 112(3):924-930;Deleuze JF, et al., Hepatology, 1996, 23(4):904-908;Davit-Spraul A, et al., Hepatology, 2007, 46(4):1177-1186",,31.83,
+3557020,MLH3,qwen3.7-max,Pathogenic,Pathogenic,0.78,PVS1;PM2,"Liu et al., Gastroenterology, 2003, 125(5):1462-1472;Wang et al., Hum Mutat, 2004, 23(4):399;Huang et al., J Med Genet, 2001, 38(10):669-673;Ricciardiello et al., Gastroenterology, 2003, 124(1):35-42",,46.73,
+424406,SGPL1,qwen3.7-max,Pathogenic,Pathogenic,0.72,PM2;PM3;PP3;PP4,"Lovric S, J Clin Invest, 2017, 127(2):540-552;Prasad N, J Clin Endocrinol Metab, 2017, 102(8):2841-2848;Janecke AR, Am J Hum Genet, 2017, 100(2):314-322",,34.35,
+4967671,TMEM127,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Qin Y et al., Nat Genet, 2010, 42(3):229-233;Yao L et al., Hum Mutat, 2010, 31(9):E1786-E1796;Abermil N et al., J Clin Endocrinol Metab, 2012, 97(4):E647-E651",,23.66,
+3169538,HMOX1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Yachie et al., J Clin Invest, 1998, first HMOX1 deficiency case;Kawashima et al., Blood, 2011, HMOX1 deficiency characterization",,50.75,
+3212982,COL6A3,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;Briñas L et al., Hum Mutat, 2010, 31(8):950-958;Butterfield RJ et al., Neuromuscul Disord, 2013, 23(11):884-890",,54.88,
+609758,HK1,qwen3.7-max,Benign,Likely benign,0.85,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,18.69,
+4984453,FAM149B1,qwen3.7-max,Pathogenic,Pathogenic,0.7,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Toriyama M, et al., Nat Commun, 2016, 7:11479;Kumar A, et al., Hum Mutat, 2020, 41(1):139-150",,40.5,
+230276,P2RX2,qwen3.7-max,Benign,Uncertain significance,0.3,PM2;PP3,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation",,23.57,
+715178,CTU2,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,21.38,
+285029,ACVR1,qwen3.7-max,Benign,Likely benign,0.65,BP4;BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant classification guidelines;Shore EM, et al., Nat Genet, 2006, ACVR1 mutations in fibrodysplasia ossificans progressiva",,42.46,
+1571979,EIF2AK2,qwen3.7-max,Benign,Likely benign,0.65,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,33.09,
+168857,KMT2A,qwen3.7-max,Benign,Likely benign,0.75,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Jones WD, et al., Am J Hum Genet, 2012, 91(5):863-871",,27.42,
+311384,AP5Z1,qwen3.7-max,Benign,Likely benign,0.72,BP4;BP7,"Richards et al., Genet Med, 2015, ACMG/AMP variant classification guidelines;Slabicki et al., J Cell Biol, 2010, AP-5 complex characterization",,19.29,
+403614,DNAAF3,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Loges NT et al., Am J Hum Genet, 2012, 91(3):541-547;Onoufriadis A et al., J Med Genet, 2013, 50(9):627-634",,32.27,
+4847289,INPP5E,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Bielas SL et al., Nat Genet, 2009, INPP5E mutations cause Joubert syndrome;Jacoby M et al., Nat Genet, 2009, INPP5E loss-of-function in ciliopathy",,34.97,
+2910207,ATM,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Savitsky et al., Science, 1995, 268(5218):1749-53;Shiloh & Ziv, Nat Rev Genet, 2020, 21(4):199-215;Ambrose & Gatti, Hum Mutat, 2013, 34(7):939-45",,70.23,
+705426,POFUT1,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;PP2;PP3,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Betz RC et al., Am J Hum Genet, 2012, POFUT1 mutations in Dowling-Degos disease;Li M et al., J Invest Dermatol, 2013, POFUT1 variant spectrum in DDD",,30.93,
+577948,PHEX,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;HYP Consortium, Nat Genet, 1995, 11(4):376-382;Beck-Nielsen SS et al., Eur J Endocrinol, 2019, 180(3):R117-R131",,24.25,
+333215,FANCI,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;ClinGen Sequence Variant Interpretation Working Group recommendations",,17.35,
+1274151,SLMAP,qwen3.7-max,Benign,Uncertain significance,0.3,PM2,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines",,23.92,
+4907091,WDR45,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Haack TB, Am J Hum Genet, 2012, 91(6):1082-1087;Kruer MC, Neurology, 2013, 80(16):1504-1510;Hayflick SJ, N Engl J Med, 2013, 368(13):1204-1212",,30.99,
+190345,TPRN,qwen3.7-max,Benign,Uncertain significance,0.4,PM2;PP2,"Shahin H et al., Am J Hum Genet, 2010, 86(1):19-27",,33.13,
+1058915,RAB3GAP1,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Aligianis IA et al., Nat Genet, 2005, 37(3):275-281;Borck G et al., Hum Mutat, 2011, 32(1):42-46;Richards S et al., Genet Med, 2015, 17(5):405-424",,22.93,
+3392296,MLH3,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Liu Y et al., Gastroenterology, 2003, MLH3 mutations in hereditary nonpolyposis colorectal cancer;Lipkin SM et al., Nat Genet, 2002, MLH3 role in mismatch repair",,26.95,
+1157207,RNF31,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;ClinGen Sequence Variant Interpretation Working Group, ACMG SVI Recommendations, 2020",,17.36,
+4943432,LRRC7,qwen3.7-max,Pathogenic,Uncertain significance,0.05,,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,9.45,
+141285,ELP1,qwen3.7-max,Benign,Uncertain significance,0.45,BP7,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Slaugenhaupt SA et al., Am J Hum Genet, 2001, IKBKAP mutations in Familial Dysautonomia",,31.53,
+4981733,CDKN1B,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Pellegata et al., Proc Natl Acad Sci USA, 2006, 103(44):16370-5;Agarwal SK, Horm Metab Res, 2013, 45(2):114-20;Malanga D et al., Oncotarget, 2015, 6(27):23448-63",,45.55,
+4974785,BRCA2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, Genet Med, 2015, 17(5):405-424;Breast Cancer Information Core (BIC) database, NHGRI;ClinVar Variation ID: 51648, NCBI",,14.46,
+511253,HMGCL,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Gibson KM, et al., J Inherit Metab Dis, 1998, 21(5):564-577;Pié J, et al., Hum Mutat, 2007, 28(4):349-355",,41.5,
+4927684,CFTR,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards et al., Genet Med, 2015;Sosnay et al., Nat Genet, 2013;CFTR2 Database (cftr2.org), 2023;ClinVar Variation ID 53483",,48.21,
+30497,HBB,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS3;PS4;PM2,"Treisman R et al., Nature, 1983, 302(5909):591-596;Zhang JZ et al., Hum Genet, 1995, 95(1):73-77;Thein SL, Hum Mol Genet, 2013, 22(R1):R36-R43;Cao A & Galanello R, Blood Rev, 2010, 24(2):61-76",,38.01,
+237651,ABCA4,qwen3.7-max,Pathogenic,Pathogenic,0.7,PM2;PM3;PP3,"Zernant et al., Invest Ophthalmol Vis Sci, 2014, 55(10):6725-6734;Maugeri A et al., Am J Hum Genet, 1999, 64(3):706-715;Cremers FP et al., Hum Mol Genet, 1998, 7(3):355-362",,28.7,
+1164573,SCARF2,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,16.89,
+168622,CHD7,qwen3.7-max,Benign,Likely benign,0.65,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Halevy T, et al., Eur J Hum Genet, 2015, 23(4):456-461",,24.64,
+4850784,RARS2,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Edvardson S et al., Am J Hum Genet, 2007, 81(4):821-826;Rankin J et al., Am J Med Genet A, 2010, 152A(1):153-159",,33.21,
+4928048,GNE,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2;PP5,"Eisenberg et al., Nat Genet, 2001;Nishino et al., Science, 2002;Huizing et al., Neuromuscul Disord, 2014",,70.37,
+142624,RMRP,qwen3.7-max,Benign,error,,,,,372.82,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
+27039,G6PC1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Lei KJ, J Clin Invest, 1994;Chou JY, Hum Mutat, 2002;Rake JP, Eur J Pediatr, 2002",,26.19,
+429997,BRIP1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Seal S, Nat Genet, 2006, 38(11):1239-41;Rafnar T, Nat Genet, 2011, 43(11):1104-7;ClinVar Variation ID 31828",,30.26,
+2109738,MAN2B1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Berg T, et al., Am J Hum Genet, 1999, 64(4):1071-1078;Malm D, et al., Orphanet J Rare Dis, 2008, 3:21;Borgwardt L, et al., Orphanet J Rare Dis, 2013, 8:129",,27.93,
+1892086,SKIC2,qwen3.7-max,Pathogenic,Pathogenic,0.75,PVS1;PM2,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Najmabadi H, et al., Nature, 2011, Deep sequencing reveals 50 novel genes for recessive cognitive disorders",,35.95,
+1314922,LARP7,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Najmabadi H et al., Am J Hum Genet, 2011, LARP7 and Alazami syndrome;Tischler C et al., Eur J Hum Genet, 2012, LARP7 LOF mechanism",,14.5,
+299693,ANTXR2,qwen3.7-max,Benign,Likely benign,0.75,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,15.1,
+4975651,FH,qwen3.7-max,Pathogenic,Pathogenic,0.92,PVS1;PM2,"Tomlinson IP et al., Nat Genet, 2002, 30(1):57-62;Richards S et al., Genet Med, 2015, 17(5):405-424;Lehtonen R et al., J Med Genet, 2006, 43(6):512-517;Kiuru M et al., Hum Mutat, 2013, 34(1):111-119",,28.14,
+257371,SALL4,qwen3.7-max,Benign,Likely benign,0.78,BP4;BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Kohlhase J, et al., Nat Genet, 2002, SALL4 mutations in Okihiro syndrome;Al-Baradie R, et al., Am J Hum Genet, 2002, SALL4 and Duane-radial ray syndrome",,32.5,
+131896,SMARCA4,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,20.92,
+339597,SPTLC2,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Garofalo DC, et al., Hum Mutat, 2021, 42(12):1521-1531",,17.58,
+574384,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Fahsold R, et al., Am J Hum Genet, 2000, 66(3):790-818;ClinVar Variation ID: multiple NF1 splice site entries, NCBI",,24.91,
+22858,PTEN,qwen3.7-max,Pathogenic,Pathogenic,0.97,PVS1;PM2,"Marsh DJ et al., Hum Mol Genet, 1998, 7(3):507-513;Eng C et al., J Med Genet, 2003, 40(4):241-247;Tan MH et al., Nat Rev Cancer, 2010, 10(8):550-560;Mester JL et al., Hum Mutat, 2011, 32(11):1264-1271",,29.76,
+4866877,IFT140,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Perrault et al., Am J Hum Genet, 2012, 91(4):744-753;Halbritter et al., Hum Mutat, 2013, 34(10):1366-1372;Richards et al., Genet Med, 2015, 17(5):405-424",,48.28,
+4898657,NPR2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Bartels CF et al., Am J Hum Genet, 2004, 75(2):291-297;Nakamura K et al., J Hum Genet, 2016, 61(8):727-730;Geister KA et al., Bone, 2013, 56(2):347-354",,19.98,
+3112497,FLNC,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Valdés-Mas R et al., Hum Mol Genet, 2014;Ortiz-Genga MF et al., J Am Coll Cardiol, 2016;Begay RL et al., Circ Genom Precis Med, 2016",,21.38,
+4970946,SMARCE1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Smith MJ et al., Nat Genet, 2012, 44(6):619-622;Tsurusaki Y et al., J Hum Genet, 2014, 59(5):262-268;Kosho T et al., Am J Med Genet C Semin Med Genet, 2014, 166C(3):286-297",,24.65,
+140387,CD320,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;PP3,"Quadros et al., Blood, 2010;Pupavac et al., Mol Genet Metab, 2012",,35.88,
+4844204,ASPM,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Bond J et al., Nat Genet, 2002, 32(2):316-320;Nicholas AK et al., Hum Mol Genet, 2009, 18(14):2621-2631;Shen J et al., Eur J Hum Genet, 2014, 22(3):386-390",,38.8,
+2848606,PTEN,qwen3.7-max,Pathogenic,Pathogenic,0.93,PVS1;PM2;PP5,"Eng C, J Med Genet, 2003, 40:241-245;Marsh DJ et al., Hum Mol Genet, 1997, 6:1715-1720;Tan MH et al., Am J Hum Genet, 2012, 90:110-124",,72.22,
+722039,GNMT,qwen3.7-max,Benign,Likely benign,0.65,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,19.63,
+4945794,MLH1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2,"ClinVar Variation ID 89765, National Center for Biotechnology Information;InSiGHT Database, International Society for Gastrointestinal Hereditary Tumours (insight-group.org);Nyström-Lahti et al., Hum Mol Genet, 1996, 5(11):1743-1748;Peltomäki & Vasen, Gastroenterology, 2004, 127(5 Suppl 1):S27-S38",,46.74,
+1156682,KCNQ1,qwen3.7-max,Benign,Uncertain significance,0.5,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Barsheshet A, et al., Circ Cardiovasc Genet, 2012, 5(2):198-204",,30.45,
+496342,SCN5A,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Kapplinger et al., Heart Rhythm, 2010, 7(3):301-308;Probst et al., Circulation, 2010, 121(1):75-82;ClinVar Variation ID: 67743",,37.34,
+420801,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Messiaen LM et al., Hum Mutat, 2000, 15(3):287-298;Fahsold R et al., Am J Hum Genet, 2000, 66(3):790-818;ClinVar, Variation ID 5468, accessed 2024",,53.28,
+451002,NLRC4,qwen3.7-max,Benign,Likely benign,0.75,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Canna SW, et al., Nat Immunol, 2014, 15(10):929-935",,21.39,
+1157683,LAT,qwen3.7-max,Benign,Uncertain significance,0.35,PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,25.7,
+3121991,DYRK1B,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Keramati AR, et al., Am J Hum Genet, 2014, DYRK1B and metabolic syndrome",,31.97,
+840788,BRCA2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Wooster R, et al., Nature, 1995, 378:789-792;Howlett NG, et al., Hum Mol Genet, 2002, 11:2231-2239;ClinVar Variation ID 51628, NCBI;Tavtigian SV, et al., Nat Genet, 1996, 12:333-337",,26.16,
+1616763,POC5,qwen3.7-max,Benign,Likely benign,0.7,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;ClinGen SVI Working Group, ACMG/AMP VUS to Benign specifications, 2020",,28.8,
+4906410,TTN,qwen3.7-max,Pathogenic,Pathogenic,0.78,PVS1;PM2,"Richards S et al., Genet Med, 2015;Herman DS et al., N Engl J Med, 2012;Tayal U et al., JACC, 2017;Roberts AM et al., Sci Transl Med, 2015",,78.82,
+447352,CD247,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,17.12,
+231012,SYNE4,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,26.67,
+4837401,FANCE,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015;Castella M et al., Am J Hum Genet, 2011;Levitus M et al., Nat Genet, 2005",,18.39,
+371163,SFXN4,qwen3.7-max,Benign,Uncertain significance,0.55,PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Hildick-Smith GJ et al., Hum Mol Genet, 2019, SFXN4 and mitochondrial disease",,38.33,
+425622,PURA,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Tanaka et al., Am J Hum Genet, 2015;Reijnders et al., Am J Hum Genet, 2017;Lalani et al., Eur J Hum Genet, 2018",,17.93,
+4960935,OPHN1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, ACMG/AMP guidelines;Billuart P, et al., Nat Genet, 1998, OPHN1 identification in X-linked intellectual disability;Govek EE, et al., Nat Neurosci, 2004, OPHN1 functional characterization",,58.04,
+39291,KIF22,qwen3.7-max,Pathogenic,Pathogenic,0.7,PM1;PM2;PM5;PP3,"Boyden et al., Am J Hum Genet, 2011;Boyden et al., J Bone Miner Res, 2011",,64.63,
+4957249,ABCB11,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Strautnieks SS, et al., Nat Genet, 1998, 18(3):219-224;Davit-Spraul A, et al., Hepatology, 2010, 51(4):1345-1355;Jansen PL, et al., Hepatology, 2009, 50(5):1539-1546",,41.02,
+2819913,SLC6A1,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;BP4,"Richards S, Genet Med, 2015, ACMG/AMP guidelines;Johannesen KM, Brain, 2018, SLC6A1 epileptic encephalopathy",,22.74,
+52885,RYR2,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;BP4,"Richards S, Genet Med, 2015, 17(5):405-424;Priori SG, Circulation, 2001, 103(1):128-130;Lahat H, Circulation, 2001, 103(22):2722-2723",,35.7,
+455418,DOCK2,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Dobbs-Korp T, et al., J Allergy Clin Immunol, 2018, 141(1):369-372",,23.14,
+906386,WFS1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Inoue H, Nat Genet, 1998, 20:143-148;Rigoli L, Clin Genet, 2018, 93:449-458;Fowler KA, Hum Mutat, 2010, 31:1163-1171",,35.48,
+1687492,SLC6A1,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;BP7,"Richards S, Genet Med, 2015, ACMG/AMP variant classification guidelines;Carvill GL, Am J Hum Genet, 2015, SLC6A1 in epileptic encephalopathy;Palmer S, Epilepsia, 2022, SLC6A1 variant curation and genotype-phenotype correlations",,28.43,
+1630679,MAMLD1,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;PP3,"Fukami M et al., Nat Genet, 2006, 38(4):431-435;Kalfa N et al., J Urol, 2008, 180(2):742-747;Liu Y et al., Asian J Androl, 2020, 22(5):507-512",,32.45,
+4959657,CD40,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, ACMG/AMP guidelines;Ferrari S, et al., Nat Immunol, 2001, CD40 deficiency causes HIGM3;Tayoun ANA, et al., Genet Med, 2018, ClinGen SVI recommendations for PVS1",,37.97,
+1251096,CEP104,qwen3.7-max,Benign,Likely benign,0.65,BP4,"Doherty D, J Med Genet, 2010, Joubert syndrome review;Tuz K et al., Hum Mol Genet, 2014, CEP104 mutations in Joubert syndrome",,25.6,
+4958623,KIAA0586,qwen3.7-max,Pathogenic,Pathogenic,0.75,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Alby C et al., Am J Hum Genet, 2015, KIAA0586 mutations in Joubert syndrome;Roosing S et al., Am J Hum Genet, 2015, KIAA0586 and short-rib thoracic dysplasia",,51.08,
+4957296,ABCB11,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Strautnieks SS et al., Nat Genet, 1998, ABCB11 mutations in PFIC2;van Mil SW et al., Gastroenterology, 2005, ABCB11 genotype-phenotype correlations;Davit-Spraul A et al., Hepatology, 2010, ABCB11 deficiency spectrum",,189.19,
+1064106,NF1,qwen3.7-max,Pathogenic,Pathogenic,0.92,PVS1;PM2,"Richards S, Genet Med, 2015, 17(5):405-424;Fahsold R, Am J Hum Genet, 2000, 66(3):790-818;Messiaen LM, Hum Mutat, 2000, 15(6):522-530",,64.82,
+2977539,MAN2B1,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Berg T et al., Am J Hum Genet, 1999, Molecular basis of alpha-mannosidosis;Liao YF et al., J Biol Chem, 2007, MAN2B1 structure and function",,25.64,
+839965,PFKM,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Sherman JB et al., J Biol Chem, 1993, 268(26):19464-9;Viskupic E et al., Hum Mutat, 1998, 11(3):252;gnomAD Consortium, Nature, 2020, 581:434-443",,27.93,
+4971044,ATM,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Savitsky et al., Science, 1995, 268(5218):1749-53;Gilad et al., Hum Mol Genet, 1996, 5(4):433-9;Ambrose et al., Hum Mutat, 2007, 28(1):95-6;ClinVar Variation ID 127845",,34.16,
+1572682,NDUFS7,qwen3.7-max,Benign,Uncertain significance,0.65,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Fassone E, et al., J Med Genet, 2010, 47(9):586-595;Hoefs SJ, et al., Hum Mutat, 2010, 31(9):E1730-E1744",,37.05,
+4803684,CDHR1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Bowne SJ, Hum Mol Genet, 2012, 21(22):4946-4954;Astuti T, Eur J Hum Genet, 2016, 24(8):1188-1195",,42.09,
+135846,SYNE1,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;BP4,"Richards S et al., Genet Med, 2015, ACMG/AMP variant classification guidelines;ClinVar SYNE1 variant submissions, NCBI",,28.5,
+1652005,POC5,qwen3.7-max,Benign,Uncertain significance,0.5,PM2,"Berezin et al., Am J Hum Genet, 2014, POC5 and ciliopathy association;ACMG/AMP Guidelines, Genet Med, 2015, Standards for variant interpretation",,24.42,
+1657650,C2CD3,qwen3.7-max,Benign,Likely benign,0.65,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Abou Tayoun AN, et al., Genet Med, 2018, 20(11):1346-1353",,19.08,
+335871,AARS1,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, Genet Med, 2015, 17(5):405-424",,13.01,
+4966922,SCYL1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Schmidt et al., Am J Hum Genet, 2015, 97(3):419-427;Guergueltcheva et al., Am J Hum Genet, 2012, 91(6):1082-1087",,27.44,
+1593844,TYMP,qwen3.7-max,Benign,Uncertain significance,0.4,PM2;BP4,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Hirano M, et al., Am J Hum Genet, 1999, 65(3):722-727;Nishino I, et al., Science, 1999, 283(5402):689-692",,49.52,
+1553507,MRPS34,qwen3.7-max,Benign,Pathogenic,0.75,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;OMIM #617664: Combined Oxidative Phosphorylation Deficiency 32",,220.1,
+4837091,GJB1,qwen3.7-max,Pathogenic,Pathogenic,0.8,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Kleopa KA et al., J Neurosci, 2006, GJB1 LOF mechanism in CMTX1;Sarg B et al., Hum Mutat, 2020, GJB1 variant spectrum in CMTX1",,17.83,
+731013,HERC1,qwen3.7-max,Benign,Uncertain significance,0.4,,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,21.71,
+1618015,SEC24D,qwen3.7-max,Benign,Uncertain significance,0.7,,,,38.47,
+701177,TCF7L2,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;PP3,"Richards S, et al., Genetics in Medicine, 2015, 17(5):405-424;Grant SF, et al., Nature Genetics, 2006, 38(3):320-323;Florez JC, et al., New England Journal of Medicine, 2006, 355(3):241-250",,49.93,
+4982741,GAA,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Pittis VR et al., Hum Mutat, 2008, 29(8):992-1001;Hu HJ et al., Mol Genet Metab, 2015, 114(2):161-169;van der Beek NA et al., J Med Genet, 2012, 49(8):524-531",,64.97,
+4969943,APC,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2,"Fearnhead NS et al., Hum Mol Genet, 2001;Aretz S et al., Hum Mutat, 2005;ClinVar Variation ID 170927, multiple submitter reviews;HGMD Professional database, APC gene",,38.89,
+1623854,KIF1A,qwen3.7-max,Benign,Uncertain significance,0.45,BP4;BP7,"Richards S, Genet Med, 2015, ACMG/AMP guidelines for variant interpretation;Lee JH, Am J Hum Genet, 2019, KIF1A-associated neurological disorders",,35.9,
+4986922,PALB2,qwen3.7-max,Pathogenic,Pathogenic,0.88,PVS1;PM2,"Antoniou et al., N Engl J Med, 2014;Southey et al., JAMA Oncol, 2016;Tischkowitz & Xia, Cancer Res, 2017",,71.0,
+250591,COL4A4,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,26.08,
+496140,CDC14A,qwen3.7-max,Benign,Likely benign,0.72,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;ClinGen Sequence Variant Interpretation Working Group, ACMG SVI Recommendations, 2020",,27.1,
+4827896,MFRP,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Ayala-Ramirez M et al., Invest Ophthalmol Vis Sci, 2006, 47(11):4727-32;Zenteno JC et al., Mol Vis, 2009, 15:1107-14;Neri A et al., Ophthalmic Genet, 2021, 42(4):460-466",,22.92,
+200154,ASL,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM3,"Walker DC, Hum Mutat, 1997, 10(3):234-235;Linnebank M, Hum Mutat, 2002, 19(4):443-444;Hu L, Mol Genet Metab, 2015, 114(2):143-151",,24.78,
+238294,SZT2,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Bagnall RD, et al., Ann Neurol, 2017, 81(4):500-511",,36.05,
+447190,PLEKHM2,qwen3.7-max,Benign,Likely benign,0.75,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Tavtigian SV, et al., Genet Med, 2020, 22(2):245-249",,37.03,
+631127,NGLY1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2,"Enns GM et al., Am J Hum Genet, 2014, 95(4):421-433;Lam C et al., Genet Med, 2017, 19(5):593-598;Need AC et al., Am J Hum Genet, 2012, 91(6):1095-1100",,48.11,
+1157853,ADAMTS18,qwen3.7-max,Benign,Likely benign,0.65,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Aldahmesh MA, et al., Hum Mol Genet, 2011, 20(21):4207-4214",,30.16,
+132116,PALB2,qwen3.7-max,Pathogenic,Pathogenic,0.93,PVS1;PM2;PS4,"Antoniou AC et al., N Engl J Med, 2014, 371(6):497-506;Southey MC et al., J Clin Oncol, 2016, 34(18):2141-2147;Yang X et al., Hum Mutat, 2020, 41(1):196-206",,109.89,
+3609157,ATM,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Shiloh Y & Ziv Y, Nat Rev Dis Primers, 2020, Ataxia-telangiectasia review;Ambrose M & Gatti RA, Hum Mutat, 2013, ATM mutation spectrum and genotype-phenotype correlations",,84.21,
+1623240,KIZ,qwen3.7-max,Benign,Uncertain significance,0.5,PM2,"Richards S, Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Khan AO, Ophthalmic Genet, 2020, KIZ gene and retinal dystrophy associations",,22.53,
+1281379,TTN,qwen3.7-max,Benign,Uncertain significance,0.6,PM2;BP4;BP7,"Richards S, Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Herman DS, N Engl J Med, 2012, TTN truncations in dilated cardiomyopathy;Roberts AM, N Engl J Med, 2015, TTN variants in dilated cardiomyopathy",,27.7,
+518154,IFT172,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;PP2;PP3,"Halbritter J et al., Am J Hum Genet, 2013, 93(5):926-931;Perrault I et al., Am J Hum Genet, 2012, 91(4):744-753;Bujakowska KM et al., Hum Mol Genet, 2015, 24(11):3046-3057",,34.85,
+4836697,GRIN1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Lemke JR et al., Am J Hum Genet, 2012;EuroEPINOMICS-RES Consortium, Am J Hum Genet, 2014;Allen AS et al., Nature, 2013",,18.08,
+711947,RIGI,qwen3.7-max,Benign,Likely benign,0.85,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Jang MA, et al., Nat Genet, 2015, 47(2):123-128",,30.69,
+2905088,CYP7B1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Tsaousidou MK et al., Am J Hum Genet, 2008, 82(2):470-476;Schüle R et al., Neurology, 2010, 74(13):1041-1047;Arnoldi A et al., Hum Mutat, 2012, 33(1):152-157",,20.48,
+1934843,PKD2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Mochizuki T, Science, 1996;Hateboer N, Lancet, 1999;Vujic M, Hum Mutat, 2003;Audrezet MP, Hum Mutat, 2012",,100.92,
+195608,TRIOBP,qwen3.7-max,Benign,Uncertain significance,0.55,PM2;PM4,"Richards S, et al., Genet Med, 2015;Shahin H, et al., Am J Hum Genet, 2002;Seifert E, et al., Hum Mutat, 2006",,48.91,
+4795545,PSMB10,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines",,24.03,
+4954662,CHD8,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Bernier R et al., Cell, 2014, Disruptive CHD8 mutations define an early subtype of autism;Satterstrom FK et al., Cell, 2020, Large-Scale Exome Sequencing Study Implicates Both Developmental and Functional Changes in the Neurobiology of Autism;Coe BP et al., Nat Genet, 2019, Neurodevelopmental disease genes implicated by de novo mutation and copy number variation morbidity",,22.28,
+1060283,DNAH5,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;Hornef N et al., Am J Hum Genet, 2006, 79(1):120-124;Knowles MR et al., N Engl J Med, 2013, 369(17):1621-1630",,55.93,
+3540149,PROS1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Borgel D et al., Blood, 1999, 94(1):219-227;Lanke E et al., Thromb Haemost, 2004, 91(4):795-801;Biguzzi E et al., J Thromb Haemost, 2005, 3(9):2022-2032",,23.6,
+4898125,ELANE,qwen3.7-max,Pathogenic,Pathogenic,0.75,PVS1_Moderate;PM2_Supporting;PP3,"Richards S et al., Genet Med, 2015, 17(5):405-424;Klein C et al., Blood, 2007, 110(7):2623-2629;Germeshausen M et al., Blood, 2007, 109(7):2791-2798;ClinGen SVI PVS1 Recommendation, 2018",,24.1,
+252984,COL1A2,qwen3.7-max,Benign,Likely benign,0.78,BP7;BP4,"Richards S et al., Genet Med, 2015, 17(5):405-424;Byers PH et al., Annu Rev Pathol, 2012, 7:479-505;Marini JC et al., Nat Rev Dis Primers, 2017, 3:17052",,26.04,
+4962460,CXCR2,qwen3.7-max,Pathogenic,Uncertain significance,0.3,PVS1,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;ClinGen Gene Curation, CXCR2 gene-disease validity not definitively established for Mendelian conditions",,32.82,
+4957357,ATP8B1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Bull LN, et al., Nat Genet, 1998, 18(3):219-224;Klomp LW, et al., Gastroenterology, 2004, 127(1):268-276",,37.41,
+1054199,ALDOB,qwen3.7-max,Pathogenic,Pathogenic,0.85,PS3;PM2;PM3;PP3,"Cross NC et al., Hum Mol Genet, 1994;Tolan DR, Hum Mutat, 1995;Santer R et al., J Inherit Metab Dis, 2000",,50.25,
+2118376,TRAK1,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,27.1,
+763694,HPS3,qwen3.7-max,Benign,Likely benign,0.7,BP4;BP7,"Richards S, Genet Med, 2015, ACMG/AMP guidelines;Huizing M, Am J Hum Genet, 2001, HPS3 gene characterization",,28.74,
+703674,CLUAP1,qwen3.7-max,Benign,Uncertain significance,0.45,PM2;PP3,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Desai S, et al., Hum Mol Genet, 2020, 29(4):591-605",,41.06,
+2975645,PALB2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;Antoniou AC et al., N Engl J Med, 2014, PALB2 breast cancer risk;Erkko H et al., Nature, 2007, PALB2 identification;Southey MC et al., J Clin Oncol, 2016, PALB2 clinical spectrum",,23.58,
+278642,LAMB3,qwen3.7-max,Benign,Uncertain significance,0.5,PM2,"Richards et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Has et al., Hum Mutat, 2020, LAMB3-related junctional epidermolysis bullosa",,59.83,
+19820,LDLRAP1,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Garcia CK et al., Science, 2001, 292(5520):1394-1398;Soutar AK & Naoumova RP, J Lipid Res, 2007, 48(9):1885-1896;Jones C et al., Curr Opin Lipidol, 2007, 18(4):397-402",,28.08,
+2523685,KCNQ2,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Singh NA, Nat Genet, 1998, 18(1):25-29;Allen AS, Am J Hum Genet, 2014, 94(3):426-434;Richards S, Genet Med, 2015, 17(5):405-424",,89.42,
+46972,GNPTAB,qwen3.7-max,Pathogenic,Pathogenic,0.7,PM1;PM2;PM3;PP3,"Tiede S et al., Nat Genet, 2005, 37(10):1138-1140;Cathey SS et al., Am J Med Genet A, 2010, 152A(8):1960-1969;Pohl S et al., Hum Mol Genet, 2010, 19(7):1248-1262",,36.13,
+1631859,ERBB4,qwen3.7-max,Benign,Uncertain significance,0.55,BP4,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,54.14,
+1601784,IFT57,qwen3.7-max,Benign,Uncertain significance,0.6,BP4,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,27.32,
+4907991,BRCA1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Richards S, et al., Genet Med, 2015, ACMG/AMP guidelines;Petrij-Bosch A, et al., Hum Mutat, 2000, BRCA1 genomic deletions;Puget K, et al., Hum Mol Genet, 1999, BRCA1 large rearrangements;Mazoyer S, et al., Hum Mutat, 2006, BRCA1 large rearrangements review",,167.98,
+359643,BRAF,qwen3.7-max,Pathogenic,Pathogenic,0.95,PS1;PS3;PM1;PM2;PP3,"Davies H, et al. Nature. 2002;417(6892):949-954;Wan PTC, et al. Cell. 2004;116(6):855-867;Sarkozy A, et al. J Med Genet. 2009;46(2):81-87;COSMIC Database: COSM461",,45.85,
+2797026,APC,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al. Genet Med. 2015;17(5):405-424;Fearnhead NS, et al. Hum Mutat. 2001;18(4):271-283;Tavtigian SV, et al. Genet Med. 2020;22(2):256-267",,61.76,
+4934380,COL7A1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015;Christiano AM et al., Nat Genet, 1993;Has C et al., J Med Genet, 2020",,94.34,
+963293,SOS2,qwen3.7-max,Benign,Uncertain significance,0.4,,,,23.81,
+4967680,BRCA1,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP guidelines;ClinGen BRCA1/2 Expert Panel SVI recommendations, 2020;ENIGMA consortium BRCA1/2 classification criteria",,24.25,
+3194479,GCK,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Osbak KK et al., Diabetes Care, 2009, 32(12):2211-2213;Chakera AJ et al., Diabet Med, 2012, 29(1):1-11;Stoffel M et al., Proc Natl Acad Sci USA, 1992, 89(16):7698-7702",,32.42,
+722559,PKD1L1,qwen3.7-max,Benign,Likely benign,0.7,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,15.62,
+52959,RYR2,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;BP4,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant classification guidelines;Priori SG, et al., Circ Res, 2001, RYR2 mutations in CPVT;Lek M, et al., Nature, 2016, gnomAD population genomics",,32.55,
+2841693,PMS2,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Ten Broeke SW et al., Clin Genet, 2015, PMS2 variant classification in Lynch syndrome;Senter L et al., Gastroenterology, 2008, PMS2 mutations in Lynch syndrome families",,58.66,
+325146,KMT2D,qwen3.7-max,Benign,Uncertain significance,0.55,PM2;PP2;PP3;BP1,"Ng SB, Nature, 2010, PMID:20798685;Bögershausen N, Hum Mutat, 2016, PMID:26691585;Li Y, Am J Hum Genet, 2018, PMID:29395075",,55.12,
+4958862,ARID1B,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S et al., Genet Med, 2015;Santen GWE et al., Hum Mutat, 2012;Hoyer J et al., Am J Hum Genet, 2012",,44.76,
+1608530,JAK3,qwen3.7-max,Benign,Uncertain significance,0.4,PM2;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Notarangelo LD, et al., Immunol Rev, 2005, 203:165-175;O'Shea JJ, et al., Immunity, 1995, 3(5):657-666",,33.15,
+551522,ABCA4,qwen3.7-max,Pathogenic,Pathogenic,0.95,PVS1;PS3;PM2;PM3,"Braun TA et al., Hum Mol Genet, 2013, 22(24):4978-4990;Sangermano R et al., Eur J Hum Genet, 2016, 24(12):1761-1768;Zernant J et al., Hum Mutat, 2014, 35(10):1224-1232;Bauwens M et al., Genet Med, 2019, 21(6):1443-1451",,32.79,
+1175651,MYO15A,qwen3.7-max,Pathogenic,Pathogenic,0.88,PVS1;PM2;PP3,"Richards et al., Genet Med, 2015;Wang et al., Science, 1998;Friedman et al., Am J Hum Genet, 1999;Liburd et al., Hum Mutat, 2001",,39.07,
+1521957,SLC41A1,qwen3.7-max,Benign,Benign,0.85,BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,17.26,
+4986614,GALNT12,qwen3.7-max,Benign,Likely benign,0.75,BP4;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424",,23.48,
+215177,COL11A1,qwen3.7-max,Benign,Uncertain significance,0.4,PM2,"Richards S, Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Ackerman J, Hum Mutat, 2020, COL11A1 variant spectrum in Stickler syndrome type 2",,32.86,
+2955371,BUB1,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;BP7,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Cahill DP, et al., Science, 1999, 285(5432):1376-1379;de Voer RM, et al., Gastroenterology, 2013, 145(3):580-589",,35.9,
+4854694,COMP,qwen3.7-max,Pathogenic,Pathogenic,0.85,PM1;PM2;PM5;PP2;PP3,"Deere M, Am J Hum Genet, 1998, 62(3):542-550;Briggs MD, Chapman ME, Hum Mutat, 2002, 19(5):465-478;Posey KL, Matrix Biol, 2018, 71-72:130-143",,54.72,
+730602,COL27A1,qwen3.7-max,Benign,Uncertain significance,0.5,PM2;PP3,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Gonzaga-Jauregui C, et al., Eur J Hum Genet, 2015, 23(4):487-492",,32.11,
+4971069,UBE3A,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Kishino T, et al., Nat Genet, 1997, 15(1):70-73;Matsuura T, et al., Nat Genet, 1997, 16(1):37-40",,69.66,
+2751146,APC,qwen3.7-max,Pathogenic,Pathogenic,0.92,PVS1;PM2;PP5,"Richards S et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Nishisho I et al., Science, 1991, APC gene mutations in FAP;Fearnhead NS et al., Hum Mol Genet, 2001, APC genotype-phenotype correlations in FAP;Groden J et al., Cell, 1991, Identification and characterization of the APC gene",,118.69,
+1062965,BRCA2,qwen3.7-max,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genet Med, 2015, ACMG/AMP standards and guidelines for variant interpretation;ENIGMA Consortium, BRCA1/BRCA2 variant classification criteria, enigmaconsortium.org",,78.41,
+3837652,LZTR1,qwen3.7-max,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards S, et al., Genet Med, 2015, ACMG/AMP variant interpretation guidelines;Johnston JJ, et al., Nat Genet, 2018, LZTR1 loss-of-function in Noonan syndrome;Steklov M, et al., Nat Genet, 2018, LZTR1 regulates RAS-MAPK signaling via Cul3 ubiquitin ligase",,82.74,
+4968240,MECP2,qwen3.7-max,Pathogenic,Pathogenic,0.82,PVS1;PM2,"Richards S, et al., Genet Med, 2015, 17(5):405-424;Amir RE, et al., Nat Genet, 1999, 23(1):185-188;Tayebi N, et al., Hum Mutat, 2010, 31(1):68-75;Lossie AC, et al., Hum Mol Genet, 2001, 10(8):805-812",,93.13,
+51766,MYBPC3,qwen3.7-max,Pathogenic,Pathogenic,0.72,PVS1;PM2,"Richards S, Aziz N, Bale S, et al. Genet Med. 2015;17(5):405-424;Carrier L, Mearini G, Stathopoulou K, Cuello F. Circ Res. 2015;117(2):194-209;Walsh R, Thomson KL, Ware JS, et al. Genet Med. 2017;19(2):192-203",,334.68,
+133578,PALB2,qwen3.7-max,Pathogenic,error,,,,,372.79,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"
+4931353,DMD,qwen3.7-max,Pathogenic,error,,,,,372.83,"HTTPSConnectionPool(host='ws-5goqmabvbrl3rm2y.cn-beijing.maas.aliyuncs.com', port=443): Read timed o"

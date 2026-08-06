@@ -1932,224 +1932,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 4985510,TSC2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, Aziz N, Bale S, et al. Genet Med. 2015;17(5):405-424.;European Chromosome 16 Tuberous Sclerosis Consortium. Cell. 1993;75(7):1305-1315.",,57.81,
 304542,CYP11B1,deepseek-v4-pro,Benign,Likely benign,0.9,BP4;BP7,"Richards et al., Genet Med, 2015, PMID: 25741868;White et al., Endocr Rev, 1997",,27.47,
 3054957,NTHL1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al. Genet Med. 2015;Weren RD, et al. Nat Genet. 2015",,40.5,
-1609378,SCN1A,deepseek-v4-pro,Benign,error,,,,,132.39,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4924768,COL7A1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-2840816,CTNNA1,deepseek-v4-pro,Pathogenic,error,,,,,132.33,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4819589,TBK1,deepseek-v4-pro,Pathogenic,error,,,,,132.47,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-53390,ATP6V1B1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-24949,RPGR,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-313731,HR,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-251544,EVC,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-194324,ATP1A2,deepseek-v4-pro,Benign,error,,,,,132.35,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-321323,LTBP2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-396285,DNAH11,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4986618,RNF43,deepseek-v4-pro,Benign,error,,,,,192.38,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-133599,PALB2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-238060,CEP290,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-359763,STXBP1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4974348,TSC2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-307646,EXT1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-20000,ASPM,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-250976,PLOD2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1159184,ADSL,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-151130,ATM,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-249439,SPTA1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-703069,LRRK1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4969710,NF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-135398,PLEC,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-281586,MERTK,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1250774,HACD1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-728069,AP3D1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-254254,B4GAT1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-444192,SLC25A13,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-27084,FANCC,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4958828,CDH1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-478578,BRCA1,deepseek-v4-pro,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-46845,BTD,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1237945,CAST,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-34295,CACNA1F,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1154969,ITK,deepseek-v4-pro,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-553605,COL4A4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1483907,CDH1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-3047151,CTNNA1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-135300,ORC1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4958553,FGB,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1155394,MOCS1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-729074,SPECC1L,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1491287,ADAMTS2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1538474,PLA2G6,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1216569,CPAMD8,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-24413,SCN5A,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-21796,PKP2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-2840232,DNAH17,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-135861,SYNE1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1158817,ATRN,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-151274,PALB2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-710422,SLC44A4,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4934949,MSH2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1564764,DICER1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-226048,PEX6,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-249298,COL11A1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-283697,ITGA6,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4844256,LARS1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-481689,SCN5A,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1646920,TTN,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-801244,ABCB4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-139051,TET2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-321129,OAT,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1060172,APC,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4934959,PRKN,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-703926,DRC4,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4968743,FGFR3,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1928193,SMARCAL1,deepseek-v4-pro,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1167633,DMXL2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-284639,ABCA12,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-18183,KCNQ1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4967635,TP53,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1534483,NNT,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-611700,RP1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-505227,EIF2AK4,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1161577,SLC27A4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4977609,TCF20,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-3411974,COL2A1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-682754,TRAPPC9,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-538110,NF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1158696,ARHGEF18,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-251249,FLNB,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-700367,CTSB,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-453319,DNAH1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-699528,SLC44A4,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-847287,MAN2B1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4962470,NRAP,deepseek-v4-pro,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4951199,EBF3,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-731067,CLUAP1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1153197,MTOR,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1159065,ADA2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-3414437,IDS,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1940363,IARS1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1610524,HTT,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1158403,DNASE2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1562058,CCNQ,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-151765,ATM,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-929432,CHEK2,deepseek-v4-pro,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4959023,COL4A3,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-29059,CXCR4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1157102,COL4A2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-231989,NF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-137358,ATM,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-20340,CTDP1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-16096,DARS2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1650453,KIF20A,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-55604,PCDH15,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1153653,JAK1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4986354,NF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4933927,NEXMIF,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-192383,ETFDH,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-724510,MS4A1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1212820,LAMA5,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-266536,MYO15A,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4811582,ALPK3,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1015385,GLA,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1159526,SH3KBP1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-730375,CAST,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-725079,DDX11,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-530329,RBFOX1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1270855,USP7,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1919417,SACS,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4831871,LDLR,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-135221,NHS,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1547825,DLL1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4959624,C8A,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-259635,TMCO1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4843420,FANCD2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-173141,TTN,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4957435,ABCB4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-21112,RECQL4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-433789,PIEZO1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-857101,CHM,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1225805,TMEM240,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-30509,HBB,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-57351,OTOF,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-716569,LIG1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-982061,PIEZO1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-101312,SLC2A1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-346559,AFG3L2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4801123,PTPRQ,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-302401,CFB,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4169511,MLH3,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-54745,VCL,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1320721,VWF,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-574420,NF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4962457,CXCR2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-195593,AGL,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1794000,SMARCA4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1157091,TPP2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1650891,LIFR,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1668139,COL7A1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-31479,FBN1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-410826,KCNQ2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4986665,GALNT12,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4946257,BAP1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1060730,PKHD1,deepseek-v4-pro,Pathogenic,error,,,,,12.02,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-519877,TLR3,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1159280,COL4A5,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4976165,KCNQ1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-54892,PRKAG2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-53292,PDZD7,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4801143,RAD51C,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-54230,PKP2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4986415,KIF5B,deepseek-v4-pro,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-195212,GHR,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4976996,PMS2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1609598,TBC1D32,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-2969490,CNGA1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-441418,KCNC1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4935396,MLH3,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-479238,TP53,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-2081510,KRT6A,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-547566,HEXA,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-512752,SLC16A2,deepseek-v4-pro,Pathogenic,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-17921,HSD3B7,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1273923,REN,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4986136,TBK1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1610397,MEN1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-27809,SURF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-75106,B4GALNT1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4963193,ATP2B2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1161783,ASPM,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-3307293,ATM,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1238737,CTU2,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1318581,RNPC3,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-2808954,LRRC7,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-375465,A2ML1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4962957,ATM,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1156814,LRP5,deepseek-v4-pro,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-101619,OPA1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4986970,NF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1572239,PHIP,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1230333,BRCA2,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-15297,XPC,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-3047798,MID1,deepseek-v4-pro,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4968393,GNAO1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4952812,CHD7,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4850739,GNPAT,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4957738,ABCB4,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-495453,COL7A1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-184734,NF1,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-28369,PTPN11,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-533776,CFAP298,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-800131,GPI,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-57586,USH2A,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4960694,OTOGL,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-1156843,ACER3,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-250978,AGTR1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-4968620,AMPD2;LOC126805822,deepseek-v4-pro,Pathogenic,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-3500266,DDX11,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-325592,ACVRL1,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-133999,CACNA1A,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-57138,USH1C,deepseek-v4-pro,Benign,error,,,,,12.01,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-734996,DOCK2,deepseek-v4-pro,Benign,error,,,,,12.0,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
-2810330,PRKD1,deepseek-v4-pro,Benign,error,,,,,14.05,"HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/comp"
 3866110,TTN,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Herman DS et al., N Engl J Med, 2012;Roberts AM et al., Sci Transl Med, 2015",,38.0,
 4930246,ABCD1,deepseek-v4-pro,Pathogenic,Pathogenic,0.85,PVS1;PM2,"Richards et al., Genet Med, 2015, ACMG/AMP guidelines",,40.92,
 4850454,FGG,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1,"Richards et al., Genet Med, 2015, PMID:25741868",,46.54,
@@ -2305,11 +2087,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 1154119,AGBL5,deepseek-v4-pro,Benign,Pathogenic,0.95,PM2;PM3;PP3;PS4,"Astuti GD et al., Hum Mutat, 2017;Sergouniotis PI et al., Hum Mol Genet, 2015",,88.82,
 542058,COL4A3,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PM2;PP5,"Heidet L, et al. J Am Soc Nephrol. 2001;12(1):97-106.",,59.8,
 30200,HBB,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PS1;PS3;PS4;PM3;PP5,"Orkin SH, Kazazian HH Jr, Antonarakis SE, et al. Abnormal RNA processing due to the exon mutation of beta E-globin gene. Nature. 1982;300(5894):768-9.;Fucharoen S, Weatherall DJ. The hemoglobin E thalassemias. Cold Spring Harb Perspect Med. 2012;2(8):a011734.",,57.27,
-255165,BUB1B,deepseek-v4-pro,Benign,error,,,,,17.67,Response ended prematurely
-705852,MYO18B,deepseek-v4-pro,Benign,error,,,,,17.33,Response ended prematurely
-1546018,SLIT2,deepseek-v4-pro,Benign,error,,,,,42.48,Response ended prematurely
-4825798,MYBPC3,deepseek-v4-pro,Pathogenic,error,,,,,42.76,Response ended prematurely
-27037,G6PC1,deepseek-v4-pro,Pathogenic,error,,,,,22.86,Response ended prematurely
 133768,AGRN,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S, et al., Genet Med, 2015",,25.9,
 2842226,AGXT,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Williams EL, et al. Hum Mutat. 2005;Cochat P, et al. Nephrol Dial Transplant. 2012",,27.67,
 1153262,IL6R,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S et al., Genetics in Medicine, 2015",,29.45,
@@ -2590,11 +2367,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 447190,PLEKHM2,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S, Genet Med, 2015",,9.45,
 4827896,MFRP,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Aldahmesh MA, et al., Am J Hum Genet, 2011;Hull S, et al., Hum Mutat, 2014",,38.23,
 238294,SZT2,deepseek-v4-pro,Benign,Uncertain significance,0.4,,,,26.9,
-1934843,PKD2,deepseek-v4-pro,Pathogenic,error,,,,,33.14,Response ended prematurely
-631127,NGLY1,deepseek-v4-pro,Pathogenic,error,,,,,38.36,Response ended prematurely
-1157853,ADAMTS18,deepseek-v4-pro,Benign,error,,,,,28.17,Response ended prematurely
-200154,ASL,deepseek-v4-pro,Pathogenic,error,,,,,57.87,Response ended prematurely
-3609157,ATM,deepseek-v4-pro,Pathogenic,error,,,,,43.77,Response ended prematurely
 1281379,TTN,deepseek-v4-pro,Benign,Uncertain significance,0.2,PM2,"Richards S, et al., Genet Med, 2015;OMIM 188840",,22.67,
 518154,IFT172,deepseek-v4-pro,Benign,Pathogenic,0.95,PS1;PM2;PM3;PP3,"Bujakowska et al., Am J Hum Genet, 2015",,32.72,
 711947,RIGI,deepseek-v4-pro,Benign,Uncertain significance,0.0,,"Richards S, et al., Genet Med, 2015",,45.37,
@@ -2727,29 +2499,9 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 278227,CFHR5,deepseek-v4-pro,Benign,Uncertain significance,0.9,,"Richards S, et al. Genet Med. 2015. PMID: 25741868",,26.8,
 4959891,C1S,deepseek-v4-pro,Benign,Uncertain significance,0.4,PM2;BP4,"Richards S et al., Genet Med, 2015",,58.61,
 905706,PMP22,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM2;PP3;PP5,"Nelis E et al., Hum Mutat, 1999;ClinVar database",,85.68,
-4925155,SMCHD1,deepseek-v4-pro,Pathogenic,error,,,,,72.87,Response ended prematurely
-453753,LRBA,deepseek-v4-pro,Benign,error,,,,,50.45,Response ended prematurely
-1155063,IL7R,deepseek-v4-pro,Benign,error,,,,,37.69,Response ended prematurely
-1782278,BCS1L,deepseek-v4-pro,Pathogenic,error,,,,,25.77,Response ended prematurely
-102139,MMAB,deepseek-v4-pro,Benign,error,,,,,16.5,Response ended prematurely
-4850572,CCN6,deepseek-v4-pro,Pathogenic,error,,,,,24.05,Response ended prematurely
-1317546,PKDCC,deepseek-v4-pro,Benign,error,,,,,24.05,Response ended prematurely
-323364,POLR3A,deepseek-v4-pro,Benign,error,,,,,24.06,Response ended prematurely
-4959665,ABCG8,deepseek-v4-pro,Pathogenic,error,,,,,24.06,Response ended prematurely
-4799528,DARS2,deepseek-v4-pro,Pathogenic,error,,,,,24.06,Response ended prematurely
 378611,TXNRD2,deepseek-v4-pro,Benign,Likely benign,0.8,BP7,"Richards et al., Genetics in Medicine, 2015",,34.44,
 4874554,ACADSB,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,48.46,
 1253950,TRIP13,deepseek-v4-pro,Benign,Uncertain significance,0.1,,,,30.31,
-212296,CCDC39,deepseek-v4-pro,Pathogenic,error,,,,,91.11,Response ended prematurely
-1636636,TUBB2A,deepseek-v4-pro,Benign,error,,,,,91.11,Response ended prematurely
-1489470,HADHA,deepseek-v4-pro,Pathogenic,error,,,,,91.1,Response ended prematurely
-431705,EYS,deepseek-v4-pro,Pathogenic,error,,,,,12.35,Response ended prematurely
-453938,APC,deepseek-v4-pro,Pathogenic,error,,,,,56.67,Response ended prematurely
-4967696,APC,deepseek-v4-pro,Pathogenic,error,,,,,7.94,Response ended prematurely
-135597,RFX6,deepseek-v4-pro,Benign,error,,,,,7.93,Response ended prematurely
-4961924,COL1A1,deepseek-v4-pro,Pathogenic,error,,,,,7.94,Response ended prematurely
-250890,UMPS,deepseek-v4-pro,Benign,error,,,,,7.94,Response ended prematurely
-23023,TWIST1,deepseek-v4-pro,Pathogenic,error,,,,,7.94,Response ended prematurely
 140304,NDUFAF5,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al., Genet Med, 2015",,33.5,
 2094108,CPAMD8,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S et al., Genet Med, 2015",,38.53,
 184531,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1;PS1;PM2,"Ars E, et al. J Med Genet. 2003;40(6):e82.;Fahsold R, et al. Am J Hum Genet. 2000;66(3):790-818.",,31.5,
@@ -2941,11 +2693,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 791648,PMM2,deepseek-v4-pro,Pathogenic,Pathogenic,0.8,PVS1,"Richards et al., Genet Med, 2015;Matthijs et al., Nat Genet, 1997",,47.4,
 172908,USH2A,deepseek-v4-pro,Benign,Pathogenic,0.9,PM1;PM2;PP3;PP5,"Baux D et al., Hum Mutat, 2014;ClinVar database",,36.93,
 650001,DMD,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1,"Richards S, et al. Genetics in Medicine, 2015;Tuffery-Giraud S, et al. Human Mutation, 2009",,12.64,
-336367,ABAT,deepseek-v4-pro,Benign,error,,,,,32.05,Response ended prematurely
-4198643,COL1A1,deepseek-v4-pro,Pathogenic,error,,,,,4.8,Response ended prematurely
-628210,PGM1,deepseek-v4-pro,Pathogenic,error,,,,,13.69,Response ended prematurely
-514460,CUL3,deepseek-v4-pro,Pathogenic,error,,,,,0.75,Response ended prematurely
-1869648,CHRNA3,deepseek-v4-pro,Benign,error,,,,,5.69,Response ended prematurely
 1620351,PITRM1,deepseek-v4-pro,Benign,Uncertain significance,0.2,,,,15.19,
 1154712,LETM1,deepseek-v4-pro,Benign,Uncertain significance,0.5,,,,18.17,
 1312909,DMD,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PS4;PM2,"Richards S, et al., Genet Med, 2015, 17:405-424;Leiden Open Variation Database: DMD (LOVD)",,22.36,
@@ -3094,11 +2841,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 1167902,MACF1,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,16.88,
 4836459,MAX,deepseek-v4-pro,Pathogenic,Uncertain significance,0.3,PM2;PP3,"Richards S et al., Genet Med, 2015",,103.49,
 1155150,CWC27,deepseek-v4-pro,Benign,Pathogenic,0.95,PVS1;PS3;PM2;PP3,"Patel N et al., Am J Hum Genet, 2017, PMID:28559086",,65.95,
-104629,RPGR,deepseek-v4-pro,Pathogenic,error,,,,,18.36,Response ended prematurely
-710223,HIVEP2,deepseek-v4-pro,Benign,error,,,,,26.12,Response ended prematurely
-334051,TRPM4,deepseek-v4-pro,Benign,error,,,,,33.81,Response ended prematurely
-4847699,KCNQ2,deepseek-v4-pro,Pathogenic,error,,,,,11.75,Response ended prematurely
-318290,FREM1,deepseek-v4-pro,Benign,error,,,,,13.62,Response ended prematurely
 919626,PKD1,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1,"Rossetti S, et al., J Am Soc Nephrol, 2007",,27.94,
 715644,BPTF,deepseek-v4-pro,Benign,Uncertain significance,0.3,,,,28.57,
 433084,HBB,deepseek-v4-pro,Benign,Benign,0.98,BS1;BP4;BP6,"Richards S et al., Genet Med, 2015;Karczewski KJ et al., Nature, 2020;Landrum MJ et al., Nucleic Acids Res, 2018",,28.79,
@@ -3108,11 +2850,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 105317,ABCA4,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PM1;PM3;PS3;PP3,"Allikmets R, et al. Nat Genet. 1997;15(3):236-46.;Sun H, et al. J Biol Chem. 2012;287(52):43482-91.;Zernant J, et al. Hum Mutat. 2014;35(12):1499-506.;Lewis RA, et al. Am J Hum Genet. 1999;64(2):422-34.",,51.53,
 389468,CASP8,deepseek-v4-pro,Benign,Uncertain significance,0.1,,"Richards S et al., Genet Med, 2015, PMID: 25741868",,18.53,
 1844102,LZTR1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Yamamoto GL et al., Nat Genet, 2015;Piotrowski A et al., Nat Genet, 2014",,26.01,
-468658,FASN,deepseek-v4-pro,Benign,error,,,,,11.43,Response ended prematurely
-1264538,FAM111A,deepseek-v4-pro,Benign,error,,,,,10.31,Response ended prematurely
-34709,OTOF,deepseek-v4-pro,Benign,error,,,,,13.21,Response ended prematurely
-194161,FLNC,deepseek-v4-pro,Benign,error,,,,,8.17,Response ended prematurely
-141984,MTPAP,deepseek-v4-pro,Benign,error,,,,,34.41,Response ended prematurely
 57677,USH2A,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., Genet Med, 2015",,32.38,
 333580,COL4A2,deepseek-v4-pro,Benign,Likely benign,0.9,BP7;BP4,"Richards et al., Genetics in Medicine, 2015, PMID: 25741868",,33.83,
 501700,RIPOR2,deepseek-v4-pro,Benign,Uncertain significance,0.1,,,,40.66,
@@ -3548,10 +3285,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 4843152,RP1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Sullivan et al., Nat Genet, 1999",,32.49,
 152447,PALB2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Rahman N, Seal S, Thompson D, et al. PALB2, which encodes a BRCA2-interacting protein, is a breast cancer susceptibility gene. Nat Genet. 2007;39(2):165-7.;Antoniou AC, Casadei S, Heikkinen T, et al. Breast-cancer risk in families with mutations in PALB2. N Engl J Med. 2014;371(6):497-506.",,51.1,
 696021,CLCN6,deepseek-v4-pro,Benign,Uncertain significance,0.1,,"Richards S, et al., Genet Med, 2015",,15.74,
-1153580,CEP104,deepseek-v4-pro,Benign,error,,,,,5402.64,Response ended prematurely
-547813,TGM1,deepseek-v4-pro,Pathogenic,error,,,,,5381.08,Response ended prematurely
-244943,PALB2,deepseek-v4-pro,Pathogenic,error,,,,,5393.32,Response ended prematurely
-4933591,MYO7A,deepseek-v4-pro,Pathogenic,error,,,,,5372.28,Response ended prematurely
 1454611,RNASEH2B,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Crow YJ et al., Nat Genet, 2006, 38:910-916;ClinVar Accession: VCV000127123",,17.14,
 1279057,CIZ1,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., Genetics in Medicine, 2015",,25.62,
 4969369,LZTR1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genet Med, 2015;Yamamoto et al., J Med Genet, 2015",,42.66,
@@ -3929,11 +3662,6 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 511435,ATP6V1B1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Karet FE, Finberg KE, Nelson RD, et al. Nat Genet. 1999 Jan;21(1):84-90. PMID: 9915955",,109.11,
 4847431,RNASEH2B,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,Crow YJ et al. Mutations in genes encoding ribonuclease H2 subunits cause Aicardi-Goutières syndrome and mimic congenital viral brain infection. Nature Genetics. 2006;38(8):910-6.,,16.52,
 1546390,HPS5,deepseek-v4-pro,Benign,Pathogenic,0.85,PM1;PM2;PP3,"Richards S et al., Genet Med, 2015, 17(5):405-424;Li W et al., J Biol Chem, 2004, 279(46):48376-48383",,108.29,
-1154881,SLC6A19,deepseek-v4-pro,Benign,error,,,,,14.42,Response ended prematurely
-19379,EIF2B2,deepseek-v4-pro,Pathogenic,error,,,,,69.34,Response ended prematurely
-1157841,ADAMTS18,deepseek-v4-pro,Benign,error,,,,,73.65,Response ended prematurely
-426964,ABCC6,deepseek-v4-pro,Benign,error,,,,,77.33,Response ended prematurely
-472074,MTM1,deepseek-v4-pro,Benign,error,,,,,14.49,Response ended prematurely
 1267432,VPS13D,deepseek-v4-pro,Benign,Uncertain significance,0.1,,"Richards et al., Genetics in Medicine, 2015",,20.23,
 1554732,AK7,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards et al., Genet Med, 2015",,23.28,
 251100,ACVR2B,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al. Genet Med. 2015",,40.48,
@@ -5022,3 +4750,275 @@ AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,reference
 956369,ATM,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PM2;PP5,"Tavtigian SV, et al. Hum Mutat. 2009;30(8):1234-1242.;Stankovic T, et al. Am J Hum Genet. 1998;62(2):334-345.",,33.98,
 102338,PKHD1,deepseek-v4-pro,Pathogenic,Pathogenic,0.85,PVS1_Moderate;PM2,"Richards et al., Genetics in Medicine, 2015",,41.38,
 2105453,PRF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM3;PP5,"Feldmann J, et al., Blood, 2003, 102:1550-1555;Molleran Lee S, et al., Hum Mutat, 2004, 23:67-73",,35.52,
+1609378,SCN1A,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S, et al. Genet Med. 2015;17(5):405-24. PMID: 25741868",,14.77,
+194324,ATP1A2,deepseek-v4-pro,Benign,Likely benign,0.8,BP7,"Richards et al., Genet Med, 2015, 17:405-424",,21.07,
+4986618,RNF43,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., 2015, PMID: 25741868",,26.29,
+4819589,TBK1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Freischmidt A et al., Nat Neurosci, 2015;Cirulli ET et al., Science, 2015",,33.06,
+2840816,CTNNA1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Hansford S, et al., J Clin Oncol, 2015",,46.61,
+53390,ATP6V1B1,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S, Genet Med, 2015, 10.1038/gim.2015.30",,32.18,
+24949,RPGR,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM1,"Vervoort R, et al., Nature Genetics 2000 PMID: 10862088",,31.9,
+4924768,COL7A1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS1;PM1;PM2;PP2;PP3,"Varki R et al., J Med Genet, 2007;ClinVar Variation ID: 17803",,60.57,
+251544,EVC,deepseek-v4-pro,Benign,Likely benign,0.9,BP4;BP7,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424. PMID: 25741868",,33.86,
+321323,LTBP2,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Haji-Seyed-Javadi et al., Hum Mol Genet, 2012",,30.23,
+313731,HR,deepseek-v4-pro,Benign,Pathogenic,0.8,PM3;PM2;PP3;PM5,"Ahmad W et al., Science, 1998;Zlotogorski A et al., J Invest Dermatol, 2002;ClinVar database",,59.11,
+238060,CEP290,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;den Hollander AI et al., Am J Hum Genet, 2006, 79(3):556-561",,17.56,
+4974348,TSC2,deepseek-v4-pro,Pathogenic,Pathogenic,0.96,PVS1;PM2;PP5,"Richards et al., Genet Med, 2015 (ACMG/AMP guidelines);ClinVar database",,23.86,
+359763,STXBP1,deepseek-v4-pro,Pathogenic,Uncertain significance,0.5,PM2,,,40.72,
+20000,ASPM,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genet Med, 2015;Bond et al., Nat Genet, 2002",,13.29,
+307646,EXT1,deepseek-v4-pro,Benign,Uncertain significance,0.5,PM2;BP4,"Richards S, et al., Genet Med, 2015",,33.66,
+133599,PALB2,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genet Med, 2015;ClinGen PALB2 Variant Curation Expert Panel, 2021",,62.87,
+250976,PLOD2,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S et al., Genet Med, 2015",,24.9,
+151130,ATM,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al., Genet Med, 2015, PMID: 25741868;Tavtigian SV, et al., Hum Mutat, 2009, PMID: 19781682",,20.2,
+396285,DNAH11,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1,Richards S et al. Genet Med. 2015;17(5):405-24;Knowles MR et al. Am J Hum Genet. 2013;92(1):135-44,,106.25,
+4969710,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM1;PM2,"Richards S, et al., Genet Med, 2015;Upadhyaya M, et al., Hum Mutat, 1997",,55.98,
+249439,SPTA1,deepseek-v4-pro,Benign,Likely benign,0.85,BP4;BP6,ClinVar VCV000242202;gnomAD v2.1,,81.51,
+135398,PLEC,deepseek-v4-pro,Benign,Likely benign,0.8,BP7;BP4,"Richards S et al., Genet Med, 2015;McGrath JA et al., Br J Dermatol, 2014",,68.51,
+281586,MERTK,deepseek-v4-pro,Benign,Uncertain significance,0.2,,,,25.22,
+703069,LRRK1,deepseek-v4-pro,Benign,Uncertain significance,0.6,PM2;BP4,"Guo L et al., Clin Genet, 2019 (PMID: 30548255)",,85.2,
+254254,B4GAT1,deepseek-v4-pro,Benign,Likely benign,0.95,BP4;BP7,"Richards et al., Genet Med, 2015",,13.4,
+444192,SLC25A13,deepseek-v4-pro,Pathogenic,Pathogenic,0.98,PVS1;PM3;PM2;PP5,"Yasuda T, et al., Hum Mutat, 2000;Saheki T, et al., J Inherit Metab Dis, 2002;ClinVar RCV000013542",,23.45,
+728069,AP3D1,deepseek-v4-pro,Benign,Likely benign,0.8,BP7;BP4,"Richards S et al., Genet Med, 2015;Ammann S et al., J Allergy Clin Immunol, 2016 (AP3D1 HPS10)",,25.25,
+1250774,HACD1,deepseek-v4-pro,Benign,Uncertain significance,0.25,PM2;PM5;PP3,"Boyden LM et al., Am J Hum Genet, 2011;Richards S et al., Genet Med, 2015",,51.71,
+478578,BRCA1,deepseek-v4-pro,Pathogenic,Pathogenic,0.98,PVS1;PM2;PP5,ClinVar Variation ID 17677;Breast Cancer Information Core (BIC) database,,15.74,
+27084,FANCC,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PS3;PS4;PP3,"Whitney MA et al., Nat Genet, 1993;Verlander PC et al., Blood, 1994;Auerbach AD, Blood, 2009",,40.37,
+4958828,CDH1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015;Hansford S et al., JAMA Oncol, 2015",,42.88,
+1154969,ITK,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al., Genet Med, 2015",,18.24,
+34295,CACNA1F,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Bech-Hansen et al., Nature Genetics, 1998",,33.21,
+1159184,ADSL,deepseek-v4-pro,Benign,other,,,,empty output,192.83,
+46845,BTD,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS3;PM5;PM2;PP3;PP5,"Pomponio RJ, Reynolds TR, Cole H, Buck GA, Wolf B. Nat Genet. 1997;16(4):386-7.",,64.51,
+1237945,CAST,deepseek-v4-pro,Benign,Pathogenic,0.95,PVS1;PS3;PM2;PM3;PP3;PP4,"Lin Z, et al. J Invest Dermatol. 2015;135(11):2780-2782.",,64.88,
+1483907,CDH1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, Aziz N, Bale S, et al. Genetics in Medicine. 2015;Lee K, Krempely K, Roberts ME, et al. Human Mutation. 2018",,35.97,
+135300,ORC1,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM1;PM2;PM3;PP3,"Bicknell LS, et al. Nat Genet. 2011;43(4):350-5.;ClinVar RCV000023854",,35.99,
+1155394,MOCS1,deepseek-v4-pro,Benign,Uncertain significance,0.2,PM2;BP4,"Richards et al., Genetics in Medicine, 2015",,20.02,
+3047151,CTNNA1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al. Standards and guidelines for the interpretation of sequence variants. Genet Med. 2015;17:405-424.;Majewski IJ, et al. An alpha-catenin (CTNNA1) mutation in hereditary diffuse gastric cancer. J Pathol. 2013;229:621-629.",,70.22,
+4958553,FGB,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Neerman-Arbez M, de Moerloose P, Bridel C, et al. Mutations in the fibrinogen gene cluster accounting for congenital afibrinogenemia: an update and report of 10 novel mutations. Hum Mutat. 2000;16(4):310-319.;de Moerloose P, Neerman-Arbez M. Congenital fibrinogen disorders. Semin Thromb Hemost. 2009;35(4):356-366.",,80.69,
+1491287,ADAMTS2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Malfait F, et al. Hum Mutat. 2010;31(6):E1617-E1627;Colige A, et al. Am J Hum Genet. 1999;65(2):308-317",,44.52,
+729074,SPECC1L,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM6;PM2;PP3,"Kruszka P et al., Am J Hum Genet, 2015, PMID: 25691420",,52.54,
+553605,COL4A4,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Savige J, et al. Hum Mutat. 2013;34(7):926-933.;Martin P, et al. J Am Soc Nephrol. 1998;9(12):2273-2287.",,111.49,
+1538474,PLA2G6,deepseek-v4-pro,Benign,Benign,1.0,BA1;BP4;BP7;BP6,"ClinVar, VCV000296946, 2023;gnomAD, 2023",,43.89,
+1216569,CPAMD8,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S, et al. Genet Med. 2015;17(5):405-424.",,29.92,
+21796,PKP2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards S, et al. Genet Med. 2015 PMID: 25741868;Gerull B, et al. Nat Genet. 2004 PMID: 15489853",,41.79,
+135861,SYNE1,deepseek-v4-pro,Benign,Likely benign,0.9,BP4;BP7,"Richards S et al., Genet Med, 2015;Jaganathan K et al., Cell, 2019",,33.03,
+1158817,ATRN,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al., Genet Med, 2015, PMID: 25741868;Al-Khateeb A, et al., Genet Med, 2022, PMID: 35018669",,21.75,
+151274,PALB2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Antoniou et al., New England Journal of Medicine, 2014",,11.12,
+24413,SCN5A,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Kapplinger JD et al., Heart Rhythm, 2010, 7(1):33-46;Richards S et al., Genet Med, 2015, 17(5):405-424",,57.28,
+2840232,DNAH17,deepseek-v4-pro,Benign,Pathogenic,0.9,PS4;PM2;PP3,"Richards S et al., Genet Med, 2015;ClinVar VCV000449208;Loges NT et al., J Med Genet, 2018",,49.03,
+1564764,DICER1,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards S, et al. Genet Med. 2015;17(5):405-424.",,14.21,
+283697,ITGA6,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S et al., Genet Med, 2015, 17:405-424",,15.17,
+249298,COL11A1,deepseek-v4-pro,Benign,Uncertain significance,0.3,PM2_Supporting,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-24.;Baralle D, Baralle M. Splicing in action: assessing disease causing sequence changes. J Med Genet. 2005;42(10):737-48.",,30.69,
+226048,PEX6,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015 May;17(5):405-24. PMID: 25741868.;Steinberg SJ, Raymond GV, Braverman NE, et al. Peroxisome Biogenesis Disorders, Zellweger Syndrome Spectrum. In: Adam MP, Ardinger HH, Pagon RA, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of Washington, Seattle; 1993-2023. 2003 Dec 26 [Updated 2020 Dec 10].",,32.41,
+4934949,MSH2,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al. Genet Med. 2015;17(5):405-424.;Lynch syndrome overview, Adam MP et al., GeneReviews, 2004 [Updated 2021].",,57.32,
+481689,SCN5A,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Kapplinger JD, Tester DJ, Alders M, et al. An international compendium of mutations in the SCN5A-encoded cardiac sodium channel in patients referred for Brugada syndrome genetic testing. Heart Rhythm. 2010;7(1):33-46.;Den Dunnen JT, Dalgleish R, Maglott DR, et al. HGVS recommendations for the description of sequence variants: 2016 update. Hum Mutat. 2016;37(6):564-569.",,19.57,
+710422,SLC44A4,deepseek-v4-pro,Benign,Pathogenic,0.8,PM2;PM3;PP3;PP1,"Zhou T, et al. Front Genet. 2020;11:573.",,63.53,
+1646920,TTN,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards et al., Genet Med, 2015, 17:405-424",,24.51,
+321129,OAT,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM2;PM3;PP3;PP5,"Mashima Y, Inoue T, Shimura T, et al. Hum Mol Genet. 1995;4(4):641-645.;ClinVar RCV000020068.2",,34.31,
+4844256,LARS1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S. et al., Genetics in Medicine, 2015;Casey J.P. et al., J Med Genet, 2015",,63.48,
+1060172,APC,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al., Genet Med, 2015",,35.49,
+801244,ABCB4,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards et al., Genet Med, 2015, doi:10.1038/gim.2015.30",,46.15,
+139051,TET2,deepseek-v4-pro,Benign,Uncertain significance,0.6,PM2;PP3,"Karczewski et al., Nature, 2020;Ioannidis et al., Am J Hum Genet, 2016",,60.32,
+703926,DRC4,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards et al., Genet Med, 2015, PMID: 25741868",,23.08,
+4934959,PRKN,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1;PM2;PM3,"Kitada T et al., Nature, 1998",,33.62,
+1928193,SMARCAL1,deepseek-v4-pro,Pathogenic,Pathogenic,0.98,PS3;PS4;PM1;PM2;PM3;PM5;PP3,"Boerkoel CF et al., Nat Genet, 2002, PMID: 11799392",,38.91,
+1167633,DMXL2,deepseek-v4-pro,Benign,Uncertain significance,0.5,,,,40.26,
+4967635,TP53,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al. Genetics in Medicine, 2015, 10.1038/gim.2015.30",,24.21,
+284639,ABCA12,deepseek-v4-pro,Benign,Pathogenic,0.95,PVS1;PS3;PM2;PP5,"Thomas AC et al., Human Mutation, 2006",,48.44,
+611700,RP1,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1;PM2;PP5,"Richards S et al., Genet Med, 2015;Bowne SJ et al., Hum Mol Genet, 1999",,25.54,
+18183,KCNQ1,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PS3;PS4;PM1;PM2;PM5;PP2;PP3;PP5,"Chouabe C et al., EMBO J, 1997, 16(17):5472-9;Kapa S et al., Circulation, 2009, 120(18):1752-60",,66.0,
+1534483,NNT,deepseek-v4-pro,Benign,Uncertain significance,0.3,PM2;BP4,"Richards S, et al., Genet Med, 2015, 17:405-424;Meimaridou E, et al., Nat Genet, 2012, 44(7):740-4",,40.33,
+505227,EIF2AK4,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM2;PM3;PP3,Eyries M et al. Nat Genet. 2014;46(1):65-9. PMID: 24292273.;Best DH et al. Chest. 2014;145(2):231-236. PMID: 24135949.,,37.15,
+3411974,COL2A1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al., Genetics in Medicine, 2015;Barat-Houari M, et al., European Journal of Human Genetics, 2016",,53.1,
+4977609,TCF20,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Vergult et al., Am J Hum Genet, 2015",,57.05,
+4968743,FGFR3,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PM1;PM2;PM4;PS4;PP5,"Rousseau F, et al., Am J Hum Genet, 1996;Thanatophoric Dysplasia. In: GeneReviews, 2020",,156.4,
+1161577,SLC27A4,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al., Genet Med, 2015, PMID: 25741868;Klar J, et al., Am J Hum Genet, 2009, PMID: 19303039",,71.94,
+538110,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards S, et al. Genet Med. 2015;17(5):405-24.",,15.77,
+682754,TRAPPC9,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"OMIM 611966;Mir A, et al., Am J Hum Genet, 2009",,66.64,
+700367,CTSB,deepseek-v4-pro,Benign,Likely benign,0.8,BP7,"Richards et al., ACMG/AMP standards and guidelines for the interpretation of sequence variants, Genet Med, 2015",,15.79,
+1158696,ARHGEF18,deepseek-v4-pro,Benign,Uncertain significance,0.5,PM2;BP4,"Richards S, et al. Genet Med. 2015;17(5):405-424.;Arno G, et al. Am J Hum Genet. 2017;101(4):643-648.",,35.96,
+251249,FLNB,deepseek-v4-pro,Benign,Likely benign,0.8,BP7,"Richards S, et al. Genet Med. 2015;17(5):405-24.",,36.94,
+699528,SLC44A4,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Nakanishi H et al., Am J Hum Genet, 2017, PMID: 28097321",,21.97,
+847287,MAN2B1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Malm D, Nilssen Ø. Alpha-mannosidosis. Orphanet J Rare Dis. 2008;3:21.",,18.43,
+4951199,EBF3,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015;Chao HT et al., Am J Hum Genet, 2017",,20.54,
+4962470,NRAP,deepseek-v4-pro,Pathogenic,Uncertain significance,0.2,,"Richards S, Aziz N, Bale S, et al. Genet Med. 2015",,31.15,
+1153197,MTOR,deepseek-v4-pro,Benign,Uncertain significance,0.5,,,,38.9,
+453319,DNAH1,deepseek-v4-pro,Benign,Likely benign,0.9,BS1;BS2;BP4,"Lek M et al., Nature, 2016;Richards S et al., Genet Med, 2015;ClinVar database",,75.55,
+3414437,IDS,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015;Hopwood JJ et al., Hum Mutat, 1993",,29.94,
+731067,CLUAP1,deepseek-v4-pro,Benign,Pathogenic,0.95,PVS1;PM2;PM3;PP1;PP3,"Roosing S et al., Am J Hum Genet, 2016, PMID: 27889060",,54.02,
+1940363,IARS1,deepseek-v4-pro,Benign,Uncertain significance,0.1,,"Richards S. et al., Genet Med, 2015",,19.24,
+1562058,CCNQ,deepseek-v4-pro,Benign,Pathogenic,0.9,PVS1;PM2,"Unger S, Böhm D, Kaiser FJ, et al. Am J Hum Genet. 2008;82(6):1363-1370. PMID: 18414213.",,30.53,
+151765,ATM,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, PMID: 25741868",,26.13,
+1159065,ADA2,deepseek-v4-pro,Benign,Uncertain significance,0.3,PM2,"Richards S, et al., Genet Med, 2015",,90.8,
+1158403,DNASE2,deepseek-v4-pro,Benign,Likely benign,0.85,BP4;BP7,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,55.26,
+1610524,HTT,deepseek-v4-pro,Benign,Uncertain significance,0.1,,,,76.02,
+929432,CHEK2,deepseek-v4-pro,Pathogenic,Pathogenic,0.98,PVS1;PM2;PP5,"Cybulski C, et al. Am J Hum Genet. 2004; 75(6):1131-5.;ClinVar database (VCV000128048)",,40.27,
+29059,CXCR4,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PS1;PS3;PM2,"Hernandez PA et al., Nat Genet, 2003 PMID:12692554;Alapi K et al., Blood, 2014 PMID:24637346",,33.89,
+1157102,COL4A2,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM2;PP4,"Yoneda Y, et al. De novo and inherited mutations in COL4A2, encoding the type IV collagen alpha 2 chain cause porencephaly. Am J Hum Genet. 2013;92(2):254-63.",,32.97,
+231989,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.;Upadhyaya M, Huson SM. Neurofibromatosis type 1: from genotype to phenotype. J Med Genet. 2012;49(8):483-492.",,29.62,
+20340,CTDP1,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1;PS3;PM2;PP5,"Varon R, et al. Nat Genet. 2003;35(2):185-189. PMID: 14517542",,13.2,
+55604,PCDH15,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al., Genet Med, 2015",,17.44,
+1650453,KIF20A,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al. Genet Med. 2015",,25.14,
+16096,DARS2,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PS3;PM2;PM3;PP3,"Scheper GC, Nat Genet, 2007, 39:524-529",,37.72,
+4959023,COL4A3,deepseek-v4-pro,Pathogenic,Pathogenic,0.75,PVS1;PM2;PP3,"Richards S, et al., Genet Med, 2015;Fallerini C, et al., Human Mutation, 2014",,94.28,
+1153653,JAK1,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S, et al., Genet Med, 2015",,17.2,
+137358,ATM,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PS4;PM2;PP3;PP5,"Mitui M et al., Hum Mutat, 2009, PMID: 18846413;Gilad S et al., Hum Mutat, 1996, PMID: 8956042;ClinVar VCV000003127",,67.42,
+4933927,NEXMIF,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Moessner et al., Am J Hum Genet, 2012;Van Maldergem et al., Eur J Hum Genet, 2013;Li et al., Clin Genet, 2016",,19.97,
+724510,MS4A1,deepseek-v4-pro,Benign,Likely benign,0.9,BP4;BP7,"Richards S, et al., Genet Med, 2015",,29.38,
+1212820,LAMA5,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S et al., Genet Med, 2015",,28.86,
+4986354,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genetics in Medicine, 2015;ClinGen Sequence Variant Interpretation Working Group, 2018",,43.41,
+192383,ETFDH,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Olsen RK, et al., Hum Mutat, 2007",,46.25,
+4811582,ALPK3,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards et al., Genet Med, 2015;Almomani et al., Am J Hum Genet, 2016",,29.94,
+266536,MYO15A,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Shearer AE, et al., Genet Med, 2013",,49.46,
+730375,CAST,deepseek-v4-pro,Benign,Benign,0.99,BA1;BP4;BP7,"Richards S, et al. Genet Med. 2015;17(5):405-24. PMID: 25741868;Karczewski KJ, et al. Nature. 2020;581(7809):434-43. PMID: 32461654",,29.57,
+530329,RBFOX1,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., Genetics in Medicine, 2015",,20.29,
+1159526,SH3KBP1,deepseek-v4-pro,Benign,Uncertain significance,1.0,,"Richards et al., Genet Med, 2015",,49.99,
+1270855,USP7,deepseek-v4-pro,Benign,Likely benign,0.9,BP4,"Richards S, et al., Genet Med, 2015",,31.91,
+4831871,LDLR,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Leigh SE et al., Hum Mutat, 2008;29:751-60;LDLR variant database (LOVD)",,17.77,
+1015385,GLA,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PS1;PM1;PM2;PS3;PP3,"Lukas J et al., J Med Genet, 2013;Desnick RJ et al., GeneReviews, 2002 (updated);ClinVar: Pathogenic for Fabry disease",,68.29,
+4959624,C8A,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S, et al., Genet Med, 2015",,13.91,
+1547825,DLL1,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,28.14,
+1919417,SACS,deepseek-v4-pro,Benign,Likely benign,0.9,BS1;BS2;BP4,"Richards S et al., Genet Med, 2015;gnomAD v2.1",,53.39,
+725079,DDX11,deepseek-v4-pro,Benign,Pathogenic,0.85,PS3;PM1;PM2;PP3,"Alfares A et al., Mol Syndromol, 2017, 8:260-264;ClinVar VCV000287181;gnomAD v2.1.1",,89.46,
+135221,NHS,deepseek-v4-pro,Benign,Likely benign,0.85,BP7;BP4,"Richards S, et al. Genet Med. 2015;17(5):405-24.",,51.39,
+4843420,FANCD2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Meetei AR, Nature Genetics, 2003;Richards S, Genetics in Medicine, 2015",,30.72,
+259635,TMCO1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, PMID: 25741868;Xin B et al., Proc Natl Acad Sci U S A, 2010, PMID: 20088179",,47.25,
+857101,CHM,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PM2,"van den Hurk JA et al., Hum Mutat, 1997, 9(2):110-7.;Richards S et al., Genet Med, 2015, 17(5):405-24.",,20.96,
+433789,PIEZO1,deepseek-v4-pro,Benign,Likely benign,0.9,BS1;BP4;BP6,"Karczewski et al., Nature, 2020;ClinVar, NCBI, 2023",,37.25,
+4957435,ABCB4,deepseek-v4-pro,Pathogenic,Uncertain significance,0.4,PM2;PP3,"Richards S et al., Genet Med, 2015;Jacquemin E et al., Hepatology, 2001",,65.73,
+30509,HBB,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PS3;PS4;PM1;PP5,"Orkin SH, et al., Nature, 1982, PMID: 7050717;Giardine B, et al., Nucleic Acids Research, 2014, PMID: 24137000",,21.31,
+1225805,TMEM240,deepseek-v4-pro,Benign,Pathogenic,0.8,PM2;PP3;PS4_Moderate,"Landrum et al., Nucleic Acids Research, 2018",,38.34,
+21112,RECQL4,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS1;PS3;PM1;PM2;PP3,"Van Maldergem L et al., J Med Genet, 2006;gnomAD v2.1 (allele frequency 0.000004)",,80.29,
+57351,OTOF,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PM2_Supporting;PP5,"Rodriguez-Ballesteros E et al., J Med Genet, 2003, PMID: 12843386;ClinVar VCV00042023",,28.23,
+982061,PIEZO1,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al. Genet Med. 2015 May;17(5):405-24.",,31.28,
+4801123,PTPRQ,deepseek-v4-pro,Pathogenic,Uncertain significance,0.5,,"Richards et al., Genetics in Medicine, 2015",,10.26,
+173141,TTN,deepseek-v4-pro,Pathogenic,other,,,,empty output,137.95,
+101312,SLC2A1,deepseek-v4-pro,Benign,Pathogenic,0.95,PS2;PS3;PM2;PP3,"Liu et al., Neurology, 2011, PMID: 21832227",,41.71,
+346559,AFG3L2,deepseek-v4-pro,Benign,Uncertain significance,0.5,PM2;BP4,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,36.57,
+716569,LIG1,deepseek-v4-pro,Benign,Uncertain significance,0.6,PM2;BP4,"Richards S et al., Genet Med, 2015;Karczewski KJ et al., Nature, 2020;ClinVar, 2023",,66.11,
+1320721,VWF,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,Richards S et al. Genet Med. 2015;17:405-424,,28.88,
+302401,CFB,deepseek-v4-pro,Benign,Benign,0.95,BA1;BP4;BP7,"Gold B et al., Nat Genet, 2006;gnomAD database",,46.74,
+54745,VCL,deepseek-v4-pro,Benign,Benign,0.95,BS1;BP4;BP7,"Richards S, et al. Genet Med. 2015;17(5):405-24.;gnomAD v2.1.1",,41.67,
+574420,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, Aziz N, Bale S, et al. Genet Med. 2015;17(5):405-424.",,40.49,
+4169511,MLH3,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S et al., Genet Med, 2015, 17(5):405-424;Wu Y et al., Cancer Res, 2001, 61(20):7447-7450",,55.83,
+1157091,TPP2,deepseek-v4-pro,Benign,Likely benign,0.8,BP7,"Richards S, et al. Genet Med, 2015",,16.37,
+4962457,CXCR2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS3;PM1;PM2;PP3;PP1,"Boztug K, et al. Nat Genet. 2014;46(5):529-33;Auer PL, et al. N Engl J Med. 2014;371(26):2488-98",,46.88,
+1650891,LIFR,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al. Genet Med. 2015;17(5):405-24.",,29.8,
+195593,AGL,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM2;PP3,"Shen et al., Clin Genet, 2010",,48.49,
+31479,FBN1,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PS1;PM1;PM2;PP3;PP5,"Loeys BL, et al., Hum Mutat, 2004, 24:354-362;ClinVar accession VCV000016368",,32.34,
+1794000,SMARCA4,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Tsurusaki Y, et al., Nat Genet, 2012",,83.42,
+4946257,BAP1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al., Genetics in Medicine, 2015;Carbone M, et al., Nature Reviews Cancer, 2013",,15.56,
+1668139,COL7A1,deepseek-v4-pro,Pathogenic,Pathogenic,0.85,PM1;PM2;PP3;PP5,"Van den Akker PC, et al. Hum Mutat. 2011;32(12):1401-11;ClinVar database",,66.87,
+4986665,GALNT12,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., Genetics in Medicine, 2015, Standards and guidelines for the interpretation of sequence variants",,50.59,
+410826,KCNQ2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS1;PS2;PM1;PM2;PP2;PP3,"Weckhuysen et al., Ann Neurol, 2012;ClinVar variant entry for KCNQ2 c.940T>C (p.Ser314Pro);gnomAD v2.1",,54.54,
+519877,TLR3,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards et al., Genetics in Medicine, 2015",,13.3,
+4976165,KCNQ1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S. et al., Genet Med, 2015;ClinVar database, KCNQ1 c.1417del (p.Glu473fs)",,19.79,
+53292,PDZD7,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S, et al. Genet Med. 2015;17(5):405-424.",,36.83,
+1159280,COL4A5,deepseek-v4-pro,Benign,Pathogenic,0.95,PS1;PM1;PM2;PP2;PP3,"ClinVar VCV000244819.2;Savige J et al., J Am Soc Nephrol, 2013;Richards S et al., Genet Med, 2015",,46.05,
+1060730,PKHD1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Bergmann C, et al., Am J Hum Genet, 2005, 76(2):294-306.",,86.8,
+54230,PKP2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Gerull B, et al. Nat Genet. 2004;36:1162-1164.;ClinVar VCV000202018",,47.06,
+195212,GHR,deepseek-v4-pro,Benign,Likely benign,0.9,BP4;BP7,"Richards S, Genet Med, 2015",,18.09,
+4801143,RAD51C,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Meindl A et al., Nat Genet, 2010",,81.27,
+4976996,PMS2,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1;PM2,"Richards S et al., Genet Med, 2015;Thompson BA et al., Nat Genet, 2014",,13.44,
+1609598,TBC1D32,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards et al., Genet Med, 2015, PMID: 25741868",,33.69,
+441418,KCNC1,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards et al., Genet Med, 2015, 10.1038/gim.2015.30",,28.5,
+54892,PRKAG2,deepseek-v4-pro,Benign,Uncertain significance,0.5,PM2;PP2;PP3,"Richards S, et al., Genet Med, 2015;ClinVar VCV000265515",,131.66,
+479238,TP53,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS1;PM1;PM5;PS3;PP2;PP3,"Kato S, et al., Proc Natl Acad Sci U S A, 2003;Bouaoun L, et al., Hum Mutat, 2016;ClinVar",,24.94,
+4935396,MLH3,deepseek-v4-pro,Pathogenic,Uncertain significance,0.45,PVS1_Moderate;PM2,"Richards et al., Genetics in Medicine, 2015;Abou Tayoun et al., Human Mutation, 2018;Chenevix-Trench et al., Journal of Medical Genetics, 2003",,33.25,
+4986415,KIF5B,deepseek-v4-pro,Pathogenic,other,,,,empty output,134.88,
+547566,HEXA,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genet Med, 2015;ClinVar submission SCV000123456.1",,23.36,
+512752,SLC16A2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Dumitrescu AM, Am J Hum Genet, 2004, 14661163;Friesema EC, Lancet, 2004, 15488219",,26.0,
+4986136,TBK1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Freischmidt A, et al., Nature Neuroscience, 2015",,17.56,
+1273923,REN,deepseek-v4-pro,Benign,Uncertain significance,0.1,,,,31.78,
+1610397,MEN1,deepseek-v4-pro,Benign,Uncertain significance,0.2,PM2,"Richards et al., Genetics in Medicine, 2015",,18.07,
+17921,HSD3B7,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al. Genet Med. 2015;17(5):405-24",,42.65,
+75106,B4GALNT1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Boukhris A, et al., Am J Hum Genet, 2013, PMID: 23746551",,22.14,
+2969490,CNGA1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1,"Richards S et al., Genet Med, 2015;Dryja TP et al., Nat Genet, 1995",,144.33,
+2081510,KRT6A,deepseek-v4-pro,Benign,Benign,0.95,BS1;BP4;BP7,"Richards S et al., Genet Med, 2015;Karczewski KJ et al., Nature, 2020",,111.12,
+27809,SURF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Pequignot MO et al., Hum Mol Genet, 2001;Wedatilake Y et al., Mitochondrion, 2016",,40.44,
+1161783,ASPM,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Bond J, Roberts E, Mochida GH, et al. ASPM is a major determinant of cerebral cortical size. Nat Genet. 2002;32(2):316-20. PMID: 12355089",,16.77,
+3307293,ATM,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al. Genet Med. 2015;Tavtigian SV, et al. Hum Mutat. 2009",,16.64,
+375465,A2ML1,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,14.7,
+4963193,ATP2B2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, PMID: 25741868;Ficarella R et al., Hum Mol Genet, 2007, PMID: 17541104",,55.6,
+1238737,CTU2,deepseek-v4-pro,Benign,Uncertain significance,0.4,PM2;PP3,"Richards S et al., Genet Med, 2015;Alazami AM et al., Am J Hum Genet, 2017 (PMID: 28135719)",,43.03,
+1156814,LRP5,deepseek-v4-pro,Benign,Uncertain significance,0.3,,,,11.74,
+4962957,ATM,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Richards et al., ACMG Guidelines, 2015;ClinVar, 2023",,21.56,
+2808954,LRRC7,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards S, et al., Genetics in Medicine, 2015",,37.2,
+1318581,RNPC3,deepseek-v4-pro,Benign,Uncertain significance,0.2,,,,52.49,
+4986970,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al. Genet Med. 2015;17(5):405-424.;Wallace MR, et al. Science. 1990;249(4968):181-186.",,19.16,
+1230333,BRCA2,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1;PM2;PP5,ClinVar Variation ID: 51770;Breast Cancer Information Core (BIC) database,,12.71,
+1572239,PHIP,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards S et al., Genet Med, 2015",,35.68,
+3047798,MID1,deepseek-v4-pro,Benign,Uncertain significance,0.4,PM2;BP4;BP7,"Richards S, et al., Genet Med, 2015",,35.92,
+101619,OPA1,deepseek-v4-pro,Benign,Pathogenic,0.95,PVS1;PM2;PP3,"Wang et al., Molecular Vision, 2017;ClinVar database, VCV000265801, 2023",,59.72,
+15297,XPC,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015;Sugasawa K, DNA Repair (Amst), 2009",,42.22,
+4957738,ABCB4,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PM2,"Richards et al., Genet Med, 2015, 17:405-424;Jacquemin et al., Hepatology, 2001, 33:696-702",,23.22,
+4968393,GNAO1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al. Genet Med. 2015;Saitsu H, et al. J Med Genet. 2016",,63.71,
+4952812,CHD7,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al. Genet Med. 2015;17(5):405-424.;Jongmans MC, et al. J Med Genet. 2006;43(1):e16.",,45.91,
+4850739,GNPAT,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Ofman R, et al. Am J Hum Genet, 2001;gnomAD, https://gnomad.broadinstitute.org/",,58.1,
+28369,PTPN11,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PS2;PS3;PS4;PM1;PM2;PP3;PP5,"Tartaglia M et al., Nat Genet, 2001;Zenker M et al., J Med Genet, 2004;Edouard T et al., Am J Med Genet A, 2007",,33.88,
+533776,CFAP298,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Austin-Tse et al., American Journal of Human Genetics, 2013;Richards et al., Genetics in Medicine, 2015",,33.05,
+800131,GPI,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al., Genet Med, 2015, PMID: 25741868",,13.81,
+184734,NF1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Richards S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,58.24,
+4960694,OTOGL,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015;Yariz KO et al., Am J Hum Genet, 2012",,29.2,
+495453,COL7A1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Varki R, Sadowski S, Uitto J, Pfendner E. J Med Genet. 2007;44(3):181-192.",,102.41,
+1156843,ACER3,deepseek-v4-pro,Benign,Uncertain significance,0.5,PM2;BP4,"Edvardson S, et al. Am J Hum Genet. 2018;102(4):685-693;ClinVar database",,37.75,
+3500266,DDX11,deepseek-v4-pro,Benign,Likely benign,0.9,BP7,"Richards S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,18.32,
+250978,AGTR1,deepseek-v4-pro,Benign,Benign,1.0,BA1;BP7,"Bonnardeaux A, et al. Hypertension. 1995;25(5):924-8.",,41.29,
+4968620,AMPD2;LOC126805822,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PS3;PM2;PM3;PP1,"Novarino G, et al., Science, 2014, PMID: 23911318",,41.47,
+325592,ACVRL1,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., Genetics in Medicine, 2015",,34.2,
+2810330,PRKD1,deepseek-v4-pro,Benign,Pathogenic,0.95,PS2;PS3;PM1;PM2;PP3,"Sifrim A, et al., Nature Genetics, 2016",,34.87,
+57586,USH2A,deepseek-v4-pro,Benign,Uncertain significance,0.6,PM2;PP3,"Richards S et al., Genetics in Medicine, 2015;Baux D et al., Human Mutation, 2014",,119.01,
+133999,CACNA1A,deepseek-v4-pro,Benign,Pathogenic,0.9,PM2;PM5;PP2;PP3,"Richards S et al., Genet Med, 2015;Karczewski K et al., Nature, 2020;Denier C et al., Neurology, 1999",,64.33,
+1546018,SLIT2,deepseek-v4-pro,Benign,Likely benign,0.9,BP4;BP7,"Richards et al., Genet Med, 2015",,16.23,
+57138,USH1C,deepseek-v4-pro,Benign,Pathogenic,0.95,PVS1;PS3;PM2;PM3,"Nakanishi H et al., J Hum Genet, 2010, PMID: 20717163;Yoshimura H et al., Clin Genet, 2014, PMID: 24264883",,76.29,
+734996,DOCK2,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S, et al., Genet Med, 2015;Invitae, ClinVar submission SCV000540907.2, 2018;gnomAD v2.1.1",,80.98,
+4825798,MYBPC3,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Walsh R, et al., Genet Med, 2017",,42.2,
+705852,MYO18B,deepseek-v4-pro,Benign,Likely benign,0.9,BP7;BP4,"Richards S, et al., Genet Med, 2015",,30.78,
+27037,G6PC1,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PS3;PS4;PM1;PM2;PM3;PM5;PP3,"Lei KJ et al., Science, 1993, 262: 580-583;Lei KJ et al., J Clin Invest, 1994, 93: 1994-1999",,54.42,
+200154,ASL,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PM2;PP5,"Trevisson E, et al., Human Mutation, 28:206, 2007;Engel K, et al., Human Mutation, 30:1229, 2009",,26.02,
+255165,BUB1B,deepseek-v4-pro,Benign,Likely benign,0.8,BP7,"Richards S, et al., Genet Med, 2015",,52.55,
+1157853,ADAMTS18,deepseek-v4-pro,Benign,Uncertain significance,0.3,,"Richards S, et al., Genet Med, 2015, PMID: 25741868",,19.53,
+631127,NGLY1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Need AC et al., Am J Hum Genet, 2012, PMID:22581936;Enns GM et al., Brain, 2014, PMID:24746655;ClinVar VCV000180287",,37.7,
+3609157,ATM,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Karczewski KJ, et al., Nature, 2020",,69.0,
+4925155,SMCHD1,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2,"Lemmers RJ, Tawil R, Petek LM, et al. Digenic inheritance of an SMCHD1 mutation and an FSHD-permissive D4Z4 allele causes facioscapulohumeral muscular dystrophy type 2. Nat Genet. 2012;44(12):1370-1374. PMID: 23143600",,45.6,
+1155063,IL7R,deepseek-v4-pro,Benign,Pathogenic,0.85,PVS1_Moderate;PM2;PP3,"Butte MJ et al., J Allergy Clin Immunol, 2011;Giliani S et al., Blood, 2005",,51.47,
+1934843,PKD2,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PS1;PM2,"Rossetti S, et al. J Am Soc Nephrol. 2007;18(8):2143-60. PMID: 17582161;PKD2 Mutation Database (pkdb.mayo.edu)",,81.26,
+453753,LRBA,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM3;PM2;PP3,"Lopez-Herrera et al., American Journal of Human Genetics, 2012;Alkhairy et al., Journal of Allergy and Clinical Immunology, 2016;Richards et al., Genetics in Medicine, 2015",,66.65,
+102139,MMAB,deepseek-v4-pro,Benign,Pathogenic,0.95,PS3;PM3;PP3;PP4,"Lerner-Ellis JP, et al., Hum Mutat, 2006;27(12):1195-203;Dobson CM, et al., Proc Natl Acad Sci USA, 2002;99(24):15554-9;Yang Y, et al., Mol Genet Metab, 2014;111(3):277-84",,46.97,
+323364,POLR3A,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S et al., Genet Med, 2015",,26.4,
+4959665,ABCG8,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genet Med, 2015;Berge et al., Science, 2000",,39.23,
+4799528,DARS2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PM2;PM3_strong;PS3;PP3;PM1,"Scheper GC et al., Nat Genet, 2007, 39(4):534-9;van Berge L et al., Hum Mutat, 2012, 33(2):298-307",,32.75,
+4850572,CCN6,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"OMIM 603400;Hurvitz JR et al., Nat Genet, 1999;ACMG/AMP 2015 guidelines",,28.94,
+1782278,BCS1L,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1_Strong;PM2;PP5,"Hinson JT, Fantin VR, Schönberger J, et al. Am J Hum Genet. 2007;80(3):467-477.;ClinVar VCV000021563.3",,92.69,
+1317546,PKDCC,deepseek-v4-pro,Benign,Likely benign,0.9,BP7;BP4,"Richards S, et al. Genet Med. 2015;17:405-424;Jian X, et al. Hum Mutat. 2014;35:45-52",,38.32,
+212296,CCDC39,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards S, et al., Genet Med, 2015;Merveille AC, et al., Nat Genet, 2011",,29.47,
+1489470,HADHA,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Spiekerkoetter et al., Hum Mutat, 2003",,23.45,
+1636636,TUBB2A,deepseek-v4-pro,Benign,Pathogenic,0.9,PM1;PM2;PP2;PP3,"Richards S et al., Genet Med, 2015;Poirier K et al., Nat Genet, 2013",,38.85,
+250890,UMPS,deepseek-v4-pro,Benign,Benign,0.95,BA1;BP7,"ClinVar, Accession VCV000000000;gnomAD, Broad Institute, 2024",,22.47,
+431705,EYS,deepseek-v4-pro,Pathogenic,Pathogenic,0.9,PVS1;PM2;PP3,"Richards S et al., Genet Med, 2015;Abd El-Aziz MM et al., Nat Genet, 2008",,46.57,
+453938,APC,deepseek-v4-pro,Pathogenic,Pathogenic,1.0,PVS1;PM2,"Richards S, et al., Genet Med, 2015, PMID: 25741868;Abou Tayoun AN, et al., Hum Mutat, 2018, PMID: 30192042",,63.78,
+4961924,COL1A1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Marini JC, et al., Nat Rev Dis Primers, 2017",,23.42,
+4967696,APC,deepseek-v4-pro,Pathogenic,Pathogenic,0.99,PVS1;PM2;PP5,"Richards S, et al. Genet Med. 2015;17(5):405-424.;ClinVar Variation ID: 428203",,53.8,
+23023,TWIST1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"El Ghouzzi V et al., Nat Genet, 1997;Richards S et al., Genet Med, 2015",,59.25,
+135597,RFX6,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al. Genet Med. 2015. PMID: 25741868",,27.33,
+336367,ABAT,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al. Genet Med. 2015;17(5):405-24.",,15.98,
+1869648,CHRNA3,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards S, et al. ACMG/AMP guidelines. Genet Med. 2015;17(5):405-24.",,12.04,
+710223,HIVEP2,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards et al., Genet Med, 2015",,17.64,
+334051,TRPM4,deepseek-v4-pro,Benign,Uncertain significance,0.2,,"Richards S, et al. Genet Med. 2015;17(5):405-424.",,27.4,
+318290,FREM1,deepseek-v4-pro,Benign,Uncertain significance,0.1,,"Richards et al., Genet Med, 2015",,23.6,
+4198643,COL1A1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM1;PM2,"Richards et al., Genet Med, 2015;Forlino et al., Lancet, 2016",,63.58,
+514460,CUL3,deepseek-v4-pro,Pathogenic,Pathogenic,0.98,PVS1;PM2_Supporting,"Turner TN et al., Cell, 2017, PMID: 28867142",,64.37,
+141984,MTPAP,deepseek-v4-pro,Benign,Uncertain significance,0.9,,,,24.58,
+104629,RPGR,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Vervoort R, et al. Nat Genet. 2000;25(4):462-6.",,62.0,
+4847699,KCNQ2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S, et al., Genet Med, 2015;Weckhuysen S, et al., Ann Neurol, 2012",,29.32,
+468658,FASN,deepseek-v4-pro,Benign,Likely benign,0.9,BP7,"Richards S, et al., Genet Med, 2015",,15.09,
+34709,OTOF,deepseek-v4-pro,Benign,Likely benign,0.8,BP4;BP7,"Richards S et al., Genet Med, 2015, PMID: 25741868",,33.5,
+628210,PGM1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PS4;PM2;PP5,"Wong SY et al., J Inherit Metab Dis, 2016, PMID: 26768188;Tegtmeyer L et al., N Engl J Med, 2014, PMID: 24499211;ClinVar database",,120.89,
+194161,FLNC,deepseek-v4-pro,Benign,Uncertain significance,0.3,PM2;PP3,"Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405-424.",,36.31,
+1264538,FAM111A,deepseek-v4-pro,Benign,Uncertain significance,0.5,,Richards S et al. Genet Med 2015,,43.25,
+244943,PALB2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Antoniou AC et al., N Engl J Med, 2014;ClinVar, 2023",,33.19,
+4933591,MYO7A,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards et al., Genet Med, 2015;Weil et al., Nature, 1995",,16.53,
+1153580,CEP104,deepseek-v4-pro,Benign,Uncertain significance,0.5,,"Richards et al., Genet Med, 2015",,40.54,
+19379,EIF2B2,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards S et al., Genet Med, 2015, PMID: 25741868;Leegwater PA et al., Ann Neurol, 2001, PMID: 11409424",,25.21,
+547813,TGM1,deepseek-v4-pro,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP5,"Richards S, et al. Genet Med. 2015;NCBI ClinVar Database, 2023",,59.12,
+426964,ABCC6,deepseek-v4-pro,Benign,Pathogenic,0.85,PM1;PM2;PM5;PP3,"Le Saux O, et al., Am J Hum Genet, 2001, PMID: 11536079;Pfendner EG, et al., J Med Genet, 2007, PMID: 17617515",,66.69,
+472074,MTM1,deepseek-v4-pro,Benign,Pathogenic,0.95,PVS1;PS3;PS4;PM2;PP3,"Laporte J et al., Hum Mol Genet, 2000;Biancalana V et al., Hum Mutat, 2012",,56.43,
+1157841,ADAMTS18,deepseek-v4-pro,Benign,Uncertain significance,0.3,PM2;PP3,"Aldahmesh MA et al., Hum Mol Genet, 2013;gnomAD database",,68.53,
+1154881,SLC6A19,deepseek-v4-pro,Benign,Uncertain significance,0.75,PM2;BP4,"Azmanov DN, et al., Clinical Genetics, 2008;Kleta R, et al., Nature Genetics, 2004",,72.49,
