@@ -26,7 +26,7 @@
 
 **Corresponding author:** Bing Song
 E-mail: songbing@gysy.com
-（第一作者：Kai Zhang，zhangkai@gdcp.edu.cn——投稿系统账户）
+（第一作者：Kai Zhang，zhangkai@gdcp.edu.cn；投稿系统以宋兵新账户注册提交）
 
 **Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding
 
