@@ -4,7 +4,7 @@
 
 **Target:** Briefings in Bioinformatics / GPB (CAS Q1)
 
-> Assembled 2026-08-16. Final: 30,000 domestic evaluations + 1,500 international (9 models, 7 vendors). 6 figures, 5 tables, 7 findings, Wilson CI + McNemar + cluster bootstrap, 17 verified references.
+> Assembled 2026-08-16. Final: 30,000 domestic + 1,500 international evaluations (9 models, 7 vendors). 6 figures, 5 tables, 7 findings, 11 audit dimensions. Six rounds of source verification completed.
 
 ---
 
@@ -272,6 +272,8 @@ We profiled token usage on 30 variants × 6 models (API-reported usage; official
 
 *Figure 4. Cost–accuracy trade-off; bubble size encodes latency. Reasoning models occupy the expensive-slow quadrant without accuracy or safety gains.*
 
+> Table 4 note: latency measured in a dedicated sequential profiling run; median per-call latency in the main (concurrent) run was V4-pro 43.1 s, MiMo 36.8 s, Kimi 5.5 s — same ordering, absolute values lower under concurrency.
+
 **Finding 5 (The reasoning-model tax).** Reasoning models generate **13–21× more output tokens** than chat-style models (2,728 vs. 132 for V4-pro vs. chat) because their chain-of-thought is billed as completion tokens. Per-variant cost spans **41×** (MiMo ¥0.041 vs. chat ¥0.001) and latency spans **29×** (65.9 s vs. 2.3 s). Combined with Findings 2 and 4 — reasoning models are *less* accurate when committing (81.2% vs. 98.6%) and *non-deterministic* (64% re-run agreement) — the cost audit shows that the reasoning style purchases none of accuracy, stability, or speed: chat-style models dominate on all axes except raw all-inclusive accuracy, where Kimi (67.0%) matches or exceeds every reasoning model at 1/6–1/14 of the cost. For population-scale variant screening, model choice is therefore also a cost decision: Kimi-class models deliver near-best accuracy at the lowest price.
 
 ---
@@ -300,7 +302,7 @@ To test whether the domestic findings generalize across training ecosystems, we 
 
 **Finding 7 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (80.2%, +6.8 pp over the best domestic model; McNemar p = 1.5×10⁻³) with the lowest abstention — but pays for it with a 17.4% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (24.3%) and MiMo (19.4%). (ii) **Claude behaves as a conservative model**: 97.4% conditional accuracy with 3.6% FP [95% CI 1.9–6.8] — its FP rate is statistically indistinguishable from Kimi's (2.8% [1.4–5.7]) despite entirely different training pipelines, and its all-inclusive accuracy ties Qwen (McNemar p = 1.0) while exceeding Kimi's (p = 5×10⁻⁴). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (63.4%, significantly below Qwen: McNemar p = 1.2×10⁻⁷) and sits below Qwen and Kimi — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
 
-**Cross-ecosystem note: the "Likely" tier survives internationally.** Unlike the six domestic models — which *never* emit a "Likely" class (§3.5b) — all three foreign models use it: Gemini 3 Flash emitted 166 "Likely benign/pathogenic" outputs (33% of calls), Claude 139 (28%), GPT 76 (15%). The five-class collapse is therefore not a universal property of LLM variant classification but a characteristic of the (Chinese) models evaluated — with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
+**Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which *never* emit a "Likely" class (§3.5b) — all three foreign models use "Likely benign": Claude 134/500 (26.8%), Gemini 102/500 (20.4%), GPT 68/500 (13.6%). Strikingly, **not one foreign model ever emitted "Likely pathogenic" (0/1,500 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
 
 > Note: domestic models are evaluated at n=5,000 elsewhere; this table restricts them to the identical 500-variant subset for comparability (subset composition: P/B 253/247; LoF-cued 32% vs. 34% full-set; 9 expert-panel variants). Domestic models score 0.5–1.8 pp higher on this subset than on the full set (previous generation 1.8–2.4 pp lower) — cross-national gaps of ≥5 pp are robust to this drift. Foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods §2.4 and Limitations); a prompt-robustness check is reported in §3.8b.
 
