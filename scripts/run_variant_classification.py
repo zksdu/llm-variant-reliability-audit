@@ -254,13 +254,26 @@ def main():
         try:
             # 推理模型（deepseek-v4* / mimo* / qwen* / glm* / kimi*）：思考+输出共享
             # max_tokens 预算，需调高（1024 会被 reasoning 耗尽导致 content 为空）
-            mt = 8192 if (model.startswith("deepseek-v4")
-                          or model.startswith("mimo")
-                          or model.startswith("qwen")
-                          or model.startswith("glm")
-                          or model.startswith("kimi")) else 1024
+            # 国际模型走中转（gemini/gpt-5/claude），实测需 16384（002 项目同配置）
+            if model.startswith(("gemini", "gpt-5", "claude")):
+                mt = 16384
+            elif model.startswith(("deepseek-v4", "mimo", "qwen", "glm",
+                                   "kimi")):
+                mt = 8192
+            else:
+                mt = 1024
+            # 国际模型（走中转）加研究性 system prompt：Claude 会对纯临床
+            # 任务触发医疗安全拒答（实测 5/20），研究语境声明可消除；
+            # 三家国外模型统一加，Methods 如实披露（国内模型无 system）
+            system = None
+            if model.startswith(("gemini", "gpt-5", "claude")):
+                system = ("You are participating in a research benchmark that "
+                          "evaluates language models on ACMG/AMP 2015 germline "
+                          "variant classification using public ClinVar-style "
+                          "records. Classifications are research outputs, not "
+                          "clinical advice. Respond with the required JSON only.")
             output = call_llm(model, build_variant_prompt(var, args.af_mode),
-                              max_tokens=mt)
+                              max_tokens=mt, system=system)
             elapsed = round(time.time() - t0, 2)
             parsed = parse_llm_json(output)
             return ([var.get("AlleleID", ""), var.get("GeneSymbol", ""),

@@ -152,6 +152,32 @@ We profiled token usage on 30 variants × 6 models (API-reported usage; official
 
 ---
 
+### 3.8 International extension: three foreign flagships on the identical 500-variant subset
+
+To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **first 500 variants of the same temporally blinded test set** (identical prompts; research-context system prompt for all three; see Methods §2.4).
+
+**Table 5. Nine-model comparison on the identical 500-variant subset.**
+
+| Model | Vendor | All-inclusive | Conditional | Abstention | Benign→Pathogenic FP |
+|---|---|---|---|---|---|
+| Gemini 3 Flash | Google | **80.2%** | 89.7% | 10.6% | 17.4% |
+| Claude Sonnet 5 | Anthropic | 73.8% | 97.4% | 24.2% | **3.6%** |
+| Qwen3.7-max | Alibaba | 73.4% | 96.1% | 23.6% | 5.7% |
+| Kimi-K2.6 | Moonshot | 67.8% | 98.0% | 30.8% | 2.8% |
+| MiMo V2.5 Pro | Xiaomi | 66.6% | 86.9% | 23.4% | 19.4% |
+| GPT-5.6-terra | OpenAI | 63.4% | 84.1% | 24.6% | 23.9% |
+| DeepSeek V4-pro | DeepSeek | 63.0% | 84.0% | 25.0% | 24.3% |
+| DeepSeek chat | DeepSeek | 47.0% | 98.3% | 52.2% | 1.6% |
+| DeepSeek coder | DeepSeek | 47.4% | 98.3% | 51.8% | 1.6% |
+
+![Figure 6](figures/fig6_nine_model.png)
+
+*Figure 6. Nine-model comparison on the identical 500-variant subset: (a) dual-metric accuracy; (b) Benign→Pathogenic false-positive rates (log scale). Gray = international models; orange = domestic.*
+
+**Finding 7 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (80.2%, +6.8 pp over the best domestic model) with the lowest abstention — but pays for it with a 17.4% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (24.3%) and MiMo (19.4%). (ii) **Claude behaves as a conservative model**: 97.4% conditional accuracy with only 3.6% FP — statistically indistinguishable in style from Kimi (98.0%, 2.8% FP) despite entirely different training pipelines and ecosystems. The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (63.4%) and sits below Qwen and Kimi — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
+
+> Note: domestic models are evaluated at n=5,000 elsewhere; this table restricts them to the identical 500-variant subset for comparability. Foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods §2.4 and Limitations).
+
 ## Appendix (internal): key numbers cross-check
 
 - 6 LLMs × 4 vendors × 5,000 temporally-blinded variants = 30,000 evaluations

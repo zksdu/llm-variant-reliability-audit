@@ -83,3 +83,7 @@ backup/
 !data/consistency_50.csv
 !data/consistency_results.csv
 !data/statistics_analysis.md
+
+# 含 API key 的本地备份，绝不上传
+docs/外部模型key配置_勿上传.md
+!data/variant_classification_results_foreign.csv
