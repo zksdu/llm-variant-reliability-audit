@@ -318,12 +318,12 @@ All source data are publicly available: ClinVar variant_summary and VCF
 (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release
 (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The
 temporally blinded test sets, gold standards, all 31,500 raw model outputs, and
-analysis scripts are available at 【gitee 公开仓库地址待填】.
+analysis scripts are available at https://gitee.com/gdcp/260807 (公开于投稿时).
 
 ## Code availability
 
-Custom analysis code is available at 【DOI-minting repository (GitHub mirror +
-Zenodo DOI) 待建】. The pipeline uses the Python 3 standard library only;
+Custom analysis code is available at https://github.com/zksdu/llm-variant-reliability-audit
+(archived on Zenodo, DOI: 10.5281/zenodo.21964620). The pipeline uses the Python 3 standard library only;
 sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement
