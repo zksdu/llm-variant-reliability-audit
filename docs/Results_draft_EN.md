@@ -33,6 +33,10 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 
 **Finding 2 (Conditional reliability is not universal — and error direction matters).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit. In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable. Crucially, the errors are directionally asymmetric: when a gold-standard Benign variant receives a definitive call, reasoning models call it **Pathogenic** far more often — V4-pro mislabels 28.4% and MiMo 22.3% of all Benign variants as Pathogenic, versus 1.3–1.4% (chat/coder) and 2.5% (Kimi); Qwen sits between at 4.7%. Six-model consensus restores FP to 1.8%. The property "when the model speaks, it is right" holds **only for conservative models**; for reasoning models, committing is frequent, less accurate, and biased toward the clinically dangerous direction (false Pathogenic).
 
+![Figure 1](figures/fig1_model_performance.png)
+
+*Figure 1. Multi-model performance on the temporally blinded test set: (a) dual-metric accuracy; (b) Benign→Pathogenic false-positive rates (log scale) — reasoning models mislabel 22–28% of Benign variants as Pathogenic.*
+
 **Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,915 variants), conditional accuracy reaches 98.3%.
 
 ### 3.3 Independent gold standard: ClinGen expert-panel review
@@ -71,7 +75,15 @@ ClinVar temporal (HGVS)   62–72%
 No clinical evidence       ~50% conditional; 73–93% abstention
 ```
 
-### 3.5 Calibration
+![Figure 2](figures/fig2_evidence_gradient.png)
+
+*Figure 2. Reliability rises with evidence quality: expert-panel stratum vs. full test set; the no-evidence regime (MaveDB) collapses to chance-level conditional accuracy with 73–93% abstention.*
+
+![Figure 3](figures/fig3_af_ablation.png)
+
+*Figure 3. Allele-frequency ablation: (a) Benign sensitivity on a Benign-rich subset (n=400); (b) accuracy on a Pathogenic subset (n=150). Adding AF improves both directions.*
+
+### 5. Calibration
 
 Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy across models (e.g., chat: confidence 0.78 vs. accuracy 49.4%; Kimi: 0.73 vs. 67.0%). Confidence is calibrated *within* a model's decision style, not across models; reasoning models over-express confidence relative to their conditional accuracy (V4-pro: 0.79 vs. 81.2%; MiMo: 0.80 vs. 85.2%).
 
@@ -99,6 +111,10 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 | Kimi-K2.6 | 49/50 (98.0%) | 50/50 (100.0%) |
 | DeepSeek V4-pro | 31/50 (62.0%) | **32/50 (64.0%)** |
 
+![Figure 5](figures/fig5_determinism.png)
+
+*Figure 5. (a) Re-run determinism at temperature 0; (b) collapse of the ACMG “Likely” tier (Kimi): gold Likely-pathogenic variants are polarized to Pathogenic, Likely-benign to Benign/VUS.*
+
 **Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
 
 ### 3.7 Cost audit (per-variant token usage and price)
@@ -115,6 +131,10 @@ We profiled token usage on 30 variants × 6 models (API-reported usage; official
 | DeepSeek V4-pro | 179 | 2,728 | 0.017 | 65.9 |
 | Qwen3.7-max | 206 | 1,936 | 0.019 | 37.7 |
 | MiMo V2.5 Pro | 440 | 1,754 | 0.041 | 30.6 |
+
+![Figure 4](figures/fig4_cost_latency.png)
+
+*Figure 4. Cost–accuracy trade-off; bubble size encodes latency. Reasoning models occupy the expensive-slow quadrant without accuracy or safety gains.*
 
 **Finding 5 (The reasoning-model tax).** Reasoning models generate **13–21× more output tokens** than chat-style models (2,728 vs. 132 for V4-pro vs. chat) because their chain-of-thought is billed as completion tokens. Per-variant cost spans **41×** (MiMo ¥0.041 vs. chat ¥0.001) and latency spans **29×** (65.9 s vs. 2.3 s). Combined with Findings 2 and 4 — reasoning models are *less* accurate when committing (81.2% vs. 98.6%) and *non-deterministic* (64% re-run agreement) — the cost audit shows that the reasoning style purchases none of accuracy, stability, or speed: chat-style models dominate on all axes except raw all-inclusive accuracy, where Kimi (67.0%) matches or exceeds every reasoning model at 1/6–1/14 of the cost. For population-scale variant screening, model choice is therefore also a cost decision: Kimi-class models deliver near-best accuracy at the lowest price.
 
