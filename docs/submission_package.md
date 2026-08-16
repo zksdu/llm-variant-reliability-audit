@@ -18,12 +18,15 @@
 
 **Running title (≤50 chars):** Reliability Audit of LLM Variant Classification
 
-**Author:** Kai Zhang
+**Authors:** Kai Zhang¹, Bing Song²,*
 
-**Affiliation:** Guangdong Communication Polytechnic, Guangzhou, Guangdong, China
+**Affiliations:**
+¹ Guangdong Communication Polytechnic, Guangzhou, Guangdong, China
+² The Third Affiliated Hospital of Guangzhou Medical University, Guangzhou, Guangdong, China
 
-**Corresponding author:** Kai Zhang
-E-mail: zhangkai@gdcp.edu.cn
+**Corresponding author:** Bing Song
+E-mail: songbing@gysy.com
+（第一作者：Kai Zhang，zhangkai@gdcp.edu.cn——投稿系统账户）
 
 **Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding
 
@@ -53,9 +56,9 @@ Not applicable. This study uses only publicly available database records (ClinVa
 **Availability of data and materials.**
 All data are publicly available: ClinVar variant_summary and VCF (ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release (ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The temporally blinded test sets, gold standards, all 31,500 raw model outputs, analysis scripts (Python 3 standard library, seed 42, byte-reproducible sampling), and figures are available at 【gitee 仓库公开地址】.
 
-**Funding.** This work was supported by no specific funding (author's institutional affiliation: Guangdong Communication Polytechnic).
+**Funding.** 【基金占位符—待填基金名称及编号；若最终无基金，改为 "This research received no specific grant..." 标准声明】
 
-**Authors' contributions.** Kai Zhang: Conceptualization, Methodology, Software, Formal analysis, Investigation, Data curation, Visualization, Writing – original draft, Writing – review & editing. The author read and approved the final manuscript.
+**Authors' contributions.** Kai Zhang: Conceptualization, Methodology, Software, Formal analysis, Investigation, Data curation, Visualization, Writing – original draft. Bing Song: Conceptualization, Supervision, Resources, Writing – review & editing. All authors read and approved the final manuscript.
 
 **Competing interests.** The authors declare that they have no competing interests.
 
@@ -78,9 +81,9 @@ This manuscript is original, has not been published previously, and is not under
 Thank you for your consideration.
 
 Sincerely,
-Kai Zhang
-Guangdong Communication Polytechnic
-E-mail: zhangkai@gdcp.edu.cn
+Bing Song (corresponding author), on behalf of all authors
+The Third Affiliated Hospital of Guangzhou Medical University
+E-mail: songbing@gysy.com
 
 
 ---
