@@ -39,7 +39,7 @@
 | Abstract | 从 `docs/submission_package.md` 复制 182 词摘要 |
 | Keywords | `variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding`（逐个添加）|
 | Running title | `Reliability Audit of LLM Variant Classification` |
-| Authors | 系统里默认宋兵为通讯；**需手动添加张凯为第二作者**（First: Kai / Last: Zhang，e-mail: zhangkai@gdcp.edu.cn，单位：广东交通职业技术学院）|
+| Authors | 单作者（Bing Song），系统默认即通讯作者，无需添加他人 |
 | Funding | 填 "No specific funding" 或选无基金选项 |
 | Conflict of Interest | 选 No |
 

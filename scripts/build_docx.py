@@ -18,9 +18,9 @@ DOCS = Path(__file__).parent.parent / "docs"
 
 TITLE = ("When data leakage is controlled: a multi-vendor reliability audit "
          "of LLM-based ACMG/AMP variant classification")
-AUTHOR = "Kai Zhang¹, Bing Song²,*"
-AFFIL_1 = "¹Guangdong Communication Polytechnic, Guangzhou, Guangdong, China"
-AFFIL_2 = "²The Third Affiliated Hospital of Guangzhou Medical University, Guangzhou, Guangdong, China"
+AUTHOR = "Bing Song"
+AFFIL_1 = "The Third Affiliated Hospital of Guangzhou Medical University, Guangzhou, Guangdong, China"
+AFFIL_2 = None
 EMAIL = "songbing@gysy.com"
 RUNNING = "Reliability Audit of LLM Variant Classification"
 KEYWORDS = ("variant classification; ACMG/AMP; large language models; data leakage; "
@@ -95,7 +95,6 @@ def main():
 
     for line, bold in [(RUNNING + "  (running title)", False),
                        ("", False), (AUTHOR, True), (AFFIL_1, False),
-                       (AFFIL_2, False),
                        ("*Corresponding author. E-mail: " + EMAIL, False),
                        ("", False)]:
         p = doc.add_paragraph()
