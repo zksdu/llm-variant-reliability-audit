@@ -87,3 +87,7 @@ backup/
 # 含 API key 的本地备份，绝不上传
 docs/外部模型key配置_勿上传.md
 !data/variant_classification_results_foreign.csv
+!data/prompt_robustness_100.csv
+!data/prompt_robustness_results.csv
+!data/foreign_determ_20.csv
+!data/foreign_determ_results.csv

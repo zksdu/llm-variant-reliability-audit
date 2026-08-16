@@ -159,6 +159,8 @@ def main():
     ap.add_argument("--af-mode", default="auto",
                     choices=["auto", "on", "off"],
                     help="AF 对照：auto=有AF列则带 / on=强制带 / off=强制不带")
+    ap.add_argument("--system-all", action="store_true",
+                    help="稳健性检验：国内模型也加研究性 system prompt")
     args = ap.parse_args()
 
     if not LLM_AVAILABLE:
@@ -265,8 +267,9 @@ def main():
             # 国际模型（走中转）加研究性 system prompt：Claude 会对纯临床
             # 任务触发医疗安全拒答（实测 5/20），研究语境声明可消除；
             # 三家国外模型统一加，Methods 如实披露（国内模型无 system）
+            # --system-all：稳健性检验用，国内模型也加同一 system prompt
             system = None
-            if model.startswith(("gemini", "gpt-5", "claude")):
+            if model.startswith(("gemini", "gpt-5", "claude")) or args.system_all:
                 system = ("You are participating in a research benchmark that "
                           "evaluates language models on ACMG/AMP 2015 germline "
                           "variant classification using public ClinVar-style "
