@@ -1,11 +1,14 @@
 # Submission Package — Title Page, Declarations, Cover Letter
 
-> 期刊决策（2026-08-16 核实）：
-> - **首选 JGG**（Journal of Genetics and Genomics）：中科院 1 区、IF 7.1、**订阅模式免费发表**（hybrid，OA 可选 $3,640）、收原创研究
-> - 备选 GPB：中科院 1 区、强制 OA **$3,500**、章节顺序特殊（Results 在 Methods 前）
-> - ~~BIB~~：**只收综述，不收纯原创研究**（官方页明示）——已排除
+> 期刊决策（2026-08-16 核实）：**已选定 JGG**（Journal of Genetics and Genomics）
+> - 中科院 1 区、IF 7.1、收原创研究（Research Article）
+> - 费用：订阅模式**免版面费**；⚠️ **印刷版彩图费 $1,000 首图 + $300/后续图**——校样阶段可选"仅在线彩色"规避（建议届时询问编辑部）
+> - OA 可选 $3,640（不选即免费）
+> - ~~BIB~~ 已排除（只收综述）；GPB 备选（强制 OA $3,500）
 >
 > ⚠️ 需用户填写：【作者名单】【单位】【通讯作者】【基金号】
+> ⚠️ JGG 要求代码放 **DOI-minting 仓库**（GitHub/GitLab/Zenodo）——gitee 不满足，
+>    需将代码镜像到 GitHub（或直接上传 Zenodo 档案获 DOI）。需外网，用户侧操作。
 
 ---
 
@@ -81,3 +84,31 @@ Sincerely,
 【通讯作者姓名】
 【单位】
 【联系方式】
+
+
+---
+
+## JGG 投稿合规清单（已完成项 ✅ / 待办 ⬜）
+
+| 项目 | 状态 |
+|---|---|
+| 标题 ≤150 字符、冒号后小写 | ✅（manuscript_JGG.md 首行）|
+| 摘要 <200 词（无引用）| ✅ 182 词 |
+| 关键词 5-7 个 | ✅ 7 个 |
+| 正文 <10,000 词（不含 Methods/Refs）| ✅ ≈4,542 词 |
+| display items ≤6（主文）| ✅ 4 图 + 2 表（原 Table 3/4/5 → S1/S2/S3）|
+| 引用作者-年份制 | ✅（[n] 全部转换）|
+| 无 first/novel/new 措辞 | ✅ |
+| 图：Arial、色盲安全、300dpi TIFF+PDF、A/B/C 标注 | ✅ figures_jgg/ |
+| CRediT 声明 | ⬜ 待填作者 |
+| 代码 DOI 仓库（GitHub/Zenodo 镜像）| ⬜ 用户侧（需外网）|
+| 作者/单位/基金 | ⬜ 用户填写 |
+| 投稿系统 | ScholarOne/Editorial Manager（投稿时在线注册）|
+
+## JGG 投稿文件清单
+
+1. `docs/manuscript_JGG.md` → 转入 Word/LaTeX 排版后上传（含正文+声明+References+图注）
+2. `docs/submission_package.md` 的标题页 + 摘要 + 投稿信
+3. `docs/figures_jgg/fig1-4_JGG.pdf/.tiff`（4 张主图）
+4. 补充材料：Table S1-S3（正文 manuscript_JGG.md 内）+ 可选 Fig S1-S5（docs/figures/）
+5. Cover letter（本文件内）
