@@ -121,6 +121,26 @@ def main():
     if buf:
         add_table(doc, buf)
 
+    # ===== 尾部附录：文章图片（中文图注）=====
+    FIGS = DOCS / "figures_jgg"
+    captions = [
+        ("fig1_JGG.png", "图 1. 时间盲法测试集上的多模型表现。A：六个国内模型双口径准确率（n=5,000/模型）；B：同一 500 变异子集上九模型对比（灰色为国际模型）；C：良性→致病假阳性率（对数轴），虚线为六模型共识 1.8%。"),
+        ("fig2_JGG.png", "图 2. 证据可得性支配可靠性。A：AF 消融（良性富集子集 n=400×3）的良性敏感度；B：致病富集子集（n=150×2）；C：跨证据情境的弃权率（有无 AF、主集 vs 冲突变异、MaveDB 功能任务）。"),
+        ("fig3_JGG.png", "图 3. 输出确定性与 \"Likely\" 档坍缩。A：temperature 0 下重跑一致率（浅色为国际模型）；B：金标准可能致病/可能良性变异的输出分布（Kimi，专家集）——强度信息极化为全致病或全良性。"),
+        ("fig4_JGG.png", "图 4. 成本-准确率权衡。每变异成本（对数轴）vs 全对全准确率；气泡大小为延迟。推理型模型（紫）占据贵且慢象限却无准确率或安全性收益。"),
+    ]
+    doc.add_page_break()
+    p = doc.add_paragraph()
+    r = p.add_run("附录：文章图片")
+    r.bold = True; r.font.size = Pt(14); set_cn_font(r, "黑体")
+    for fname, cap in captions:
+        doc.add_page_break()
+        doc.add_picture(str(FIGS / fname), width=Cm(16))
+        p = doc.add_paragraph()
+        add_runs(p, cap)
+        for r_ in p.runs:
+            r_.font.size = Pt(9)
+
     out_docx = DOCS / "manuscript_中文版.docx"
     doc.save(out_docx)
     print(f"✓ docx: {out_docx}")

@@ -50,10 +50,11 @@ def panel_label(ax, s):
 
 def save(fig, name):
     fig.savefig(FIGS / f"{name}.pdf")
+    fig.savefig(FIGS / f"{name}.png")
     try:
         fig.savefig(FIGS / f"{name}.tiff", pil_kwargs={"compression": "tiff_lzw"})
     except Exception:
-        fig.savefig(FIGS / f"{name}_600dpi.png", dpi=600)
+        pass
     plt.close(fig)
     print(f"  {name}")
 
