@@ -19,17 +19,17 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 
 | Model | Vendor | All-inclusive Acc. | Conditional Acc. (spoken) | Spoken n | Expert-panel Acc. (n=100) |
 |---|---|---|---|---|---|
-| Qwen3.7-max | Alibaba | **71.6%** | 96.4% | 3,715 | 86.0% |
-| Kimi-K2.6 | Moonshot | 67.0% | 97.8% | 3,422 | 90.0% |
-| MiMo V2.5 Pro | Xiaomi | 66.1% | 85.2% | 3,877 | 92.0% |
-| DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 3,807 | **93.0%** |
-| DeepSeek chat | DeepSeek | 49.4% | 98.6% | 2,505 | 69.0% |
-| DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,495 | 68.0% |
+| Qwen3.7-max | Alibaba | **71.6%** | 96.4% | 3,714 | 86.0% |
+| Kimi-K2.6 | Moonshot | 67.0% | 97.8% | 3,421 | 90.0% |
+| MiMo V2.5 Pro | Xiaomi | 66.1% | 85.2% | 3,876 | 92.0% |
+| DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 3,806 | **93.0%** |
+| DeepSeek chat | DeepSeek | 49.4% | 98.6% | 2,504 | 69.0% |
+| DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,494 | 68.0% |
 | 6-model majority | — | 64.1% | 98.3% | 2,915 | 93.5% |
 
 > Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528).
 
-**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.6 to +22.4 percentage points (pp)** in all-inclusive accuracy (all pairwise McNemar p < 10⁻⁸⁶; Kimi vs. MiMo: p = 0.11, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
+**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.6 to +22.4 percentage points (pp)** in all-inclusive accuracy (all new-generation vs. previous-generation McNemar p ≤ 2.9×10⁻²⁰; Kimi vs. MiMo: p = 0.12, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
 
 **Finding 2 (Conditional reliability is not universal — and error direction matters).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit. In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable. Crucially, the errors are directionally asymmetric: when a gold-standard Benign variant receives a definitive call, reasoning models call it **Pathogenic** far more often — V4-pro mislabels 28.4% and MiMo 22.3% of all Benign variants as Pathogenic, versus 1.3–1.4% (chat/coder) and 2.5% (Kimi); Qwen sits between at 4.7%. Six-model consensus restores FP to 1.8%. The property "when the model speaks, it is right" holds **only for conservative models**; for reasoning models, committing is frequent, less accurate, and biased toward the clinically dangerous direction (false Pathogenic).
 
@@ -83,7 +83,7 @@ No clinical evidence       ~50% conditional; 73–93% abstention
 
 *Figure 3. Allele-frequency ablation: (a) Benign sensitivity on a Benign-rich subset (n=400); (b) accuracy on a Pathogenic subset (n=150). Adding AF improves both directions.*
 
-### 5. Calibration
+### 3.5 Calibration
 
 Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy across models (e.g., chat: confidence 0.78 vs. accuracy 49.4%; Kimi: 0.73 vs. 67.0%). Confidence is calibrated *within* a model's decision style, not across models; reasoning models over-express confidence relative to their conditional accuracy (V4-pro: 0.79 vs. 81.2%; MiMo: 0.80 vs. 85.2%).
 
