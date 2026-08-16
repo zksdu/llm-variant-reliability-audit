@@ -293,7 +293,7 @@ Each variant was presented as a clinical-geneticist task: variant name (HGVS), g
 
 ### Reproducibility
 
-All scripts, prompts, seeds, and intermediate files are public in the project repository (gitee mirror provided in Data Availability); sampling uses fixed seed 42; all API calls use temperature 0. Analysis code: Python 3 standard library (no ML dependencies).
+All scripts, prompts, seeds, and intermediate files are public in the project repository (see Data availability); sampling uses fixed seed 42; all API calls use temperature 0. Analysis code: Python 3 standard library (no ML dependencies).
 
 ### Limitations
 
@@ -318,7 +318,8 @@ All source data are publicly available: ClinVar variant_summary and VCF
 (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release
 (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The
 temporally blinded test sets, gold standards, all 31,500 raw model outputs, and
-analysis scripts are available at https://gitee.com/gdcp/260807 (公开于投稿时).
+analysis scripts are available at https://github.com/zksdu/llm-variant-reliability-audit
+(archived on Zenodo, DOI: 10.5281/zenodo.21964620).
 
 ## Code availability
 

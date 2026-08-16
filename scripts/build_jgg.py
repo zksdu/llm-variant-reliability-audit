@@ -69,6 +69,7 @@ XREF = [
     ("reported in \u00a73.8b", "reported below"),
     ("(\u00a73.2b)", "(see below)"),
     ("(see Discussion \u00a74)", "(see Discussion)"),
+    ("(gitee mirror provided in Data Availability)", "(see Data availability)"),
     ("(see Discussion)", "(see Discussion)"),
     ("Table 3.", "Table S1."),
     ("Table 4.", "Table S2."),
@@ -167,7 +168,8 @@ All source data are publicly available: ClinVar variant_summary and VCF
 (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release
 (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The
 temporally blinded test sets, gold standards, all 31,500 raw model outputs, and
-analysis scripts are available at https://gitee.com/gdcp/260807 (\u516c\u5f00\u4e8e\u6295\u7a3f\u65f6).
+analysis scripts are available at https://github.com/zksdu/llm-variant-reliability-audit
+(archived on Zenodo, DOI: 10.5281/zenodo.21964620).
 
 ## Code availability
 
