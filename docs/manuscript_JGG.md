@@ -342,8 +342,8 @@ analysis scripts are available at https://gitee.com/gdcp/260807.
 
 ## Code availability
 
-Custom analysis code is available at 【DOI-minting repository (GitHub mirror +
-Zenodo DOI) 待建】. The pipeline uses the Python 3 standard library only;
+Custom analysis code is available at https://github.com/zksdu/llm-variant-reliability-audit
+(Zenodo DOI will be minted upon release). The pipeline uses the Python 3 standard library only;
 sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement
