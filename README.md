@@ -1,54 +1,64 @@
-# Bioinformatics_Paper_Project — 生信论文研究目录
+# LLM Variant Classification Reliability Audit
 
-> 创建日期：2026-08-04
-> 目的：独立于软件工程论文（`../SCI_Paper_Project`）的生信方向 SCI 论文研究空间
+Code and data for: **"When Data Leakage Is Controlled: A Multi-Vendor Reliability Audit of LLM-Based ACMG/AMP Variant Classification"**
 
-## 目录结构
+A temporally blinded, multi-vendor audit of large language models performing ACMG/AMP 2015 germline variant classification:
+
+- **6 Chinese LLMs at full scale** (5,000 variants × 6 models = 30,000 evaluations): DeepSeek v4-pro / chat / coder, Kimi-K2.6, MiMo V2.5 Pro, Qwen3.7-max
+- **3 international flagships** on an identical 500-variant subset (1,500 evaluations): Gemini 3 Flash, GPT-5.6-terra, Claude Sonnet 5
+- Independent validation on **900 ClinGen expert-panel variants**
+- Sub-experiments: allele-frequency ablation, conflicting-classification variants, MaveDB functional-effect task, output determinism, cost profiling, five-class analysis, surface-cue stratification
+
+## Repository layout
 
 ```
-Bioinformatics_Paper_Project/
-├── README.md          ← 本文件（项目说明）
-├── docs/              ← 论文大纲、期刊调研、写作规划
-├── data/              ← 生信数据集（公开数据，注意体积与版权）
-├── scripts/           ← 分析脚本（可复现）
-├── results/           ← 分析结果
-└── figures/           ← 论文图表
+scripts/    Full pipeline (pure Python 3 standard library)
+  preprocess_clinvar.py          ClinVar parsing + temporal test-set construction
+  rebuild_temporal.py            Reproducible temporal test set (seed 42)
+  run_variant_classification.py  LLM experiments (concurrent, resumable)
+  analyze_consensus.py           Dual-metric accuracy, consensus, gold-standard strata
+  statistics_analysis.py         Wilson CI + McNemar tests
+  annotate_af.py                 Allele-frequency annotation from ClinVar VCF
+  extract_expert_panel.py        Expert-panel validation set
+  extract_conflicting.py         Conflicting-classification set
+  mavedb_sample.py               MaveDB functional test set
+  cost_profiling.py              Token usage / cost audit
+  generate_figures.py            All manuscript figures (300 dpi PNG + PDF)
+data/       Test sets, gold standards, and all raw results (CSV)
+docs/       Manuscript drafts, analyses, figures
 ```
 
-## 目标约束（与用户确认）
+## Reproduction
 
-- 目标期刊：**中科院 1 区**（用户明确要求）
-- SCIE 收录必须（职称有效）
-- 费用/录用率：1 区无"容易中"选项，需接受高门槛或付费（见 docs/生信期刊调研.md）
+```bash
+# 1. Download public inputs (see Data sources)
+# 2. Build the temporal test set (byte-reproducible, seed 42)
+python scripts/rebuild_temporal.py
+# 3. Run models (requires API keys via .env; never committed)
+python scripts/run_variant_classification.py --input data/clinvar_testset_temporal.csv \
+    --models deepseek-chat --out data/results.csv
+# 4. Analysis
+python scripts/merge_results.py && python scripts/analyze_consensus.py \
+    --results data/variant_classification_results_all.csv
+python scripts/statistics_analysis.py
+python scripts/generate_figures.py
+```
 
-## 生信 1 区期刊候选（2026-08 核实）
+## Data sources (all public)
 
-| 期刊 | 分区(2026) | IF | 费用 | 难度 | 备注 |
-|------|-----------|-----|------|------|------|
-| Genome Research | 1 区 Top | 6.3 | 免费(hybrid) | 极难 | 年发文~150 |
-| Nucleic Acids Research | 1 区 Top | 15.0 | $4,192 | 极难 | 完全不免费 |
-| **GPB（国产）** | **1 区** | 7.9 | $3,650 | 难(16%) | 国内友好、审稿快(18天) |
+| Resource | Source |
+|---|---|
+| ClinVar variant_summary | https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz |
+| ClinVar VCF (GRCh38, AF_ESP/EXAC/TGP) | https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz |
+| MaveDB (Ensembl-mapped) | https://ftp.ensembl.org/pub/current_variation/MaveDB/MaveDB_variants.tsv.gz |
+| Gene symbols | mygene.info API |
 
-⚠️ **避坑**：Computers in Biology and Medicine（CIBM）已被 WoS 除名（2025-11），勿投。
+Large raw files (>100 MB) are not committed; download via the URLs above.
 
-## 待办（下一步）
+## Key results
 
-- [ ] 确定生信研究方向（单细胞 / 基因组 / 转录组 / 多组学整合 / 疾病关联等）
-- [ ] 调研可用的公开数据集（TCGA / GEO / 1000 Genomes 等）
-- [ ] 明确是否复用 DeepSeek API（生信分析中的 LLM 应用？）或纯生信方法
-- [ ] 撰写论文大纲
-
-## 与软件工程论文的关系
-
-- 两篇论文相互独立，各有目录
-- 生信论文若涉及 LLM 应用（如基因组注释、变异解读、文献挖掘），可复用 `../SCI_Paper_Project` 的 DeepSeek 调用基建（.env / call_llm / RAG）
-- 投稿节奏可并行推进
-
-## 数据下载规则（重要）
-
-> **用户明确要求**：凡是需要下载数据，直接给用户下载地址，用户用迅雷一次性完整下载。
-> 不要用脚本/分段/curl 等方式下载大数据文件（慢且易损坏）。
-
-**ClinVar 数据**（已由用户下载完成，2026-08-04）：
-- 地址：https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz
-- 文件：`data/variant_summary.txt.gz`（441,573,728 字节，gzip 完整 ✓）
+See `docs/manuscript_draft_EN.md` (full manuscript), `data/consensus_analysis.md`,
+`data/statistics_analysis.md` for complete tables. Headline numbers are
+reproducible end-to-end from the raw CSVs in `data/` (verified: sampling is
+byte-reproducible at seed 42; the full analysis pipeline reproduces every
+table and figure from the committed CSVs).
