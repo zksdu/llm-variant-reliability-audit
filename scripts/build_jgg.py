@@ -123,12 +123,13 @@ def main():
 
     d_idx = id_src.find("## 4. Discussion (draft)")
     intro = id_src[:d_idx]
-    intro = re.sub(r"^# Introduction & Discussion.*?---\n", "", intro, flags=re.S, count=1)
+    intro = re.sub(r"^# Introduction & Discussion.*?---\n", "", intro, flags=re.S, count=1).lstrip("\n")
     intro = re.sub(r"^## 1\. Introduction \(draft\)", "## Introduction", intro)
-    disc = id_src[d_idx:]
+    ref_idx = id_src.find("## References")
+    disc = id_src[d_idx:ref_idx] if ref_idx > d_idx else id_src[d_idx:]
     disc = re.sub(r"^## 4\. Discussion \(draft\)", "## Discussion", disc)
 
-    results = re.sub(r"^# Results \(Draft\).*?---\n", "", results, flags=re.S, count=1)
+    results = re.sub(r"^# Results \(Draft\).*?---\n", "", results, flags=re.S, count=1).lstrip("\n")
     results = re.sub(r"^## 3\. Results", "## Results", results)
 
     # 应用转换

@@ -12,7 +12,7 @@
 
 ---
 
-## 1. Introduction (draft)
+## Introduction
 
 Clinical variant interpretation — classifying a germline variant as Pathogenic, Benign, or Uncertain per ACMG/AMP guidelines — is a bottleneck in genomic medicine: manual curation is expert-hours per variant and inconsistent across laboratories (Richards et al., 2015; Rehm et al., 2015). Large language models (LLMs) have been proposed as scalable interpreters (Landrum et al., 2020; Karczewski et al., 2020; Cheng et al., 2023), with recent work reporting near-expert agreement (e.g., AI-CURA reports expert-level consistency on curated variants (AI-CURA, 2026)).
 
@@ -24,7 +24,7 @@ Here we report an audit that combines all three controls: 6 LLMs from 4 vendors,
 
 We find that label-leakage control reveals a large vendor gap (up to +22 pp), that the "when the model speaks it is right" property holds only for conservative models, that majority voting can reduce accuracy, and that model reliability tracks evidence availability — abstention is a calibrated, trustworthy signal rather than noise. We frame this work as a **reliability audit** rather than a generalization study: temporal blinding removes the label-memorization channel, but prior *evidence* (literature, submissions) may remain in training data; our goal is therefore to establish under which operational conditions an LLM's output can be trusted, not to claim de novo generalization from sequence alone.
 
-## 3. Results
+## Results
 
 ### Cohort and experimental scale
 
@@ -231,26 +231,6 @@ Under label-leakage control, LLM variant interpretation passes reliability audit
 
 ---
 
-## References
-
-(Richards et al., 2015) Richards S, Aziz N, Bale S, et al. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet Med. 2015;17(5):405–424. doi:10.1038/gim.2015.30
-(Rehm et al., 2015) Rehm HL, Berg JS, Brooks LD, et al. ClinGen — the Clinical Genome Resource. N Engl J Med. 2015;372(23):2235–2242. doi:10.1056/NEJMsr1409004
-(Landrum et al., 2020) Landrum MJ, Lee JM, Benson M, et al. ClinVar: improvements to integrating and interpreting data. Nucleic Acids Res. 2020;48(D1):D835–D844. doi:10.1093/nar/gkz972
-(Karczewski et al., 2020) Karczewski KJ, Francioli LC, Tiao G, et al. The mutational constraint spectrum quantified from variation in 141,456 humans. Nature. 2020;581:434–443. doi:10.1038/s41586-020-2308-7
-(Cheng et al., 2023) Cheng J, Novati G, Pan M, et al. Accurate proteome-wide missense variant effect prediction with AlphaMissense. Science. 2023;381(6664):eadg7492. doi:10.1126/science.adg7492
-(AI-CURA, 2026) Hong Kong Genome Institute. AI-CURA, an automated LLM workflow for high-accuracy genetic variant classification. Sci Transl Med. 2026. doi:10.1126/scitranslmed.adz4172
-(Basharat et al., 2025) Basharat H, Plotkin S, Le C, Zhu K, Pink M, Alfaro I. VariantBench: a framework for evaluating LLMs on justifications for genetic variant interpretation. In: Proc. IJCNLP-AACL 2025 (SRW), Mumbai, India. ACL. https://aclanthology.org/2025.ijcnlp-srw.26/
-(Saadat and Fellay, 2026) 【authors】. VarLitBench and VarLitAgent for benchmarking and agentic curation of variant-specific functional evidence. In: Proc. ICML 2026. arXiv:2604.00075
-(Sainz et al., 2023) Sainz O, Campos JA, García-Ferrero I, et al. NLP evaluation in trouble: on the need to measure LLM data contamination for each benchmark. In: Findings of EMNLP 2023. arXiv:2310.18018
-(Bordt et al., 2024) Bordt S, et al. How much can we forget about data contamination? OpenReview. https://openreview.net/forum?id=Pf0PaYS9KG
-(Golchin and Surdeanu, 2023) Golchin S, Surdeanu M. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023. arXiv:2308.08493
-(Esposito et al., 2019) Esposito D, Weile J, Shrestha R, et al. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. https://www.mavedb.org
-(Wu et al., 2013) Wu C, MacLeod I, Su AI. BioGPS and MyGene.info: organizing online, gene-centric information. Nucleic Acids Res. 2013;41(D1):D561–D565. doi:10.1093/nar/gks1186
-(DeepSeek-AI, 2024) DeepSeek-AI. DeepSeek-V3 technical report. arXiv:2412.19437
-(Moonshot AI, 2025) Moonshot AI. Kimi K2: open agentic intelligence. arXiv:2507.20534 (technical report)
-(Qwen Team, 2025) Qwen Team. Qwen3 technical report. arXiv:2505.09388
-(Xiaomi, 2026) Xiaomi. MiMo API documentation. https://mimo.mi.com (商业 API 模型，无公开技术报告，引用官方文档)
-
 ## Materials and methods
 
 ### Data sources
@@ -338,19 +318,20 @@ All source data are publicly available: ClinVar variant_summary and VCF
 (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release
 (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The
 temporally blinded test sets, gold standards, all 31,500 raw model outputs, and
-analysis scripts are available at https://gitee.com/gdcp/260807.
+analysis scripts are available at 【gitee 公开仓库地址待填】.
 
 ## Code availability
 
-Custom analysis code is available at https://github.com/zksdu/llm-variant-reliability-audit
-(Zenodo DOI will be minted upon release). The pipeline uses the Python 3 standard library only;
+Custom analysis code is available at 【DOI-minting repository (GitHub mirror +
+Zenodo DOI) 待建】. The pipeline uses the Python 3 standard library only;
 sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement
 
-**Kai Zhang:** Conceptualization, Methodology, Software, Formal analysis,
-Investigation, Data curation, Visualization, Writing – original draft,
-Writing – review & editing. The author read and approved the final manuscript.
+【请填写，如：】**[Author 1]:** Conceptualization, Methodology, Software,
+Formal analysis, Writing – original draft. **[Author 2]:** Conceptualization,
+Writing – review & editing, Supervision. All authors read and approved the final
+manuscript.
 
 ## Conflict of interest
 
@@ -358,7 +339,7 @@ The authors declare that they have no conflict of interest.
 
 ## Acknowledgments
 
-Not applicable.
+【可选：资助致谢】
 
 ## References
 
