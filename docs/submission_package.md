@@ -18,15 +18,12 @@
 
 **Running title (≤50 chars):** Reliability Audit of LLM Variant Classification
 
-**Authors:** 【请填写：First A. Author¹, Second B. Author², ...】
+**Author:** Kai Zhang
 
-**Affiliations:**
-1. 【单位全称，城市，邮编，国家】
-2. 【...】
+**Affiliation:** Guangdong Communication Polytechnic, Guangzhou, Guangdong, China
 
-**Corresponding author:** 【姓名】
-E-mail: 【邮箱】
-Tel: 【电话（可选）】
+**Corresponding author:** Kai Zhang
+E-mail: 【邮箱待填—投稿系统必须】
 
 **Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding
 
@@ -56,13 +53,13 @@ Not applicable. This study uses only publicly available database records (ClinVa
 **Availability of data and materials.**
 All data are publicly available: ClinVar variant_summary and VCF (ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release (ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The temporally blinded test sets, gold standards, all 31,500 raw model outputs, analysis scripts (Python 3 standard library, seed 42, byte-reproducible sampling), and figures are available at 【gitee 仓库公开地址】.
 
-**Funding.** 【请填写：基金名 + 编号；若无写 "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."】
+**Funding.** This work was supported by no specific funding (author's institutional affiliation: Guangdong Communication Polytechnic).
 
-**Authors' contributions.** 【请填写，例如：】Conceptualization: X.X.; Methodology: X.X. and X.X.; Software and experiments: X.X.; Formal analysis: X.X.; Writing—original draft: X.X.; Writing—review and editing: all authors. All authors read and approved the final manuscript.
+**Authors' contributions.** Kai Zhang: Conceptualization, Methodology, Software, Formal analysis, Investigation, Data curation, Visualization, Writing – original draft, Writing – review & editing. The author read and approved the final manuscript.
 
 **Competing interests.** The authors declare that they have no competing interests.
 
-**Acknowledgements.** 【可选：感谢计算资源/资助方等】
+**Acknowledgements.** Not applicable.
 
 ---
 
@@ -81,9 +78,9 @@ This manuscript is original, has not been published previously, and is not under
 Thank you for your consideration.
 
 Sincerely,
-【通讯作者姓名】
-【单位】
-【联系方式】
+Kai Zhang
+Guangdong Communication Polytechnic
+E-mail: 【待填】
 
 
 ---

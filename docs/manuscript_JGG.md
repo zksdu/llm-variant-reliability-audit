@@ -348,10 +348,9 @@ sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement
 
-【请填写，如：】**[Author 1]:** Conceptualization, Methodology, Software,
-Formal analysis, Writing – original draft. **[Author 2]:** Conceptualization,
-Writing – review & editing, Supervision. All authors read and approved the final
-manuscript.
+**Kai Zhang:** Conceptualization, Methodology, Software, Formal analysis,
+Investigation, Data curation, Visualization, Writing – original draft,
+Writing – review & editing. The author read and approved the final manuscript.
 
 ## Conflict of interest
 
@@ -359,7 +358,7 @@ The authors declare that they have no conflict of interest.
 
 ## Acknowledgments
 
-【可选：资助致谢】
+Not applicable.
 
 ## References
 
