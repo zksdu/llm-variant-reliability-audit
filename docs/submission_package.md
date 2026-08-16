@@ -23,7 +23,7 @@
 **Affiliation:** Guangdong Communication Polytechnic, Guangzhou, Guangdong, China
 
 **Corresponding author:** Kai Zhang
-E-mail: 【邮箱待填—投稿系统必须】
+E-mail: zhangkai@gdcp.edu.cn
 
 **Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding
 
@@ -80,7 +80,7 @@ Thank you for your consideration.
 Sincerely,
 Kai Zhang
 Guangdong Communication Polytechnic
-E-mail: 【待填】
+E-mail: zhangkai@gdcp.edu.cn
 
 
 ---
