@@ -338,7 +338,7 @@ All source data are publicly available: ClinVar variant_summary and VCF
 (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release
 (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The
 temporally blinded test sets, gold standards, all 31,500 raw model outputs, and
-analysis scripts are available at 【gitee 公开仓库地址待填】.
+analysis scripts are available at https://gitee.com/gdcp/260807.
 
 ## Code availability
 
