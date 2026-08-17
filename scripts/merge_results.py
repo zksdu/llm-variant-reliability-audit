@@ -21,6 +21,7 @@ SOURCES = [
     "variant_classification_results_kimi.csv",
     "variant_classification_results_mimo.csv",
     "variant_classification_results_qwen.csv",
+    "variant_classification_results_foreign.csv",  # 3 个国际模型（全量 5000）
 ]
 
 

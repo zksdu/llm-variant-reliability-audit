@@ -25,6 +25,7 @@ PATHO = {"Pathogenic", "Likely pathogenic"}
 BENIGN = {"Benign", "Likely benign"}
 MODELS = ["deepseek-v4-pro", "deepseek-chat", "deepseek-coder",
           "kimi-k2.6", "mimo-v2.5-pro", "qwen3.7-max"]
+MODELS_INTL = ["gemini-3-flash", "claude-sonnet-5", "gpt-5.6-terra"]
 
 
 def bin2(c):
@@ -94,7 +95,7 @@ def main():
     lines.append("| 模型 | 准确率 | 95% CI |")
     lines.append("|---|---|---|")
     accs = {}
-    for m in MODELS:
+    for m in MODELS + MODELS_INTL:
         k = sum(1 for a in aids if votes[a].get(m) == gold[a])
         n = len(aids)
         p, lo, hi = wilson_ci(k, n)
@@ -107,7 +108,10 @@ def main():
     lines.append("|---|---|---|")
     pairs = [("qwen3.7-max", "deepseek-chat"), ("qwen3.7-max", "kimi-k2.6"),
              ("kimi-k2.6", "deepseek-chat"), ("deepseek-v4-pro", "deepseek-chat"),
-             ("mimo-v2.5-pro", "deepseek-chat"), ("kimi-k2.6", "mimo-v2.5-pro")]
+             ("mimo-v2.5-pro", "deepseek-chat"), ("kimi-k2.6", "mimo-v2.5-pro"),
+             ("gemini-3-flash", "qwen3.7-max"), ("claude-sonnet-5", "qwen3.7-max"),
+             ("gpt-5.6-terra", "qwen3.7-max"), ("claude-sonnet-5", "kimi-k2.6"),
+             ("gpt-5.6-terra", "deepseek-v4-pro")]
     for m1, m2 in pairs:
         a = b = 0
         for aid in aids:
