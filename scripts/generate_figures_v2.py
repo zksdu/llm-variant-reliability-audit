@@ -297,11 +297,60 @@ def save(fig, name):
     print(f"  {name}")
 
 
+def fig4(votes, gold):
+    """金标准良性变异的归宿：正确B / VUS / 误判P（临床风险可视化）。"""
+    s9 = stats(votes, gold, INTL3 + DOM6)
+    order = sorted(s9, key=lambda m: -s9[m]["all"])
+    fig, ax = plt.subplots(figsize=(4.6, 3.4))
+    y = np.arange(len(order))[::-1]
+    nB = sum(1 for g in gold.values() if g == "B")
+    cor, vus, fpos = [], [], []
+    for m in order:
+        c = v = f = 0
+        for a, g in gold.items():
+            if g != "B":
+                continue
+            x = votes.get(a, {}).get(m)
+            if x == "B":
+                c += 1
+            elif x == "V":
+                v += 1
+            elif x == "P":
+                f += 1
+        cor.append(c / nB * 100)
+        vus.append(v / nB * 100)
+        fpos.append(f / nB * 100)
+    ax.barh(y, cor, 0.62, color="#7FB2D9", edgecolor=DEEP, lw=0.5,
+            label="correct Benign")
+    ax.barh(y, vus, 0.62, left=cor, color="#BBBBBB",
+            label="VUS (abstain)")
+    left2 = [a + b for a, b in zip(cor, vus)]
+    ax.barh(y, fpos, 0.62, left=left2, color=FP_C,
+            label="false Pathogenic")
+    for yi, m, fv in zip(y, order, fpos):
+        if fv >= 1.5:
+            ax.text(101, yi, f"{fv:.1f}%", va="center", fontsize=6.8,
+                    color=FP_C)
+    ax.set_yticks(y)
+    ax.set_yticklabels([NICE[m] for m in order])
+    for tick, m in zip(ax.get_yticklabels(), order):
+        if m in INTL3:
+            tick.set_style("italic")
+    ax.set_xlim(0, 110)
+    ax.set_xlabel("Share of gold-standard Benign variants (%, n = 2,500)")
+    ax.set_title("Fate of Benign variants across nine models",
+                 fontsize=8.5, loc="left", pad=4)
+    ax.legend(frameon=False, loc="lower right", fontsize=6.5)
+    fig.tight_layout()
+    save(fig, "fig4")
+
+
 if __name__ == "__main__":
     print("数据驱动 SCI 图表（figures_v2/）：")
     votes, gold, review = load()
     fig1(votes, gold)
     fig2()
     fig3()
+    fig4(votes, gold)
     n_f = sum(1 for a in votes if any(m in INTL3 for m in votes[a]))
     print(f"\u2713 国际模型当前覆盖 {n_f} 变异（扩量完成后重跑即自动更新为全量）")

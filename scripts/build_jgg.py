@@ -135,6 +135,17 @@ def main():
     # 应用转换
     intro, results, disc, methods = map(apply_all, (intro, results, disc, methods))
 
+    # 图引用注入（按出现顺序 Fig.1-4）
+    NL = "\n"
+    results = results.replace("### Models that speak are almost always right",
+                              "### Models that speak are almost always right" + NL + NL + "(Fig. 1)", 1)
+    results = results.replace("### Triangulation: evidence availability drives reliability",
+                              "### Triangulation: evidence availability drives reliability" + NL + NL + "(Fig. 2)", 1)
+    results = results.replace("### Output determinism",
+                              "### Output determinism" + NL + NL + "(Fig. 3)", 1)
+    results = results.replace("### Five-class analysis",
+                              "### Five-class analysis" + NL + NL + "(Fig. 4)", 1)
+
     # 添加图表的正文引用（JGG 要求按序引用）
     results = results.replace("### Headline accuracy: models that speak are almost always right",
                               "### Models that speak are almost always right\n\n(Fig. 1)")
@@ -245,6 +256,12 @@ Benign sensitivity without vs. with population AF. B: The ablation on a
 Pathogenic-enriched subset (n = 150 \u00d7 2). C: Abstention across evidence contexts:
 with vs. without AF, main set vs. conflicting-interpretation variants, and the
 no-evidence MaveDB task.
+
+**Fig. 4. Fate of gold-standard Benign variants across the nine models.**
+For each model, the share of the 2,500 gold-standard Benign variants that is
+correctly called Benign (blue), abstained as VUS (grey), or misclassified as
+Pathogenic (magenta) — the clinically dangerous direction. Conservative and
+aggressive camps separate sharply on the magenta segment.
 
 **Fig. 3. Output determinism and the collapse of the "Likely" tier.**
 A: Re-run agreement at temperature 0 (n = 50 per model, plus the international

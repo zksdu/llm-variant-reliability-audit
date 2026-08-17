@@ -88,6 +88,8 @@ The vendor gap **widens** under the strongest gold standard (+29.9 pp for Kimi v
 
 (Fig. 2)
 
+(Fig. 2)
+
 Three sub-experiments show that LLM reliability is governed by the *evidence available in the prompt*:
 
 **(a) Allele-frequency (AF) ablation (n = 400 × 3 models Benign-enriched + 150 × 2 Pathogenic).** Adding population allele frequencies (AF_ESP/ExAC/1000G, from ClinVar VCF) to the prompt — the identical variants, models, and otherwise identical prompts — raised Benign sensitivity from 11.0% to 68.8% (chat, **+57.8 pp**), 10.7% to 68.3% (coder), and 43.4% to 81.5% (Kimi); abstention fell from 80% to 33% (chat) and all-inclusive accuracy roughly tripled (19.1%→66.5% for chat; 49.3%→80.8% for Kimi). **The systematic Benign abstention observed in the main experiment is primarily an information-deficit behavior, not model conservatism.** The effect is bidirectional: on a Pathogenic-enriched AF subset (n = 150 × 2), adding AF raised accuracy from 44.9% to 64.0% (chat, +19.1 pp) and 47.5% to 85.3% (Kimi, +37.8 pp), with abstention falling from ~50% to 15–36%. Evidence completeness governs reliability on both sides of the P/B axis.
@@ -110,7 +112,9 @@ No clinical evidence       ~50% conditional; 73–93% abstention
 
 Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy across models (e.g., chat: confidence 0.78 vs. accuracy 49.4%; Kimi: 0.73 vs. 67.0%). Confidence is calibrated *within* a model's decision style, not across models; reasoning models over-express confidence relative to their conditional accuracy (V4-pro: 0.79 vs. 81.2%; MiMo: 0.80 vs. 85.2%).
 
-### Five-class analysis: the "Likely" tier is absent
+### Five-class analysis
+
+(Fig. 4): the "Likely" tier is absent
 
 The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain significance / Likely benign / Benign), and P vs. LP carry different clinical follow-up (e.g., LP requires confirmation). On the expert-panel set (which carries five-class labels; P: 306, LP: 342, LB: 193, B: 59), **none of the evaluated models ever emitted a "Likely" class** — the five-class output collapses to three (P / VUS / B).
 
@@ -124,7 +128,7 @@ Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard 
 
 ### Output determinism
 
-(Fig. 3)
+(Fig. 3) (reproducibility audit)
 
 Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
 
@@ -375,6 +379,12 @@ Benign sensitivity without vs. with population AF. B: The ablation on a
 Pathogenic-enriched subset (n = 150 × 2). C: Abstention across evidence contexts:
 with vs. without AF, main set vs. conflicting-interpretation variants, and the
 no-evidence MaveDB task.
+
+**Fig. 4. Fate of gold-standard Benign variants across the nine models.**
+For each model, the share of the 2,500 gold-standard Benign variants that is
+correctly called Benign (blue), abstained as VUS (grey), or misclassified as
+Pathogenic (magenta) — the clinically dangerous direction. Conservative and
+aggressive camps separate sharply on the magenta segment.
 
 **Fig. 3. Output determinism and the collapse of the "Likely" tier.**
 A: Re-run agreement at temperature 0 (n = 50 per model, plus the international
