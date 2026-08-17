@@ -367,7 +367,7 @@ A: Dual-metric accuracy for six domestic models on the full test set (n = 5,000 
 all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy.
 B: The same metrics for all nine models on the complete test set
 (international models in gray). C: Benign→Pathogenic false-positive rates on the
-500-variant subset (log scale); the 6-model consensus value is indicated.
+complete test set (log scale); the 6-model consensus value is indicated.
 
 **Fig. 2. Evidence availability governs reliability.**
 A: Allele-frequency ablation on a Benign-rich subset (n = 400 × 3 models):
