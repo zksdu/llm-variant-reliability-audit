@@ -137,8 +137,8 @@ def main():
 
     # 图引用注入（按出现顺序 Fig.1-4）
     NL = "\n"
-    results = results.replace("### Models that speak are almost always right",
-                              "### Models that speak are almost always right" + NL + NL + "(Fig. 1)", 1)
+    results = results.replace("### Headline accuracy: models that speak are almost always right",
+                              "### Headline accuracy: models that speak are almost always right" + NL + NL + "(Fig. 1)", 1)
     results = results.replace("### Triangulation: evidence availability drives reliability",
                               "### Triangulation: evidence availability drives reliability" + NL + NL + "(Fig. 2)", 1)
     results = results.replace("### Output determinism",

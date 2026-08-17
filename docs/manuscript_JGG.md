@@ -32,6 +32,8 @@ We evaluated **6 LLMs from 4 vendors** (DeepSeek: v4-pro, chat, coder; Moonshot:
 
 ### Headline accuracy: models that speak are almost always right
 
+(Fig. 1)
+
 We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS counted as errors; clinical usability) and **conditional accuracy given a definitive call** (VUS excluded; reliability of expressed opinions).
 
 **Table 1. Performance on the temporally-blinded test set (n = 5,000 variants).**
