@@ -58,7 +58,7 @@ All data are publicly available: ClinVar variant_summary and VCF (ftp.ncbi.nlm.n
 
 **Funding.** 【基金占位符—待填基金名称及编号；若最终无基金，改为 "This research received no specific grant..." 标准声明】
 
-**Authors' contributions.** Bing Song: Conceptualization, Methodology, Software, Formal analysis, Investigation, Data curation, Visualization, Writing – original draft. Kai Zhang: Conceptualization, Supervision, Resources, Writing – review & editing. All authors read and approved the final manuscript.
+**Authors' contributions.** Bing Song: Conceptualization, Investigation, Data curation, Validation, Writing – original draft. Kai Zhang: Methodology, Software, Formal analysis, Visualization, Supervision, Writing – review & editing. All authors read and approved the final manuscript.
 
 **Competing interests.** The authors declare that they have no competing interests.
 
