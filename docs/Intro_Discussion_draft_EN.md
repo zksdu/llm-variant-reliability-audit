@@ -44,7 +44,7 @@ AI-CURA [6] demonstrated expert-consistency without leakage control; our label-b
 
 ### 4.6 Limitations
 
-(i) Vendor panel is Chinese-commercial; conclusions about LLMs generally require non-Chinese models (in progress). (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) Cost audit (30 variants × 6 models, API-reported usage): reasoning models emit 13–21× more output tokens (chain-of-thought billed as completion), per-variant cost spans 41× (MiMo ¥0.041 vs. chat ¥0.001) and latency spans 29× (65.9 s vs. 2.3 s) — yet reasoning models buy neither accuracy, stability, nor safety (22–28% Benign→Pathogenic false positives).
+(i) Vendor panel is Chinese-commercial; conclusions about LLMs generally require non-Chinese models (in progress). (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) API latency spans 29× across the panel (65.9 s vs. 2.3 s per call), a deployment consideration for population-scale screening.
 
 ### 4.7 Conclusion
 

@@ -66,7 +66,7 @@ HGVS protein notation can itself reveal the answer class: nonsense (p.Xxx###Ter)
 | Kimi-K2.6 | 99.8% | 77.7% | −22.1 pp |
 | Qwen3.7-max | 99.5% | 83.8% | −15.7 pp |
 
-**Finding 6 (Part of headline accuracy is name-reading).** Two-thirds of gold-standard Pathogenic variants (1,671/2,499) carry an LoF cue directly in their name, and on these, every model is near-ceiling (98.5–99.8%) — performance achievable without gene-disease knowledge beyond recognizing the notation. On the 828 uncued variants (missense, synonymous, splice-region), sensitivity drops to 67.8–83.8%, still well above the 50% base rate — models retain genuine discriminative signal, but 16–31 pp weaker. Naive accuracy metrics conflate these two regimes; a reliability audit should report both strata. Qwen degrades least (−15.7 pp), consistent with its overall lead.
+**Finding 5 (Part of headline accuracy is name-reading).** Two-thirds of gold-standard Pathogenic variants (1,671/2,499) carry an LoF cue directly in their name, and on these, every model is near-ceiling (98.5–99.8%) — performance achievable without gene-disease knowledge beyond recognizing the notation. On the 828 uncued variants (missense, synonymous, splice-region), sensitivity drops to 67.8–83.8%, still well above the 50% base rate — models retain genuine discriminative signal, but 16–31 pp weaker. Naive accuracy metrics conflate these two regimes; a reliability audit should report both strata. Qwen degrades least (−15.7 pp), consistent with its overall lead.
 
 ### Independent gold standard: ClinGen expert-panel review
 
@@ -140,34 +140,11 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 **Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
 
-### Cost audit
-
-(Fig. 4)
-
-We profiled token usage on 30 variants × 6 models (API-reported usage; official vendor pricing, Aug 2026).
-
-**Table S2. Per-variant token usage, cost, and latency (n = 30 variants).**
-
-| Model | Input tok | Output tok | Cost (¥/variant) | Latency (s) |
-|---|---|---|---|---|
-| DeepSeek chat | 179 | 132 | 0.001 | 2.3 |
-| DeepSeek coder | 179 | 137 | 0.001 | 2.5 |
-| Kimi-K2.6 | 183 | 160 | 0.003 | 5.9 |
-| DeepSeek V4-pro | 179 | 2,728 | 0.017 | 65.9 |
-| Qwen3.7-max | 206 | 1,936 | 0.019 | 37.7 |
-| MiMo V2.5 Pro | 440 | 1,754 | 0.041 | 30.6 |
-
-> Table 4 note: latency measured in a dedicated sequential profiling run; median per-call latency in the main (concurrent) run was V4-pro 43.1 s, MiMo 36.8 s, Kimi 5.5 s — same ordering, absolute values lower under concurrency.
-
-**Finding 5 (The reasoning-model tax).** Reasoning models generate **13–21× more output tokens** than chat-style models (2,728 vs. 132 for V4-pro vs. chat) because their chain-of-thought is billed as completion tokens. Per-variant cost spans **41×** (MiMo ¥0.041 vs. chat ¥0.001) and latency spans **29×** (65.9 s vs. 2.3 s). Combined with Findings 2 and 4 — reasoning models are *less* accurate when committing (81.2% vs. 98.6%) and *non-deterministic* (64% re-run agreement) — the cost audit shows that the reasoning style purchases none of accuracy, stability, or speed: chat-style models dominate on all axes except raw all-inclusive accuracy, where Kimi (67.0%) matches or exceeds every reasoning model at 1/6–1/14 of the cost. For population-scale variant screening, model choice is therefore also a cost decision: Kimi-class models deliver near-best accuracy at the lowest price.
-
----
-
 ### International extension: three foreign flagships on the identical 500-variant subset
 
 To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **first 500 variants of the same temporally blinded test set** (identical prompts; research-context system prompt for all three; see Materials and methods).
 
-**Table S3. Nine-model comparison on the identical 500-variant subset.**
+**Table S2. Nine-model comparison on the identical 500-variant subset.**
 
 | Model | Vendor | All-inclusive | Conditional | Abstention | Benign→Pathogenic FP |
 |---|---|---|---|---|---|
@@ -181,7 +158,7 @@ To test whether the domestic findings generalize across training ecosystems, we 
 | DeepSeek chat | DeepSeek | 47.0% | 98.3% | 52.2% | 1.6% |
 | DeepSeek coder | DeepSeek | 47.4% | 98.3% | 51.8% | 1.6% |
 
-**Finding 7 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (80.2%, +6.8 pp over the best domestic model; McNemar p = 1.5×10⁻³) with the lowest abstention — but pays for it with a 17.4% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (24.3%) and MiMo (19.4%). (ii) **Claude behaves as a conservative model**: 97.4% conditional accuracy with 3.6% FP [95% CI 1.9–6.8] — its FP rate is statistically indistinguishable from Kimi's (2.8% [1.4–5.7]) despite entirely different training pipelines, and its all-inclusive accuracy ties Qwen (McNemar p = 1.0) while exceeding Kimi's (p = 5×10⁻⁴). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (63.4%, significantly below Qwen: McNemar p = 1.2×10⁻⁷) and sits below Qwen and Kimi — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
+**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (80.2%, +6.8 pp over the best domestic model; McNemar p = 1.5×10⁻³) with the lowest abstention — but pays for it with a 17.4% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (24.3%) and MiMo (19.4%). (ii) **Claude behaves as a conservative model**: 97.4% conditional accuracy with 3.6% FP [95% CI 1.9–6.8] — its FP rate is statistically indistinguishable from Kimi's (2.8% [1.4–5.7]) despite entirely different training pipelines, and its all-inclusive accuracy ties Qwen (McNemar p = 1.0) while exceeding Kimi's (p = 5×10⁻⁴). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (63.4%, significantly below Qwen: McNemar p = 1.2×10⁻⁷) and sits below Qwen and Kimi — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
 
 **Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which *never* emit a "Likely" class (see the five-class analysis below) — all three foreign models use "Likely benign": Claude 134/500 (26.8%), Gemini 102/500 (20.4%), GPT 68/500 (13.6%). Strikingly, **not one foreign model ever emitted "Likely pathogenic" (0/1,500 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
 
@@ -223,7 +200,7 @@ AI-CURA (AI-CURA, 2026) demonstrated expert-consistency without leakage control;
 
 ### Limitations
 
-(i) Vendor panel is Chinese-commercial; conclusions about LLMs generally require non-Chinese models (in progress). (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) Cost audit (30 variants × 6 models, API-reported usage): reasoning models emit 13–21× more output tokens (chain-of-thought billed as completion), per-variant cost spans 41× (MiMo ¥0.041 vs. chat ¥0.001) and latency spans 29× (65.9 s vs. 2.3 s) — yet reasoning models buy neither accuracy, stability, nor safety (22–28% Benign→Pathogenic false positives).
+(i) Vendor panel is Chinese-commercial; conclusions about LLMs generally require non-Chinese models (in progress). (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) API latency spans 29× across the panel (65.9 s vs. 2.3 s per call), a deployment consideration for population-scale screening.
 
 ### Conclusion
 
@@ -405,14 +382,8 @@ extension). B: Output distribution for gold-standard Likely pathogenic and Likel
 benign variants (Kimi, expert set): strength information polarizes to Pathogenic or
 Benign; cross-ecosystem counts in text.
 
-**Fig. 4. Cost–accuracy trade-off.**
-Per-variant cost (log scale) vs. all-inclusive accuracy; bubble size encodes latency.
-Reasoning-class models occupy the expensive–slow quadrant without accuracy or safety
-gains (see also Table S2).
-
 ### Supplementary material
 
 - **Table S1.** Re-run consistency (n = 50 × 3 models).
-- **Table S2.** Per-variant token usage, cost, and latency (n = 30 × 6 models).
-- **Table S3.** Nine-model comparison on the identical 500-variant subset.
+- **Table S2.** Nine-model comparison on the identical 500-variant subset.
 - **Fig. S1–S5.** Extended figures from the audit (optional, from docs/figures/).

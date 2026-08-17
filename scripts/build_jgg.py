@@ -72,8 +72,7 @@ XREF = [
     ("(gitee mirror provided in Data Availability)", "(see Data availability)"),
     ("(see Discussion)", "(see Discussion)"),
     ("Table 3.", "Table S1."),
-    ("Table 4.", "Table S2."),
-    ("Table 5.", "Table S3."),
+    ("Table 5.", "Table S2."),
 ]
 
 TBL_RENUM = [
@@ -143,8 +142,6 @@ def main():
                               "### Triangulation: evidence availability drives reliability\n\n(Fig. 2)")
     results = results.replace("### Output determinism (reproducibility audit)",
                               "### Output determinism\n\n(Fig. 3)")
-    results = results.replace("### Cost audit (per-variant token usage and price)",
-                              "### Cost audit\n\n(Fig. 4)")
 
     # 转换表 3/4/5 标签（保内容，标记为补充表）
     for a, b in TBL_RENUM:
@@ -255,16 +252,10 @@ extension). B: Output distribution for gold-standard Likely pathogenic and Likel
 benign variants (Kimi, expert set): strength information polarizes to Pathogenic or
 Benign; cross-ecosystem counts in text.
 
-**Fig. 4. Cost\u2013accuracy trade-off.**
-Per-variant cost (log scale) vs. all-inclusive accuracy; bubble size encodes latency.
-Reasoning-class models occupy the expensive\u2013slow quadrant without accuracy or safety
-gains (see also Table S2).
-
 ### Supplementary material
 
 - **Table S1.** Re-run consistency (n = 50 \u00d7 3 models).
-- **Table S2.** Per-variant token usage, cost, and latency (n = 30 \u00d7 6 models).
-- **Table S3.** Nine-model comparison on the identical 500-variant subset.
+- **Table S2.** Nine-model comparison on the identical 500-variant subset.
 - **Fig. S1\u2013S5.** Extended figures from the audit (optional, from docs/figures/).
 """
 
