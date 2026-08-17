@@ -49,7 +49,7 @@ HGVS protein notation can itself reveal the answer class: nonsense (p.Xxx###Ter)
 | Kimi-K2.6 | 99.8% | 77.7% | −22.1 pp |
 | Qwen3.7-max | 99.5% | 83.8% | −15.7 pp |
 
-**Finding 5 (Part of headline accuracy is name-reading).** Two-thirds of gold-standard Pathogenic variants (1,671/2,499) carry an LoF cue directly in their name, and on these, every model is near-ceiling (98.5–99.8%) — performance achievable without gene-disease knowledge beyond recognizing the notation. On the 828 uncued variants (missense, synonymous, splice-region), sensitivity drops to 67.8–83.8%, still well above the 50% base rate — models retain genuine discriminative signal, but 16–31 pp weaker. Naive accuracy metrics conflate these two regimes; a reliability audit should report both strata. Qwen degrades least (−15.7 pp), consistent with its overall lead.
+**Finding 4 (Part of headline accuracy is name-reading).** Two-thirds of gold-standard Pathogenic variants (1,671/2,499) carry an LoF cue directly in their name, and on these, every model is near-ceiling (98.5–99.8%) — performance achievable without gene-disease knowledge beyond recognizing the notation. On the 828 uncued variants (missense, synonymous, splice-region), sensitivity drops to 67.8–83.8%, still well above the 50% base rate — models retain genuine discriminative signal, but 16–31 pp weaker. Naive accuracy metrics conflate these two regimes; a reliability audit should report both strata. Qwen degrades least (−15.7 pp), consistent with its overall lead.
 
 ### 3.3 Independent gold standard: ClinGen expert-panel review
 
@@ -129,7 +129,7 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 > Cross-check: the 100 expert-panel variants shared between the main test set and the dedicated 900-variant set were classified twice in independent runs (same model, same prompt); agreement was chat 99/100, coder 100/100, Kimi 97/100 — consistent with the determinism ranking above.
 
-**Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
+**Finding 5 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
 
 ### 3.8 International extension: three foreign flagships at full scale
 
@@ -163,9 +163,9 @@ To test whether the domestic findings generalize across training ecosystems, we 
 
 Because the three foreign models received a research-context system prompt that domestic models did not, we ran two checks.
 
-**(a) Prompt effect on domestic models (n = 100 × 2, identical variants).** Adding the same system prompt to Kimi and Qwen changed all-inclusive accuracy by −3 pp (Kimi 73→70%) and −1 pp (Qwen 73→72%), and abstention by ≤3 pp — a slight conservative shift, far smaller than the behavioral differences between foreign models themselves (abstention 10.6% Gemini vs. 24.2% Claude; FP 17.4% vs. 3.6%). The conservative/aggressive attribution therefore cannot be an artifact of the prompt asymmetry.
+**(a) Prompt effect on domestic models (n = 100 × 2, identical variants).** Adding the same system prompt to Kimi and Qwen changed all-inclusive accuracy by −3 pp (Kimi 73→70%) and −1 pp (Qwen 73→72%), and abstention by ≤3 pp — a slight conservative shift, far smaller than the behavioral differences between foreign models themselves (abstention 9.2% Gemini vs. 29.3% Claude; FP 27.8% vs. 3.9%). The conservative/aggressive attribution therefore cannot be an artifact of the prompt asymmetry.
 
-**(b) Foreign-model determinism (n = 20 × 3, temperature 0).** Exact-class agreement with the original run: Gemini 80%, GPT-5.6 85%, Claude 75%; binary agreement 95% / 85% / 80%. Foreign models are intermediate between fully deterministic chat-style models (100%) and V4-pro (64%); note that relay routing may contribute additional nondeterminism. Directionally, Finding 4 extends internationally: reasoning-class flagships are not output-stable at temperature 0.
+**(b) Foreign-model determinism (n = 20 × 3, temperature 0).** Exact-class agreement with the original run: Gemini 80%, GPT-5.6 85%, Claude 75%; binary agreement 95% / 85% / 80%. Foreign models are intermediate between fully deterministic chat-style models (100%) and V4-pro (64%); note that relay routing may contribute additional nondeterminism. Directionally, Finding 5 extends internationally: reasoning-class flagships are not output-stable at temperature 0.
 
 ## Appendix (internal): key numbers cross-check
 
