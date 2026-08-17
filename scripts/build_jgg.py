@@ -71,6 +71,8 @@ XREF = [
     ("(see Discussion \u00a74)", "(see Discussion)"),
     ("(gitee mirror provided in Data Availability)", "(see Data availability)"),
     ("(see Discussion)", "(see Discussion)"),
+    ("Table 2.", "Table S3."),
+    ("Table 2 reports", "Table S3 reports"),
     ("Table 3.", "Table S1."),
     ("Table 5.", "Table S2."),
 ]
@@ -135,16 +137,21 @@ def main():
     # 应用转换
     intro, results, disc, methods = map(apply_all, (intro, results, disc, methods))
 
-    # 图引用注入（按出现顺序 Fig.1-4）
+    # 图引用注入（语义+顺序：Fig1 总性能 / Fig2 证据 / Fig3A 确定性 3B Likely坍缩 /
+    # Fig4 良性归宿 / Fig5 行为仪表盘）
     NL = "\n"
     results = results.replace("### Headline accuracy: models that speak are almost always right",
                               "### Headline accuracy: models that speak are almost always right" + NL + NL + "(Fig. 1)", 1)
     results = results.replace("### Triangulation: evidence availability drives reliability",
                               "### Triangulation: evidence availability drives reliability" + NL + NL + "(Fig. 2)", 1)
-    results = results.replace("### Output determinism",
-                              "### Output determinism" + NL + NL + "(Fig. 3)", 1)
     results = results.replace("### Five-class analysis",
-                              "### Five-class analysis" + NL + NL + "(Fig. 4)", 1)
+                              "### Five-class analysis" + NL + NL + "(Fig. 3B)", 1)
+    results = results.replace("### Output determinism",
+                              "### Output determinism" + NL + NL + "(Fig. 3A)", 1)
+    results = results.replace("### International extension",
+                              "### International extension" + NL + NL + "(Fig. 4)", 1)
+    results = results.replace("### Prompt-asymmetry robustness check",
+                              "### Prompt-asymmetry robustness check" + NL + NL + "(Fig. 5)", 1)
 
     # 转换表 3/4/5 标签（保内容，标记为补充表）
     for a, b in TBL_RENUM:
@@ -249,6 +256,9 @@ Pathogenic-enriched subset (n = 150 \u00d7 2). C: Abstention across evidence con
 with vs. without AF, main set vs. conflicting-interpretation variants, and the
 no-evidence MaveDB task.
 
+**Fig. 5. Behavioral dashboard of the nine models.**
+Six audited dimensions per model (all-inclusive, conditional, expert-panel, abstention, Benign-to-Pathogenic FP, spoken rate), color-coded 0-100; the dashboard summarizes the audit and supports model selection.
+
 **Fig. 4. Fate of gold-standard Benign variants across the nine models.**
 For each model, the share of the 2,500 gold-standard Benign variants that is
 correctly called Benign (blue), abstained as VUS (grey), or misclassified as
@@ -265,6 +275,7 @@ Benign; cross-ecosystem counts in text.
 
 - **Table S1.** Re-run consistency (n = 50 \u00d7 3 models).
 - **Table S2.** Nine-model comparison on the complete test set (n = 5,000 per model).
+- **Table S3.** Expert-panel validation (n = 797 exclusive variants; 3 models).
 - **Fig. S1\u2013S5.** Extended figures from the audit (optional, from docs/figures/).
 """
 

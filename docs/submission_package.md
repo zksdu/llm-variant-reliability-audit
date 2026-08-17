@@ -38,7 +38,7 @@ E-mail: zhangkai@gdcp.edu.cn
 
 **Objective.** To audit LLM variant-classification reliability under controlled label leakage, across vendors and evidence conditions.
 
-**Methods.** On a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026), we evaluated six Chinese LLMs (30,000 evaluations) and three international flagships (Gemini 3 Flash, GPT-5.6-terra, Claude Sonnet 5) on an identical 500-variant subset, with independent validation on 900 expert-panel variants and ablations for allele-frequency (AF) evidence, conflicting classifications, and MaveDB functional variants.
+**Methods.** On a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026), we evaluated six Chinese LLMs (30,000 evaluations) and three international flagships (Gemini 3 Flash, GPT-5.6-terra, Claude Sonnet 5) at full scale (15,000 additional evaluations), with independent validation on 900 expert-panel variants and ablations for allele-frequency (AF) evidence, conflicting classifications, and MaveDB functional variants.
 
 **Results.** New-generation models achieved 61.8–71.6% all-inclusive accuracy and 86–93% on expert-panel variants. Conditional accuracy when committing was 97.8–98.7% for conservative models versus 81.2–85.2% for reasoning models, whose Benign→Pathogenic false-positive rates reached 22–28%. Providing AF raised Benign sensitivity by up to 57.8 pp. Gemini led internationally (80.2%); Claude paired 97.4% conditional accuracy with 3.6% false positives. Majority voting underperformed the best single model.
 

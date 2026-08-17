@@ -47,9 +47,9 @@
 | 顺序 | 文件 | 设为 Role |
 |---|---|---|
 | 1 | `docs/submission_JGG.docx` | **Manuscript** |
-| 2 | `docs/figures_jgg/fig1_JGG.pdf` | **Figure** |
-| 3 | `docs/figures_jgg/fig2_JGG.pdf` | Figure |
-| 4 | `docs/figures_jgg/fig3_JGG.pdf` | Figure |
+| 2 | `docs/figures_v2/fig1.pdf` | **Figure** |
+| 3 | `docs/figures_v2/fig2.pdf` | Figure |
+| 4 | `docs/figures_v2/fig3.pdf` | Figure |
 
 | 6 | Cover letter（`docs/submission_package.md` 末段全文）| 粘贴进 Cover Letter 文本框 |
 

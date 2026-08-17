@@ -345,6 +345,49 @@ def fig4(votes, gold):
     save(fig, "fig4")
 
 
+def fig5(votes, gold, review):
+    """九模型 × 六维度行为仪表盘（审计综合视图）。"""
+    s9 = stats(votes, gold, INTL3 + DOM6)
+    order = sorted(s9, key=lambda m: -s9[m]["all"])
+    EXPERT = {"reviewed by expert panel", "practice guideline"}
+    metrics = ["All-inclusive", "Conditional", "Expert-panel",
+               "Abstention", "FP (Benign→P)", "Spoken rate"]
+    mat, fmt = [], []
+    for m in order:
+        en = ec = 0
+        for a, g in gold.items():
+            if review.get(a) in EXPERT and g in ("P", "B"):
+                en += 1
+                if votes.get(a, {}).get(m) == g:
+                    ec += 1
+        row = [s9[m]["all"], s9[m]["cond"], ec / max(en, 1) * 100,
+               s9[m]["abst"], s9[m]["fp"],
+               100 - s9[m]["abst"]]
+        mat.append(row)
+    mat = np.array(mat)
+    fig, ax = plt.subplots(figsize=(5.4, 3.6))
+    im = ax.imshow(mat, cmap="RdYlGn", aspect="auto", vmin=0, vmax=100)
+    ax.set_xticks(range(6))
+    ax.set_xticklabels(metrics, fontsize=7, rotation=28, ha="right")
+    ax.set_yticks(range(len(order)))
+    ax.set_yticklabels([NICE[m] for m in order], fontsize=8)
+    for tick, m in zip(ax.get_yticklabels(), order):
+        if m in INTL3:
+            tick.set_style("italic")
+    for i in range(len(order)):
+        for j in range(6):
+            v = mat[i, j]
+            ax.text(j, i, f"{v:.0f}", ha="center", va="center", fontsize=7,
+                    color="black" if 25 < v < 85 else "white")
+    cb = fig.colorbar(im, ax=ax, shrink=0.85)
+    cb.set_label("Score (%)", fontsize=7.5)
+    cb.ax.tick_params(labelsize=6.5)
+    ax.set_title("Behavioral dashboard of the nine models",
+                 fontsize=9, loc="left", pad=6)
+    fig.tight_layout()
+    save(fig, "fig5")
+
+
 if __name__ == "__main__":
     print("数据驱动 SCI 图表（figures_v2/）：")
     votes, gold, review = load()
@@ -352,5 +395,6 @@ if __name__ == "__main__":
     fig2()
     fig3()
     fig4(votes, gold)
+    fig5(votes, gold, review)
     n_f = sum(1 for a in votes if any(m in INTL3 for m in votes[a]))
     print(f"\u2713 国际模型当前覆盖 {n_f} 变异（扩量完成后重跑即自动更新为全量）")

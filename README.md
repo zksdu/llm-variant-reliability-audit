@@ -5,7 +5,7 @@ Code and data for: **"When Data Leakage Is Controlled: A Multi-Vendor Reliabilit
 A temporally blinded, multi-vendor audit of large language models performing ACMG/AMP 2015 germline variant classification:
 
 - **6 Chinese LLMs at full scale** (5,000 variants × 6 models = 30,000 evaluations): DeepSeek v4-pro / chat / coder, Kimi-K2.6, MiMo V2.5 Pro, Qwen3.7-max
-- **3 international flagships** on an identical 500-variant subset (1,500 evaluations): Gemini 3 Flash, GPT-5.6-terra, Claude Sonnet 5
+- **3 international flagships at full scale** (5,000 variants each, 15,000 evaluations): Gemini 3 Flash, GPT-5.6-terra, Claude Sonnet 5
 - Independent validation on **900 ClinGen expert-panel variants**
 - Sub-experiments: allele-frequency ablation, conflicting-classification variants, MaveDB functional-effect task, output determinism, cost profiling, five-class analysis, surface-cue stratification
 

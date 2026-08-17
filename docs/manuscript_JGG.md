@@ -70,9 +70,9 @@ HGVS protein notation can itself reveal the answer class: nonsense (p.Xxx###Ter)
 
 ### Independent gold standard: ClinGen expert-panel review
 
-We constructed a dedicated validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated ≥ 2026-04, P: n=647, B: n=252). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); to guarantee independence, Table 2 reports the **800 exclusive variants** (797 evaluable; P: 550, B: 247).
+We constructed a dedicated validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated ≥ 2026-04, P-side 645, B-side 252). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); to guarantee independence, Table S3 reports the **800 exclusive variants** (797 evaluable; P: 550, B: 247).
 
-**Table 2. Expert-panel validation (n = 797 exclusive variants; 3 models).**
+**Table S3. Expert-panel validation (n = 797 exclusive variants; 3 models).**
 
 | Model | All-inclusive Acc. | Conditional Acc. |
 |---|---|---|
@@ -112,7 +112,7 @@ Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy
 
 ### Five-class analysis
 
-(Fig. 4): the "Likely" tier is absent
+(Fig. 3B): the "Likely" tier is absent
 
 The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain significance / Likely benign / Benign), and P vs. LP carry different clinical follow-up (e.g., LP requires confirmation). On the expert-panel set (which carries five-class labels; P: 306, LP: 342, LB: 193, B: 59), **none of the evaluated models ever emitted a "Likely" class** — the five-class output collapses to three (P / VUS / B).
 
@@ -126,7 +126,7 @@ Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard 
 
 ### Output determinism
 
-(Fig. 3) (reproducibility audit)
+(Fig. 3A) (reproducibility audit)
 
 Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
 
@@ -142,7 +142,9 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 **Finding 5 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
 
-### International extension: three foreign flagships at full scale
+### International extension
+
+(Fig. 4): three foreign flagships at full scale
 
 To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **complete temporally blinded test set** (5,000 variants each; identical prompts; research-context system prompt for all three; see Methods).
 
@@ -166,7 +168,9 @@ To test whether the domestic findings generalize across training ecosystems, we 
 
 > Note: foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods and Limitations); a prompt-robustness check is reported below.
 
-### Prompt-asymmetry robustness check and foreign-model determinism
+### Prompt-asymmetry robustness check
+
+(Fig. 5) and foreign-model determinism
 
 Because the three foreign models received a research-context system prompt that domestic models did not, we ran two checks.
 
@@ -378,6 +382,9 @@ Pathogenic-enriched subset (n = 150 × 2). C: Abstention across evidence context
 with vs. without AF, main set vs. conflicting-interpretation variants, and the
 no-evidence MaveDB task.
 
+**Fig. 5. Behavioral dashboard of the nine models.**
+Six audited dimensions per model (all-inclusive, conditional, expert-panel, abstention, Benign-to-Pathogenic FP, spoken rate), color-coded 0-100; the dashboard summarizes the audit and supports model selection.
+
 **Fig. 4. Fate of gold-standard Benign variants across the nine models.**
 For each model, the share of the 2,500 gold-standard Benign variants that is
 correctly called Benign (blue), abstained as VUS (grey), or misclassified as
@@ -394,4 +401,5 @@ Benign; cross-ecosystem counts in text.
 
 - **Table S1.** Re-run consistency (n = 50 × 3 models).
 - **Table S2.** Nine-model comparison on the complete test set (n = 5,000 per model).
+- **Table S3.** Expert-panel validation (n = 797 exclusive variants; 3 models).
 - **Fig. S1–S5.** Extended figures from the audit (optional, from docs/figures/).
