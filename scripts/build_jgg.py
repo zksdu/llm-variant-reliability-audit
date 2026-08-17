@@ -146,14 +146,6 @@ def main():
     results = results.replace("### Five-class analysis",
                               "### Five-class analysis" + NL + NL + "(Fig. 4)", 1)
 
-    # 添加图表的正文引用（JGG 要求按序引用）
-    results = results.replace("### Headline accuracy: models that speak are almost always right",
-                              "### Models that speak are almost always right\n\n(Fig. 1)")
-    results = results.replace("### Triangulation: evidence availability drives reliability",
-                              "### Triangulation: evidence availability drives reliability\n\n(Fig. 2)")
-    results = results.replace("### Output determinism (reproducibility audit)",
-                              "### Output determinism\n\n(Fig. 3)")
-
     # 转换表 3/4/5 标签（保内容，标记为补充表）
     for a, b in TBL_RENUM:
         results = results.replace(a, b)
