@@ -56,7 +56,7 @@ Not applicable. This study uses only publicly available database records (ClinVa
 **Availability of data and materials.**
 All data are publicly available: ClinVar variant_summary and VCF (ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release (ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The temporally blinded test sets, gold standards, all 31,500 raw model outputs, analysis scripts (Python 3 standard library, seed 42, byte-reproducible sampling), and figures are available at 【gitee 仓库公开地址】.
 
-**Funding.** 【基金占位符—待填基金名称及编号；若最终无基金，改为 "This research received no specific grant..." 标准声明】
+**Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
 **Authors' contributions.** Bing Song: Conceptualization, Investigation, Data curation, Validation, Writing – original draft. Kai Zhang: Methodology, Software, Formal analysis, Visualization, Supervision, Writing – review & editing. All authors read and approved the final manuscript.
 
