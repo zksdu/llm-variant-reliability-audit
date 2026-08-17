@@ -50,7 +50,7 @@
 | 2 | `docs/figures_jgg/fig1_JGG.pdf` | **Figure** |
 | 3 | `docs/figures_jgg/fig2_JGG.pdf` | Figure |
 | 4 | `docs/figures_jgg/fig3_JGG.pdf` | Figure |
-| 5 | `docs/figures_jgg/fig4_JGG.pdf` | Figure |
+
 | 6 | Cover letter（`docs/submission_package.md` 末段全文）| 粘贴进 Cover Letter 文本框 |
 
 > 表格已在 Manuscript 内（含 Table 1/2 + S1-S3 清单），无需单独上传。
