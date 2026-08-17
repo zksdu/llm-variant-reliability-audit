@@ -10,10 +10,10 @@
 1. 打开 https://www.editorialmanager.com/JGG
 2. 点左上 **Register Now**（或 Register）
 3. 填写（⚠️ 姓名顺序是常见坑）：
-   - **First/Given Name**: `Bing`（名）
-   - **Last/Family Name**: `Song`（姓）
-   - **E-mail**: `songbing@gysy.com`（医院邮箱）
-   - **Institution**: `The Third Affiliated Hospital of Guangzhou Medical University`
+   - **First/Given Name**: `Kai`（名）
+   - **Last/Family Name**: `Zhang`（姓）
+   - **E-mail**: `zhangkai@gdcp.edu.cn`
+   - **Institution**: `Guangdong Communication Polytechnic`
    - **Country**: `China`
    - 密码：自定（含大小写+数字，8 位以上）
 4. 提交后系统发验证邮件到邮箱 → 点邮件里的激活链接
@@ -39,7 +39,7 @@
 | Abstract | 从 `docs/submission_package.md` 复制 182 词摘要 |
 | Keywords | `variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding`（逐个添加）|
 | Running title | `Reliability Audit of LLM Variant Classification` |
-| Authors | 单作者（Bing Song），系统默认即通讯作者，无需添加他人 |
+| Authors | 系统默认张凯（通讯）为作者；**需手动添加 Bing Song 并置顶为第一作者**（First: Bing / Last: Song，e-mail: songbing@gysy.com，单位：广医三院）|
 | Funding | 填 "No specific funding" 或选无基金选项 |
 | Conflict of Interest | 选 No |
 

@@ -180,9 +180,9 @@ sampling is byte-reproducible at seed 42.
 ## CRediT authorship contribution statement
 
 **Bing Song:** Conceptualization, Methodology, Software, Formal analysis,
-Investigation, Data curation, Visualization, Supervision, Writing \u2013 original
-draft, Writing \u2013 review & editing. The author read and approved the final
-manuscript.
+Investigation, Data curation, Visualization, Writing \u2013 original draft.
+**Kai Zhang:** Conceptualization, Supervision, Resources, Writing \u2013 review
+& editing. All authors read and approved the final manuscript.
 
 ## Conflict of interest
 
