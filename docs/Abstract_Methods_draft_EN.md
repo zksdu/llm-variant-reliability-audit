@@ -56,7 +56,7 @@ Six models, four vendors, all accessed through official OpenAI-compatible APIs (
 | MiMo V2.5 Pro | Xiaomi | reasoning, 310B/15B active | xiaomimimo.com |
 | Qwen3.7-max | Alibaba | reasoning | Alibaba Model Studio (dedicated instance) |
 
-Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the first 500 variants of the same test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused 25% of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
+Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the complete test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused 25% of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
 
 ### 2.5 Prompt design
 
@@ -84,7 +84,7 @@ All scripts, prompts, seeds, and intermediate files are public in the project re
 
 ### 2.9 Limitations
 
-- Foreign models were evaluated on a 500-variant subset (vs. 5,000 for domestic models) through a relay endpoint, and received a research-context system prompt that domestic models did not (required to prevent Claude's medical-safety refusals); cross-national comparisons are therefore indicative rather than definitive, though the subset is identical across all nine models.
+- Foreign models were accessed through a relay endpoint and received a research-context system prompt that domestic models did not (required to prevent Claude's medical-safety refusals); the prompt-robustness check (§ international extension) shows the behavioral dichotomy is unaffected.
 - Primary gold standard inherits ClinVar label noise; mitigated by the expert-panel stratum and temporal filtering.
 - "Likely" classes were excluded from the binary gold standard but present in model outputs; the VUS=error convention penalizes models that map "Likely" labels to "Uncertain".
 - MaveDB functional direction is a soft validation (loss-of-function ≠ pathogenicity for haploinsufficient genes).

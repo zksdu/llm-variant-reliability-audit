@@ -235,7 +235,7 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 **Fig. 1. Multi-model performance on the temporally blinded test set.**
 A: Dual-metric accuracy for six domestic models on the full test set (n = 5,000 each);
 all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy.
-B: The same metrics for all nine models on the identical 500-variant subset
+B: The same metrics for all nine models on the complete test set
 (international models in gray). C: Benign\u2192Pathogenic false-positive rates on the
 500-variant subset (log scale); the 6-model consensus value is indicated.
 
@@ -255,7 +255,7 @@ Benign; cross-ecosystem counts in text.
 ### Supplementary material
 
 - **Table S1.** Re-run consistency (n = 50 \u00d7 3 models).
-- **Table S2.** Nine-model comparison on the identical 500-variant subset.
+- **Table S2.** Nine-model comparison on the complete test set (n = 5,000 per model).
 - **Fig. S1\u2013S5.** Extended figures from the audit (optional, from docs/figures/).
 """
 

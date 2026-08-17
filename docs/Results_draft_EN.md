@@ -131,33 +131,33 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 **Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
 
-### 3.8 International extension: three foreign flagships on the identical 500-variant subset
+### 3.8 International extension: three foreign flagships at full scale
 
-To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **first 500 variants of the same temporally blinded test set** (identical prompts; research-context system prompt for all three; see Methods §2.4).
+To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **complete temporally blinded test set** (5,000 variants each; identical prompts; research-context system prompt for all three; see Methods).
 
-**Table 5. Nine-model comparison on the identical 500-variant subset.**
+**Table 5. Nine-model comparison on the complete test set (n = 5,000 per model).**
 
-| Model | Vendor | All-inclusive | Conditional | Abstention | Benign→Pathogenic FP |
-|---|---|---|---|---|---|
-| Gemini 3 Flash | Google | **80.2%** | 89.7% | 10.6% | 17.4% |
-| Claude Sonnet 5 | Anthropic | 73.8% | 97.4% | 24.2% | **3.6%** |
-| Qwen3.7-max | Alibaba | 73.4% | 96.1% | 23.6% | 5.7% |
-| Kimi-K2.6 | Moonshot | 67.8% | 98.0% | 30.8% | 2.8% |
-| MiMo V2.5 Pro | Xiaomi | 66.6% | 86.9% | 23.4% | 19.4% |
-| GPT-5.6-terra | OpenAI | 63.4% | 84.1% | 24.6% | 23.9% |
-| DeepSeek V4-pro | DeepSeek | 63.0% | 84.0% | 25.0% | 24.3% |
-| DeepSeek chat | DeepSeek | 47.0% | 98.3% | 52.2% | 1.6% |
-| DeepSeek coder | DeepSeek | 47.4% | 98.3% | 51.8% | 1.6% |
+| Model | Vendor | All-inclusive | Conditional | Abstention | Benign→Pathogenic FP | Expert-panel (n=100) |
+|---|---|---|---|---|---|---|
+| Gemini 3 Flash | Google | **76.5%** | 84.3% | 9.2% | 27.8% | 91% |
+| Qwen3.7-max | Alibaba | 71.6% | 96.4% | 25.7% | 4.7% | 86% |
+| Claude Sonnet 5 | Anthropic | 68.5% | 97.0% | 29.3% | **3.9%** | 90% |
+| Kimi-K2.6 | Moonshot | 67.0% | 97.8% | 31.6% | 2.5% | 90% |
+| MiMo V2.5 Pro | Xiaomi | 66.1% | 85.2% | 22.5% | 22.3% | 92% |
+| DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 23.9% | 28.4% | 93% |
+| GPT-5.6-terra | OpenAI | 60.3% | 86.9% | 30.6% | 17.9% | 92% |
+| DeepSeek chat | DeepSeek | 49.4% | 98.6% | 49.9% | 1.4% | 69% |
+| DeepSeek coder | DeepSeek | 49.2% | 98.7% | 50.1% | 1.3% | 68% |
 
 ![Figure 6](figures/fig6_nine_model.png)
 
-*Figure 6. Nine-model comparison on the identical 500-variant subset: (a) dual-metric accuracy; (b) Benign→Pathogenic false-positive rates (log scale). Gray = international models; orange = domestic.*
+*Figure 6. Nine-model comparison on the complete test set.*
 
-**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (80.2%, +6.8 pp over the best domestic model; McNemar p = 1.5×10⁻³) with the lowest abstention — but pays for it with a 17.4% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (24.3%) and MiMo (19.4%). (ii) **Claude behaves as a conservative model**: 97.4% conditional accuracy with 3.6% FP [95% CI 1.9–6.8] — its FP rate is statistically indistinguishable from Kimi's (2.8% [1.4–5.7]) despite entirely different training pipelines, and its all-inclusive accuracy ties Qwen (McNemar p = 1.0) while exceeding Kimi's (p = 5×10⁻⁴). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (63.4%, significantly below Qwen: McNemar p = 1.2×10⁻⁷) and sits below Qwen and Kimi — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
+**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (76.5% [75.3–77.7], +4.9 pp over the best domestic model; McNemar p = 1.7×10⁻¹³) with the lowest abstention (9.2%) — but pays for it with a 27.8% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (28.4%) and MiMo (22.3%). (ii) **Claude behaves as a conservative model**: 97.0% conditional accuracy with 3.9% FP — its FP rate is statistically indistinguishable from Kimi's (2.5%) despite entirely different training pipelines, and it exceeds Kimi in all-inclusive accuracy (p = 2.7×10⁻³) while sitting below Qwen (p = 3.0×10⁻¹⁵). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (60.3%, significantly below Qwen: McNemar p = 4.7×10⁻⁹⁰) and sits below every current-generation domestic model — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
 
-**Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which *never* emit a "Likely" class (§3.5b) — all three foreign models use "Likely benign": Claude 134/500 (26.8%), Gemini 102/500 (20.4%), GPT 68/500 (13.6%). Strikingly, **not one foreign model ever emitted "Likely pathogenic" (0/1,500 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
+**Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which *never* emit a "Likely" class (§3.5b) — all three foreign models use "Likely benign": Claude 1,065/5,000 (21.3%), Gemini 646/5,000 (12.9%), GPT 591/5,000 (11.8%). Strikingly, **not one foreign model ever emitted "Likely pathogenic" (0/15,000 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
 
-> Note: domestic models are evaluated at n=5,000 elsewhere; this table restricts them to the identical 500-variant subset for comparability (subset composition: P/B 253/247; LoF-cued 32% vs. 34% full-set; 9 expert-panel variants). Domestic models score 0.5–1.8 pp higher on this subset than on the full set (previous generation 1.8–2.4 pp lower) — cross-national gaps of ≥5 pp are robust to this drift. Foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods §2.4 and Limitations); a prompt-robustness check is reported in §3.8b.
+> Note: foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods and Limitations); a prompt-robustness check is reported below.
 
 ### 3.8b Prompt-asymmetry robustness check and foreign-model determinism
 

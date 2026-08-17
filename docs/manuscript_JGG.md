@@ -140,29 +140,29 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 **Finding 4 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
 
-### International extension: three foreign flagships on the identical 500-variant subset
+### International extension: three foreign flagships at full scale
 
-To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **first 500 variants of the same temporally blinded test set** (identical prompts; research-context system prompt for all three; see Materials and methods).
+To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **complete temporally blinded test set** (5,000 variants each; identical prompts; research-context system prompt for all three; see Methods).
 
-**Table S2. Nine-model comparison on the identical 500-variant subset.**
+**Table S2. Nine-model comparison on the complete test set (n = 5,000 per model).**
 
-| Model | Vendor | All-inclusive | Conditional | Abstention | Benign→Pathogenic FP |
-|---|---|---|---|---|---|
-| Gemini 3 Flash | Google | **80.2%** | 89.7% | 10.6% | 17.4% |
-| Claude Sonnet 5 | Anthropic | 73.8% | 97.4% | 24.2% | **3.6%** |
-| Qwen3.7-max | Alibaba | 73.4% | 96.1% | 23.6% | 5.7% |
-| Kimi-K2.6 | Moonshot | 67.8% | 98.0% | 30.8% | 2.8% |
-| MiMo V2.5 Pro | Xiaomi | 66.6% | 86.9% | 23.4% | 19.4% |
-| GPT-5.6-terra | OpenAI | 63.4% | 84.1% | 24.6% | 23.9% |
-| DeepSeek V4-pro | DeepSeek | 63.0% | 84.0% | 25.0% | 24.3% |
-| DeepSeek chat | DeepSeek | 47.0% | 98.3% | 52.2% | 1.6% |
-| DeepSeek coder | DeepSeek | 47.4% | 98.3% | 51.8% | 1.6% |
+| Model | Vendor | All-inclusive | Conditional | Abstention | Benign→Pathogenic FP | Expert-panel (n=100) |
+|---|---|---|---|---|---|---|
+| Gemini 3 Flash | Google | **76.5%** | 84.3% | 9.2% | 27.8% | 91% |
+| Qwen3.7-max | Alibaba | 71.6% | 96.4% | 25.7% | 4.7% | 86% |
+| Claude Sonnet 5 | Anthropic | 68.5% | 97.0% | 29.3% | **3.9%** | 90% |
+| Kimi-K2.6 | Moonshot | 67.0% | 97.8% | 31.6% | 2.5% | 90% |
+| MiMo V2.5 Pro | Xiaomi | 66.1% | 85.2% | 22.5% | 22.3% | 92% |
+| DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 23.9% | 28.4% | 93% |
+| GPT-5.6-terra | OpenAI | 60.3% | 86.9% | 30.6% | 17.9% | 92% |
+| DeepSeek chat | DeepSeek | 49.4% | 98.6% | 49.9% | 1.4% | 69% |
+| DeepSeek coder | DeepSeek | 49.2% | 98.7% | 50.1% | 1.3% | 68% |
 
-**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (80.2%, +6.8 pp over the best domestic model; McNemar p = 1.5×10⁻³) with the lowest abstention — but pays for it with a 17.4% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (24.3%) and MiMo (19.4%). (ii) **Claude behaves as a conservative model**: 97.4% conditional accuracy with 3.6% FP [95% CI 1.9–6.8] — its FP rate is statistically indistinguishable from Kimi's (2.8% [1.4–5.7]) despite entirely different training pipelines, and its all-inclusive accuracy ties Qwen (McNemar p = 1.0) while exceeding Kimi's (p = 5×10⁻⁴). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (63.4%, significantly below Qwen: McNemar p = 1.2×10⁻⁷) and sits below Qwen and Kimi — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
+**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (76.5% [75.3–77.7], +4.9 pp over the best domestic model; McNemar p = 1.7×10⁻¹³) with the lowest abstention (9.2%) — but pays for it with a 27.8% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (28.4%) and MiMo (22.3%). (ii) **Claude behaves as a conservative model**: 97.0% conditional accuracy with 3.9% FP — its FP rate is statistically indistinguishable from Kimi's (2.5%) despite entirely different training pipelines, and it exceeds Kimi in all-inclusive accuracy (p = 2.7×10⁻³) while sitting below Qwen (p = 3.0×10⁻¹⁵). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (60.3%, significantly below Qwen: McNemar p = 4.7×10⁻⁹⁰) and sits below every current-generation domestic model — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
 
-**Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which *never* emit a "Likely" class (see the five-class analysis below) — all three foreign models use "Likely benign": Claude 134/500 (26.8%), Gemini 102/500 (20.4%), GPT 68/500 (13.6%). Strikingly, **not one foreign model ever emitted "Likely pathogenic" (0/1,500 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
+**Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which *never* emit a "Likely" class (see the five-class analysis below) — all three foreign models use "Likely benign": Claude 1,065/5,000 (21.3%), Gemini 646/5,000 (12.9%), GPT 591/5,000 (11.8%). Strikingly, **not one foreign model ever emitted "Likely pathogenic" (0/15,000 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
 
-> Note: domestic models are evaluated at n=5,000 elsewhere; this table restricts them to the identical 500-variant subset for comparability (subset composition: P/B 253/247; LoF-cued 32% vs. 34% full-set; 9 expert-panel variants). Domestic models score 0.5–1.8 pp higher on this subset than on the full set (previous generation 1.8–2.4 pp lower) — cross-national gaps of ≥5 pp are robust to this drift. Foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Materials and methods and Limitations); a prompt-robustness check is reported below.
+> Note: foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods and Limitations); a prompt-robustness check is reported below.
 
 ### Prompt-asymmetry robustness check and foreign-model determinism
 
@@ -176,11 +176,11 @@ Because the three foreign models received a research-context system prompt that 
 
 ### Principal findings
 
-Under label-leakage control (temporal blinding of the gold-standard label), current-generation LLMs classify 62–72% of variants correctly (all-inclusive), rising to 86–93% on expert-panel-reviewed variants. When conservative models commit to a call, they are right 97.8–98.7% of the time, mislabeling only 1.3–2.5% of Benign variants as Pathogenic; reasoning models, by contrast, mislabel 22–28% of Benign variants as Pathogenic — the clinically dangerous direction. An international extension (Gemini 3 Flash / GPT-5.6-terra / Claude Sonnet 5 on the identical 500-variant subset) places Gemini first overall (80.2%) and shows the conservative/aggressive dichotomy spans ecosystems. These are substantially lower than unblinded reports of expert-level consistency (AI-CURA, 2026); interpreted as a reliability audit, they define the *operational envelope* in which an LLM's output can be trusted, rather than a ceiling on generalization: label memorization is controlled, and remaining performance reflects the evidence the model actually reasons with.
+Under label-leakage control (temporal blinding of the gold-standard label), current-generation LLMs classify 62–72% of variants correctly (all-inclusive), rising to 86–93% on expert-panel-reviewed variants. When conservative models commit to a call, they are right 97.8–98.7% of the time, mislabeling only 1.3–2.5% of Benign variants as Pathogenic; reasoning models, by contrast, mislabel 22–28% of Benign variants as Pathogenic — the clinically dangerous direction. An international extension (Gemini 3 Flash / GPT-5.6-terra / Claude Sonnet 5 at full scale) places Gemini first overall (76.5%) and shows the conservative/aggressive dichotomy spans ecosystems. These are substantially lower than unblinded reports of expert-level consistency (AI-CURA, 2026); interpreted as a reliability audit, they define the *operational envelope* in which an LLM's output can be trusted, rather than a ceiling on generalization: label memorization is controlled, and remaining performance reflects the evidence the model actually reasons with.
 
 ### Vendor choice matters more than ensemble size
 
-The gap between the best and worst model (+22.4 pp all-inclusive; +25 pp expert-panel) exceeds the gain from any ensemble strategy we tested, and naive majority voting *reduced* accuracy below the best single model because conservative voters dominate ties. Two implications: (i) published "LLM accuracy" without model identity is meaningless; (ii) clinical deployments should select models on blinded benchmarks, not on ensemble size. The recommendation is model-specific — Kimi and Qwen excel on evidence-rich variants, while reasoning models (V4-pro, MiMo) commit more often but less reliably. The international extension (see the international extension below) sharpens this: Gemini 3 Flash leads all nine models in all-inclusive accuracy but with a 17.4% Benign→Pathogenic FP rate (aggressive camp), while Claude pairs 97.4% conditional accuracy with 3.6% FP (conservative camp, style-identical to Kimi). Behavior style — not vendor, nationality, or price tier — is the operative selection criterion.
+The gap between the best and worst model (+22.4 pp all-inclusive; +25 pp expert-panel) exceeds the gain from any ensemble strategy we tested, and naive majority voting *reduced* accuracy below the best single model because conservative voters dominate ties. Two implications: (i) published "LLM accuracy" without model identity is meaningless; (ii) clinical deployments should select models on blinded benchmarks, not on ensemble size. The recommendation is model-specific — Kimi and Qwen excel on evidence-rich variants, while reasoning models (V4-pro, MiMo) commit more often but less reliably. The international extension sharpens this: Gemini 3 Flash leads all nine models in all-inclusive accuracy (76.5%) but with a 27.8% Benign→Pathogenic FP rate (aggressive camp), while Claude pairs 97.0% conditional accuracy with 3.9% FP (conservative camp, style-identical to Kimi). Behavior style — not vendor, nationality, or price tier — is the operative selection criterion.
 
 ### Abstention is calibrated behavior, not conservatism
 
@@ -200,7 +200,7 @@ AI-CURA (AI-CURA, 2026) demonstrated expert-consistency without leakage control;
 
 ### Limitations
 
-(i) Vendor panel is Chinese-commercial; conclusions about LLMs generally require non-Chinese models (in progress). (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) API latency spans 29× across the panel (65.9 s vs. 2.3 s per call), a deployment consideration for population-scale screening.
+ (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) API latency spans 29× across the panel (65.9 s vs. 2.3 s per call), a deployment consideration for population-scale screening.
 
 ### Conclusion
 
@@ -246,7 +246,7 @@ Six models, four vendors, all accessed through official OpenAI-compatible APIs (
 | MiMo V2.5 Pro | Xiaomi | reasoning, 310B/15B active | xiaomimimo.com |
 | Qwen3.7-max | Alibaba | reasoning | Alibaba Model Studio (dedicated instance) |
 
-Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the first 500 variants of the same test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused 25% of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
+Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the complete test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused 25% of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
 
 ### Prompt design
 
@@ -274,7 +274,7 @@ All scripts, prompts, seeds, and intermediate files are public in the project re
 
 ### Limitations
 
-- Foreign models were evaluated on a 500-variant subset (vs. 5,000 for domestic models) through a relay endpoint, and received a research-context system prompt that domestic models did not (required to prevent Claude's medical-safety refusals); cross-national comparisons are therefore indicative rather than definitive, though the subset is identical across all nine models.
+- Foreign models were accessed through a relay endpoint and received a research-context system prompt that domestic models did not (required to prevent Claude's medical-safety refusals); the prompt-robustness check (§ international extension) shows the behavioral dichotomy is unaffected.
 - Primary gold standard inherits ClinVar label noise; mitigated by the expert-panel stratum and temporal filtering.
 - "Likely" classes were excluded from the binary gold standard but present in model outputs; the VUS=error convention penalizes models that map "Likely" labels to "Uncertain".
 - MaveDB functional direction is a soft validation (loss-of-function ≠ pathogenicity for haploinsufficient genes).
@@ -365,7 +365,7 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 **Fig. 1. Multi-model performance on the temporally blinded test set.**
 A: Dual-metric accuracy for six domestic models on the full test set (n = 5,000 each);
 all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy.
-B: The same metrics for all nine models on the identical 500-variant subset
+B: The same metrics for all nine models on the complete test set
 (international models in gray). C: Benign→Pathogenic false-positive rates on the
 500-variant subset (log scale); the 6-model consensus value is indicated.
 
@@ -385,5 +385,5 @@ Benign; cross-ecosystem counts in text.
 ### Supplementary material
 
 - **Table S1.** Re-run consistency (n = 50 × 3 models).
-- **Table S2.** Nine-model comparison on the identical 500-variant subset.
+- **Table S2.** Nine-model comparison on the complete test set (n = 5,000 per model).
 - **Fig. S1–S5.** Extended figures from the audit (optional, from docs/figures/).
