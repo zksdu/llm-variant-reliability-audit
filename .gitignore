@@ -91,3 +91,8 @@ docs/外部模型key配置_勿上传.md
 !data/prompt_robustness_results.csv
 !data/foreign_determ_20.csv
 !data/foreign_determ_results.csv
+
+# 含作者个人信息的本地生成文件（不上传）
+docs/submission_JGG.docx
+docs/manuscript_中文版.docx
+docs/manuscript_中文版.pdf
