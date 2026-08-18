@@ -1,0 +1,151 @@
+AlleleID,GeneSymbol,model,prompt_class,llm_class,confidence,acmg_rules,references,parse_error,time_s,notes
+4961925,COL1A1,gpt-5.6-terra,Pathogenic,Pathogenic,0.9,PM1;PM2;PP3,"Richards et al., Genetics in Medicine, 2015;Byers et al., Journal of Biological Chemistry, 1991",,13.81,
+2938759,OBSCN,gpt-5.6-terra,Benign,Uncertain significance,0.72,,"Richards et al., Genetics in Medicine, 2015",,11.71,
+2938759,OBSCN,gemini-3-flash,Benign,Uncertain significance,0.9,PM2,"ClinVar, Variation ID 1185858;Richards et al., Genet Med, 2015",,66.19,
+4961925,COL1A1,gemini-3-flash,Pathogenic,Pathogenic,0.99,PS3;PS4;PM1;PM2;PM5;PP3,"Steiner et al., Hum Mutat, 2005;Marini et al., Hum Mutat, 2007",,100.06,
+1610930,LRP2,gpt-5.6-terra,Benign,Likely benign,0.88,BP7,"Richards et al., Genetics in Medicine, 2015;Landrum et al., Nucleic Acids Research, 2018",,12.48,
+1610930,LRP2,gemini-3-flash,Benign,Likely benign,0.9,BP4;BP7,"ClinVar, NCBI, 2023;gnomAD, Broad Institute, 2021",,71.77,
+650567,MTOR,gpt-5.6-terra,Benign,Uncertain significance,0.58,PP3,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP sequence variant interpretation standards and guidelines",,27.76,
+141675,KANSL1,gemini-3-flash,Benign,Benign,0.99,BA1,"Koolen et al., Nat Genet, 2012;Stefansson et al., Nat Genet, 2005",,36.19,
+650567,MTOR,gemini-3-flash,Benign,Likely benign,0.95,BS1;BP4,"Richards et al., Genet Med, 2015;Landrum et al., Nucleic Acids Res, 2018;Karczewski et al., Nature, 2020",,86.08,
+141675,KANSL1,gpt-5.6-terra,Benign,Pathogenic,0.82,PVS1;PM2;PP3,"Koolen et al., American Journal of Human Genetics, 2012;ClinVar, NCBI, 2024",,25.93,
+4898579,BRIP1,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Seal et al., Nat Genet. 2006;Cantor et al., Cell, 2001;ClinVar (VCV000128145)",,18.08,
+4898579,BRIP1,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP standards and guidelines;ClinGen, BRIP1 Dosage Sensitivity Curation, 2023",,8.14,
+844029,SLC12A3,gpt-5.6-terra,Pathogenic,Pathogenic,0.93,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP sequence variant interpretation standards and guidelines;NCBI ClinVar, SLC12A3 c.2850_2851del (p.Arg950fs), accessed 2025",,11.09,
+22749,PMM2,gemini-3-flash,Pathogenic,Pathogenic,1.0,PS3;PM2;PM3;PP3;PP4,"Matthijs et al., Am J Hum Genet, 1997;Matthijs et al., Eur J Hum Genet, 1999;Schollen et al., Hum Mutat, 2004",,11.15,
+844029,SLC12A3,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM3,"Shao et al., J Am Soc Nephrol, 2008;Vargas-Poussou et al., J Am Soc Nephrol, 2011",,64.21,
+22749,PMM2,gpt-5.6-terra,Pathogenic,Pathogenic,0.95,PS3;PS4;PM2;PP3;PP4,"Matthijs et al., Nature Genetics, 1997;Kjaergaard et al., Human Mutation, 1998;Sassi et al., Human Mutation, 2011",,28.05,
+1059991,ETFDH,gpt-5.6-terra,Pathogenic,Pathogenic,0.84,PM2;PP3;PP4,"Goodman et al., Human Mutation, 2002;Olsen et al., Journal of Inherited Metabolic Disease, 2007",,15.35,
+4967699,PMS2,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PS4,"Thompson et al., Nature Genetics, 2014;Senter et al., Gastroenterology, 2008;InSiGHT database",,46.29,
+4967699,PMS2,gpt-5.6-terra,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Samsell et al., Human Mutation, 2020;InSiGHT Variant Interpretation Committee, Human Mutation, 2020",,10.95,
+2880021,HCFC1,gpt-5.6-terra,Benign,Pathogenic,0.87,PVS1;PM2;PP3,"ACMG/AMP joint consensus standards, Genetics in Medicine, 2015;ClinVar, NCBI, 2024",,14.51,
+2880021,HCFC1,gemini-3-flash,Benign,Uncertain significance,0.8,PM2;BP4,"ClinVar (VCV000496664);gnomAD (v2.1.1, v3.1.2)",,99.84,
+514705,ANKRD11,gemini-3-flash,Pathogenic,Pathogenic,1.0,PVS1;PS4;PM2,"Sirmaci et al., Am J Hum Genet, 2011;Ockeloen et al., Am J Med Genet A, 2015",,47.41,
+514705,ANKRD11,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP sequence variant interpretation guidelines;Sirmaci et al., Nature Genetics, 2011, ANKRD11 mutations cause KBG syndrome;Low et al., Human Mutation, 2016, ANKRD11-related KBG syndrome",,10.39,
+1059991,ETFDH,gemini-3-flash,Pathogenic,Pathogenic,0.99,PM2;PM3;PS3;PP3;PP4,"Olsen RK, et al., Hum Mutat, 2007;Xiang L, et al., Clin Genet, 2011;Wen B, et al., J Hum Genet, 2013;Zhang R, et al., Sci Rep, 2015",,215.08,
+1164419,WNT10B,gpt-5.6-terra,Benign,Benign,0.98,BP7;BS1,"Richards et al., Genetics in Medicine, 2015;ClinVar, National Center for Biotechnology Information, accessed 2025;Lek et al., Nature, 2016",,11.78,
+1164419,WNT10B,gemini-3-flash,Benign,Benign,0.95,BS1;BS2;BP4;BP7,"Landrum et al., Nucleic Acids Res, 2018;Karczewski et al., Nature, 2020",,79.23,
+259892,EXT1,gemini-3-flash,Pathogenic,Pathogenic,0.99,PS3;PM1;PM2;PM5;PP1;PP3,"Wuyts et al., Hum Mutat. 1998;12(1):67;McCormick et al., Nat Genet. 2000;25(1):40-4;Francannet et al., J Med Genet. 2001;38(7):438-48",,32.74,
+259892,EXT1,gpt-5.6-terra,Pathogenic,Pathogenic,0.78,PM2;PM1;PP3,"ACMG/AMP consensus guidelines, Genetics in Medicine, 2015;Genereux et al., Human Mutation, 2020",,9.48,
+135050,MED17,gpt-5.6-terra,Benign,Uncertain significance,0.62,BP7,"Richards et al., Genetics in Medicine, 2015",,8.63,
+4957380,ATP8B1,gemini-3-flash,Pathogenic,Pathogenic,0.98,PVS1;PM2;PM3,"Klomp et al., Hepatology, 2004;van Mil et al., Gastroenterology, 2004",,21.87,
+4957380,ATP8B1,gpt-5.6-terra,Pathogenic,Pathogenic,0.86,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Bull et al., Nature Genetics, 1998, PMID: 9771704",,10.4,
+135050,MED17,gemini-3-flash,Benign,Benign,0.95,BS1;BS2;BP4;BP7,"ClinVar, NCBI, 2023;gnomAD, Broad Institute, 2021",,54.17,
+1530352,TELO2,gpt-5.6-terra,Benign,Pathogenic,0.86,PS3;PM2;PP3,"You et al., American Journal of Human Genetics, 2016;ClinVar, TELO2 c.1770+10C>T, accessed 2025",,10.15,
+705698,DSCAM,gemini-3-flash,Benign,Likely benign,0.9,BP4;BP7,"Richards et al., Genet Med, 2015",,3.83,
+705698,DSCAM,gpt-5.6-terra,Benign,Likely benign,0.84,BP7,"Richards et al., Genetics in Medicine, 2015;Landrum et al., Nucleic Acids Research, 2018",,11.47,
+1530352,TELO2,gemini-3-flash,Benign,Likely benign,0.9,BS1;BP4,"Landrum et al., Nucleic Acids Res. 2018;Karczewski et al., Nature. 2020",,71.45,
+1609434,DHODH,gemini-3-flash,Benign,Pathogenic,0.98,PS3;PM2;PM3;PP3;PP4,"Ng SB, et al., Nature Genetics, 2010, 42(1):30-35",,40.83,
+1609434,DHODH,gpt-5.6-terra,Benign,Pathogenic,0.84,PM2;PM3;PP3,"Ng et al., Nature Genetics, 2010;ClinVar, NCBI, 2024",,40.05,
+1158357,LAMA1,gpt-5.6-terra,Benign,Uncertain significance,0.62,,"Richards et al., Genetics in Medicine, 2015",,16.79,
+1158357,LAMA1,gemini-3-flash,Benign,Uncertain significance,0.9,PM2;BP4,"ClinVar, NCBI, 2023, 446844;Richards et al., Genet Med, 2015",,41.25,
+240528,KCNT1,gpt-5.6-terra,Benign,Uncertain significance,0.72,,"Richards et al., Genetics in Medicine, 2015",,11.14,
+240528,KCNT1,gemini-3-flash,Benign,Benign,0.99,BS1;BS2;BP7,"Landrum et al., Nucleic Acids Res. 2018;Karczewski et al., Nature 2020",,54.37,
+621282,HGSNAT,gpt-5.6-terra,Benign,Likely benign,0.78,BP7,"Richards et al., Genetics in Medicine, 2015",,13.64,
+18938,HEXA,gemini-3-flash,Pathogenic,Pathogenic,0.95,PM2;PM3;PP3;PP4;PS3,"Triggs-Raine et al., Am J Hum Genet, 1991;Landrum et al., Nucleic Acids Res, 2018",,4.9,
+18938,HEXA,gpt-5.6-terra,Pathogenic,Pathogenic,0.96,PS3;PM2;PM3;PP3,"Richards et al., Genetics in Medicine, 2015;ClinVar, NCBI, accessed 2025;HEXA Variant Database, Leiden Open Variation Database, accessed 2025",,14.06,
+621282,HGSNAT,gemini-3-flash,Benign,Pathogenic,1.0,PS3;PS4;PM2;PP3,"Hrebicek et al., Am J Hum Genet, 2006;Fedele et al., Hum Mutat, 2007;Ruijter et al., J Inherit Metab Dis, 2008",,78.41,
+190218,FUCA1,gpt-5.6-terra,Benign,Uncertain significance,0.32,,"Richards et al., Genetics in Medicine, 2015;Landrum et al., Nucleic Acids Research, 2018",,13.4,
+190218,FUCA1,gemini-3-flash,Benign,Benign,1.0,BA1;BS1,"Richards et al., Genet Med, 2015;gnomAD;ClinVar",,39.24,
+1484998,NPC2,gemini-3-flash,Pathogenic,Pathogenic,0.99,PVS1;PM2;PM3;PP4,"Millat et al., Am J Hum Genet, 2001;Vanier, Orphanet J Rare Dis, 2010;Staretz-Chacham et al., Mol Genet Metab, 2010",,12.67,
+1484998,NPC2,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Carstea et al., Science, 1997",,7.07,
+614518,SH3KBP1,gpt-5.6-terra,Pathogenic,Uncertain significance,0.63,,,,13.13,
+315468,RBP3,gemini-3-flash,Benign,Benign,0.95,BS1;BS2;BP4;BP7,"ClinVar, VCV000632548.4;gnomAD, v2.1.1",,30.96,
+1760511,PKD1,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Audrézet MP et al., Hum Mutat, 2012",,3.7,
+614518,SH3KBP1,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PS4,"Piton et al., Hum Mutat, 2011",,92.3,
+1760511,PKD1,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1,"Harris et al., Nature Genetics, 2002;Richards et al., Genetics in Medicine, 2015",,8.62,
+315468,RBP3,gpt-5.6-terra,Benign,Likely benign,0.78,BP7,"Richards et al., Genetics in Medicine, 2015",,40.36,
+1928344,NPHP4,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM3,"Hoefele et al., Hum Genet, 2005;Landrum et al., Nucleic Acids Res, 2018",,28.21,
+1928344,NPHP4,gpt-5.6-terra,Pathogenic,Pathogenic,0.93,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Otto et al., Nature Genetics, 2008",,40.32,
+3867383,BRIP1,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1,"Walsh et al., New England Journal of Medicine, 2008;Lee et al., Genetics in Medicine, 2018",,6.45,
+3867383,BRIP1,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Seal et al., Nature Genetics, 2006;Cantor et al., Cell, 2001",,32.95,
+4969663,NF1,gemini-3-flash,Pathogenic,Pathogenic,0.99,PVS1;PM2,"Richards et al., Genet Med, 2015;Landrum et al., Nucleic Acids Res, 2018",,4.71,
+4969663,NF1,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1,"Richards et al., Genetics in Medicine, 2015;Pasmant et al., Human Mutation, 2015",,9.76,
+337872,TRIP11,gemini-3-flash,Benign,Pathogenic,0.95,PVS1;PS3;PM2;PM3;PP3,"Smits et al., Nature Genetics, 2010, 42(2):175-9;Wehrle et al., American Journal of Medical Genetics Part A, 2019, 179(6):953-963",,20.71,
+337872,TRIP11,gpt-5.6-terra,Benign,Pathogenic,0.86,PVS1;PM2;PP3,"ClinVar submission records, NCBI, 2024",,37.71,
+818207,COL4A3,gpt-5.6-terra,Pathogenic,Pathogenic,0.96,PVS1,"Richards et al., Genetics in Medicine, 2015;Genovese et al., GeneReviews, 2023",,12.35,
+818207,COL4A3,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PP3,"Richards et al., Genet Med, 2015;Savige et al., J Am Soc Nephrol, 2013",,48.66,
+259849,FBXL4,gpt-5.6-terra,Pathogenic,Pathogenic,0.93,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP sequence variant interpretation standards and guidelines;Holt et al., Journal of Medical Genetics, 2015, FBXL4 mutations cause mitochondrial encephalomyopathic presentations;El-Hattab and Scaglia, GeneReviews, updated 2023, FBXL4-related encephalomyopathic mitochondrial DNA depletion syndrome",,14.92,
+259849,FBXL4,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM3;PP4,"Gai et al., Am J Hum Genet, 2013;Bonnen et al., Am J Hum Genet, 2013",,53.93,
+32699,BRCA1,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PS3;PM1;PM2;PP3,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP sequence variant interpretation standards;Spurdle et al., Human Mutation, 2008, BRCA1 RING-domain missense variant functional analysis;ClinVar, BRCA1 NM_007294.4:c.190T>G (p.Cys64Gly)",,14.54,
+32699,BRCA1,gemini-3-flash,Pathogenic,Pathogenic,0.99,PS3;PM1;PM2;PM5;PP3,"Findlay et al., Nature, 2018;Starita et al., Genetics, 2015",,92.05,
+1155072,C9,gpt-5.6-terra,Benign,Uncertain significance,0.55,,"Richards et al., Genetics in Medicine, 2015",,14.54,
+1155072,C9,gemini-3-flash,Benign,Benign,1.0,BA1,"Richards et al., Genet Med, 2015;Karczewski et al., Nature, 2020;Landrum et al., Nucleic Acids Res, 2018",,96.26,
+1154941,OTULIN,gpt-5.6-terra,Benign,Uncertain significance,0.62,PM2;PP3,"Richards et al., Genetics in Medicine, 2015",,23.57,
+1154941,OTULIN,gemini-3-flash,Benign,Likely benign,0.9,BS1;BP4,"ClinVar, Variation ID: 987330;gnomAD, v2.1.1",,74.8,
+176642,CCDC40,gpt-5.6-terra,Benign,Pathogenic,0.88,PS3;PM2;PP4,"Begriche et al., Human Mutation, 2011;Zariwala et al., Human Mutation, 2013",,11.07,
+176642,CCDC40,gemini-3-flash,Benign,Pathogenic,0.95,PS3;PM2;PM3;PP3;PP4,"Becker-Heck et al., Nature Genetics, 2011",,57.98,
+645466,NF1,gpt-5.6-terra,Pathogenic,Pathogenic,0.99,PVS1,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP standards and guidelines for the interpretation of sequence variants;Brosius et al., Human Mutation, 2013, Constitutional NF1 mutation spectrum and genotype-phenotype correlations",,6.18,
+645466,NF1,gemini-3-flash,Pathogenic,Pathogenic,0.99,PVS1;PM2_Supporting;PS4,"Messiaen et al., Genet Med, 2000;ClinVar VCV000031858",,26.95,
+1827974,MSH3,gpt-5.6-terra,Pathogenic,Pathogenic,0.93,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Brnich et al., Genetics in Medicine, 2020;Adam et al., Cancer Discovery, 2016",,13.33,
+1601346,CASQ1,gemini-3-flash,Benign,Benign,1.0,BA1,"Karczewski et al., Nature, 2020;Landrum et al., Nucleic Acids Res, 2018",,38.84,
+1827974,MSH3,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM3,"Adam et al., Am J Hum Genet, 2016;ClinVar, VCV000429608",,92.74,
+1601346,CASQ1,gpt-5.6-terra,Benign,Pathogenic,0.82,PM2;PM3;PP3,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP standards and guidelines;Landrum et al., Nucleic Acids Research, 2018, ClinVar database",,40.76,
+3804420,LRP6,gpt-5.6-terra,Benign,Likely benign,0.82,BP7,"Richards et al., Genetics in Medicine, 2015",,9.76,
+3804420,LRP6,gemini-3-flash,Benign,Benign,0.99,BS1;BS2;BP4;BP7,"ClinVar, 225235;gnomAD, v2.1.1;Richards et al., Genet Med, 2015",,81.3,
+704434,RNF213,gpt-5.6-terra,Benign,Uncertain significance,0.62,BP7,"Richards et al., Genetics in Medicine, 2015",,13.32,
+1177671,CEP290,gemini-3-flash,Pathogenic,Pathogenic,0.99,PVS1;PM2,"Valente et al., Nature Genetics, 2006;Coppieters et al., Human Mutation, 2010",,13.05,
+704434,RNF213,gemini-3-flash,Benign,Likely benign,0.95,BP4;BP7,"Richards et al., Genet Med, 2015;Landrum et al., Nucleic Acids Res, 2018",,59.29,
+1177671,CEP290,gpt-5.6-terra,Pathogenic,Pathogenic,0.99,PVS1,"Richards et al., Genetics in Medicine, 2015;Abou Tayoun et al., Human Mutation, 2018",,7.23,
+4986965,MSH6,gemini-3-flash,Pathogenic,Pathogenic,0.99,PVS1;PM2;PS4,"Peltomäki et al., Gastroenterology, 1997;Thompson et al., Hum Mutat, 2013;ClinVar Variation ID: 89358",,15.22,
+4986965,MSH6,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1;PM2,"Richards et al., Genetics in Medicine, 2015;Abou Tayoun et al., Human Mutation, 2018",,13.7,
+182127,MSH6,gemini-3-flash,Pathogenic,Pathogenic,0.99,PVS1;PM2,"Thompson et al., Hum Mutat, 2002;ClinVar VCV000091258",,19.94,
+182127,MSH6,gpt-5.6-terra,Pathogenic,Pathogenic,0.99,PVS1,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP standards and guidelines;Tavtigian et al., Human Mutation, 2009, MSH6-associated mismatch repair deficiency",,11.5,
+4910527,NEB,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2;PM3,"Lehtokari et al., Hum Mutat, 2006;Malfatti et al., Neurology, 2014",,23.05,
+542034,COL4A3,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2_Supporting,"Richards et al., Genet Med, 2015;Landrum et al., Nucleic Acids Res, 2018",,4.25,
+4910527,NEB,gpt-5.6-terra,Pathogenic,Pathogenic,0.88,PVS1,"Richards et al., Genetics in Medicine, 2015",,10.72,
+542034,COL4A3,gpt-5.6-terra,Pathogenic,Pathogenic,0.97,PVS1,"Richards et al., Genetics in Medicine, 2015, ACMG/AMP sequence variant interpretation guidelines;Abou Tayoun et al., Human Mutation, 2018, ClinGen/ACMG sequence variant interpretation recommendations for PVS1;Kashtan, Kidney International, 2021, Alport syndromes: phenotypic and genotypic considerations",,11.81,
+266615,TBX3,gemini-3-flash,Benign,Likely benign,0.85,BS1;BP4,"Landrum et al., Nucleic Acids Res, 2018",,6.18,
+266615,TBX3,gpt-5.6-terra,Benign,Uncertain significance,0.62,PM1;PM2;PP3,"Richards et al., Genetics in Medicine, 2015;ClinVar, NCBI, 2024",,27.3,
+4968153,SALL1,gemini-3-flash,Pathogenic,Pathogenic,0.95,PVS1;PM2,"Kohlhase et al., Nature Genetics, 1998;Botzenhart et al., Human Mutation, 2007;Furniss et al., Journal of Medical Genetics, 1999",,19.58,
+4968153,SALL1,gpt-5.6-terra,Pathogenic,Pathogenic,0.98,PVS1;PM2,"Kohlhase et al., Nature Genetics, 1999;Kohlhase et al., Human Molecular Genetics, 1999;ClinGen SALL1 dosage sensitivity curation, 2022",,11.15,
+1610930,LRP2,claude-sonnet-5,Benign,error,,,,,32.65,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+2938759,OBSCN,claude-sonnet-5,Benign,error,,,,,32.68,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4961925,COL1A1,claude-sonnet-5,Pathogenic,error,,,,,32.73,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+650567,MTOR,claude-sonnet-5,Benign,error,,,,,31.75,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+141675,KANSL1,claude-sonnet-5,Benign,error,,,,,31.82,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4898579,BRIP1,claude-sonnet-5,Pathogenic,error,,,,,31.88,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+844029,SLC12A3,claude-sonnet-5,Pathogenic,error,,,,,31.77,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+22749,PMM2,claude-sonnet-5,Pathogenic,error,,,,,31.82,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1059991,ETFDH,claude-sonnet-5,Pathogenic,error,,,,,31.98,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4967699,PMS2,claude-sonnet-5,Pathogenic,error,,,,,31.62,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+2880021,HCFC1,claude-sonnet-5,Benign,error,,,,,31.56,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+514705,ANKRD11,claude-sonnet-5,Pathogenic,error,,,,,31.59,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+259892,EXT1,claude-sonnet-5,Pathogenic,error,,,,,34.36,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1164419,WNT10B,claude-sonnet-5,Benign,error,,,,,34.48,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+135050,MED17,claude-sonnet-5,Benign,error,,,,,34.89,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4957380,ATP8B1,claude-sonnet-5,Pathogenic,error,,,,,32.13,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1530352,TELO2,claude-sonnet-5,Benign,error,,,,,32.19,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+705698,DSCAM,claude-sonnet-5,Benign,error,,,,,31.99,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1609434,DHODH,claude-sonnet-5,Benign,error,,,,,31.98,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1158357,LAMA1,claude-sonnet-5,Benign,error,,,,,32.22,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+240528,KCNT1,claude-sonnet-5,Benign,error,,,,,32.23,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+621282,HGSNAT,claude-sonnet-5,Benign,error,,,,,32.66,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+18938,HEXA,claude-sonnet-5,Pathogenic,error,,,,,32.35,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+190218,FUCA1,claude-sonnet-5,Benign,error,,,,,32.27,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1484998,NPC2,claude-sonnet-5,Pathogenic,error,,,,,34.49,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+315468,RBP3,claude-sonnet-5,Benign,error,,,,,33.97,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+614518,SH3KBP1,claude-sonnet-5,Pathogenic,error,,,,,34.51,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1760511,PKD1,claude-sonnet-5,Pathogenic,error,,,,,36.23,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+3867383,BRIP1,claude-sonnet-5,Pathogenic,error,,,,,37.01,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1928344,NPHP4,claude-sonnet-5,Pathogenic,error,,,,,37.06,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4969663,NF1,claude-sonnet-5,Pathogenic,error,,,,,35.48,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+337872,TRIP11,claude-sonnet-5,Benign,error,,,,,35.15,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+818207,COL4A3,claude-sonnet-5,Pathogenic,error,,,,,35.84,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+259849,FBXL4,claude-sonnet-5,Pathogenic,error,,,,,33.08,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+32699,BRCA1,claude-sonnet-5,Pathogenic,error,,,,,33.27,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1155072,C9,claude-sonnet-5,Benign,error,,,,,32.67,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1154941,OTULIN,claude-sonnet-5,Benign,error,,,,,32.68,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+176642,CCDC40,claude-sonnet-5,Benign,error,,,,,32.91,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+645466,NF1,claude-sonnet-5,Pathogenic,error,,,,,32.79,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1827974,MSH3,claude-sonnet-5,Pathogenic,error,,,,,33.6,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1601346,CASQ1,claude-sonnet-5,Benign,error,,,,,34.5,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+3804420,LRP6,claude-sonnet-5,Benign,error,,,,,34.5,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+704434,RNF213,claude-sonnet-5,Benign,error,,,,,35.22,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4986965,MSH6,claude-sonnet-5,Pathogenic,error,,,,,34.44,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+1177671,CEP290,claude-sonnet-5,Pathogenic,error,,,,,35.09,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+182127,MSH6,claude-sonnet-5,Pathogenic,error,,,,,35.58,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4910527,NEB,claude-sonnet-5,Pathogenic,error,,,,,35.78,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+542034,COL4A3,claude-sonnet-5,Pathogenic,error,,,,,35.89,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+266615,TBX3,claude-sonnet-5,Benign,error,,,,,35.0,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"
+4968153,SALL1,claude-sonnet-5,Pathogenic,error,,,,,34.22,"HTTP 429: {""error"":{""message"":""Upstream rate limit exceeded, please retry later"",""type"":""rate_limit_"

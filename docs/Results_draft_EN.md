@@ -55,13 +55,17 @@ HGVS protein notation can itself reveal the answer class: nonsense (p.Xxx###Ter)
 
 We constructed a dedicated validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated between 2026-01 and 2026-07, P-side 645, B-side 252). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); to guarantee independence, Table S3 reports the **800 exclusive variants** (797 evaluable; P: 550, B: 247).
 
-**Table 2. Expert-panel validation (n = 797 exclusive variants; 3 models).**
+**Table 2. Expert-panel validation (n = 797 exclusive variants; 5 models).**
 
-| Model | All-inclusive Acc. | Conditional Acc. |
-|---|---|---|
-| Kimi-K2.6 | **72.8%** | 90.6% |
-| DeepSeek chat | 42.9% | 95.0% |
-| DeepSeek coder | 43.3% | 94.8% |
+| Model | Vendor | All-inclusive | Conditional | Abstention | FP rate |
+|---|---|---|---|---|---|
+| Gemini 3 Flash | Google | **79.0%** | 85.4% | 7.4% | 36.4% |
+| Kimi-K2.6 | Moonshot | 72.8% | 90.6% | 19.7% | 19.8% |
+| GPT-5.6-terra | OpenAI | 69.5% | 84.7% | 17.9% | 36.4% |
+| DeepSeek chat | DeepSeek | 42.9% | 95.0% | 54.8% | 7.3% |
+| DeepSeek coder | DeepSeek | 43.3% | 94.8% | 54.3% | 7.7% |
+
+> Claude Sonnet 5 excluded: all API calls returned 429 rate-limit errors on this set; no valid results obtained.
 
 > Results on the full 900 (including the shared 100) are qualitatively identical: Kimi 74.7% / chat 45.7% / coder 46.0% (robustness check).
 
@@ -153,7 +157,7 @@ To test whether the domestic findings generalize across training ecosystems, we 
 
 *Figure 6. Nine-model comparison on the complete test set.*
 
-**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (76.5% [75.3–77.7], +4.9 pp over the best domestic model; McNemar p = 1.7×10⁻¹³) with the lowest abstention (9.2%) — but pays for it with a 27.8% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (28.4%) and MiMo (22.3%). (ii) **Claude behaves as a conservative model**: 97.0% conditional accuracy with 3.9% FP — an order of magnitude below the aggressive camp and closest to Kimi's (2.5%; Fisher exact p = 0.008, distinguishable but both single-digit), and it exceeds Kimi in all-inclusive accuracy (p = 2.7×10⁻³) while sitting below Qwen (p = 3.0×10⁻¹⁵). The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (60.3%, significantly below Qwen: McNemar p = 4.7×10⁻⁹⁰) and sits below every current-generation domestic model — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
+**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (76.5% [75.3–77.7], +4.9 pp over the best domestic model; McNemar p = 1.7×10⁻¹³) with the lowest abstention (9.2%) — but pays for it with a 27.8% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (28.4%) and MiMo (22.3%). (ii) **Claude behaves as a conservative model**: 97.0% conditional accuracy with 3.9% FP — an order of magnitude below the aggressive camp and closest to Kimi's (2.5%; Fisher exact p = 0.008, distinguishable but both single-digit), and it exceeds Kimi in all-inclusive accuracy (p = 2.7×10⁻³) while sitting below Qwen (p = 3.0×10⁻¹⁵). On the independent expert-panel set (Table 2), the same dichotomy sharpens: Gemini and GPT both show 36.4% false-positive rates (vs. Kimi 19.8% and chat/coder 7–8%), confirming that the aggressive/conservative split holds under the strongest gold standard across ecosystems. The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (60.3%, significantly below Qwen: McNemar p = 4.7×10⁻⁹⁰) and sits below every current-generation domestic model — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
 
 **Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which *never* emit a "Likely" class (§3.5b) — all three foreign models use "Likely benign": Claude 1,065/5,000 (21.3%), Gemini 646/5,000 (12.9%), GPT 591/5,000 (11.8%). Strikingly, **not one foreign model ever emitted "Likely pathogenic" (0/15,000 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
 
