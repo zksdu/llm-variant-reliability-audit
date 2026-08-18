@@ -18,15 +18,15 @@
 
 **Running title (≤50 chars):** Reliability Audit of LLM Variant Classification
 
-**Authors:** Bing Song¹, Kai Zhang²,*
+**Authors:** __AUTHOR_2__¹, __AUTHOR_1__²,*
 
 **Affiliations:**
-¹ The Third Affiliated Hospital of Guangzhou Medical University, Guangzhou, Guangdong, China
-² Guangdong Communication Polytechnic, Guangzhou, Guangdong, China
+¹ __AFFIL_2__
+² __AFFIL_1__
 
-**Corresponding author:** Kai Zhang
+**Corresponding author:** __AUTHOR_1__
 E-mail: __CORRESPONDING_AUTHOR_EMAIL__
-（第一作者：Bing Song，__FIRST_AUTHOR_EMAIL__）
+（第一作者：__AUTHOR_2__，__FIRST_AUTHOR_EMAIL__）
 
 **Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding
 
@@ -58,7 +58,7 @@ All data are publicly available: ClinVar variant_summary and VCF (ftp.ncbi.nlm.n
 
 **Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
-**Authors' contributions.** Bing Song: Conceptualization, Investigation, Data curation, Validation, Writing – original draft. Kai Zhang: Methodology, Software, Formal analysis, Visualization, Supervision, Writing – review & editing. All authors read and approved the final manuscript.
+**Authors' contributions.** __AUTHOR_2__: Conceptualization, Investigation, Data curation, Validation, Writing – original draft. __AUTHOR_1__: Methodology, Software, Formal analysis, Visualization, Supervision, Writing – review & editing. All authors read and approved the final manuscript.
 
 **Competing interests.** The authors declare that they have no competing interests.
 
@@ -81,8 +81,8 @@ This manuscript is original, has not been published previously, and is not under
 Thank you for your consideration.
 
 Sincerely,
-Kai Zhang (corresponding author), on behalf of all authors
-Guangdong Communication Polytechnic
+__AUTHOR_1__ (corresponding author), on behalf of all authors
+__AFFIL_1__
 E-mail: __CORRESPONDING_AUTHOR_EMAIL__
 
 

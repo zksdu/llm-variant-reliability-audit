@@ -18,9 +18,9 @@ DOCS = Path(__file__).parent.parent / "docs"
 
 TITLE = ("When data leakage is controlled: a multi-vendor reliability audit "
          "of LLM-based ACMG/AMP variant classification")
-AUTHOR = "Bing Song¹, Kai Zhang²,*"
-AFFIL_1 = "¹The Third Affiliated Hospital of Guangzhou Medical University, Guangzhou, Guangdong, China"
-AFFIL_2 = "²Guangdong Communication Polytechnic, Guangzhou, Guangdong, China"
+AUTHOR = "__AUTHOR_2__¹, __AUTHOR_1__²,*"
+AFFIL_1 = "¹__AFFIL_2__"
+AFFIL_2 = "²__AFFIL_1__"
 EMAIL = "__CORRESPONDING_AUTHOR_EMAIL__"
 RUNNING = "Reliability Audit of LLM Variant Classification"
 KEYWORDS = ("variant classification; ACMG/AMP; large language models; data leakage; "
