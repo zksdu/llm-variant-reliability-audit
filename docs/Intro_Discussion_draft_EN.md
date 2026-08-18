@@ -53,6 +53,7 @@ AI-CURA [6] demonstrated expert-consistency without leakage control; our label-b
 (vii) McNemar paired tests assume variant independence; gene-level clustering (2,050 genes, NF1 n=83) means tests are optimistic; cluster-bootstrap CIs are reported alongside and preserve all conclusions.
 (viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (shift ≤3 pp), but the caveat remains.
 (ix) Conditional accuracy compares models with very different abstention rates (9.2% vs 49.9%); different denominator sizes can obscure direct comparison (Simpson's paradox risk).
+(x) No comparison with established non-ML variant effect predictors (AlphaMissense, REVEL, CADD, InterVar). Such a comparison would contextualize LLM accuracy against tools that use evolutionary conservation, protein structure, or rule-based ACMG interpretation; a preliminary comparison using AlphaMissense predictions on the same test set is in preparation.
 
 ### 4.7 Conclusion
 
