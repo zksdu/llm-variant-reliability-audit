@@ -186,9 +186,9 @@ sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement
 
-**__AUTHOR_2__:** Conceptualization, Investigation, Data curation, Validation,
+**Bing Song:** Conceptualization, Investigation, Data curation, Validation,
 Writing \u2013 original draft.
-**__AUTHOR_1__:** Methodology, Software, Formal analysis, Visualization,
+**Kai Zhang:** Methodology, Software, Formal analysis, Visualization,
 Supervision, Writing \u2013 review & editing. All authors read and approved the
 final manuscript.
 
@@ -215,6 +215,8 @@ DeepSeek-AI, 2024. DeepSeek-V3 technical report. arXiv:2412.19437.
 Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. 
 
 Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023.
+
+Lin, Y.-C., et al., 2025. Benchmarking large language models GPT-4o, Llama 3.1, and Qwen 2.5 for cancer genetic variant classification. npj Precis. Oncol. 【DOI/volume/pages 待核实——已在正文引言中引用，差异：somatic vs germline、无时间盲法、3 models】
 
 Karczewski, K.J., Francioli, L.C., Tiao, G., et al., 2020. The mutational constraint spectrum quantified from variation in 141,456 humans. Nature 581, 434\u2013443.
 
@@ -243,11 +245,8 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 ## Figure legends
 
 **Fig. 1. Multi-model performance on the temporally blinded test set.**
-A: Dual-metric accuracy for six domestic models on the full test set (n = 5,000 each);
-all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy.
-B: The same metrics for all nine models on the complete test set
-(international models in gray). C: Benign\u2192Pathogenic false-positive rates on the
-complete test set (log scale); the 6-model consensus value is indicated.
+A: Dual-metric accuracy for all nine models on the complete test set (n ~ 4,999 evaluable per model); all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy with Wilson 95% CI error bars. International models shown with white fill and outline.
+B: Benign-to-Pathogenic false-positive rates (log scale) with 95% CI; the 6-model consensus value is indicated.
 
 **Fig. 2. Evidence availability governs reliability.**
 A: Allele-frequency ablation on a Benign-rich subset (n = 400 \u00d7 3 models):

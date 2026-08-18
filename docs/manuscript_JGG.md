@@ -144,7 +144,7 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 > Cross-check: the 100 expert-panel variants shared between the main test set and the dedicated 900-variant set were classified twice in independent runs (same model, same prompt); agreement was chat 99/100, coder 100/100, Kimi 97/100 — consistent with the determinism ranking above.
 
-**Finding 5 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas the reasoning model V4-pro changed its binary call on 36% of re-run variants — including 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction) and 9 VUS↔definitive changes. Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy. The "reasoning models commit more but are less reliable" finding (Finding 2) thus extends to *commit stability*: their expressed calls are neither as accurate nor as reproducible as those of conservative models.
+**Finding 5 (Reasoning models are not deterministic).** At temperature = 0, chat-style models reproduce their outputs exactly (100%), whereas reasoning models are significantly less stable: DeepSeek V4-pro changed its binary call on 36% of re-run variants (n=50), Gemini 3 Flash on 12% (n=50), and GPT-5.6-terra on 22% (n=50). The V4-pro instability included 3 direct Benign↔Pathogenic flips (the clinically most consequential error direction). Gemini showed 4 such cross-semantic flips in 50 re-runs, and GPT showed 1. The determinism spectrum is: chat/coder (100%) > Kimi (98%) > Gemini (88%) > GPT (78%) > V4-pro (64%). Under a reliability-audit framing, non-determinism is a first-class failure mode: a model that can return contradictory answers for the same input cannot be deployed in clinical workflows, regardless of its average accuracy.
 
 ### International extension
 
@@ -210,7 +210,15 @@ AI-CURA (AI-CURA, 2026) demonstrated expert-consistency without leakage control;
 
 ### Limitations
 
- (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) API latency spans 29× across the panel (65.9 s vs. 2.3 s per call), a deployment consideration for population-scale screening.
+(i) Vendor panel is dominated by Chinese-commercial models (6/9); while Gemini, GPT, and Claude provide cross-ecosystem evidence, the majority of the 45,000 evaluations are domestic, limiting full generalization.
+(ii) Temporal blinding controls label-memorization specifically; a variant's *evidence* (literature, submissions) may predate its label date, so the model could still have encountered supporting evidence. The strength of this "evidence leakage channel" has not been quantified.
+(iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies; the five-class analysis shows this collapse is asymmetric (Likely pathogenic is never emitted).
+(iv) The MaveDB functional direction is a soft validation (loss-of-function ≠ pathogenicity for haploinsufficient genes); datasets are not temporally blinded.
+(v) Single task (germline SNV/indel); splice/de novo/structural/somatic variants unaddressed.
+(vi) Population bias: ClinVar submissions and reference AF panels (ESP/ExAC/1000G) skew European-ancestry; Benign sensitivity estimates may not transfer equitably to non-European populations.
+(vii) McNemar paired tests assume variant independence; gene-level clustering (2,050 genes, NF1 n=83) means tests are optimistic; cluster-bootstrap CIs are reported alongside and preserve all conclusions.
+(viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (shift ≤3 pp), but the caveat remains.
+(ix) Conditional accuracy compares models with very different abstention rates (9.2% vs 49.9%); different denominator sizes can obscure direct comparison (Simpson's paradox risk).
 
 ### Conclusion
 
@@ -316,9 +324,9 @@ sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement
 
-**__AUTHOR_2__:** Conceptualization, Investigation, Data curation, Validation,
+**Bing Song:** Conceptualization, Investigation, Data curation, Validation,
 Writing – original draft.
-**__AUTHOR_1__:** Methodology, Software, Formal analysis, Visualization,
+**Kai Zhang:** Methodology, Software, Formal analysis, Visualization,
 Supervision, Writing – review & editing. All authors read and approved the
 final manuscript.
 
@@ -345,6 +353,8 @@ DeepSeek-AI, 2024. DeepSeek-V3 technical report. arXiv:2412.19437.
 Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. 
 
 Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023.
+
+Lin, Y.-C., et al., 2025. Benchmarking large language models GPT-4o, Llama 3.1, and Qwen 2.5 for cancer genetic variant classification. npj Precis. Oncol. 【DOI/volume/pages 待核实——已在正文引言中引用，差异：somatic vs germline、无时间盲法、3 models】
 
 Karczewski, K.J., Francioli, L.C., Tiao, G., et al., 2020. The mutational constraint spectrum quantified from variation in 141,456 humans. Nature 581, 434–443.
 
@@ -373,11 +383,8 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 ## Figure legends
 
 **Fig. 1. Multi-model performance on the temporally blinded test set.**
-A: Dual-metric accuracy for six domestic models on the full test set (n = 5,000 each);
-all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy.
-B: The same metrics for all nine models on the complete test set
-(international models in gray). C: Benign→Pathogenic false-positive rates on the
-complete test set (log scale); the 6-model consensus value is indicated.
+A: Dual-metric accuracy for all nine models on the complete test set (n ~ 4,999 evaluable per model); all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy with Wilson 95% CI error bars. International models shown with white fill and outline.
+B: Benign-to-Pathogenic false-positive rates (log scale) with 95% CI; the 6-model consensus value is indicated.
 
 **Fig. 2. Evidence availability governs reliability.**
 A: Allele-frequency ablation on a Benign-rich subset (n = 400 × 3 models):

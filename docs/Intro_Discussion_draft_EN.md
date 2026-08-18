@@ -44,7 +44,15 @@ AI-CURA [6] demonstrated expert-consistency without leakage control; our label-b
 
 ### 4.6 Limitations
 
- (ii) Temporal blinding approximates leakage control via LastEvaluated date; a variant's *evidence* (submissions, literature) may predate its label, so the model could still have seen evidence if not the final label. (iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies. (iv) The MaveDB functional direction is a soft validation. (v) Single task (germline SNV/indel); splice/structural/de novo variants unaddressed. (vi) API latency spans 29× across the panel (65.9 s vs. 2.3 s per call), a deployment consideration for population-scale screening.
+(i) Vendor panel is dominated by Chinese-commercial models (6/9); while Gemini, GPT, and Claude provide cross-ecosystem evidence, the majority of the 45,000 evaluations are domestic, limiting full generalization.
+(ii) Temporal blinding controls label-memorization specifically; a variant's *evidence* (literature, submissions) may predate its label date, so the model could still have encountered supporting evidence. The strength of this "evidence leakage channel" has not been quantified.
+(iii) Binary P/B evaluation collapses ACMG's five classes and penalizes "Likely" mapping strategies; the five-class analysis shows this collapse is asymmetric (Likely pathogenic is never emitted).
+(iv) The MaveDB functional direction is a soft validation (loss-of-function ≠ pathogenicity for haploinsufficient genes); datasets are not temporally blinded.
+(v) Single task (germline SNV/indel); splice/de novo/structural/somatic variants unaddressed.
+(vi) Population bias: ClinVar submissions and reference AF panels (ESP/ExAC/1000G) skew European-ancestry; Benign sensitivity estimates may not transfer equitably to non-European populations.
+(vii) McNemar paired tests assume variant independence; gene-level clustering (2,050 genes, NF1 n=83) means tests are optimistic; cluster-bootstrap CIs are reported alongside and preserve all conclusions.
+(viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (shift ≤3 pp), but the caveat remains.
+(ix) Conditional accuracy compares models with very different abstention rates (9.2% vs 49.9%); different denominator sizes can obscure direct comparison (Simpson's paradox risk).
 
 ### 4.7 Conclusion
 
