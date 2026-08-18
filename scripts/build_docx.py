@@ -21,7 +21,7 @@ TITLE = ("When data leakage is controlled: a multi-vendor reliability audit "
 AUTHOR = "Bing Song¹, Kai Zhang²,*"
 AFFIL_1 = "¹The Third Affiliated Hospital of Guangzhou Medical University, Guangzhou, Guangdong, China"
 AFFIL_2 = "²Guangdong Communication Polytechnic, Guangzhou, Guangdong, China"
-EMAIL = "zhangkai@gdcp.edu.cn"
+EMAIL = "__CORRESPONDING_AUTHOR_EMAIL__"
 RUNNING = "Reliability Audit of LLM Variant Classification"
 KEYWORDS = ("variant classification; ACMG/AMP; large language models; data leakage; "
             "ClinVar; reliability audit; temporal blinding")
