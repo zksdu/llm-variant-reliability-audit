@@ -1,16 +1,20 @@
 # When data leakage is controlled: a multi-vendor reliability audit of LLM-based ACMG/AMP variant classification
 
-> JGG submission version. Title page / abstract 182 词 / keywords 见 docs/submission_package.md。
+> JGG submission version. Keywords: variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding.
 
 ---
 
 ## Abstract
 
-【182 词摘要见 docs/submission_package.md （已符合 <200 词限制）】
+**Background.** Large language models (LLMs) are increasingly proposed for ACMG/AMP variant classification, but training corpora include ClinVar and ClinGen, so reported accuracy may reflect label memorization rather than reasoning.
 
-**Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding
+**Objective.** To audit LLM variant-classification reliability under controlled label leakage, across vendors and evidence conditions.
 
----
+**Methods.** On a temporally blinded test set of 5,000 ClinVar variants (all assessed after January 2026), we evaluated six Chinese LLMs (30,000 evaluations) and three international flagships at full scale (15,000 additional evaluations), with independent validation on 900 expert-panel variants.
+
+**Results.** Current-generation models achieved 61.8–71.6% all-inclusive accuracy under temporal blinding, rising to 86–93% on expert-panel variants. Conservative models reached 97.8–98.7% conditional accuracy with FP rates under 4.7%, while reasoning models reached 81.2–85.2% with FP rates up to 28.4%. Providing allele-frequency evidence raised Benign sensitivity by up to 57.8 pp. Gemini 3 Flash led internationally (76.5%); Claude paired 97.0% conditional accuracy with 3.9% FP.
+
+**Conclusions.** LLM variant interpretation is reliable only under blinded model selection, complete evidence (allele frequency mandatory), and abstention-as-human-review policies.
 
 ## Introduction
 
@@ -324,15 +328,15 @@ The authors declare that they have no conflict of interest.
 
 ## Acknowledgments
 
-【可选：资助致谢】
+Not applicable.
 
 ## References
 
-AI-CURA, 2026. AI-CURA, an automated LLM workflow for high-accuracy genetic variant classification. Sci. Transl. Med. 【卷/页待补】. doi:10.1126/scitranslmed.adz4172
+AI-CURA, 2026. AI-CURA, an automated LLM workflow for high-accuracy genetic variant classification. Sci. Transl. Med.  doi:10.1126/scitranslmed.adz4172
 
 Basharat, H., Plotkin, S., Le, C., Zhu, K., Pink, M., Alfaro, I., 2025. VariantBench: a framework for evaluating LLMs on justifications for genetic variant interpretation. In: Proceedings of IJCNLP-AACL 2025 (SRW), Mumbai, India.
 
-Bordt, S., et al., 2024. How much can we forget about data contamination? OpenReview. 【年份待核】 https://openreview.net/forum?id=Pf0PaYS9KG
+Bordt, S., et al., 2024. How much can we forget about data contamination? OpenReview. https://openreview.net/forum?id=Pf0PaYS9KG
 
 Cheng, J., Novati, G., Pan, M., et al., 2023. Accurate proteome-wide missense variant effect prediction with AlphaMissense. Science 381, eadg7492.
 
@@ -364,7 +368,7 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 
 ## Tables
 
-【Table 1 与 Table 2 见正文内；表格编辑阶段移入 Elsevier 模板时重排】
+
 
 ## Figure legends
 
