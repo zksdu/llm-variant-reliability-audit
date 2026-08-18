@@ -53,7 +53,7 @@ HGVS protein notation can itself reveal the answer class: nonsense (p.Xxx###Ter)
 
 ### 3.3 Independent gold standard: ClinGen expert-panel review
 
-We constructed a dedicated validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated ≥ 2026-04, P-side 645, B-side 252). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); to guarantee independence, Table S3 reports the **800 exclusive variants** (797 evaluable; P: 550, B: 247).
+We constructed a dedicated validation set of **900 variants curated by expert panels** (ClinGen/clinical guideline committees; ReviewStatus = "reviewed by expert panel"; all re-evaluated between 2026-01 and 2026-07, P-side 645, B-side 252). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); to guarantee independence, Table S3 reports the **800 exclusive variants** (797 evaluable; P: 550, B: 247).
 
 **Table 2. Expert-panel validation (n = 797 exclusive variants; 3 models).**
 
