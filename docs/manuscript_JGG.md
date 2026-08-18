@@ -342,7 +342,7 @@ Cheng, J., Novati, G., Pan, M., et al., 2023. Accurate proteome-wide missense va
 
 DeepSeek-AI, 2024. DeepSeek-V3 technical report. arXiv:2412.19437.
 
-Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. 【版本待核】
+Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. 
 
 Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023.
 
