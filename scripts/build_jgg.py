@@ -216,7 +216,7 @@ Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source plat
 
 Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023.
 
-Lin, Y.-C., et al., 2025. Benchmarking large language models GPT-4o, Llama 3.1, and Qwen 2.5 for cancer genetic variant classification. npj Precis. Oncol. 【DOI/volume/pages 待核实——已在正文引言中引用，差异：somatic vs germline、无时间盲法、3 models】
+Lin, Y.-C., et al., 2025. Benchmarking large language models GPT-4o, Llama 3.1, and Qwen 2.5 for cancer genetic variant classification. npj Precis. Oncol. 9, 165. doi:10.1038/s41669-025-00583-8
 
 Karczewski, K.J., Francioli, L.C., Tiao, G., et al., 2020. The mutational constraint spectrum quantified from variation in 141,456 humans. Nature 581, 434\u2013443.
 
