@@ -25,7 +25,7 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 | DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 3,806 | **93.0%** |
 | DeepSeek chat | DeepSeek | 49.4% | 98.6% | 2,504 | 69.0% |
 | DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,494 | 68.0% |
-| 6-model majority | — | 64.1% | 98.3% | 2,915 | 93.5% |
+| 6-model majority | — | 64.1% | 98.4% | 2,911 | 93.5% |
 
 > Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528).
 
@@ -37,7 +37,7 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 
 *Figure 1. Multi-model performance on the temporally blinded test set: (a) dual-metric accuracy; (b) Benign→Pathogenic false-positive rates (log scale) — reasoning models mislabel 22–28% of Benign variants as Pathogenic.*
 
-**Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,915 variants), conditional accuracy reaches 98.3%.
+**Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,911 variants), conditional accuracy reaches 98.4%.
 
 ### 3.2b Surface-cue stratification: how much performance is readable from the variant name?
 
