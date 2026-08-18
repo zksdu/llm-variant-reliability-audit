@@ -279,7 +279,7 @@ Benign; cross-ecosystem counts in text.
 - **Fig. S1\u2013S5.** Extended figures from the audit (optional, from docs/figures/).
 """
 
-    title_block = """# When data leakage is controlled: a multi-vendor reliability audit of LLM-based ACMG/AMP variant classification
+    title_block = """# Multi-vendor evaluation of large language models for ACMG/AMP variant classification with controlled data contamination
 
 > JGG submission version. Keywords: variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding.
 

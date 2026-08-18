@@ -16,13 +16,12 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 DOCS = Path(__file__).parent.parent / "docs"
 
-TITLE = ("When data leakage is controlled: a multi-vendor reliability audit "
-         "of LLM-based ACMG/AMP variant classification")
+TITLE = "Multi-vendor evaluation of large language models for ACMG/AMP variant classification with controlled data contamination"
 AUTHOR = "__AUTHOR_2__¹, __AUTHOR_1__²,*"
 AFFIL_1 = "¹__AFFIL_2__"
 AFFIL_2 = "²__AFFIL_1__"
 EMAIL = "__CORRESPONDING_AUTHOR_EMAIL__"
-RUNNING = "Reliability Audit of LLM Variant Classification"
+RUNNING = "Multi-vendor LLM Variant Classification"
 KEYWORDS = ("variant classification; ACMG/AMP; large language models; data leakage; "
             "ClinVar; reliability audit; temporal blinding")
 ABSTRACT = """Background. Large language models (LLMs) are increasingly proposed for ACMG/AMP variant classification, but training corpora include ClinVar and ClinGen, so reported accuracy may reflect label memorization rather than reasoning.

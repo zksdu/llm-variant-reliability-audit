@@ -16,7 +16,7 @@
 
 **Title:** When Data Leakage Is Controlled: A Multi-Vendor Reliability Audit of LLM-Based ACMG/AMP Variant Classification
 
-**Running title (≤50 chars):** Reliability Audit of LLM Variant Classification
+**Running title (≤50 chars):** Multi-vendor LLM Variant Classification
 
 **Authors:** __AUTHOR_2__¹, __AUTHOR_1__²,*
 
@@ -28,7 +28,7 @@
 E-mail: __CORRESPONDING_AUTHOR_EMAIL__
 （第一作者：__AUTHOR_2__，__FIRST_AUTHOR_EMAIL__）
 
-**Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; reliability audit; temporal blinding
+**Keywords:** variant classification; ACMG/AMP; large language models; data leakage; ClinVar; controlled data contamination; temporal blinding
 
 ---
 
