@@ -202,7 +202,7 @@ To test whether the domestic findings generalize across training ecosystems, we 
 
 (Fig. 5) (full-scale, n = 5,000)
 
-Qwen3.7-max was re-evaluated on the complete test set with the same system prompt used for international models. The prompt shifts Qwen conservative: accuracy 71.6-to-65.5% (-6.2 pp), abstention +8.1 pp, FP 4.7-to-1.0%. Binary agreement 100%. Under unified prompt: Gemini 76.5% (FP 27.8%), Claude 68.5% (FP 3.9%), Qwen 65.5% (FP 1.0%). The conservative/aggressive dichotomy persists; Qwen's original accuracy was slightly inflated relative to prompted international models.
+Qwen3.7-max was re-evaluated on the complete test set with the same system prompt used for international models. The prompt shifts Qwen conservative: accuracy 71.6-to-65.5% (-6.2 pp), abstention +8.1 pp, FP 4.7-to-1.0%. Binary agreement 99.8% (5 direction changes out of 3,186 co-definitive variants). Under unified prompt: Gemini 76.5% (FP 27.8%), Claude 68.5% (FP 3.9%), Qwen 65.5% (FP 1.0%). The conservative/aggressive dichotomy persists; Qwen's original accuracy was slightly inflated relative to prompted international models.
 
 ### Foreign-model determinism
 
@@ -306,7 +306,7 @@ Each variant was presented as a clinical-geneticist task: variant name (HGVS), g
 - **Confusion matrix** on the P/B gold standard; sensitivity/specificity per model.
 - **Consensus**: majority vote across models on the three-way (P/B/VUS) semantics — semantically close classes (e.g., Pathogenic vs. Likely pathogenic) do not split votes; ties excluded (reported separately).
 - Expert-panel stratification (gold A strict/broad) applied to every model and the consensus.
-- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Because variants cluster by gene (2,050 genes across 5,000 variants; 3,952 variants in multi-variant genes, max NF1 n=83), we additionally computed gene-level cluster-bootstrap 95% CIs (1,000 resamples); these widen the Wilson intervals by ≈1.5× without changing any between-model conclusion. Gene-level permutation tests (500 permutations) confirm that all key model comparisons (Gemini vs. Qwen, Qwen vs. chat, Gemini vs. chat, Kimi vs. chat) remain significant at p < 0.001 even after correcting for gene-level clustering. Model-output determinism checked by re-running 50 variants × 3 models (temperature 0) and measuring classification agreement.
+- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Because variants cluster by gene (2,050 genes across 5,000 variants; 3,952 variants in multi-variant genes, max NF1 n=83), we additionally computed gene-level cluster-bootstrap 95% CIs (1,000 resamples); these widen the Wilson intervals by ≈1.5× without changing any between-model conclusion. Model-output determinism checked by re-running 50 variants × 3 models (temperature 0) and measuring classification agreement.
 
 ### Sub-experiments
 
