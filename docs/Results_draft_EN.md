@@ -19,10 +19,13 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 
 | Model | Vendor | All-inclusive Acc. | Conditional Acc. (spoken) | Spoken n | Expert-panel Acc. (n=100) |
 |---|---|---|---|---|---|
-| Qwen3.7-max | Alibaba | **71.6%** | 96.4% | 3,714 | 86.0% |
+| Gemini 3 Flash | Google | **76.5%** | 84.3% | 4,538 | 91.0% |
+| Qwen3.7-max | Alibaba | 71.6% | 96.4% | 3,714 | 86.0% |
+| Claude Sonnet 5 | Anthropic | 68.5% | 97.0% | 3,532 | 90.0% |
 | Kimi-K2.6 | Moonshot | 67.0% | 97.8% | 3,421 | 90.0% |
 | MiMo V2.5 Pro | Xiaomi | 66.1% | 85.2% | 3,876 | 92.0% |
 | DeepSeek V4-pro | DeepSeek | 61.8% | 81.2% | 3,806 | **93.0%** |
+| GPT-5.6-terra | OpenAI | 60.3% | 86.9% | 3,469 | 92.0% |
 | DeepSeek chat | DeepSeek | 49.4% | 98.6% | 2,504 | 69.0% |
 | DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,494 | 68.0% |
 | 6-model majority | — | 64.1% | 98.4% | 2,911 | 93.5% |
@@ -111,6 +114,11 @@ The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain
 | Kimi-K2.6 | 32.3% | 0/900 | 7.2% |
 | DeepSeek chat | 22.4% | 0/900 | 2.1% |
 | DeepSeek coder | 22.7% | 0/900 | 2.2% |
+| Gemini 3 Flash | — | 646 LB/5,000 | 27.8% FP |
+| Claude Sonnet 5 | — | 1,065 LB/5,000 | 3.9% FP |
+| GPT-5.6-terra | — | 591 LB/5,000 | 17.9% FP |
+
+> Note: International models were evaluated on the full 5,000-variant test set (not the 900-variant expert panel set); "LB" = Likely benign output. No model emitted Likely pathogenic (LP = 0 across all 15,000 international calls).
 
 Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard Likely pathogenic variants were escalated to Pathogenic; 51% of Likely benign were downgraded to Benign by Kimi. Two implications: (i) LLM outputs are usable at the binary-semantics level only — the "Likely" tier carries clinical information the models do not produce; (ii) reported high conditional accuracy on binary P/B evaluation is partly achieved *by* this collapse, which a five-class evaluation would not credit.
 
@@ -124,7 +132,10 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 |---|---|---|
 | DeepSeek chat | 50/50 (100.0%) | 50/50 (100.0%) |
 | Kimi-K2.6 | 49/50 (98.0%) | 50/50 (100.0%) |
+| Gemini 3 Flash | 40/50 (80.0%) | 44/50 (88.0%) |
+| GPT-5.6-terra | 38/50 (76.0%) | 39/50 (78.0%) |
 | DeepSeek V4-pro | 31/50 (62.0%) | **32/50 (64.0%)** |
+| Claude Sonnet 5 | — | — |
 
 ![Figure 5](figures/fig5_determinism.png)
 
