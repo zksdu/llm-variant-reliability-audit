@@ -106,15 +106,6 @@ Three sub-experiments show that LLM reliability is governed by the *evidence ava
 
 **(c) Functional-effect task (MaveDB, n = 300 × 2 models).** On deep-mutational-scanning variants with extreme functional scores (loss-of-function: score ≤ −0.8; normal: score ≥ 0.5) but no clinical evidence, models abstain massively (73–93%) and conditional directional agreement ≈ chance (45–55%). LLMs have no capacity for *de novo* functional inference from protein sequence alone — and they know it (abstain rather than hallucinate).
 
-*Summary:*
-
-```
-Evidence available        All-inclusive accuracy
-──────────────────────────────────────────────────
-Expert-panel (ClinGen)    86–93%
-ClinVar temporal (HGVS)   62–72%
-No clinical evidence       ~50% conditional; 73–93% abstention
-```
 
 ### Calibration
 

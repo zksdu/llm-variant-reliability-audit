@@ -85,11 +85,12 @@ TBL_RENUM = [
 
 
 def strip_embedded_figs(src: str) -> str:
-    """去掉正文内嵌图片与图注（JGG 图注独立成节）。"""
+    """去掉正文内嵌图片、图注和概念文本块（JGG 图注独立成节）。"""
     src = re.sub(r"!\[Figure \d\]\(figures/[^)]+\)\n+\*[^\n]*Figure[^\n]*\*\n+", "", src)
-    # 概念图文本块去 "Figure 1 (concept)" 标签
-    src = src.replace("**Figure 1 (concept). Reliability vs. evidence availability.**",
-                      "*Summary:*")
+    # 概念图文本块：删整个段落（含围栏）
+    src = re.sub(r"\*\*Figure 1 \(concept\).*?```\r?\n", "", src, flags=re.S)
+    # 兜底：删除残留的 "Evidence available" 围栏块（Windows 换行兼容）
+    src = re.sub(r"Evidence available.*?abstention\r?\n```\r?\n", "", src, flags=re.S)
     return src
 
 
