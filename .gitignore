@@ -105,3 +105,7 @@ docs/EM账号信息_勿上传.md
 !data/prompt_sym_qwen_5000.csv
 !data/determ_200_domestic.csv
 !data/determ_200_intl.csv
+!data/af_gpt_claude_results.csv
+!data/af_v4_mimo_results.csv
+!data/af_p_only.csv
+!data/af_p_results_on.csv
