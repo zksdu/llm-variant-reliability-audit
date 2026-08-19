@@ -251,9 +251,9 @@ The central design decision: LLM training corpora contain ClinVar history, so ev
 
 ### Models
 
-Six models, four vendors, all accessed through official OpenAI-compatible APIs (temperature 0, max_tokens 8,192 for reasoning-family models):
+Nine models from seven vendors, all accessed through OpenAI-compatible APIs (temperature 0, max_tokens 8,192 for reasoning-family models):
 
-| Model | Vendor | Type | API |
+| Model | Vendor | Type | API endpoint |
 |---|---|---|---|
 | DeepSeek V4-pro | DeepSeek | reasoning, 1.6T/49B active | api.deepseek.com |
 | DeepSeek chat (V3) | DeepSeek | chat | api.deepseek.com |
@@ -261,6 +261,9 @@ Six models, four vendors, all accessed through official OpenAI-compatible APIs (
 | Kimi-K2.6 | Moonshot | chat | Alibaba Model Studio gateway |
 | MiMo V2.5 Pro | Xiaomi | reasoning, 310B/15B active | xiaomimimo.com |
 | Qwen3.7-max | Alibaba | reasoning | Alibaba Model Studio (dedicated instance) |
+| Gemini 3 Flash | Google (US) | reasoning | relay via ai.flashapi.top |
+| GPT-5.6-terra | OpenAI (US) | reasoning | relay via ai.flashapi.top |
+| Claude Sonnet 5 | Anthropic (US) | chat | relay via ai.flashapi.top |
 
 Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the complete test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused 25% of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
 
