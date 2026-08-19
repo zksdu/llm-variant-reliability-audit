@@ -191,13 +191,11 @@ To test whether the domestic findings generalize across training ecosystems, we 
 
 > Note: foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods and Limitations); a prompt-robustness check is reported below.
 
-### 3.8b Prompt-asymmetry robustness check and foreign-model determinism
+### Prompt-asymmetry robustness check (full-scale, n = 5,000)
 
-Because the three foreign models received a research-context system prompt that domestic models did not, we ran two checks.
+Qwen3.7-max was re-evaluated on the complete test set with the same system prompt used for international models. The prompt shifts Qwen conservative: accuracy 71.6-to-65.5% (-6.2 pp), abstention +8.1 pp, FP 4.7-to-1.0%. Binary agreement 100%. Under unified prompt: Gemini 76.5% (FP 27.8%), Claude 68.5% (FP 3.9%), Qwen 65.5% (FP 1.0%). The conservative/aggressive dichotomy persists; Qwen's original accuracy was slightly inflated relative to prompted international models.
 
-**(a) Prompt effect on domestic models (n = 100 × 2, identical variants).** Adding the same system prompt to Kimi and Qwen changed all-inclusive accuracy by −3 pp (Kimi 73→70%) and −1 pp (Qwen 73→72%), and abstention by ≤3 pp — a slight conservative shift, far smaller than the behavioral differences between foreign models themselves (abstention 9.2% Gemini vs. 29.3% Claude; FP 27.8% vs. 3.9%). The conservative/aggressive attribution therefore cannot be an artifact of the prompt asymmetry.
-
-**(b) Foreign-model determinism (n = 20 × 3, temperature 0).** Exact-class agreement with the original run: Gemini 80%, GPT-5.6 85%, Claude 75%; binary agreement 95% / 85% / 80%. Foreign models are intermediate between fully deterministic chat-style models (100%) and V4-pro (64%); note that relay routing may contribute additional nondeterminism. Directionally, Finding 5 extends internationally: reasoning-class flagships are not output-stable at temperature 0.
+### Foreign-model determinism
 
 ## Appendix (internal): key numbers cross-check
 

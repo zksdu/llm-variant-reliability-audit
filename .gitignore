@@ -102,3 +102,4 @@ docs/EM账号信息_勿上传.md
 !data/ep_determ_intl_50_clean.csv
 !data/af_qwen_gemini_results.csv
 ~$*
+!data/prompt_sym_qwen_5000.csv
