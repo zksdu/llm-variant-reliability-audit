@@ -122,6 +122,24 @@ The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain
 
 Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard Likely pathogenic variants were escalated to Pathogenic; 51% of Likely benign were downgraded to Benign by Kimi. Two implications: (i) LLM outputs are usable at the binary-semantics level only — the "Likely" tier carries clinical information the models do not produce; (ii) reported high conditional accuracy on binary P/B evaluation is partly achieved *by* this collapse, which a five-class evaluation would not credit.
 
+### Clinical risk stratification (Weighted Error Severity Index)
+
+To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): Benign-to-Pathogenic misclassification = weight 4 (unnecessary prophylactic surgery, cascade screening), Pathogenic-to-Benign = weight 4 (missed diagnosis), VUS abstention = weight 0 (safe deferral).
+
+| Model | WESI | B-to-P (extreme) | Total extreme | Abstention |
+|---|---|---|---|---|
+| V4-pro | **0.585** | 711 (28.4%) | **716** | 23% |
+| Gemini | **0.577** | 694 (27.8%) | **712** | 9% |
+| MiMo | **0.460** | 557 (22.3%) | **573** | 22% |
+| GPT | **0.363** | 448 (17.9%) | **454** | 31% |
+| Qwen | 0.108 | 118 (4.7%) | 133 | 26% |
+| Claude | **0.086** | 97 (3.9%) | **107** | 29% |
+| Kimi | **0.060** | 63 (2.5%) | **74** | 32% |
+| chat | **0.029** | 35 (1.4%) | **36** | 50% |
+| coder | **0.026** | 32 (1.3%) | **33** | 50% |
+
+**Finding 7 (A 22-fold clinical risk spectrum).** The safest (coder, 33 extreme events/5000) and most dangerous (V4-pro, 716 events) differ by 22x. Each B-to-P triggers 3-5 cascade tests in relatives. V4-pro's 711 false positives could affect 2100-3500 relatives. **For clinical deployment, model selection should prioritize WESI over raw accuracy.**
+
 ### 3.6 Output determinism (reproducibility audit)
 
 Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
