@@ -195,21 +195,21 @@ def fig1(votes, gold):
 def fig2():
     fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.5))
     # A: AF 消融 Benign sensitivity — 5 模型（chat/coder/Kimi/Qwen/Gemini）
-    ms5 = ["chat", "coder", "Kimi", "Qwen", "Gemini"]
-    no5 = [11.0, 10.7, 43.4, 57.8, 67.2]
-    yes5 = [68.8, 68.3, 81.5, 92.2, 96.0]
+    ms5 = ["chat", "coder", "Kimi", "Qwen", "Gemini", "GPT", "Claude", "V4p", "MiMo"]
+    no5 = [15.0, 15.8, 50.5, 57.8, 67.2, 37.5, 56.2, 35.5, 44.8]
+    yes5 = [66.5, 66.2, 80.8, 92.2, 96.0, 90.2, 90.0, 71.5, 80.2]
     ax = axes[0]
-    x5 = np.arange(5)
+    x5 = np.arange(9)
     ax.bar(x5 - 0.2, no5, 0.4, color=DEEP, label="no AF")
     ax.bar(x5 + 0.2, yes5, 0.4, color=LIGHT, label="with AF")
     for i, (p, q) in enumerate(zip(no5, yes5)):
         ax.annotate(f"+{q-p:.0f}", (i, max(p, q) + 3), ha="center",
                     fontsize=6.5, fontweight="bold", color="#2F5C3A")
     ax.set_xticks(x5)
-    ax.set_xticklabels(ms5, fontsize=6.5, rotation=20, ha="right")
+    ax.set_xticklabels(ms5, fontsize=6, rotation=30, ha="right")
     ax.set_ylim(0, 108)
     ax.set_ylabel("Benign sensitivity (%)")
-    ax.set_title("A  AF ablation (5 models)", fontsize=8.5, loc="left", pad=4)
+    ax.set_title("A  AF ablation (9 models)", fontsize=8.5, loc="left", pad=4)
     ax.legend(frameon=False, fontsize=6, loc="lower right")
     ax.grid(axis="y", alpha=0.25, lw=0.5)
     ax.set_axisbelow(True)
