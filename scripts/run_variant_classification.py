@@ -31,23 +31,16 @@ import re
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# 复用软件工程项目的 DeepSeek 基建（call_llm / .env 加载）
-SE_PROJECT = Path(__file__).parent.parent.parent / "SCI_Paper_Project"
-SE_SCRIPTS = SE_PROJECT / "study" / "scripts"
-if SE_SCRIPTS.exists():
-    sys.path.insert(0, str(SE_SCRIPTS))
-
+# call_llm 复用模块（本项目 scripts/ 内，不依赖外部项目）
 HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE))
+
 DATA_DIR = HERE.parent / "data"
 RESULTS_DIR = HERE.parent / "results"
 OUT_CSV = DATA_DIR / "variant_classification_results.csv"
 
-# 引入 call_llm（若软件工程项目可用）
-try:
-    from run_experiment import call_llm, _has_api_key  # noqa: E402
-    LLM_AVAILABLE = True
-except ImportError:
-    LLM_AVAILABLE = False
+from call_llm import call_llm, _has_api_key
+LLM_AVAILABLE = True
 
 # ACMG/AMP 致病性分类标签（模型输出应落到这些类）
 ACMG_CLASSES = [

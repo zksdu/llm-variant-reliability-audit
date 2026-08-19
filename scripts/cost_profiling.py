@@ -20,8 +20,6 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 DATA_DIR = HERE.parent / "data"
-SE_SCRIPTS = Path(__file__).parent.parent.parent / "SCI_Paper_Project" / "study" / "scripts"
-sys.path.insert(0, str(SE_SCRIPTS))
 sys.path.insert(0, str(HERE))
 
 from run_experiment import (call_llm, _provider_for_model, PROVIDER_ENV,  # noqa: E402
