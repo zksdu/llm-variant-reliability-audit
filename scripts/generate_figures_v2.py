@@ -234,7 +234,7 @@ def fig2():
     ax.set_axisbelow(True)
     # C: 弃权 × 证据情境
     ax = axes[2]
-    ctx = ["Main\nset", "+AF", "Conflict", "MaveDB\n(LoF)", "MaveDB\n(Norm)"]
+    ctx = ["Main", "+AF", "Conf.", "Mave\nLoF", "Mave\nNorm"]
     chat_v = [49.9, 33.2, 89.0, 93, 93]
     kimi_v = [31.5, 18.0, 54.0, 83, 73]
     x = np.arange(5)
