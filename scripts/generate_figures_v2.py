@@ -194,29 +194,44 @@ def fig1(votes, gold):
 
 def fig2():
     fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.5))
-    # A/B: AF 消融（实测数字稳定）
-    ms = ["DeepSeek chat", "DeepSeek coder", "Kimi-K2.6"]
-    no = [11.0, 10.7, 43.4]
-    yes = [68.8, 68.3, 81.5]
-    x = np.arange(3)
-    for ax, (label_n, label_y, vn, vy, nn) in zip(
-            axes[:2],
-            [("A  Benign sensitivity", "with AF", no, yes, 3),
-             ("B  Pathogenic subset", "with AF", [44.9, 47.5], [64.0, 85.3], 2)]):
-        xx = np.arange(nn)
-        ax.bar(xx - 0.2, vn, 0.4, color=DEEP, label="no AF")
-        ax.bar(xx + 0.2, vy, 0.4, color=LIGHT, label=label_y)
-        for i, (p, q) in enumerate(zip(vn, vy)):
-            ax.annotate(f"+{q-p:.0f}", (i, max(p, q) + 3), ha="center",
-                        fontsize=7.5, fontweight="bold", color="#2F5C3A")
-        ax.set_xticks(xx)
-        ax.set_xticklabels(ms[:nn] if nn == 3 else ms[:2], fontsize=7)
-        ax.set_ylim(0, 100)
-        ax.set_ylabel("Accuracy / sensitivity (%)")
-        ax.set_title(label_n, fontsize=8.5, loc="left", pad=4)
-        ax.legend(frameon=False, fontsize=6.5, loc="lower right")
-        ax.grid(axis="y", alpha=0.25, lw=0.5)
-        ax.set_axisbelow(True)
+    # A: AF 消融 Benign sensitivity — 5 模型（chat/coder/Kimi/Qwen/Gemini）
+    ms5 = ["chat", "coder", "Kimi", "Qwen", "Gemini"]
+    no5 = [11.0, 10.7, 43.4, 57.8, 67.2]
+    yes5 = [68.8, 68.3, 81.5, 92.2, 96.0]
+    ax = axes[0]
+    x5 = np.arange(5)
+    ax.bar(x5 - 0.2, no5, 0.4, color=DEEP, label="no AF")
+    ax.bar(x5 + 0.2, yes5, 0.4, color=LIGHT, label="with AF")
+    for i, (p, q) in enumerate(zip(no5, yes5)):
+        ax.annotate(f"+{q-p:.0f}", (i, max(p, q) + 3), ha="center",
+                    fontsize=6.5, fontweight="bold", color="#2F5C3A")
+    ax.set_xticks(x5)
+    ax.set_xticklabels(ms5, fontsize=6.5, rotation=20, ha="right")
+    ax.set_ylim(0, 108)
+    ax.set_ylabel("Benign sensitivity (%)")
+    ax.set_title("A  AF ablation (5 models)", fontsize=8.5, loc="left", pad=4)
+    ax.legend(frameon=False, fontsize=6, loc="lower right")
+    ax.grid(axis="y", alpha=0.25, lw=0.5)
+    ax.set_axisbelow(True)
+    # B: AF Pathogenic subset — 2 模型
+    ms2 = ["chat", "Kimi"]
+    no2 = [44.9, 47.5]
+    yes2 = [64.0, 85.3]
+    ax = axes[1]
+    x2 = np.arange(2)
+    ax.bar(x2 - 0.2, no2, 0.4, color=DEEP, label="no AF")
+    ax.bar(x2 + 0.2, yes2, 0.4, color=LIGHT, label="with AF")
+    for i, (p, q) in enumerate(zip(no2, yes2)):
+        ax.annotate(f"+{q-p:.0f}", (i, max(p, q) + 3), ha="center",
+                    fontsize=7.5, fontweight="bold", color="#2F5C3A")
+    ax.set_xticks(x2)
+    ax.set_xticklabels(ms2, fontsize=7)
+    ax.set_ylim(0, 100)
+    ax.set_ylabel("Accuracy (%)")
+    ax.set_title("B  Pathogenic subset", fontsize=8.5, loc="left", pad=4)
+    ax.legend(frameon=False, fontsize=6.5, loc="lower right")
+    ax.grid(axis="y", alpha=0.25, lw=0.5)
+    ax.set_axisbelow(True)
     # C: 弃权 × 证据情境
     ax = axes[2]
     ctx = ["Main\nset", "+AF", "Conflict", "MaveDB\n(LoF)", "MaveDB\n(Norm)"]
