@@ -362,6 +362,10 @@ final manuscript.
 
 The authors declare that they have no conflict of interest.
 
+## AI use declaration
+
+During the preparation of this work the authors used an AI language model (GLM, Z.ai) to assist with drafting and language editing. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
+
 ## Acknowledgments
 
 Not applicable.
