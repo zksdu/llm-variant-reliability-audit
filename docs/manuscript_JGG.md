@@ -374,37 +374,37 @@ Not applicable.
 
 AI-CURA, 2026. AI-CURA, an automated LLM workflow for high-accuracy genetic variant classification. Sci. Transl. Med.  doi:10.1126/scitranslmed.adz4172
 
-Basharat, H., Plotkin, S., Le, C., Zhu, K., Pink, M., Alfaro, I., 2025. VariantBench: a framework for evaluating LLMs on justifications for genetic variant interpretation. In: Proceedings of IJCNLP-AACL 2025 (SRW), Mumbai, India.
+Basharat, H., Plotkin, S., Le, C., Zhu, K., Pink, M., Alfaro, I., 2025. VariantBench: a framework for evaluating LLMs on justifications for genetic variant interpretation. In: Proc. IJCNLP-AACL 2025 (SRW), Mumbai, India. https://aclanthology.org/2025.ijcnlp-srw.26/
 
 Bordt, S., et al., 2024. How much can we forget about data contamination? OpenReview. https://openreview.net/forum?id=Pf0PaYS9KG
 
-Cheng, J., Novati, G., Pan, M., et al., 2023. Accurate proteome-wide missense variant effect prediction with AlphaMissense. Science 381, eadg7492.
+Cheng, J., Novati, G., Pan, M., et al., 2023. Accurate proteome-wide missense variant effect prediction with AlphaMissense. Science 381, eadg7492. doi:10.1126/science.adg7492
 
 DeepSeek-AI, 2024. DeepSeek-V3 technical report. arXiv:2412.19437.
 
-Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. 
+Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. doi:10.1101/2020.04.16.041627
 
-Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023.
+Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023. arXiv:2308.08493
 
 Lin, Y.-C., et al., 2025. Benchmarking large language models GPT-4o, Llama 3.1, and Qwen 2.5 for cancer genetic variant classification. npj Precis. Oncol. 9, 165. doi:10.1038/s41669-025-00583-8
 
-Karczewski, K.J., Francioli, L.C., Tiao, G., et al., 2020. The mutational constraint spectrum quantified from variation in 141,456 humans. Nature 581, 434–443.
+Karczewski, K.J., Francioli, L.C., Tiao, G., et al., 2020. The mutational constraint spectrum quantified from variation in 141,456 humans. Nature 581, 434-443. doi:10.1038/s41586-020-2308-7
 
-Landrum, M.J., Lee, J.M., Benson, M., et al., 2020. ClinVar: improvements to integrating and interpreting data. Nucleic Acids Res. 48, D835–D844.
+Landrum, M.J., Lee, J.M., Benson, M., et al., 2020. ClinVar: improvements to integrating and interpreting data. Nucleic Acids Res. 48, D835-D844. doi:10.1093/nar/gkz972
 
 Moonshot AI, 2025. Kimi K2: open agentic intelligence. arXiv:2507.20534.
 
 Qwen Team, 2025. Qwen3 technical report. arXiv:2505.09388.
 
-Rehm, H.L., Berg, J.S., Brooks, L.D., et al., 2015. ClinGen — the Clinical Genome Resource. N. Engl. J. Med. 372, 2235–2242.
+Rehm, H.L., Berg, J.S., Brooks, L.D., et al., 2015. ClinGen - the Clinical Genome Resource. N. Engl. J. Med. 372, 2235-2242. doi:10.1056/NEJMsr1409004
 
-Richards, S., Aziz, N., Bale, S., et al., 2015. Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. Genet. Med. 17, 405–424.
+Richards, S., Aziz, N., Bale, S., et al., 2015. Standards and guidelines for the interpretation of sequence variants. Genet. Med. 17, 405-424. doi:10.1038/gim.2015.30
 
 Saadat, A., Fellay, J., 2026. Large language models for variant-centric functional evidence mining. arXiv:2604.00075.
 
-Sainz, O., Campos, J.A., García-Ferrero, I., et al., 2023. NLP evaluation in trouble: on the need to measure LLM data contamination for each benchmark. In: Findings of EMNLP 2023.
+Sainz, O., Campos, J.A., García-Ferrero, I., et al., 2023. NLP evaluation in trouble: on the need to measure LLM data contamination for each benchmark. In: Findings of EMNLP 2023. arXiv:2310.18018
 
-Wu, C., MacLeod, I., Su, A.I., 2013. BioGPS and MyGene.info: organizing online, gene-centric information. Nucleic Acids Res. 41, D561–D565.
+Wu, C., MacLeod, I., Su, A.I., 2013. BioGPS and MyGene.info: organizing online, gene-centric information. Nucleic Acids Res. 41, D561-D565. doi:10.1093/nar/gks1186
 
 Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 
