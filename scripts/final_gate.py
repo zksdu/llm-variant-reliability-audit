@@ -56,8 +56,10 @@ checks = {
     # ===== 摘要 =====
     '摘要-规模': '30,000 evaluations' in full and '15,000 additional evaluations' in full,
     '摘要-范围': '61.8–71.6%' in full and '86–93%' in full,
-    '摘要-盲分层': 'no international model outperformed the best domestic models' in full,
-    '盲分层三Tie': 'Gemini 88.0%, Claude 87.1%, Qwen 86.8%' in full,
+    '摘要-盲分层': 'no international model outperforms the best domestic models' in full and 'statistically indistinguishable (81.4% vs. 80.2%' in full,
+    '盲分层三Tie': 'Gemini 88.0% [85.7–89.9], Claude 87.1% [84.8–89.1], and the domestic leader Qwen 86.8%' in full,
+    '专用盲集S4': '81.4% [79.6–83.0]' in full and '64.7% [62.6–66.8]' in full and '25.0%' in full,
+    '专用盲集设计': '2,000 newly sampled variants' in full and 'pool: 4,772' in full,
     '摘要-Claude': '97.0% conditional accuracy with 3.9% FP' in full,
     '摘要-AF': 'up to 60.1 pp' in full,
 
@@ -149,7 +151,7 @@ checks = {
     # ===== 历史错误零残留 =====
     '旧-AF基线': '11.0% to 68.8%' not in full and '44.9%' not in full and '47.5%' not in full,
     '旧-79翻转': 'V4-pro = 79' not in full,
-    '旧-80.2/97.4/3.6': '80.2%' not in full and '97.4%' not in full and '3.6% false' not in full,
+    '旧-80.2/97.4/3.6': 'led internationally (80.2%)' not in full and '97.4%' not in full and '3.6% false' not in full,
     '旧-DOI': '1409004' not in full and 'gks1186' not in full and '1685-3' not in full and 's41669' not in full,
     '旧-共识': '2,911' not in full and '98.4%' not in full,
     '旧-500样本': '500-variant' not in full,
