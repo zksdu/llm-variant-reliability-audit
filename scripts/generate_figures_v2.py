@@ -94,6 +94,8 @@ def load():
     votes = defaultdict(dict)
     for fn in ["variant_classification_results_all.csv",
                "variant_classification_results_foreign.csv"]:
+        if not (DATA / fn).exists():
+            continue
         with (DATA / fn).open(encoding="utf-8", newline="") as f:
             for r in csv.DictReader(f):
                 if r["llm_class"] != "error":
@@ -294,6 +296,8 @@ def fig3():
     orig = defaultdict(dict)
     for fn in ["variant_classification_results_all.csv",
                "variant_classification_results_foreign.csv"]:
+        if not (DATA / fn).exists():
+            continue
         with (DATA / fn).open(encoding="utf-8", newline="") as f:
             for r in csv.DictReader(f):
                 orig[r["AlleleID"]][r["model"]] = r["llm_class"]
