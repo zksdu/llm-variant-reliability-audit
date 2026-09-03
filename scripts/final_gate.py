@@ -29,6 +29,21 @@ def _pkg_abstract_ok():
     return n(m.group(1)) == n(p.group(1))
 
 
+
+def _keywords_ok():
+    src = (ROOT / 'scripts' / 'build_docx.py').read_text(encoding='utf-8')
+    raw = re.search(r'KEYWORDS\s*=\s*\((.+?)\)', src, re.S)
+    if not raw:
+        return False
+    n = lambda s: [w.strip(' .') for w in re.sub(r'\s+', ' ', s).split(';') if w.strip(' .')]
+    kw_docx = n(raw.group(1).replace('"', ''))
+    m = re.search(r'Keywords:\s*(.+)', (ROOT / 'docs' / 'manuscript_JGG.md').read_text(encoding='utf-8'))
+    kw_md = n(m.group(1).split('|')[0]) if m else []
+    p2 = re.search(r'\*\*Keywords:\*\*\s*(.+)', (ROOT / 'docs' / 'submission_package.md').read_text(encoding='utf-8'))
+    kw_pkg = n(p2.group(1)) if p2 else []
+    return kw_docx == kw_md == kw_pkg and len(kw_md) == 7
+
+
 checks = {
     # ===== 结构 =====
     '表格数=8': len(d.tables) == 8,
@@ -110,6 +125,7 @@ checks = {
     '级联假设': 'Assuming 3–5 relatives' in full,
     '仓库地址': 'github.com/zksdu/llm-acmg-variant-audit' in full,
     '投稿包摘要=正文摘要': _pkg_abstract_ok(),
+    '关键词三方一致': _keywords_ok(),
     'Zenodo DOI': '10.5281/zenodo.22264400' in full,
 
     # ===== 参考文献（全部经权威元数据逐字段核实）=====
