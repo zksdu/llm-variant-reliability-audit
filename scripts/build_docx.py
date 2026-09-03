@@ -136,8 +136,17 @@ def main():
         if buf:
             add_table(doc, buf)
             buf = []
-        if not l.strip() or l.startswith(">") or l.strip() == "---" \
+        if not l.strip() or l.strip() == "---" \
                 or l.startswith("![") or l.startswith("# "):
+            i += 1
+            continue
+        if l.startswith(">"):
+            note = l.lstrip("> ").strip()
+            if note:
+                p = doc.add_paragraph()
+                add_runs(p, note)
+                for r in p.runs:
+                    r.italic = True
             i += 1
             continue
         if l.startswith("## "):
