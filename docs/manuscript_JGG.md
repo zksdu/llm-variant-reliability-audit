@@ -264,7 +264,7 @@ The central design decision: LLM training corpora contain ClinVar history, so ev
 
 ### Models
 
-Nine models from seven vendors (DeepSeek models: DeepSeek-AI, 2024; Kimi: Moonshot AI, 2025; Qwen: Qwen Team, 2025), all accessed through OpenAI-compatible APIs (temperature 0, max_tokens 8,192 for reasoning-family models):
+Nine models from seven vendors (DeepSeek models: DeepSeek-AI, 2024; Kimi: Kimi Team, 2025; Qwen: Yang et al., 2025), all accessed through OpenAI-compatible APIs (temperature 0, max_tokens 8,192 for reasoning-family models):
 
 | Model | Vendor | Type | API endpoint |
 |---|---|---|---|
@@ -378,9 +378,9 @@ Karczewski, K.J., Francioli, L.C., Tiao, G., et al., 2020. The mutational constr
 
 Landrum, M.J., Lee, J.M., Benson, M., et al., 2020. ClinVar: improvements to integrating and interpreting data. Nucleic Acids Res. 48, D835-D844. doi:10.1093/nar/gkz972
 
-Moonshot AI, 2025. Kimi K2: open agentic intelligence. arXiv:2507.20534.
+Kimi Team, 2025. Kimi K2: open agentic intelligence. arXiv:2507.20534.
 
-Qwen Team, 2025. Qwen3 technical report. arXiv:2505.09388.
+Yang, A., Li, A., Yang, B., et al., 2025. Qwen3 technical report. arXiv:2505.09388.
 
 Rehm, H.L., Berg, J.S., Brooks, L.D., et al., 2015. ClinGen - the Clinical Genome Resource. N. Engl. J. Med. 372, 2235-2242. doi:10.1056/NEJMsr1406261
 
