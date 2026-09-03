@@ -5,13 +5,13 @@
 ## 关键发现
 
 ### 1. 模型从不输出 "Likely" 类别（核心发现）
-所有 3 个模型的五分类混淆矩阵中，"Likely pathogenic / Likely benign" 列全部为 0。
+三个模型的五分类输出中 "Likely" 类极少出现：Kimi 11/900（1.2%）、coder 4/900（0.4%）、chat 2/900（0.2%）（2026-09-03 复核修正）。
 **LLM 的 ACMG 五分类输出实际上是三分类（Pathogenic / Uncertain / Benign）**，
 强度信息（Likely 档）完全丢失。
 
 ### 2. 强度极化：Likely 被升级/降级
 - 金标准 Likely pathogenic（342）：Kimi 82% 升级为 Pathogenic、chat 58% 升级
-- 金标准 Likely benign（193）：Kimi 51% 降级为 Benign、14% 升为 Pathogenic
+- 金标准 Likely benign（193）：Kimi 53% 降级为 Benign、14% 升为 Pathogenic（2026-09-03 从原始数据复核修正）
 - 五分类精确匹配率：Kimi 32.3% / chat 22.4% / coder 22.7%
   （"低"主要是 Likely 档缺失所致）
 

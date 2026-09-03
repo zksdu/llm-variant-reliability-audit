@@ -253,13 +253,40 @@ def fig2():
 
 
 def fig3():
+    """A: 确定性（n=200 重跑 vs 原跑，从原始文件实时计算）；
+    B: Likely 档坍缩（专家面板 900 上 Kimi 输出分布，实时计算）。"""
+    # ---- A: 确定性 ----
+    orig = defaultdict(dict)
+    for fn in ["variant_classification_results_all.csv",
+               "variant_classification_results_foreign.csv"]:
+        with (DATA / fn).open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                orig[r["AlleleID"]][r["model"]] = r["llm_class"]
+    res = defaultdict(lambda: [0, 0, 0])          # n, exact, binary
+    for fn in ["determ_200_domestic.csv", "determ_200_intl.csv"]:
+        with (DATA / fn).open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                o = orig.get(r["AlleleID"], {}).get(r["model"])
+                if not o or o == "error" or r["llm_class"] == "error":
+                    continue
+                st = res[r["model"]]
+                st[0] += 1
+                if o == r["llm_class"]:
+                    st[1] += 1
+                if bin2(o) == bin2(r["llm_class"]):
+                    st[2] += 1
+    order = sorted(res, key=lambda m: -res[m][2] / res[m][0])
+    exact = [res[m][1] / res[m][0] * 100 for m in order]
+    binary = [res[m][2] / res[m][0] * 100 for m in order]
+    intl = [m in INTL3 for m in order]
+    short = {"deepseek-chat": "chat", "kimi-k2.6": "Kimi",
+             "deepseek-v4-pro": "V4-pro", "gemini-3-flash": "Gemini",
+             "gpt-5.6-terra": "GPT", "claude-sonnet-5": "Claude"}
+    ms = [short.get(m, m) for m in order]
+
     fig, (a, b) = plt.subplots(1, 2, figsize=(7.1, 2.8),
                                gridspec_kw={"width_ratios": [1.2, 1]})
-    ms = ["chat", "Kimi", "V4-pro", "Gemini", "GPT", "Claude"]
-    exact = [100, 98, 62, 80, 85, 75]
-    binary = [100, 100, 64, 95, 85, 80]
-    intl = [0, 0, 0, 1, 1, 1]
-    y = np.arange(6)[::-1]
+    y = np.arange(len(order))[::-1]
     a.barh(y + 0.2, exact, 0.38, color=[INTL_FACE if i else DEEP for i in intl],
            edgecolor=DEEP, lw=0.8, label="Exact class")
     a.barh(y - 0.2, binary, 0.38, color=[LIGHT if not i else "#FBE3C0" for i in intl],
@@ -272,15 +299,35 @@ def fig3():
             tick.set_style("italic")
     a.set_xlim(0, 112)
     a.set_xlabel("Re-run agreement (%)")
-    a.set_title("A  Output determinism (T = 0)", fontsize=8.5, loc="left", pad=4)
+    a.set_title("A  Output determinism (T = 0, n = 200/model)",
+                fontsize=8.5, loc="left", pad=4)
     a.legend(frameon=False, loc="lower right")
-    a.grid(axis="x", alpha=0.25, lw=0.5)
+    a.grid(axis="x", alpha=0.25)
     a.set_axisbelow(True)
-    # B: Likely 坍缩
+
+    # ---- B: Likely 坍缩（专家面板 900，Kimi） ----
+    gold = {}
+    with (DATA / "expert_panel_candidates.csv").open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            gold[r["AlleleID"]] = r["ClinicalSignificance"]
+    kimi = {}
+    with (DATA / "expert_panel_results.csv").open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            if r["model"] == "kimi-k2.6":
+                kimi[r["AlleleID"]] = r["llm_class"]
+    dist = {}
+    for gs in ["Likely pathogenic", "Likely benign"]:
+        cnt = defaultdict(int)
+        for aid, g in gold.items():
+            if g != gs or aid not in kimi:
+                continue
+            cnt[bin2(kimi[aid])] += 1
+        tot = max(1, sum(cnt.values()))
+        dist[gs] = [cnt[k] / tot * 100 for k in ("P", "V", "B")]
     cats = ["Gold\nLikely pathogenic", "Gold\nLikely benign"]
-    toP = [82, 14]
-    toV = [15, 33]
-    toB = [3, 53]
+    toP = [dist[gs][0] for gs in dist]
+    toV = [dist[gs][1] for gs in dist]
+    toB = [dist[gs][2] for gs in dist]
     x = np.arange(2)
     b.bar(x, toP, 0.5, color=FP_C, alpha=0.85, label="\u2192 Pathogenic")
     b.bar(x, toV, 0.5, bottom=toP, color="#BBBBBB", label="\u2192 VUS")
@@ -289,7 +336,7 @@ def fig3():
     for xi, (p, v, bs) in enumerate(zip(toP, toV, toB)):
         for val, bottom, col in [(p, 0, "white"), (v, p, "black"), (bs, p + v, "white")]:
             if val >= 8:
-                b.text(xi, bottom + val / 2, f"{val}%", ha="center", va="center",
+                b.text(xi, bottom + val / 2, f"{val:.0f}%", ha="center", va="center",
                        fontsize=7, color=col)
     b.set_xticks(x)
     b.set_xticklabels(cats, fontsize=7.5)

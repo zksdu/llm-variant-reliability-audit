@@ -22,7 +22,7 @@ Clinical variant interpretation — classifying a germline variant as Pathogenic
 
 Two problems undermine these numbers. First, **training-data leakage**: LLM corpora contain public variant databases, so a model asked to classify a variant may reproduce a label it has memorized rather than reason about evidence. Published evaluations rarely control for this. Second, **vendor dependence**: results are typically reported for a single model family, leaving open whether any observed capability is a property of LLMs in general or of one training pipeline.
 
-Existing variant-interpretation benchmarks do not resolve these concerns. VariantBench (Basharat et al., 2025) evaluates ACMG classifications and criterion-level justifications but without leakage control; VarLitBench (Saadat and Fellay, 2026) anchors on ClinGen-curated functional evidence whose public availability makes memorization possible; AI-CURA (AI-CURA, 2026) demonstrated clinical-grade performance on curated variants, again without controlling what the model saw during training. In the broader LLM literature, benchmark contamination is well documented (Sainz et al., 2023; Bordt et al., 2024), and temporally split evaluation has been proposed as a decontamination strategy (Golchin and Surdeanu, 2023). No study to date has combined temporal blinding, multi-vendor coverage, and independent expert-panel validation at scale for variant classification.
+Existing variant-interpretation benchmarks do not resolve these concerns. VariantBench (Basharat et al., 2025) evaluates ACMG classifications and criterion-level justifications but without leakage control; VarLitBench (Saadat and Fellay, 2026) anchors on ClinGen-curated functional evidence whose public availability makes memorization possible; AI-CURA (AI-CURA, 2026) demonstrated clinical-grade performance on curated variants, again without controlling what the model saw during training. In the broader LLM literature, benchmark contamination is well documented (Sainz et al., 2023; Bordt et al., 2025), and temporally split evaluation has been proposed as a decontamination strategy (Golchin and Surdeanu, 2023). No study to date has combined temporal blinding, multi-vendor coverage, and independent expert-panel validation at scale for variant classification.
 
 Here we report an audit that combines all three controls: 6 LLMs from 4 vendors, 30,000 variant-model evaluations on a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026), with an independent 900-variant expert-panel validation set and three triangulation sub-experiments (allele-frequency ablation, conflicting-interpretation variants, and functional-effect variants). We address three questions: (RQ1) How reliable is LLM variant classification under label-leakage control? (RQ2) Do multi-model consensus and model choice improve reliability? (RQ3) How does reliability depend on the evidence available to the model?
 
@@ -122,16 +122,16 @@ The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain
 
 | Model | Exact five-class match | Likely-tier output | Cross-semantic errors (P↔B) |
 |---|---|---|---|
-| Kimi-K2.6 | 32.3% | 0/900 | 7.2% |
-| DeepSeek chat | 22.4% | 0/900 | 2.1% |
-| DeepSeek coder | 22.7% | 0/900 | 2.2% |
+| Kimi-K2.6 | 32.3% | 11/900 | 7.2% |
+| DeepSeek chat | 22.4% | 2/900 | 2.1% |
+| DeepSeek coder | 22.7% | 4/900 | 2.2% |
 | Gemini 3 Flash | — | 646 LB/5,000 | 27.8% FP |
 | Claude Sonnet 5 | — | 1,065 LB/5,000 | 3.9% FP |
 | GPT-5.6-terra | — | 591 LB/5,000 | 17.9% FP |
 
 > Note: International models were evaluated on the full 5,000-variant test set (not the 900-variant expert panel set); "LB" = Likely benign output. No model emitted Likely pathogenic (LP = 0 across all 15,000 international calls).
 
-Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard Likely pathogenic variants were escalated to Pathogenic; 51% of Likely benign were downgraded to Benign by Kimi. Two implications: (i) LLM outputs are usable at the binary-semantics level only — the "Likely" tier carries clinical information the models do not produce; (ii) reported high conditional accuracy on binary P/B evaluation is partly achieved *by* this collapse, which a five-class evaluation would not credit.
+Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard Likely pathogenic variants were escalated to Pathogenic; 53% of Likely benign were downgraded to Benign by Kimi. Two implications: (i) LLM outputs are usable at the binary-semantics level only — the "Likely" tier carries clinical information the models do not produce; (ii) reported high conditional accuracy on binary P/B evaluation is partly achieved *by* this collapse, which a five-class evaluation would not credit.
 
 ### Clinical risk stratification (Weighted Error Severity Index)
 
@@ -157,7 +157,7 @@ To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): B
 
 Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
 
-**Table S1. Re-run consistency (n = 50 variants × 3 models).**
+**Table S1. Re-run consistency (n = 50 variants per model; temperature 0).**
 
 | Model | Exact-class agreement | Binary (P/B) agreement |
 |---|---|---|
@@ -170,7 +170,7 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 > Cross-check: the 100 expert-panel variants shared between the main test set and the dedicated 900-variant set were classified twice in independent runs (same model, same prompt); agreement was chat 99/100, coder 100/100, Kimi 97/100 — consistent with the determinism ranking above.
 
-**Finding 5 (Reasoning models are not deterministic — worsens with sample size).** At temperature = 0 (n = 200 per model), the determinism spectrum is: Kimi 96.0% > chat 92.5% > Claude 88.0% > Gemini 86.0% > GPT 78.0% > **V4-pro 40.0%**. Critically, the number of direct Benign↔Pathogenic flips (the clinically most consequential error direction): Kimi/chat/Claude = **0**, Gemini = 15, GPT = 10, **V4-pro = 79**. V4-pro changed its binary call on **60% of re-run variants** — at n = 50 this was estimated at 36%, but the larger sample reveals substantially worse non-determinism. Three models (chat, Kimi, Claude) never flip across semantic boundaries; their non-determinism is entirely VUS↔definitive shifts, which are clinically safe (changes abstention, not direction). Under a reliability-audit framing, non-determinism with cross-semantic flips is a first-class failure mode: **a model that returns contradictory clinical directions for the same input cannot be deployed regardless of its average accuracy.**
+**Finding 5 (Reasoning models are not deterministic — worsens with sample size).** At temperature = 0 (n = 200 per model), the determinism spectrum is: Kimi 96.0% > chat 92.5% > Claude 88.0% > Gemini 86.0% > GPT 78.0% > **V4-pro 40.0%**. Critically, the number of direct Benign↔Pathogenic flips (the clinically most consequential error direction): Kimi/chat/Claude = **0**, GPT = 10, Gemini = 15, V4-pro = 2. V4-pro changed its binary output on **60% of re-run variants** — half of its re-runs returned unparseable output (a delivery failure as consequential as a flip: the system yields no usable answer) — and at n = 50 the change rate was estimated at 36%; the larger sample reveals substantially worse non-determinism. Three models (chat, Kimi, Claude) never flip across semantic boundaries; their non-determinism is entirely VUS↔definitive shifts, which are clinically safe (changes abstention, not direction). Under a reliability-audit framing, non-determinism with cross-semantic flips is a first-class failure mode: **a model that returns contradictory clinical directions for the same input cannot be deployed regardless of its average accuracy.**
 
 ### International extension
 
@@ -222,7 +222,7 @@ Three independent experiments converge: models abstain more when evidence is mis
 
 ### Reproducibility as a reliability property
 
-At temperature 0, chat-style models are exactly reproducible (100% over 50 re-runs), but the reasoning model V4-pro changed its binary call on 36% of re-run variants, including direct Benign↔Pathogenic flips. Average accuracy alone is therefore insufficient to audit a model for clinical use: a non-deterministic model cannot be deployed regardless of its mean performance, and reported single-run accuracies for such models are themselves noisy. The audit framing makes this explicit: determinism, like accuracy and abstention calibration, is a measured property we report per model rather than assume.
+At temperature 0, chat-style models are exactly reproducible (100% over 50 re-runs), but the reasoning model V4-pro changed its binary output on 60% of 200 re-run variants (half of them unparseable outputs), including direct Benign↔Pathogenic flips. Average accuracy alone is therefore insufficient to audit a model for clinical use: a non-deterministic model cannot be deployed regardless of its mean performance, and reported single-run accuracies for such models are themselves noisy. The audit framing makes this explicit: determinism, like accuracy and abstention calibration, is a measured property we report per model rather than assume.
 
 ### The information-deficit explanation of Benign underperformance
 
@@ -376,17 +376,17 @@ AI-CURA, 2026. AI-CURA, an automated LLM workflow for high-accuracy genetic vari
 
 Basharat, H., Plotkin, S., Le, C., Zhu, K., Pink, M., Alfaro, I., 2025. VariantBench: a framework for evaluating LLMs on justifications for genetic variant interpretation. In: Proc. IJCNLP-AACL 2025 (SRW), Mumbai, India. https://aclanthology.org/2025.ijcnlp-srw.26/
 
-Bordt, S., et al., 2024. How much can we forget about data contamination? OpenReview. https://openreview.net/forum?id=Pf0PaYS9KG
+Bordt, S., Srinivas, S., Boreiko, V., von Luxburg, U., 2025. How much can we forget about data contamination? Proc. ICML 2025. https://openreview.net/forum?id=Pf0PaYS9KG
 
 Cheng, J., Novati, G., Pan, M., et al., 2023. Accurate proteome-wide missense variant effect prediction with AlphaMissense. Science 381, eadg7492. doi:10.1126/science.adg7492
 
 DeepSeek-AI, 2024. DeepSeek-V3 technical report. arXiv:2412.19437.
 
-Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. bioRxiv. doi:10.1101/2020.04.16.041627
+Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. Genome Biol. 20, 100. doi:10.1186/s13059-019-1685-3
 
 Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023. arXiv:2308.08493
 
-Lin, Y.-C., et al., 2025. Benchmarking large language models GPT-4o, Llama 3.1, and Qwen 2.5 for cancer genetic variant classification. npj Precis. Oncol. 9, 165. doi:10.1038/s41669-025-00583-8
+Lin, K.-H., Kao, T.-H., Wang, L.-C., et al., 2025. Benchmarking large language models GPT-4o, Llama 3.1, and Qwen 2.5 for cancer genetic variant classification. npj Precis. Oncol. 9, 141. doi:10.1038/s41698-025-00935-4
 
 Karczewski, K.J., Francioli, L.C., Tiao, G., et al., 2020. The mutational constraint spectrum quantified from variation in 141,456 humans. Nature 581, 434-443. doi:10.1038/s41586-020-2308-7
 
@@ -415,7 +415,7 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 ## Figure legends
 
 **Fig. 1. Multi-model performance on the temporally blinded test set.**
-A: Dual-metric accuracy for all nine models on the complete test set (n ~ 4,999 evaluable per model); all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy with Wilson 95% CI error bars. International models shown with white fill and outline.
+A: Dual-metric accuracy for all nine models on the complete test set (n = 5,000 variants per model); all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy with Wilson 95% CI error bars. International models shown with white fill and outline.
 B: Benign-to-Pathogenic false-positive rates (log scale) with 95% CI; the 6-model consensus value is indicated.
 
 **Fig. 2. Evidence availability governs reliability.**
@@ -425,8 +425,11 @@ Pathogenic-enriched subset (n = 150 × 2). C: Abstention across evidence context
 with vs. without AF, main set vs. conflicting-interpretation variants, and the
 no-evidence MaveDB task.
 
-**Fig. 5. Behavioral dashboard of the nine models.**
-Six audited dimensions per model (all-inclusive, conditional, expert-panel, abstention, Benign-to-Pathogenic FP, spoken rate), color-coded 0-100; the dashboard summarizes the audit and supports model selection.
+**Fig. 3. Output determinism and the collapse of the "Likely" tier.**
+A: Re-run agreement at temperature 0 (n = 200 variants per model; international
+models included). B: Output distribution for gold-standard Likely pathogenic and Likely
+benign variants (Kimi, expert set): strength information polarizes to Pathogenic or
+Benign; cross-ecosystem counts in text.
 
 **Fig. 4. Fate of gold-standard Benign variants across the nine models.**
 For each model, the share of the 2,500 gold-standard Benign variants that is
@@ -434,15 +437,12 @@ correctly called Benign (blue), abstained as VUS (grey), or misclassified as
 Pathogenic (magenta) — the clinically dangerous direction. Conservative and
 aggressive camps separate sharply on the magenta segment.
 
-**Fig. 3. Output determinism and the collapse of the "Likely" tier.**
-A: Re-run agreement at temperature 0 (n = 50 per model, plus the international
-extension). B: Output distribution for gold-standard Likely pathogenic and Likely
-benign variants (Kimi, expert set): strength information polarizes to Pathogenic or
-Benign; cross-ecosystem counts in text.
+**Fig. 5. Behavioral dashboard of the nine models.**
+Six audited dimensions per model (all-inclusive, conditional, expert-panel, abstention, Benign-to-Pathogenic FP, spoken rate), color-coded 0-100; the dashboard summarizes the audit and supports model selection.
 
 ### Supplementary material
 
 - **Table S1.** Re-run consistency (n = 50 × 3 models).
 - **Table S2.** Nine-model comparison on the complete test set (n = 5,000 per model).
-- **Table S3.** Expert-panel validation (n = 797 exclusive variants; 3 models).
+- **Table S3.** Expert-panel validation (n = 797 exclusive variants; 5 models).
 - **Fig. S1–S5.** Extended figures from the audit (optional, from docs/figures/).
