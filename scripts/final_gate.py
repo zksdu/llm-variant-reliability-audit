@@ -18,6 +18,17 @@ for tb in d.tables:
         for c in row.cells:
             full += '\n' + c.text
 
+def _pkg_abstract_ok():
+    md = (ROOT / 'docs' / 'manuscript_JGG.md').read_text(encoding='utf-8')
+    pkg = (ROOT / 'docs' / 'submission_package.md').read_text(encoding='utf-8')
+    m = re.search(r'## Abstract\n\n(.+?)\n\n## Introduction', md, re.S)
+    p = re.search(r'## Abstract[^\n]*\n\n(.+?)\n\n---', pkg, re.S)
+    if not (m and p):
+        return False
+    n = lambda s: ' '.join(s.replace('**', '').split())
+    return n(m.group(1)) == n(p.group(1))
+
+
 checks = {
     # ===== 结构 =====
     '表格数=8': len(d.tables) == 8,
@@ -98,6 +109,7 @@ checks = {
     '可复现声明': 'every intermediate file needed to reproduce' in full,
     '级联假设': 'Assuming 3–5 relatives' in full,
     '仓库地址': 'github.com/zksdu/llm-acmg-variant-audit' in full,
+    '投稿包摘要=正文摘要': _pkg_abstract_ok(),
     'Zenodo DOI': '10.5281/zenodo.22264400' in full,
 
     # ===== 参考文献（全部经权威元数据逐字段核实）=====
