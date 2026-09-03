@@ -252,7 +252,7 @@ The central design decision: LLM training corpora contain ClinVar history, so ev
 
 - Model cutoffs (verified 2026-08): DeepSeek V4 ~Dec 2025; Kimi/GLM/MiMo/Qwen families ≤ 2025. We conservatively require **LastEvaluated ≥ 2026-01-01**.
 - Eligibility: unambiguous clinical classification (Pathogenic or Benign only; "Likely" and compound terms excluded from the P/B gold standard), a HGVS name, and no conflicting classification.
-- De-duplication by ALLELEID (4.9% of raw rows were duplicate allele entries).
+- De-duplication by ALLELEID: variant_summary lists one row per allele per origin; collapsing to one row per allele removes 49.6% of raw rows (9,029,235 rows → 4,548,781 unique alleles).
 - Stratified sampling: 2,500 P-side + 2,500 Benign, seed 42 (reproducible), yielding n = 5,000 (2,499 strict Pathogenic + 1 compound P-side label excluded from analysis as unevaluable; 4,999 with unambiguous P/B gold labels).
 - Result: all 5,000 variants were last evaluated between 2026-01 and 2026-07 (Jan 2,097 / Feb 1,672 / Mar 324 / Apr 412 / May 263 / Jun 199 / Jul 33), i.e., after every evaluated model's training cutoff — the models cannot have seen these labels during training.
 
@@ -393,9 +393,6 @@ Sainz, O., Campos, J.A., García-Ferrero, I., et al., 2023. NLP evaluation in tr
 Wu, C., MacLeod, I., Su, A.I., 2013. BioGPS and MyGene.info: organizing online, gene-centric information. Nucleic Acids Res. 41, D561-D565. doi:10.1093/nar/gks1114
 
 Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
-
-## Tables
-
 
 
 ## Figure legends
