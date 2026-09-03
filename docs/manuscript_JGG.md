@@ -57,7 +57,7 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 
 > Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528).
 
-**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.6 to +22.4 percentage points (pp)** in all-inclusive accuracy (all current-generation vs. previous-generation McNemar p ≤ 2.9×10⁻²⁰; Kimi vs. MiMo: p = 0.12, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
+**Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.4 to +22.4 percentage points (pp)** in all-inclusive accuracy (all current-vs-previous-generation pairs McNemar p ≤ 1.6×10⁻⁸⁶; within-generation Kimi vs. MiMo: p = 0.12, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
 
 **Finding 2 (Conditional reliability is not universal — and error direction matters).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit. In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable. Crucially, the errors are directionally asymmetric: when a gold-standard Benign variant receives a definitive call, reasoning models call it **Pathogenic** far more often — V4-pro mislabels 28.4% and MiMo 22.3% of all Benign variants as Pathogenic, versus 1.3–1.4% (chat/coder) and 2.5% (Kimi); Qwen sits between at 4.7%. Six-model consensus restores FP to 1.8%. The property "when the model speaks, it is right" holds **only for conservative models**; for reasoning models, committing is frequent, less accurate, and biased toward the clinically dangerous direction (false Pathogenic).
 
@@ -122,7 +122,7 @@ The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain
 
 | Model | Exact five-class match | Likely-tier output | Cross-semantic errors (P↔B) |
 |---|---|---|---|
-| Kimi-K2.6 | 32.3% | 11/900 | 7.2% |
+| Kimi-K2.6 | 32.1% | 11/900 | 7.2% |
 | DeepSeek chat | 22.4% | 2/900 | 2.1% |
 | DeepSeek coder | 22.7% | 4/900 | 2.2% |
 | Gemini 3 Flash | — | 646 LB/5,000 | 27.8% FP |
@@ -155,7 +155,7 @@ To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): B
 
 (Fig. 3A) (reproducibility audit)
 
-Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants × 3 models under identical settings (temperature = 0, same prompt, same endpoint) and measured classification agreement with the original run.
+Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants per model under identical settings (temperature = 0, same prompt, same endpoint; six models attempted, five completed — Claude returned 429 rate-limit errors) and measured classification agreement with the original run.
 
 **Table S1. Re-run consistency (n = 50 variants per model; temperature 0).**
 
@@ -218,7 +218,7 @@ The gap between the best and worst model (+27.3 pp all-inclusive across nine mod
 
 ### Abstention is calibrated behavior, not conservatism
 
-Three independent experiments converge: models abstain more when evidence is missing (AF ablation: abstention falls 80%→33% once allele frequencies are provided), when experts disagree (conflicting variants: +22–39 pp abstention without being told), and when the task has no clinical evidence at all (MaveDB functional task: 73–93% abstention). LLMs behave like evidence-aware decision systems: they express uncertainty where evidence is weak and commit where it is strong. Clinically, this makes abstention a **trustworthy triage signal** — "the model said Uncertain, therefore review by a human" is a safe operating policy, and our data show the model is disproportionately Uncertain precisely when human review is needed.
+Three independent experiments converge: models abstain more when evidence is missing (AF ablation: on gold-standard Benign variants, chat abstention falls 90%→31% once allele frequencies are provided), when experts disagree (conflicting variants: +22–39 pp abstention without being told), and when the task has no clinical evidence at all (MaveDB functional task: 73–93% abstention). LLMs behave like evidence-aware decision systems: they express uncertainty where evidence is weak and commit where it is strong. Clinically, this makes abstention a **trustworthy triage signal** — "the model said Uncertain, therefore review by a human" is a safe operating policy, and our data show the model is disproportionately Uncertain precisely when human review is needed.
 
 ### Reproducibility as a reliability property
 
@@ -306,7 +306,7 @@ Each variant was presented as a clinical-geneticist task: variant name (HGVS), g
 - **Confusion matrix** on the P/B gold standard; sensitivity/specificity per model.
 - **Consensus**: majority vote across models on the three-way (P/B/VUS) semantics — semantically close classes (e.g., Pathogenic vs. Likely pathogenic) do not split votes; ties excluded (reported separately).
 - Expert-panel stratification (gold A strict/broad) applied to every model and the consensus.
-- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Because variants cluster by gene (2,050 genes across 5,000 variants; 3,952 variants in multi-variant genes, max NF1 n=83), we additionally computed gene-level cluster-bootstrap 95% CIs (1,000 resamples); these widen the Wilson intervals by ≈1.5× without changing any between-model conclusion. Model-output determinism checked by re-running 50 variants × 3 models (temperature 0) and measuring classification agreement.
+- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Because variants cluster by gene (2,050 genes across 5,000 variants; 3,952 variants in multi-variant genes, max NF1 n=83), we additionally computed gene-level cluster-bootstrap 95% CIs (1,000 resamples); these widen the Wilson intervals by ≈1.5× without changing any between-model conclusion. Model-output determinism checked by re-running 50 variants per model (temperature 0; five models completed) and, at larger scale, 200 variants per model, measuring classification agreement.
 
 ### Sub-experiments
 
@@ -364,7 +364,7 @@ The authors declare that they have no conflict of interest.
 
 ## AI use declaration
 
-During the preparation of this work the authors used an AI language model (GLM, Z.ai) to assist with drafting and language editing. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
+During the preparation of this work the authors used an AI language model (GLM, Z.ai) to assist with drafting, language editing, and analysis-code development. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
 
 ## Acknowledgments
 
@@ -416,10 +416,10 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 
 **Fig. 1. Multi-model performance on the temporally blinded test set.**
 A: Dual-metric accuracy for all nine models on the complete test set (n = 5,000 variants per model); all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy with Wilson 95% CI error bars. International models shown with white fill and outline.
-B: Benign-to-Pathogenic false-positive rates (log scale) with 95% CI; the 6-model consensus value is indicated.
+B: Benign-to-Pathogenic false-positive rates (log scale) with 95% CI.
 
 **Fig. 2. Evidence availability governs reliability.**
-A: Allele-frequency ablation on a Benign-rich subset (n = 400 × 3 models):
+A: Allele-frequency ablation on a Benign-rich subset (n = 400 × 9 models):
 Benign sensitivity without vs. with population AF. B: The ablation on a
 Pathogenic-enriched subset (n = 150 × 2). C: Abstention across evidence contexts:
 with vs. without AF, main set vs. conflicting-interpretation variants, and the
@@ -442,7 +442,6 @@ Six audited dimensions per model (all-inclusive, conditional, expert-panel, abst
 
 ### Supplementary material
 
-- **Table S1.** Re-run consistency (n = 50 × 3 models).
+- **Table S1.** Re-run consistency (n = 50 variants per model; temperature 0).
 - **Table S2.** Nine-model comparison on the complete test set (n = 5,000 per model).
 - **Table S3.** Expert-panel validation (n = 797 exclusive variants; 5 models).
-- **Fig. S1–S5.** Extended figures from the audit (optional, from docs/figures/).
