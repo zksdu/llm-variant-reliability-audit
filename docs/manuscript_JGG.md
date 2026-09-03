@@ -32,13 +32,11 @@ We find that label-leakage control reveals a large vendor gap (up to +27 pp), th
 
 ### Cohort and experimental scale
 
-We evaluated **6 LLMs from 4 vendors** (DeepSeek: v4-pro, chat, coder; Moonshot: Kimi-K2.6; Xiaomi: MiMo V2.5 Pro; Alibaba: Qwen3.7-max) on a **temporally-blinded test set of 5,000 ClinVar variants** (all LastEvaluated ≥ 2026-01, i.e., after the training cutoff of every evaluated model). In total, **30,000/30,000** domestic and **15,000/15,000** international variant-model pairs completed successfully (4 initial parse failures were automatically retried). All analyses use binary Pathogenic vs. Benign evaluation with VUS treated as abstention (see Methods).
+We evaluated **6 LLMs from 4 vendors** (DeepSeek: v4-pro, chat, coder; Moonshot: Kimi-K2.6; Xiaomi: MiMo V2.5 Pro; Alibaba: Qwen3.7-max) on a **temporally-blinded test set of 5,000 ClinVar variants** (all LastEvaluated ≥ 2026-01, i.e., after the training cutoff of every evaluated model). In total, **30,000/30,000** domestic and **15,000/15,000** international variant-model pairs completed successfully (4 rows remain unparseable after automatic retry and are excluded from analysis). All analyses use binary Pathogenic vs. Benign evaluation with VUS treated as abstention (see Methods).
 
 ### Headline accuracy: models that speak are almost always right
 
-(Fig. 1)
-
-We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS counted as errors; clinical usability) and **conditional accuracy given a definitive call** (VUS excluded; reliability of expressed opinions).
+We report two complementary accuracy metrics (Fig. 1): **all-inclusive accuracy** (VUS counted as errors; clinical usability) and **conditional accuracy given a definitive call** (VUS excluded; reliability of expressed opinions).
 
 **Table 1. Performance on the temporally-blinded test set (n = 5,000 variants).**
 
@@ -59,7 +57,7 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 
 **Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.4 to +22.4 percentage points (pp)** in all-inclusive accuracy (all current-vs-previous-generation pairs McNemar p ≤ 1.6×10⁻⁸⁶; within-generation Kimi vs. MiMo: p = 0.12, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
 
-**Finding 2 (Conditional reliability is not universal — and error direction matters).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit. In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable. Crucially, the errors are directionally asymmetric: when a gold-standard Benign variant receives a definitive call, reasoning models call it **Pathogenic** far more often — V4-pro mislabels 28.4% and MiMo 22.3% of all Benign variants as Pathogenic, versus 1.3–1.4% (chat/coder) and 2.5% (Kimi); Qwen sits between at 4.7%. Six-model consensus restores FP to 1.8%. The property "when the model speaks, it is right" holds **only for conservative models**; for reasoning models, committing is frequent, less accurate, and biased toward the clinically dangerous direction (false Pathogenic).
+**Finding 2 (Conditional reliability is not universal — and error direction matters).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit. In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable. Crucially, the errors are directionally asymmetric: when a gold-standard Benign variant receives a definitive call, reasoning models call it **Pathogenic** far more often — V4-pro mislabels 28.4% and MiMo 22.3% of all Benign variants as Pathogenic, versus 1.3–1.4% (chat/coder) and 2.5% (Kimi); Qwen sits between at 4.7%. Six-model consensus restores FP to 1.8%. The property "when the model speaks, it is right" holds **only for conservative models**; for reasoning models, committing is frequent, less accurate, and biased toward the clinically dangerous direction (false Pathogenic; Fig. 4).
 
 **Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,915 variants), conditional accuracy reaches 98.3%.
 
@@ -71,9 +69,9 @@ HGVS protein notation can itself reveal the answer class: nonsense (p.Xxx###Ter)
 |---|---|---|---|
 | DeepSeek chat | 98.5% | 67.8% | −30.7 pp |
 | Kimi-K2.6 | 99.8% | 77.7% | −22.1 pp |
-| Qwen3.7-max | 99.5% | 83.8% | −15.7 pp |
+| Qwen3.7-max | 99.4% | 83.6% | −15.8 pp |
 
-**Finding 4 (Part of headline accuracy is name-reading).** Two-thirds of gold-standard Pathogenic variants (1,671/2,499) carry an LoF cue directly in their name, and on these, every model is near-ceiling (98.5–99.8%) — performance achievable without gene-disease knowledge beyond recognizing the notation. On the 828 uncued variants (missense, synonymous, splice-region), sensitivity drops to 67.8–83.8%, still well above the 50% base rate — models retain genuine discriminative signal, but 16–31 pp weaker. Naive accuracy metrics conflate these two regimes; a reliability audit should report both strata. Qwen degrades least (−15.7 pp), consistent with its overall lead.
+**Finding 4 (Part of headline accuracy is name-reading).** Two-thirds of gold-standard Pathogenic variants (1,671/2,499) carry an LoF cue directly in their name, and on these, every model is near-ceiling (98.5–99.8%) — performance achievable without gene-disease knowledge beyond recognizing the notation. On the 828 uncued variants (missense, synonymous, splice-region), sensitivity drops to 67.8–83.6%, still well above the 50% base rate — models retain genuine discriminative signal, but 16–31 pp weaker. Naive accuracy metrics conflate these two regimes; a reliability audit should report both strata. Qwen degrades least (−15.8 pp), consistent with its overall lead.
 
 ### Independent gold standard: ClinGen expert-panel review
 
@@ -97,9 +95,7 @@ The vendor gap **widens** under the strongest gold standard (+29.9 pp for Kimi v
 
 ### Triangulation: evidence availability drives reliability
 
-(Fig. 2)
-
-Three sub-experiments show that LLM reliability is governed by the *evidence available in the prompt*:
+Three sub-experiments (Fig. 2) show that LLM reliability is governed by the *evidence available in the prompt*:
 
 **(a) Allele-frequency (AF) ablation (n = 400 × 9 models Benign-enriched + 150 × 2 Pathogenic).** Adding population allele frequencies (AF_ESP/ExAC/1000G, from ClinVar VCF) to the prompt — the identical variants, models, and otherwise identical prompts, with the no-AF condition taken from the main experiment — raised Benign sensitivity on gold-standard Benign variants (n = 356) from 8.7% to 68.8% (chat, **+60.1 pp**), 9.3% to 68.3% (coder), and 45.5% to 81.5% (Kimi); chat's abstention on these variants fell from 90% to 31%. **The systematic Benign abstention observed in the main experiment is primarily an information-deficit behavior, not model conservatism.** The effect is Benign-side-specific: on a Pathogenic-enriched AF subset (n = 150 × 2), adding AF did not raise accuracy (chat 76.7%→64.0%; Kimi 90.0%→85.3%) and abstention rose (23.3%→36.0% chat; 8.7%→14.7% Kimi) — population AF is Benign-directed evidence (BA1/BS1), and its presence makes models appropriately more cautious, not more accurate, on Pathogenic calls. AF evidence is thus mandatory for Benign recall but is not a universal accuracy booster.
 
@@ -114,9 +110,7 @@ The AF effect on Benign sensitivity is consistent across all nine tested models 
 
 Mean self-reported confidence (0.73–0.80 for the domestic models; 0.95 for Gemini) did not track all-inclusive accuracy across models (e.g., chat: confidence 0.78 vs. accuracy 49.4%; Kimi: 0.73 vs. 67.0%). Confidence is calibrated *within* a model's decision style, not across models; reasoning models over-express confidence relative to their conditional accuracy (V4-pro: 0.79 vs. 81.2%; MiMo: 0.80 vs. 85.2%).
 
-### Five-class analysis
-
-(Fig. 3B): the "Likely" tier is absent
+### Five-class analysis (Fig. 3B): the "Likely" tier is absent
 
 The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain significance / Likely benign / Benign), and P vs. LP carry different clinical follow-up (e.g., LP requires confirmation). On the expert-panel set (which carries five-class labels; P: 306, LP: 342, LB: 193, B: 59), **domestic models rarely emit a "Likely" class (Kimi 11/900 = 1.2%, coder 4/900 = 0.4%, chat 2/900 = 0.2%)** — the five-class output collapses to three (P / VUS / B).
 
@@ -149,11 +143,9 @@ To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): B
 | chat | **0.029** | 35 (1.4%) | **36** | 50% |
 | coder | **0.026** | 32 (1.3%) | **33** | 50% |
 
-**Finding 7 (A 22-fold clinical risk spectrum).** The safest (coder, 33 extreme events/5000) and most dangerous (V4-pro, 716 events) differ by 22x. Each B-to-P triggers 3-5 cascade tests in relatives. V4-pro's 711 false positives could affect 2100-3500 relatives. **For clinical deployment, model selection should prioritize WESI over raw accuracy.**
+**Finding 7 (A 22-fold clinical risk spectrum).** The safest (coder, 33 extreme events/5000) and most dangerous (V4-pro, 716 events) differ by 22x. Assuming 3–5 relatives per proband undergo cascade testing, V4-pro's 711 false positives could affect roughly 2,100–3,500 relatives. **For clinical deployment, model selection should prioritize WESI over raw accuracy.**
 
-### Output determinism
-
-(Fig. 3A) (reproducibility audit)
+### Output determinism (Fig. 3A; reproducibility audit)
 
 Because a clinical system must return the *same* answer for the *same* variant, we re-ran 50 variants per model under identical settings (temperature = 0, same prompt, same endpoint; six models attempted, five completed — Claude returned 429 rate-limit errors) and measured classification agreement with the original run.
 
@@ -172,9 +164,7 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 **Finding 5 (Reasoning models are not deterministic — worsens with sample size).** At temperature = 0 (n = 200 per model), the determinism spectrum is: Kimi 96.0% > chat 92.5% > Claude 88.0% > Gemini 86.0% > GPT 78.0% > **V4-pro 40.0%**. Critically, the number of direct Benign↔Pathogenic flips (the clinically most consequential error direction): Kimi/chat/Claude = **0**, GPT = 10, Gemini = 15, V4-pro = 2. V4-pro changed its binary output on **60% of re-run variants** — half of its re-runs returned unparseable output (a delivery failure as consequential as a flip: the system yields no usable answer) — and at n = 50 the change rate was estimated at 36%; the larger sample reveals substantially worse non-determinism. Three models (chat, Kimi, Claude) never flip across semantic boundaries; their non-determinism is entirely VUS↔definitive shifts, which are clinically safe (changes abstention, not direction). Under a reliability-audit framing, non-determinism with cross-semantic flips is a first-class failure mode: **a model that returns contradictory clinical directions for the same input cannot be deployed regardless of its average accuracy.**
 
-### International extension
-
-(Fig. 4): three foreign flagships at full scale
+### International extension: three foreign flagships at full scale
 
 To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **complete temporally blinded test set** (5,000 variants each; identical prompts; research-context system prompt for all three; see Methods).
 
@@ -192,15 +182,13 @@ To test whether the domestic findings generalize across training ecosystems, we 
 | DeepSeek chat | DeepSeek | 49.4% | 98.6% | 49.9% | 1.4% | 69% |
 | DeepSeek coder | DeepSeek | 49.2% | 98.7% | 50.1% | 1.3% | 68% |
 
-**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (76.5% [75.3–77.7], +4.9 pp over the best domestic model; McNemar p = 1.7×10⁻¹³) with the lowest abstention (9.2%) — but pays for it with a 27.8% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (28.4%) and MiMo (22.3%). (ii) **Claude behaves as a conservative model**: 97.0% conditional accuracy with 3.9% FP — an order of magnitude below the aggressive camp and closest to Kimi's (2.5%; Fisher exact p = 0.008, distinguishable but both single-digit), and it exceeds Kimi in all-inclusive accuracy (p = 2.7×10⁻³) while sitting below Qwen (p = 3.0×10⁻¹⁵). On the independent expert-panel set (Table 2), the same dichotomy sharpens: Gemini and GPT both show 36.4% false-positive rates (vs. Kimi 19.8% and chat/coder 7–8%), confirming that the aggressive/conservative split holds under the strongest gold standard across ecosystems. The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality. (iii) **GPT-5.6-terra trails its foreign peers** (60.3%, significantly below Qwen: McNemar p = 4.7×10⁻⁹⁰) and sits below every current-generation domestic model — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
+**Finding 6 (The domestic findings generalize — and sharpen — internationally).** Three observations extend beyond the Chinese ecosystem. (i) **Gemini 3 Flash leads all nine models** (76.5% [75.3–77.7], +4.9 pp over the best domestic model; McNemar p = 1.7×10⁻¹³) with the lowest abstention (9.2%) — but pays for it with a 27.8% false-positive rate on Benign variants, placing it squarely in the *aggressive* camp with V4-pro (28.4%) and MiMo (22.3%). (ii) **Claude behaves as a conservative model**: 97.0% conditional accuracy with 3.9% FP — an order of magnitude below the aggressive camp and closest to Kimi's (2.5%; Fisher exact p = 0.008, distinguishable but both single-digit), and it exceeds Kimi in all-inclusive accuracy (p = 2.7×10⁻³) while sitting below Qwen (p = 3.0×10⁻¹⁵). On the independent expert-panel set (Table S3), the same dichotomy sharpens: Gemini and GPT both show 36.4% false-positive rates (vs. Kimi 19.8% and chat/coder 7–8%), confirming that the aggressive/conservative split holds under the strongest gold standard across ecosystems. The conservative/aggressive dichotomy of Finding 2 is thus a property of model *behavior*, not vendor nationality (the full behavioral dashboard, Fig. 5, summarizes the six audited dimensions per model). (iii) **GPT-5.6-terra trails its foreign peers** (60.3%, significantly below Qwen: McNemar p = 4.7×10⁻⁹⁰) and sits below every current-generation domestic model — capability tracks neither nationality nor presumed price tier, reinforcing the audit's central message that model choice must be made on measured, blinded evidence rather than vendor reputation.
 
 **Cross-ecosystem note: the "Likely" tier survives on the benign side only.** Unlike the six domestic models — which rarely emit a "Likely" class (≤1.2%) (see the five-class analysis below) — all three foreign models use "Likely benign": Claude 1,065/5,000 (21.3%), Gemini 646/5,000 (12.9%), GPT 591/5,000 (11.8%). Strikingly, **not one foreign model emitted "Likely pathogenic" (0/15,000 calls)** — strength information survives only on the benign side, while the pathogenic side polarizes to full "Pathogenic" in every ecosystem. The five-class collapse is therefore asymmetric and partially ecosystem-dependent, with direct consequences for clinical workflows that distinguish Pathogenic from Likely pathogenic follow-up.
 
 > Note: foreign-model results are obtained via an OpenAI-compatible relay with a research-context system prompt (disclosed in Methods and Limitations); a prompt-robustness check is reported below.
 
-### Prompt-asymmetry robustness check
-
-(Fig. 5) (full-scale, n = 5,000)
+### Prompt-asymmetry robustness check (full-scale, n = 5,000)
 
 Qwen3.7-max was re-evaluated on the complete test set with the same system prompt used for international models. The prompt shifts Qwen conservative: accuracy 71.6-to-65.5% (-6.2 pp), abstention +8.1 pp, FP 4.7-to-1.0%. Binary agreement 99.8% (5 direction changes out of 3,186 co-definitive variants). Under unified prompt: Gemini 76.5% (FP 27.8%), Claude 68.5% (FP 3.9%), Qwen 65.5% (FP 1.0%). The conservative/aggressive dichotomy persists; Qwen's original accuracy was slightly inflated relative to prompted international models.
 
@@ -304,7 +292,7 @@ Each variant was presented as a clinical-geneticist task: variant name (HGVS), g
 - **Confusion matrix** on the P/B gold standard; sensitivity/specificity per model.
 - **Consensus**: majority vote across models on the three-way (P/B/VUS) semantics — semantically close classes (e.g., Pathogenic vs. Likely pathogenic) do not split votes; ties excluded (reported separately).
 - Expert-panel stratification (gold A strict/broad) applied to every model and the consensus.
-- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Because variants cluster by gene (2,050 genes across 5,000 variants; 3,952 variants in multi-variant genes, max NF1 n=83), we additionally computed gene-level cluster-bootstrap 95% CIs (1,000 resamples); these widen the Wilson intervals by ≈1.5× without changing any between-model conclusion. Model-output determinism checked by re-running 50 variants per model (temperature 0; five models completed) and, at larger scale, 200 variants per model, measuring classification agreement.
+- **Statistics**: Wilson 95% confidence intervals for all accuracies; McNemar's paired test (normal approximation with continuity correction, n > 30) for model comparisons on the shared variant set; consensus vs. best-single-model compared descriptively. Because variants cluster by gene (2,050 genes across 5,000 variants; 3,952 variants in multi-variant genes, max NF1 n=83), we additionally computed gene-level cluster-bootstrap 95% CIs (1,000 resamples); these widen the Wilson intervals by 1.6–2.4× (mean ≈1.9×) without changing any between-model conclusion (archived computation in the repository). Model-output determinism checked by re-running 50 variants per model (temperature 0; five models completed) and, at larger scale, 200 variants per model, measuring classification agreement.
 
 ### Sub-experiments
 
