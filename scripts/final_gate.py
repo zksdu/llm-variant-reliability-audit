@@ -46,7 +46,7 @@ def _keywords_ok():
 
 checks = {
     # ===== 结构 =====
-    '表格数=8': len(d.tables) == 8,
+    '表格数=9': len(d.tables) == 9,
     '无中文残留': not re.search('[\u4e00-\u9fff]', full),
     '无游离图标记': not re.search(r'^\(Fig\.', full, re.M),
     '标题正确': 'Multi-vendor evaluation of large language models for ACMG/AMP variant classification with controlled data contamination' in full,
@@ -56,7 +56,8 @@ checks = {
     # ===== 摘要 =====
     '摘要-规模': '30,000 evaluations' in full and '15,000 additional evaluations' in full,
     '摘要-范围': '61.8–71.6%' in full and '86–93%' in full,
-    '摘要-Gemini': 'Gemini 3 Flash led internationally (76.5%)' in full,
+    '摘要-盲分层': 'no international model outperformed the best domestic models' in full,
+    '盲分层三Tie': 'Gemini 88.0%, Claude 87.1%, Qwen 86.8%' in full,
     '摘要-Claude': '97.0% conditional accuracy with 3.9% FP' in full,
     '摘要-AF': 'up to 60.1 pp' in full,
 
@@ -97,7 +98,7 @@ checks = {
     'S2-FP列': '27.8%' in full and '3.9%' in full and '17.9%' in full,
     'S3-五行': '79.0%' in full and '72.8%' in full and '69.6%' in full and '42.9%' in full and '43.3%' in full,
     'S3-全900': 'Kimi 74.7% / chat 45.7% / coder 46.0%' in full,
-    'S3-Claude429': '429 rate-limit errors' in full,
+    'S3-Claude502': 'HTTP 502' in full,
     'F6-Fisher': 'Fisher exact p = 0.008' in full,
 
     # ===== AF/三角验证（复算值）=====
@@ -124,6 +125,9 @@ checks = {
     '可复现声明': 'every intermediate file needed to reproduce' in full,
     '级联假设': 'Assuming 3–5 relatives' in full,
     '仓库地址': 'github.com/zksdu/llm-acmg-variant-audit' in full,
+    'S4表存在': 'Table S4' in full and 'LastEvaluated ≥ 2026-04' in full,
+    '截止披露': 'GPT-5.6-terra ~2026-02-16' in full and 'Gemini 3 Flash ~2026-03' in full,
+    '无GLM残留': 'GLM/MiMo' not in full,
     '投稿包摘要=正文摘要': _pkg_abstract_ok(),
     '关键词三方一致': _keywords_ok(),
     'Zenodo DOI': '10.5281/zenodo.22281813' in full,
