@@ -3,7 +3,7 @@
 > ⚠️ 本文件为 EM 投稿时逐字复制用的唯一权威版本（旧版含过时数字已废弃）。
 > 权威正文：docs/manuscript_JGG.md / docs/submission_JGG.docx
 > 投稿图（5 张）：docs/figures_v2/fig1-fig5（.tiff/.pdf/.png）
-> 代码仓库：https://github.com/zksdu/llm-acmg-variant-audit（Zenodo DOI: 10.5281/zenodo.22281813）
+> 代码仓库：https://github.com/zksdu/llm-acmg-variant-audit（Zenodo DOI: 10.5281/zenodo.22288477）
 
 ---
 
@@ -48,10 +48,10 @@ Not applicable. This study uses only publicly available database records (ClinVa
 **Consent for publication.** Not applicable.
 
 **Availability of data and materials.**
-All source data are publicly available: ClinVar variant_summary and VCF (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The temporally blinded test sets, gold standards, all 45,000 raw model outputs (4 parse-failure rows excluded from analysis), and analysis scripts are available at https://github.com/zksdu/llm-acmg-variant-audit (archived on Zenodo, DOI: 10.5281/zenodo.22281813).
+All source data are publicly available: ClinVar variant_summary and VCF (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The temporally blinded test sets, gold standards, all 45,000 raw model outputs (4 parse-failure rows excluded from analysis), and analysis scripts are available at https://github.com/zksdu/llm-acmg-variant-audit (archived on Zenodo, DOI: 10.5281/zenodo.22288477).
 
 **Code availability.**
-Custom analysis code is available at https://github.com/zksdu/llm-acmg-variant-audit (archived on Zenodo, DOI: 10.5281/zenodo.22281813). The pipeline uses the Python 3 standard library only; sampling is byte-reproducible at seed 42.
+Custom analysis code is available at https://github.com/zksdu/llm-acmg-variant-audit (archived on Zenodo, DOI: 10.5281/zenodo.22288477). The pipeline uses the Python 3 standard library only; sampling is byte-reproducible at seed 42.
 
 **Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
@@ -96,7 +96,7 @@ E-mail: zhangkai@gdcp.edu.cn
 3. Cover letter：上方文本（或作为单独文件上传）
 4. Personal Keywords（5 个）：variant classification / ACMG/AMP / large language model / ClinVar / artificial intelligence
 5. 补充表 S1–S3：正文内（docx 已含）；如 EM 要求单独文件，从 manuscript_JGG.md 提取
-6. 代码仓库（Data availability 栏填写）：https://github.com/zksdu/llm-acmg-variant-audit（DOI: 10.5281/zenodo.22281813）
+6. 代码仓库（Data availability 栏填写）：https://github.com/zksdu/llm-acmg-variant-audit（DOI: 10.5281/zenodo.22288477）
 
 ## 合规自查（2026-09-03 终审）
 

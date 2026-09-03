@@ -342,12 +342,12 @@ All source data are publicly available: ClinVar variant_summary and VCF
 (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The
 temporally blinded test sets, gold standards, all 45,000 raw model outputs (4 parse-failure rows excluded from analysis), the dedicated fully blinded set and its 6,000 raw outputs,
 and analysis scripts are available at https://github.com/zksdu/llm-acmg-variant-audit
-(archived on Zenodo, DOI: 10.5281/zenodo.22281813).
+(archived on Zenodo, DOI: 10.5281/zenodo.22288477).
 
 ## Code availability
 
 Custom analysis code is available at https://github.com/zksdu/llm-acmg-variant-audit
-(archived on Zenodo, DOI: 10.5281/zenodo.22281813). The pipeline uses the Python 3 standard library only;
+(archived on Zenodo, DOI: 10.5281/zenodo.22288477). The pipeline uses the Python 3 standard library only;
 sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement

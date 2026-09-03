@@ -14,7 +14,7 @@ GitHub 发 **v1.2.0** Release 换新 DOI：
 3. 标题：`v1.2.0 — dedicated blinded-set revision`
 4. 描述：`Adds dedicated fully blinded set (n=2,000) evaluation, cutoff disclosures, and final review fixes.`
 5. Publish → 1-2 分钟后到 https://zenodo.org/account/settings/github/ 取新 DOI → **发给助手替换**，等 docx 重建完成后再投稿。
-   （若决定沿用 DOI 10.5281/zenodo.22281813 也可直接投，但快照对应 v1.1.0，与终稿有差异。）
+   （若决定沿用 DOI 10.5281/zenodo.22288477 也可直接投，但快照对应 v1.1.0，与终稿有差异。）
 
 ---
 
@@ -50,7 +50,7 @@ GitHub 发 **v1.2.0** Release 换新 DOI：
 | Funding | No specific funding（或选无基金选项）|
 | Conflict of Interest | No |
 | Ethics | `Not applicable. This study uses only publicly available database records (ClinVar, ClinGen-derived review statuses, MaveDB); no human participants, patient material, or personal data were involved.` |
-| Data availability | `All source data are publicly available (ClinVar, MaveDB, mygene.info). Test sets, gold standards, all 51,000 raw model outputs, and analysis scripts: https://github.com/zksdu/llm-acmg-variant-audit (DOI: 10.5281/zenodo.22281813 — 或 v1.2.0 新 DOI)` |
+| Data availability | `All source data are publicly available (ClinVar, MaveDB, mygene.info). Test sets, gold standards, all 51,000 raw model outputs, and analysis scripts: https://github.com/zksdu/llm-acmg-variant-audit (DOI: 10.5281/zenodo.22288477 — 或 v1.2.0 新 DOI)` |
 
 ### 3. 上传文件（按顺序）
 
