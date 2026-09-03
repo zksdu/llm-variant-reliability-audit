@@ -83,7 +83,7 @@ We constructed a dedicated validation set of **900 variants curated by expert pa
 |---|---|---|---|---|---|
 | Gemini 3 Flash | Google | **79.0%** | 85.4% | 7.4% | 36.4% |
 | Kimi-K2.6 | Moonshot | 72.8% | 90.6% | 19.7% | 19.8% |
-| GPT-5.6-terra | OpenAI | 69.5% | 84.7% | 17.9% | 36.4% |
+| GPT-5.6-terra | OpenAI | 69.6% | 84.7% | 17.8% | 36.4% |
 | DeepSeek chat | DeepSeek | 42.9% | 95.0% | 54.8% | 7.3% |
 | DeepSeek coder | DeepSeek | 43.3% | 94.8% | 54.3% | 7.7% |
 
@@ -112,7 +112,7 @@ Mean self-reported confidence (0.73–0.80 for the domestic models; 0.95 for Gem
 
 ### Five-class analysis (Fig. 3B): the "Likely" tier is absent
 
-The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain significance / Likely benign / Benign), and P vs. LP carry different clinical follow-up (e.g., LP requires confirmation). On the expert-panel set (which carries five-class labels; P: 306, LP: 342, LB: 193, B: 59), **domestic models rarely emit a "Likely" class (Kimi 11/900 = 1.2%, coder 4/900 = 0.4%, chat 2/900 = 0.2%)** — the five-class output collapses to three (P / VUS / B).
+The ACMG/AMP framework is five-class (Pathogenic / Likely pathogenic / Uncertain significance / Likely benign / Benign), and P vs. LP carry different clinical follow-up (e.g., LP requires confirmation). On the expert-panel set (which carries five-class labels; P: 303 + 3 compound P/LP, LP: 342, LB: 193, B: 59), **domestic models rarely emit a "Likely" class (Kimi 11/900 = 1.2%, coder 4/900 = 0.4%, chat 2/900 = 0.2%)** — the five-class output collapses to three (P / VUS / B).
 
 | Model | Exact five-class match | Likely-tier output | Cross-semantic errors (P↔B) |
 |---|---|---|---|
@@ -227,7 +227,7 @@ AI-CURA (AI-CURA, 2026) demonstrated expert-consistency without leakage control;
 (v) Single task (germline SNV/indel); splice/de novo/structural/somatic variants unaddressed.
 (vi) Population bias: ClinVar submissions and reference AF panels (ESP/ExAC/1000G) skew European-ancestry; Benign sensitivity estimates may not transfer equitably to non-European populations.
 (vii) McNemar paired tests assume variant independence; gene-level clustering (2,050 genes, NF1 n=83) means tests are optimistic; cluster-bootstrap CIs are reported alongside and preserve all conclusions.
-(viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (Qwen's accuracy shifts −6.1 pp under the unified prompt, but its conservative-camp behavior persists: FP 1.0%, conditional accuracy 98.9%), but the caveat remains.
+(viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (Qwen's accuracy shifts −6.2 pp under the unified prompt, but its conservative-camp behavior persists: FP 1.0%, conditional accuracy 98.9%), but the caveat remains.
 (ix) Conditional accuracy compares models with very different abstention rates (9.2% vs 49.9%); different denominator sizes can obscure direct comparison (Simpson's paradox risk).
 (x) No comprehensive comparison with non-ML variant effect predictors (AlphaMissense, REVEL, CADD, InterVar). The available AlphaMissense release is transcript-level hg38, and only a small minority of test-set variants could be matched directly (most ClinVar annotations are hg19/GRCh37), preventing a head-to-head comparison on a usable subset; a liftover-based comparison is in preparation.
 
@@ -278,7 +278,7 @@ Nine models from seven vendors (DeepSeek models: DeepSeek-AI, 2024; Kimi: Moonsh
 | GPT-5.6-terra | OpenAI (US) | reasoning | relay via ai.flashapi.top |
 | Claude Sonnet 5 | Anthropic (US) | chat | relay via ai.flashapi.top |
 
-Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the complete test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused a substantial share of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
+Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the complete test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused 5 of 20 variant-classification queries in pilot testing (25%, medical-safety policy; documented in the archived runner script), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
 
 ### Prompt design
 
