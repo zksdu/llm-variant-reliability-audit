@@ -273,11 +273,11 @@ AI-CURA（AI-CURA, 2026）展示了无泄漏控制的专家一致性；我们的
 
 ## 数据可用性
 
-全部源数据公开可得：ClinVar variant_summary 与 VCF（ftp.ncbi.nlm.nih.gov/pub/clinvar/）、MaveDB Ensembl 映射版（ftp.ensembl.org/pub/current_variation/MaveDB/）、mygene.info。时间盲法测试集、金标准、全部 44,996 条原始模型输出与分析脚本见 https://github.com/zksdu/llm-variant-reliability-audit（Zenodo 存档，DOI: 10.5281/zenodo.21964620）。
+全部源数据公开可得：ClinVar variant_summary 与 VCF（ftp.ncbi.nlm.nih.gov/pub/clinvar/）、MaveDB Ensembl 映射版（ftp.ensembl.org/pub/current_variation/MaveDB/）、mygene.info。时间盲法测试集、金标准、全部 44,996 条原始模型输出与分析脚本见 https://github.com/zksdu/llm-acmg-variant-audit（Zenodo 存档，DOI: 10.5281/zenodo.21964620）。
 
 ## 代码可用性
 
-自定义分析代码见 https://github.com/zksdu/llm-variant-reliability-audit（Zenodo 存档，DOI: 10.5281/zenodo.21964620）。管线仅用 Python 3 标准库；种子 42 下采样逐字节可复现。
+自定义分析代码见 https://github.com/zksdu/llm-acmg-variant-audit（Zenodo 存档，DOI: 10.5281/zenodo.21964620）。管线仅用 Python 3 标准库；种子 42 下采样逐字节可复现。
 
 ## CRediT 作者贡献声明
 
