@@ -368,7 +368,7 @@ Cheng, J., Novati, G., Pan, M., et al., 2023. Accurate proteome-wide missense va
 
 DeepSeek-AI, 2024. DeepSeek-V3 technical report. arXiv:2412.19437.
 
-Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and query data from multiplexed assays of variant effect. Genome Biol. 20, 100. doi:10.1186/s13059-019-1685-3
+Esposito, D., Weile, J., Shrestha, R., et al., 2019. MaveDB: an open-source platform to distribute and interpret data from multiplexed assays of variant effect. Genome Biol. 20, 223. doi:10.1186/s13059-019-1845-6
 
 Golchin, S., Surdeanu, M., 2023. Time travel in LLMs: tracing data contamination in large language models. In: Findings of EMNLP 2023. arXiv:2308.08493
 
@@ -382,7 +382,7 @@ Moonshot AI, 2025. Kimi K2: open agentic intelligence. arXiv:2507.20534.
 
 Qwen Team, 2025. Qwen3 technical report. arXiv:2505.09388.
 
-Rehm, H.L., Berg, J.S., Brooks, L.D., et al., 2015. ClinGen - the Clinical Genome Resource. N. Engl. J. Med. 372, 2235-2242. doi:10.1056/NEJMsr1409004
+Rehm, H.L., Berg, J.S., Brooks, L.D., et al., 2015. ClinGen - the Clinical Genome Resource. N. Engl. J. Med. 372, 2235-2242. doi:10.1056/NEJMsr1406261
 
 Richards, S., Aziz, N., Bale, S., et al., 2015. Standards and guidelines for the interpretation of sequence variants. Genet. Med. 17, 405-424. doi:10.1038/gim.2015.30
 
@@ -390,7 +390,7 @@ Saadat, A., Fellay, J., 2026. Large language models for variant-centric function
 
 Sainz, O., Campos, J.A., García-Ferrero, I., et al., 2023. NLP evaluation in trouble: on the need to measure LLM data contamination for each benchmark. In: Findings of EMNLP 2023. arXiv:2310.18018
 
-Wu, C., MacLeod, I., Su, A.I., 2013. BioGPS and MyGene.info: organizing online, gene-centric information. Nucleic Acids Res. 41, D561-D565. doi:10.1093/nar/gks1186
+Wu, C., MacLeod, I., Su, A.I., 2013. BioGPS and MyGene.info: organizing online, gene-centric information. Nucleic Acids Res. 41, D561-D565. doi:10.1093/nar/gks1114
 
 Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 
