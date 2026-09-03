@@ -20,7 +20,7 @@
 
 Clinical variant interpretation — classifying a germline variant as Pathogenic, Benign, or Uncertain per ACMG/AMP guidelines — is a bottleneck in genomic medicine: manual curation is expert-hours per variant and inconsistent across laboratories (Richards et al., 2015; Rehm et al., 2015). Large language models (LLMs) have been proposed as scalable interpreters (Landrum et al., 2020; Karczewski et al., 2020; Cheng et al., 2023), with recent work reporting near-expert agreement (e.g., AI-CURA reports expert-level consistency on curated variants (AI-CURA, 2026)).
 
-Two problems undermine these numbers. First, **training-data leakage**: LLM corpora contain public variant databases, so a model asked to classify a variant may reproduce a label it has memorized rather than reason about evidence. Published evaluations rarely control for this. Second, **vendor dependence**: results are typically reported for a single model family, leaving open whether any observed capability is a property of LLMs in general or of one training pipeline.
+Two problems undermine these numbers. First, **training-data leakage**: LLM corpora contain public variant databases, so a model asked to classify a variant may reproduce a label it has memorized rather than reason about evidence. Published evaluations rarely control for this. Second, **vendor dependence**: results are typically reported for a single model family (Lin et al., 2025), leaving open whether any observed capability is a property of LLMs in general or of one training pipeline.
 
 Existing variant-interpretation benchmarks do not resolve these concerns. VariantBench (Basharat et al., 2025) evaluates ACMG classifications and criterion-level justifications but without leakage control; VarLitBench (Saadat and Fellay, 2026) anchors on ClinGen-curated functional evidence whose public availability makes memorization possible; AI-CURA (AI-CURA, 2026) demonstrated clinical-grade performance on curated variants, again without controlling what the model saw during training. In the broader LLM literature, benchmark contamination is well documented (Sainz et al., 2023; Bordt et al., 2025), and temporally split evaluation has been proposed as a decontamination strategy (Golchin and Surdeanu, 2023). No study to date has combined temporal blinding, multi-vendor coverage, and independent expert-panel validation at scale for variant classification.
 
@@ -227,7 +227,7 @@ AI-CURA (AI-CURA, 2026) demonstrated expert-consistency without leakage control;
 (v) Single task (germline SNV/indel); splice/de novo/structural/somatic variants unaddressed.
 (vi) Population bias: ClinVar submissions and reference AF panels (ESP/ExAC/1000G) skew European-ancestry; Benign sensitivity estimates may not transfer equitably to non-European populations.
 (vii) McNemar paired tests assume variant independence; gene-level clustering (2,050 genes, NF1 n=83) means tests are optimistic; cluster-bootstrap CIs are reported alongside and preserve all conclusions.
-(viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (shift ≤3 pp), but the caveat remains.
+(viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (Qwen's accuracy shifts −6.1 pp under the unified prompt, but its conservative-camp behavior persists: FP 1.0%, conditional accuracy 98.9%), but the caveat remains.
 (ix) Conditional accuracy compares models with very different abstention rates (9.2% vs 49.9%); different denominator sizes can obscure direct comparison (Simpson's paradox risk).
 (x) No comprehensive comparison with non-ML variant effect predictors (AlphaMissense, REVEL, CADD, InterVar). The available AlphaMissense release is transcript-level hg38, and only a small minority of test-set variants could be matched directly (most ClinVar annotations are hg19/GRCh37), preventing a head-to-head comparison on a usable subset; a liftover-based comparison is in preparation.
 
@@ -243,7 +243,7 @@ Under label-leakage control, LLM variant interpretation passes reliability audit
 
 - **ClinVar variant_summary** (Aug 2026 release; 9,029,235 rows; 43 columns), used for test-set construction and gold-standard labels.
 - **ClinVar VCF (GRCh38)** (clinvar.vcf.gz; ~193 MB), used to attach population allele frequencies (AF_ESP, AF_EXAC, AF_TGP) by ALLELEID.
-- **MaveDB** (Ensembl-mapped release; 3,158,202 scored variants), used for the functional-effect triangulation experiment; gene symbols resolved via mygene.info (RefSeq accession → symbol).
+- **MaveDB** (Esposito et al., 2019) (Ensembl-mapped release; 3,158,202 scored variants), used for the functional-effect triangulation experiment; gene symbols resolved via mygene.info (Wu et al., 2013) (RefSeq accession → symbol).
 - All data are public; download URLs in Data Availability.
 
 ### Temporally blinded test set (label-leakage control)
@@ -264,7 +264,7 @@ The central design decision: LLM training corpora contain ClinVar history, so ev
 
 ### Models
 
-Nine models from seven vendors, all accessed through OpenAI-compatible APIs (temperature 0, max_tokens 8,192 for reasoning-family models):
+Nine models from seven vendors (DeepSeek models: DeepSeek-AI, 2024; Kimi: Moonshot AI, 2025; Qwen: Qwen Team, 2025), all accessed through OpenAI-compatible APIs (temperature 0, max_tokens 8,192 for reasoning-family models):
 
 | Model | Vendor | Type | API endpoint |
 |---|---|---|---|
