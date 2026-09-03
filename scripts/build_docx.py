@@ -28,11 +28,11 @@ ABSTRACT = """Background. Large language models (LLMs) are increasingly proposed
 
 Objective. To audit LLM variant-classification reliability under controlled label leakage, across vendors and evidence conditions.
 
-Methods. On a temporally blinded test set of 5,000 ClinVar variants (all expert-assessed after January 2026), we evaluated six Chinese LLMs (30,000 evaluations) and three international flagships (Gemini 3 Flash, GPT-5.6-terra, Claude Sonnet 5) on an identical 500-variant subset, with independent validation on 900 expert-panel variants and ablations for allele-frequency (AF) evidence, conflicting classifications, and MaveDB functional variants.
+Methods. On a temporally blinded test set of 5,000 ClinVar variants (all assessed after January 2026), we evaluated six Chinese LLMs (30,000 evaluations) and three international flagships at full scale (15,000 additional evaluations), with independent validation on 900 expert-panel variants.
 
-Results. New-generation models achieved 61.8\u201371.6% all-inclusive accuracy and 86\u201393% on expert-panel variants. Conditional accuracy when committing was 97.8\u201398.7% for conservative models versus 81.2\u201385.2% for reasoning models, whose Benign\u2192Pathogenic false-positive rates reached 22\u201328%. Providing AF raised Benign sensitivity by up to 57.8 pp. Gemini led internationally (80.2%); Claude paired 97.4% conditional accuracy with 3.6% false positives. Majority voting underperformed the best single model.
+Results. Current-generation models achieved 61.8\u201371.6% all-inclusive accuracy under temporal blinding, rising to 86\u201393% on expert-panel variants. Conservative models reached 97.8\u201398.7% conditional accuracy with FP rates under 4.7%, while reasoning models reached 81.2\u201385.2% with FP rates up to 28.4%. Providing allele-frequency evidence raised Benign sensitivity by up to 60.1 pp. Gemini 3 Flash led internationally (76.5%); Claude paired 97.0% conditional accuracy with 3.9% FP.
 
-Conclusions. LLM variant interpretation is reliable only under blinded model selection, complete evidence (AF mandatory), and abstention-as-human-review policies."""
+Conclusions. LLM variant interpretation is reliable only under blinded model selection, complete evidence (allele frequency mandatory), and abstention-as-human-review policies."""
 
 
 INLINE = re.compile(r"(\*\*.+?\*\*|\*[^*\n]+?\*)")

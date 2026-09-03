@@ -12,7 +12,7 @@
 
 **Methods.** On a temporally blinded test set of 5,000 ClinVar variants (all assessed after January 2026), we evaluated six Chinese LLMs (30,000 evaluations) and three international flagships at full scale (15,000 additional evaluations), with independent validation on 900 expert-panel variants.
 
-**Results.** Current-generation models achieved 61.8–71.6% all-inclusive accuracy under temporal blinding, rising to 86–93% on expert-panel variants. Conservative models reached 97.8–98.7% conditional accuracy with FP rates under 4.7%, while reasoning models reached 81.2–85.2% with FP rates up to 28.4%. Providing allele-frequency evidence raised Benign sensitivity by up to 57.8 pp. Gemini 3 Flash led internationally (76.5%); Claude paired 97.0% conditional accuracy with 3.9% FP.
+**Results.** Current-generation models achieved 61.8–71.6% all-inclusive accuracy under temporal blinding, rising to 86–93% on expert-panel variants. Conservative models reached 97.8–98.7% conditional accuracy with FP rates under 4.7%, while reasoning models reached 81.2–85.2% with FP rates up to 28.4%. Providing allele-frequency evidence raised Benign sensitivity by up to 60.1 pp. Gemini 3 Flash led internationally (76.5%); Claude paired 97.0% conditional accuracy with 3.9% FP.
 
 **Conclusions.** LLM variant interpretation is reliable only under blinded model selection, complete evidence (allele frequency mandatory), and abstention-as-human-review policies.
 
@@ -53,7 +53,7 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 | GPT-5.6-terra | OpenAI | 60.3% | 86.9% | 3,469 | 92.0% |
 | DeepSeek chat | DeepSeek | 49.4% | 98.6% | 2,504 | 69.0% |
 | DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,494 | 68.0% |
-| 6-model majority | — | 64.1% | 98.4% | 2,911 | 93.5% |
+| 6-model majority | — | 64.1% | 98.3% | 2,915 | 93.5% |
 
 > Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528).
 
@@ -61,7 +61,7 @@ We report two complementary accuracy metrics: **all-inclusive accuracy** (VUS co
 
 **Finding 2 (Conditional reliability is not universal — and error direction matters).** Conservative models (chat/coder/Kimi) achieve 97.8–98.7% conditional accuracy when they commit. In contrast, reasoning-style models (V4-pro: 81.2%; MiMo: 85.2%) commit more often (76–78% of variants) but their expressed calls are substantially less reliable. Crucially, the errors are directionally asymmetric: when a gold-standard Benign variant receives a definitive call, reasoning models call it **Pathogenic** far more often — V4-pro mislabels 28.4% and MiMo 22.3% of all Benign variants as Pathogenic, versus 1.3–1.4% (chat/coder) and 2.5% (Kimi); Qwen sits between at 4.7%. Six-model consensus restores FP to 1.8%. The property "when the model speaks, it is right" holds **only for conservative models**; for reasoning models, committing is frequent, less accurate, and biased toward the clinically dangerous direction (false Pathogenic).
 
-**Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,911 variants), conditional accuracy reaches 98.4%.
+**Finding 3 (Majority voting can hurt).** Six-model majority voting (64.1% all-inclusive) underperformed the best single model (Qwen3.7-max, 71.6%; +7.5 pp) because the three DeepSeek votes — collectively the most conservative — dominate ties. Model *diversity and selection* matter more than ensemble size; however, when the ensemble agrees on a definitive call (2,915 variants), conditional accuracy reaches 98.3%.
 
 ### Surface-cue stratification: how much performance is readable from the variant name?
 
@@ -101,18 +101,18 @@ The vendor gap **widens** under the strongest gold standard (+29.9 pp for Kimi v
 
 Three sub-experiments show that LLM reliability is governed by the *evidence available in the prompt*:
 
-**(a) Allele-frequency (AF) ablation (n = 400 × 9 models Benign-enriched + 150 × 2 Pathogenic).** Adding population allele frequencies (AF_ESP/ExAC/1000G, from ClinVar VCF) to the prompt — the identical variants, models, and otherwise identical prompts — raised Benign sensitivity from 11.0% to 68.8% (chat, **+57.8 pp**), 10.7% to 68.3% (coder), and 43.4% to 81.5% (Kimi); abstention fell from 80% to 33% (chat) and all-inclusive accuracy roughly tripled (19.1%→66.5% for chat; 49.3%→80.8% for Kimi). **The systematic Benign abstention observed in the main experiment is primarily an information-deficit behavior, not model conservatism.** The effect is bidirectional: on a Pathogenic-enriched AF subset (n = 150 × 2), adding AF raised accuracy from 44.9% to 64.0% (chat, +19.1 pp) and 47.5% to 85.3% (Kimi, +37.8 pp), with abstention falling from ~50% to 15–36%. Evidence completeness governs reliability on both sides of the P/B axis.
+**(a) Allele-frequency (AF) ablation (n = 400 × 9 models Benign-enriched + 150 × 2 Pathogenic).** Adding population allele frequencies (AF_ESP/ExAC/1000G, from ClinVar VCF) to the prompt — the identical variants, models, and otherwise identical prompts, with the no-AF condition taken from the main experiment — raised Benign sensitivity on gold-standard Benign variants (n = 356) from 8.7% to 68.8% (chat, **+60.1 pp**), 9.3% to 68.3% (coder), and 45.5% to 81.5% (Kimi); chat's abstention on these variants fell from 90% to 31%. **The systematic Benign abstention observed in the main experiment is primarily an information-deficit behavior, not model conservatism.** The effect is Benign-side-specific: on a Pathogenic-enriched AF subset (n = 150 × 2), adding AF did not raise accuracy (chat 76.7%→64.0%; Kimi 90.0%→85.3%) and abstention rose (23.3%→36.0% chat; 8.7%→14.7% Kimi) — population AF is Benign-directed evidence (BA1/BS1), and its presence makes models appropriately more cautious, not more accurate, on Pathogenic calls. AF evidence is thus mandatory for Benign recall but is not a universal accuracy booster.
 
-The AF effect is consistent across all nine tested models (range +28.8 to +52.8 pp): chat 15.0→66.5%, coder 15.8→66.2%, Kimi 50.5→80.8%, Qwen 57.8→92.2%, Gemini 67.2→96.0%, GPT 37.5→90.2%, Claude 56.2→90.0%, V4-pro 35.5→71.5%, MiMo 44.8→80.2%.
+The AF effect on Benign sensitivity is consistent across all nine tested models (range +32.3 to +60.1 pp): chat 8.7→68.8%, coder 9.3→68.3%, Kimi 45.5→81.5%, Qwen 53.7→93.0%, Gemini 63.2→95.5%, GPT 30.1→90.2%, Claude 51.4→90.7%, V4-pro 27.8→71.3%, MiMo 38.2→80.1%.
 
-**(b) Conflicting-interpretation variants (n = 300 × 2 models).** On variants where clinical submitters disagree (conflicting classifications), models spontaneously raise abstention by **+22.5 pp (Kimi)** and **+39.1 pp (chat)** compared with the main test set — despite the prompt containing no conflict information. LLMs exhibit evidence-grounded uncertainty calibration: they sense controversy.
+**(b) Conflicting-interpretation variants (n = 300 × 2 models).** On variants where clinical submitters disagree (conflicting classifications), models spontaneously raise abstention by **+22.4 pp (Kimi)** and **+39.1 pp (chat)** compared with the main test set — despite the prompt containing no conflict information. LLMs exhibit evidence-grounded uncertainty calibration: they sense controversy.
 
 **(c) Functional-effect task (MaveDB, n = 300 × 2 models).** On deep-mutational-scanning variants with extreme functional scores (loss-of-function: score ≤ −0.8; normal: score ≥ 0.5) but no clinical evidence, models abstain massively (73–93%) and conditional directional agreement ≈ chance (45–55%). LLMs have no capacity for *de novo* functional inference from protein sequence alone — and they know it (abstain rather than hallucinate).
 
 
 ### Calibration
 
-Mean self-reported confidence (0.73–0.80) did not track all-inclusive accuracy across models (e.g., chat: confidence 0.78 vs. accuracy 49.4%; Kimi: 0.73 vs. 67.0%). Confidence is calibrated *within* a model's decision style, not across models; reasoning models over-express confidence relative to their conditional accuracy (V4-pro: 0.79 vs. 81.2%; MiMo: 0.80 vs. 85.2%).
+Mean self-reported confidence (0.73–0.80 for the domestic models; 0.95 for Gemini) did not track all-inclusive accuracy across models (e.g., chat: confidence 0.78 vs. accuracy 49.4%; Kimi: 0.73 vs. 67.0%). Confidence is calibrated *within* a model's decision style, not across models; reasoning models over-express confidence relative to their conditional accuracy (V4-pro: 0.79 vs. 81.2%; MiMo: 0.80 vs. 85.2%).
 
 ### Five-class analysis
 
@@ -135,7 +135,7 @@ Strength polarization is systematic: 82% (Kimi) and 58% (chat) of gold-standard 
 
 ### Clinical risk stratification (Weighted Error Severity Index)
 
-To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): Benign-to-Pathogenic misclassification = weight 4 (unnecessary prophylactic surgery, cascade screening), Pathogenic-to-Benign = weight 4 (missed diagnosis), VUS abstention = weight 0 (safe deferral).
+To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): Benign-to-Pathogenic misclassification = weight 4 (unnecessary prophylactic surgery, cascade screening), Pathogenic-to-Benign = weight 4 (missed diagnosis), unparseable output = weight 2 (delivery failure), VUS abstention = weight 0 (safe deferral).
 
 | Model | WESI | B-to-P (extreme) | Total extreme | Abstention |
 |---|---|---|---|---|
@@ -226,7 +226,7 @@ At temperature 0, chat-style models are exactly reproducible (100% over 50 re-ru
 
 ### The information-deficit explanation of Benign underperformance
 
-The most striking baseline result — Benign sensitivity of 9.6–43% — is largely explained by missing allele-frequency evidence. With AF provided, Benign sensitivity rises by up to +57.8 pp and all-inclusive accuracy roughly triples. ACMG rules BA1/BS1 (population frequency) are among the strongest Benign evidence; omitting them cripples the Benign side of the classification. Practical implication: any LLM-based variant interpretation pipeline must integrate population-frequency databases; performance numbers reported without AF are systematically pessimistic about Benign recall.
+The most striking baseline result — Benign sensitivity of 8.7–63.2% across the nine models without AF — is largely explained by missing allele-frequency evidence. With AF provided, Benign sensitivity rises by up to +60.1 pp. ACMG rules BA1/BS1 (population frequency) are among the strongest Benign evidence; omitting them cripples the Benign side of the classification. Practical implication: any LLM-based variant interpretation pipeline must integrate population-frequency databases; performance numbers reported without AF are systematically pessimistic about Benign recall.
 
 ### Relation to prior work
 
@@ -243,7 +243,7 @@ AI-CURA (AI-CURA, 2026) demonstrated expert-consistency without leakage control;
 (vii) McNemar paired tests assume variant independence; gene-level clustering (2,050 genes, NF1 n=83) means tests are optimistic; cluster-bootstrap CIs are reported alongside and preserve all conclusions.
 (viii) Prompt asymmetry: international models received a research-context system prompt that domestic models did not; robustness check shows the conservative/aggressive dichotomy is unaffected (shift ≤3 pp), but the caveat remains.
 (ix) Conditional accuracy compares models with very different abstention rates (9.2% vs 49.9%); different denominator sizes can obscure direct comparison (Simpson's paradox risk).
-(x) No comprehensive comparison with non-ML variant effect predictors (AlphaMissense, REVEL, CADD, InterVar). AlphaMissense (hg38) was available but only 27 of 5,000 test set variants (99.1% in hg19 GRCh37) could be directly matched; on this subset AlphaMissense achieved 59.3% accuracy vs. Qwen 71.6% and chat 49.4% on the full set. The hg19→hg38 coordinate mismatch prevents a definitive comparison; a liftover-based comparison is in preparation.
+(x) No comprehensive comparison with non-ML variant effect predictors (AlphaMissense, REVEL, CADD, InterVar). The available AlphaMissense release is transcript-level hg38, and only a small minority of test-set variants could be matched directly (most ClinVar annotations are hg19/GRCh37), preventing a head-to-head comparison on a usable subset; a liftover-based comparison is in preparation.
 
 ### Conclusion
 
@@ -267,13 +267,13 @@ The central design decision: LLM training corpora contain ClinVar history, so ev
 - Model cutoffs (verified 2026-08): DeepSeek V4 ~Dec 2025; Kimi/GLM/MiMo/Qwen families ≤ 2025. We conservatively require **LastEvaluated ≥ 2026-01-01**.
 - Eligibility: unambiguous clinical classification (Pathogenic or Benign only; "Likely" and compound terms excluded from the P/B gold standard), a HGVS name, and no conflicting classification.
 - De-duplication by ALLELEID (4.9% of raw rows were duplicate allele entries).
-- Stratified sampling: 2,500 Pathogenic + 2,500 Benign, seed 42 (reproducible), yielding n = 5,000.
+- Stratified sampling: 2,500 P-side + 2,500 Benign, seed 42 (reproducible), yielding n = 5,000 (2,499 strict Pathogenic + 1 compound P-side label excluded from analysis as unevaluable; 4,999 with unambiguous P/B gold labels).
 - Result: all 5,000 variants were last evaluated between 2026-01 and 2026-07 (Jan 2,097 / Feb 1,672 / Mar 324 / Apr 412 / May 263 / Jun 199 / Jul 33), i.e., after every evaluated model's training cutoff — the models cannot have seen these labels during training.
 
 ### Gold standards
 
 - **Primary**: ClinVar aggregate classification (Pathogenic/Benign binary).
-- **Gold standard A (expert panel)**: ReviewStatus ∈ {reviewed by expert panel, practice guideline} — classifications produced by ClinGen variant-curation expert panels / guideline committees. Dedicated validation set: 900 such variants (P-side 645: Pathogenic 303 + Likely pathogenic 342; B-side 252: Benign 59 + Likely benign 193; 3 compound P/LP labels excluded as unevaluable; all ≥ 2026-04). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); the dedicated-set analysis therefore reports **800 exclusive variants (797 evaluable)** for strict independence, with the full 900 as a robustness check. Gold standard A (broad): expert-panel ∪ {multiple submitters, no conflicts}.
+- **Gold standard A (expert panel)**: ReviewStatus ∈ {reviewed by expert panel, practice guideline} — classifications produced by ClinGen variant-curation expert panels / guideline committees. Dedicated validation set: 900 such variants (P-side 645: Pathogenic 303 + Likely pathogenic 342; B-side 252: Benign 59 + Likely benign 193; 3 compound P/LP labels excluded as unevaluable; all ≥ 2026-01). Of these, 100 were also sampled into the main test set (Table 1, expert-panel stratum); the dedicated-set analysis therefore reports **800 exclusive variants (797 evaluable)** for strict independence, with the full 900 as a robustness check. Gold standard A (broad): expert-panel ∪ {multiple submitters, no conflicts}.
 - **Triangulation sets**: conflicting-interpretation variants (44,815 candidates; 300 sampled) and MaveDB functional extremes (150 loss-of-function: score ≤ −0.8; 150 normal: score ≥ 0.5).
 
 ### Models
@@ -292,7 +292,7 @@ Nine models from seven vendors, all accessed through OpenAI-compatible APIs (tem
 | GPT-5.6-terra | OpenAI (US) | reasoning | relay via ai.flashapi.top |
 | Claude Sonnet 5 | Anthropic (US) | chat | relay via ai.flashapi.top |
 
-Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the complete test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused 25% of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
+Six domestic models were selected a priori as the current generation of widely used Chinese commercial LLMs (the previous-generation DeepSeek models serve as an intra-vendor generation control). For international coverage we additionally evaluated three foreign flagship models on the complete test set (identical variants, identical prompts): **Gemini 3 Flash (Google), GPT-5.6-terra (OpenAI), and Claude Sonnet 5 (Anthropic)**, accessed through an OpenAI-compatible relay endpoint (temperature 0, max_tokens 16,384). Because Claude refused a substantial share of variant-classification queries in pilot testing (medical-safety policy), all three foreign models received a system prompt establishing the research-benchmark context ("classifications are research outputs, not clinical advice"); after this change refusals dropped to 0%. Domestic models received no system prompt; this prompt asymmetry is disclosed as a limitation.
 
 ### Prompt design
 

@@ -193,11 +193,33 @@ def fig1(votes, gold):
 
 
 def fig2():
+    """A/B: AF 消融（从原始文件实时计算）；C: 弃权×证据情境（数值已逐项核验）。"""
     fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.5))
-    # A: AF 消融 Benign sensitivity — 5 模型（chat/coder/Kimi/Qwen/Gemini）
-    ms5 = ["chat", "coder", "Kimi", "Qwen", "Gemini", "GPT", "Claude", "V4p", "MiMo"]
-    no5 = [15.0, 15.8, 50.5, 57.8, 67.2, 37.5, 56.2, 35.5, 44.8]
-    yes5 = [66.5, 66.2, 80.8, 92.2, 96.0, 90.2, 90.0, 71.5, 80.2]
+
+    # ---- A: AF 消融 Benign sensitivity（9 模型，gold-B n=356）----
+    goldmap = {}
+    with (DATA / "clinvar_testset_temporal.csv").open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            goldmap[r["AlleleID"]] = bin2(r["ClinicalSignificance"])
+    main_v = defaultdict(dict)
+    with (DATA / "variant_classification_results_all.csv").open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            main_v[r["AlleleID"]][r["model"]] = bin2(r["llm_class"])
+    afres = defaultdict(dict)
+    for fn in ["af_results_on.csv", "af_gpt_claude_results.csv",
+               "af_qwen_gemini_results.csv", "af_v4_mimo_results.csv"]:
+        with (DATA / fn).open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                afres[r["AlleleID"]][r["model"]] = bin2(r["llm_class"])
+    order9 = ["deepseek-chat", "deepseek-coder", "kimi-k2.6", "qwen3.7-max",
+              "gemini-3-flash", "gpt-5.6-terra", "claude-sonnet-5",
+              "deepseek-v4-pro", "mimo-v2.5-pro"]
+    short9 = ["chat", "coder", "Kimi", "Qwen", "Gemini", "GPT", "Claude", "V4p", "MiMo"]
+    no5, yes5 = [], []
+    for m in order9:
+        ids = [a for a in afres if m in afres[a] and goldmap.get(a) == "B"]
+        no5.append(sum(1 for a in ids if main_v.get(a, {}).get(m) == "B") / len(ids) * 100)
+        yes5.append(sum(1 for a in ids if afres[a][m] == "B") / len(ids) * 100)
     ax = axes[0]
     x5 = np.arange(9)
     ax.bar(x5 - 0.2, no5, 0.4, color=DEEP, label="no AF")
@@ -206,33 +228,46 @@ def fig2():
         ax.annotate(f"+{q-p:.0f}", (i, max(p, q) + 3), ha="center",
                     fontsize=6.5, fontweight="bold", color="#2F5C3A")
     ax.set_xticks(x5)
-    ax.set_xticklabels(ms5, fontsize=6, rotation=30, ha="right")
+    ax.set_xticklabels(short9, fontsize=6, rotation=30, ha="right")
     ax.set_ylim(0, 108)
     ax.set_ylabel("Benign sensitivity (%)")
-    ax.set_title("A  AF ablation (9 models)", fontsize=8.5, loc="left", pad=4)
+    ax.set_title(f"A  AF ablation (9 models, n = {len([a for a in afres if goldmap.get(a) == 'B'])} Benign)",
+                 fontsize=8.5, loc="left", pad=4)
     ax.legend(frameon=False, fontsize=6, loc="lower right")
-    ax.grid(axis="y", alpha=0.25, lw=0.5)
+    ax.grid(axis="y", alpha=0.25)
     ax.set_axisbelow(True)
-    # B: AF Pathogenic subset — 2 模型
-    ms2 = ["chat", "Kimi"]
-    no2 = [44.9, 47.5]
-    yes2 = [64.0, 85.3]
+
+    # ---- B: AF Pathogenic subset（150 × 2，实时计算）----
+    paf = defaultdict(dict)
+    with (DATA / "af_p_results_on.csv").open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            paf[r["AlleleID"]][r["model"]] = bin2(r["llm_class"])
+    ms2, no2, yes2 = [], [], []
+    for m in ["deepseek-chat", "kimi-k2.6"]:
+        ids = [a for a in paf if m in paf[a]]
+        ms2.append(m)
+        no2.append(sum(1 for a in ids if main_v.get(a, {}).get(m) == "P") / len(ids) * 100)
+        yes2.append(sum(1 for a in ids if paf[a][m] == "P") / len(ids) * 100)
     ax = axes[1]
-    x2 = np.arange(2)
+    x2 = np.arange(len(ms2))
     ax.bar(x2 - 0.2, no2, 0.4, color=DEEP, label="no AF")
     ax.bar(x2 + 0.2, yes2, 0.4, color=LIGHT, label="with AF")
     for i, (p, q) in enumerate(zip(no2, yes2)):
-        ax.annotate(f"+{q-p:.0f}", (i, max(p, q) + 3), ha="center",
-                    fontsize=7.5, fontweight="bold", color="#2F5C3A")
+        delta = q - p
+        ax.annotate(f"{delta:+.0f}", (i, max(p, q) + 3), ha="center",
+                    fontsize=7.5, fontweight="bold",
+                    color="#2F5C3A" if delta >= 0 else "#B2182B")
     ax.set_xticks(x2)
-    ax.set_xticklabels(ms2, fontsize=7)
-    ax.set_ylim(0, 100)
+    ax.set_xticklabels(["chat", "Kimi"], fontsize=7)
+    ax.set_ylim(0, 108)
     ax.set_ylabel("Accuracy (%)")
-    ax.set_title("B  Pathogenic subset", fontsize=8.5, loc="left", pad=4)
+    ax.set_title("B  Pathogenic subset (n = 150)", fontsize=8.5, loc="left", pad=4)
     ax.legend(frameon=False, fontsize=6.5, loc="lower right")
-    ax.grid(axis="y", alpha=0.25, lw=0.5)
+    ax.grid(axis="y", alpha=0.25)
     ax.set_axisbelow(True)
-    # C: 弃权 × 证据情境
+
+    # ---- C: 弃权 × 证据情境（数值逐项核验：Main=表S2；+AF=AF集实测；
+    #      Conf=54.0/89.0；MaveDB=83/73 与 93/93）----
     ax = axes[2]
     ctx = ["Main", "+AF", "Conf.", "Mave\nLoF", "Mave\nNorm"]
     chat_v = [49.9, 33.2, 89.0, 93, 93]
@@ -246,7 +281,7 @@ def fig2():
     ax.set_ylim(0, 104)
     ax.set_title("C  Abstention vs. evidence context", fontsize=8.5, loc="left", pad=4)
     ax.legend(frameon=False, fontsize=6.5)
-    ax.grid(axis="y", alpha=0.25, lw=0.5)
+    ax.grid(axis="y", alpha=0.25)
     ax.set_axisbelow(True)
     fig.tight_layout(w_pad=1.5)
     save(fig, "fig2")
