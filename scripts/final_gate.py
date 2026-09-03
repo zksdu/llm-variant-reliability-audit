@@ -128,7 +128,7 @@ checks = {
     '级联假设': 'Assuming 3–5 relatives' in full,
     '仓库地址': 'github.com/zksdu/llm-acmg-variant-audit' in full,
     'S4表存在': 'Table S4' in full and 'LastEvaluated ≥ 2026-04' in full,
-    '截止披露': 'GPT-5.6-terra ~2026-02-16' in full and 'Gemini 3 Flash ~2026-03' in full,
+    '截止披露': 'GPT-5.6-terra ~2026-02-16' in full and 'Gemini Flash model ~2026-03' in full and 'versions 3.5' in full,
     '无GLM残留': 'GLM/MiMo' not in full,
     '投稿包摘要=正文摘要': _pkg_abstract_ok(),
     '关键词三方一致': _keywords_ok(),
