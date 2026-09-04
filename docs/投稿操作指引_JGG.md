@@ -51,7 +51,7 @@ GitHub 发 **v1.2.1** Release 换最终投稿 DOI（当前稿件引用的是 v1.
 | Funding | No specific funding（或选无基金选项）|
 | Conflict of Interest | No |
 | Ethics | `Not applicable. This study uses only publicly available database records (ClinVar, ClinGen-derived review statuses, MaveDB); no human participants, patient material, or personal data were involved.` |
-| Data availability | `All source data are publicly available (ClinVar, MaveDB, mygene.info). Test sets, gold standards, all 51,000 raw model outputs, and analysis scripts: https://github.com/zksdu/llm-acmg-variant-audit (DOI: 10.5281/zenodo.22288477 — 或 v1.2.0 新 DOI)` |
+| Data availability | `All source data are publicly available (ClinVar, MaveDB, mygene.info). Test sets, gold standards, all 51,000 raw model outputs, and analysis scripts: https://github.com/zksdu/llm-acmg-variant-audit (DOI: 10.5281/zenodo.22288477 — 换 v1.2.1 后为新 DOI)` |
 
 ### 3. 上传文件（按顺序）
 
