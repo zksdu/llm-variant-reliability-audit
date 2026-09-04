@@ -101,7 +101,7 @@ Three sub-experiments (Fig. 2) show that LLM reliability is governed by the *evi
 
 The AF effect on Benign sensitivity is consistent across all nine tested models (range +32.3 to +60.1 pp): chat 8.7→68.8%, coder 9.3→68.3%, Kimi 45.5→81.5%, Qwen 53.7→93.0%, Gemini 63.2→95.5%, GPT 30.1→90.2%, Claude 51.4→90.7%, V4-pro 27.8→71.3%, MiMo 38.2→80.1%.
 
-**(b) Conflicting-interpretation variants (n = 300 × 2 models).** On variants where clinical submitters disagree (conflicting classifications), models spontaneously raise abstention by **+22.4 pp (Kimi)** and **+39.1 pp (chat)** compared with the main test set — despite the prompt containing no conflict information. LLMs exhibit evidence-grounded uncertainty calibration: they sense controversy.
+**(b) Conflicting-interpretation variants (n = 300 × 2 models).** On variants where clinical submitters disagree (conflicting classifications), models spontaneously raise abstention by **+22.8 pp (Kimi)** and **+39.1 pp (chat)** compared with the main test set — despite the prompt containing no conflict information. LLMs exhibit evidence-grounded uncertainty calibration: they sense controversy.
 
 **(c) Functional-effect task (MaveDB, n = 300 × 2 models).** On deep-mutational-scanning variants with extreme functional scores (loss-of-function: score ≤ −0.8; normal: score ≥ 0.5) but no clinical evidence, models abstain massively (73–93%) and conditional directional agreement ≈ chance (45–55%). LLMs have no capacity for *de novo* functional inference from protein sequence alone — and they know it (abstain rather than hallucinate).
 
@@ -133,7 +133,7 @@ To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): B
 
 | Model | WESI | B-to-P (extreme) | Total extreme | Abstention |
 |---|---|---|---|---|
-| V4-pro | **0.585** | 711 (28.4%) | **716** | 23% |
+| V4-pro | **0.585** | 711 (28.4%) | **716** | 24% |
 | Gemini | **0.577** | 694 (27.8%) | **712** | 9% |
 | MiMo | **0.461** | 557 (22.3%) | **573** | 22% |
 | GPT | **0.363** | 448 (17.9%) | **454** | 31% |
@@ -412,11 +412,11 @@ Xiaomi, 2026. MiMo API documentation. https://mimo.mi.com
 ## Figure legends
 
 **Fig. 1. Multi-model performance on the temporally blinded test set.**
-A: Dual-metric accuracy for all nine models on the complete test set (n = 5,000 variants per model); all-inclusive (VUS counted as error) and conditional (committed calls only) accuracy with Wilson 95% CI error bars. International models shown with white fill and outline.
+A: Dual-metric accuracy for all nine models on the complete test set (n = 4,999 evaluable variants per model); all-inclusive accuracy (VUS counted as errors; Wilson 95% CI error bars) and conditional accuracy (committed calls only). International models shown with white fill and outline.
 B: Benign-to-Pathogenic false-positive rates (log scale) with 95% CI.
 
 **Fig. 2. Evidence availability governs reliability.**
-A: Allele-frequency ablation on a Benign-rich subset (n = 400 × 9 models):
+A: Allele-frequency ablation on a Benign-rich subset (400 variants × 9 models; the 356 gold-standard Benign variants shown):
 Benign sensitivity without vs. with population AF. B: The ablation on a
 Pathogenic-enriched subset (n = 150 × 2). C: Abstention across evidence contexts:
 with vs. without AF, main set vs. conflicting-interpretation variants, and the

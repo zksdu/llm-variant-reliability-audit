@@ -275,11 +275,12 @@ def fig2():
     ax.set_axisbelow(True)
 
     # ---- C: 弃权 × 证据情境（数值逐项核验：Main=表S2；+AF=AF集实测；
-    #      Conf=54.0/89.0；MaveDB=83/73 与 93/93）----
+    #      Conf=54.3/89.0（Kimi 163/300 含 1 行 unparseable，与主实验口径一致）；
+    #      MaveDB=83/73 与 93/93）----
     ax = axes[2]
     ctx = ["Main", "+AF", "Conf.", "Mave\nLoF", "Mave\nNorm"]
     chat_v = [49.9, 33.2, 89.0, 93, 93]
-    kimi_v = [31.5, 18.0, 54.0, 83, 73]
+    kimi_v = [31.5, 18.0, 54.3, 83, 73]
     x = np.arange(5)
     ax.bar(x - 0.2, chat_v, 0.4, color=DEEP, label="chat")
     ax.bar(x + 0.2, kimi_v, 0.4, color=LIGHT, label="Kimi")

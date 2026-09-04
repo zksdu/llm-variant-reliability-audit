@@ -109,7 +109,7 @@ checks = {
     'AF-P侧反转': '76.7%→64.0%' in full and '90.0%→85.3%' in full,
     'AF-九模型范围': '+32.3 to +60.1 pp' in full,
     'AF-P侧弃权升': '23.3%→36.0%' in full,
-    '冲突': '+22.4 pp (Kimi)' in full and '+39.1 pp (chat)' in full,
+    '冲突': '+22.8 pp (Kimi)' in full and '+39.1 pp (chat)' in full,
     'MaveDB': '73–93%' in full and '45–55%' in full,
     '校准': '0.95 for Gemini' in full,
     '提示词对称': '71.6-to-65.5%' in full and 'FP 4.7-to-1.0%' in full and '3,186 co-definitive' in full,
