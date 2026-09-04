@@ -7,14 +7,15 @@
 
 ## 〇、投稿前唯一待办（5 分钟）
 
-GitHub 发 **v1.2.0** Release 换新 DOI：
+GitHub 发 **v1.2.1** Release 换最终投稿 DOI（当前稿件引用的是 v1.2.0 DOI 10.5281/zenodo.22288477；v1.2.1 让 Zenodo 快照与投稿版完全一致）：
 
 1. 打开 https://github.com/zksdu/llm-acmg-variant-audit/releases/new
-2. **Choose a tag** 输入 `v1.2.0` → 选 "Create new tag: v1.2.0 on publish"
-3. 标题：`v1.2.0 — dedicated blinded-set revision`
-4. 描述：`Adds dedicated fully blinded set (n=2,000) evaluation, cutoff disclosures, and final review fixes.`
-5. Publish → 1-2 分钟后到 https://zenodo.org/account/settings/github/ 取新 DOI → **发给助手替换**，等 docx 重建完成后再投稿。
-   （若决定沿用 DOI 10.5281/zenodo.22288477 也可直接投，但快照对应 v1.1.0，与终稿有差异。）
+2. **Choose a tag** 输入 `v1.2.1` → 选 "Create new tag: v1.2.1 on publish"；Target: `main`
+3. 标题：`v1.2.1 — presentation and accuracy-audit round`
+4. 描述（可直接粘贴）：
+   `Maintenance release after deep figure, figure-text, and table-cell audits. Legends relocated (no occlusion; values unchanged); Kimi conflicting-subset abstention corrected to 54.3% (text +22.8 pp); MiMo WESI 0.460; chat surface-cue gap -30.8 pp; truthful completion counts (44,938/45,000 parseable; 62 rows retained as errors); international parse-failure rates disclosed; verification suite tightened (fig_geom_check added, exact WESI/Gap checks). All gates pass 101/101.`
+5. Publish → 几分钟后到 https://zenodo.org/account/settings/github/ （或点开 DOI 10.5281/zenodo.22288477 的 Versions 页）取 v1.2.1 新版本 DOI → **发给助手替换**（助手会换 10 个文件并重建 docx、重跑门禁、推送三端），换完再投稿。
+   （若不想再换 DOI，沿用 10.5281/zenodo.22288477（v1.2.0）直接投稿也可接受：差异仅为图表外观修正与文字口径，v1.2.0 存档自带代码可复现其自身图表；但 v1.2.1 与投稿版逐字节一致，更严谨。）
 
 ---
 
