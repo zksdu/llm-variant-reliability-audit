@@ -145,7 +145,9 @@ order4 = ['deepseek-v4-pro', 'gemini-3-flash', 'mimo-v2.5-pro', 'gpt-5.6-terra',
           'qwen3.7-max', 'claude-sonnet-5', 'kimi-k2.6', 'deepseek-chat', 'deepseek-coder']
 for r, m in enumerate(order4, start=1):
     wesi = (4 * round(M[m]['fp'] * 25) + 4 * M[m]['fn'] + 2 * parse_err[m]) / n_eval
-    cmp(f'WESI[{m}]', cell(4, r, 1), wesi, tol=0.0006)
+    wesi_s = f"{wesi:.3f}"
+    if cell(4, r, 1) != wesi_s:
+        fails.append(f'WESI[{m}]: docx={cell(4,r,1)} 重算={wesi_s}')
     fpc = round(M[m]['fp'] * 25)
     if int(re.sub(r'[(),% ]', '', cell(4, r, 2).split('(')[0])) != fpc:
         fails.append(f'WESI[{m}].BtoP: docx={cell(4,r,2)} 重算={fpc}')
@@ -160,6 +162,9 @@ for r, m in {1: 'deepseek-chat', 2: 'kimi-k2.6', 3: 'qwen3.7-max'}.items():
     us = sum(1 for a in uncued if votes.get(a, {}).get(m) == 'P') / len(uncued) * 100
     cmp(f'表面[{m}].cued', cell(1, r, 1), cs)
     cmp(f'表面[{m}].uncued', cell(1, r, 2), us)
+    dv = float(re.sub(r'[^\d.\-+]', '', cell(1, r, 3).replace('−', '-')) or 'nan')
+    if abs(dv - (us - cs)) > 0.051:
+        fails.append(f'表面[{m}].Gap: docx={cell(1,r,3)} 重算={us - cs:+.1f}')
 
 # ===== 表S3（docx 索引2）：5 模型 排他集 =====
 main_ids = set(gold)

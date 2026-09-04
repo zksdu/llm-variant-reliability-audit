@@ -53,7 +53,7 @@ We report two complementary accuracy metrics (Fig. 1): **all-inclusive accuracy*
 | DeepSeek coder | DeepSeek | 49.2% | 98.7% | 2,494 | 68.0% |
 | 6-model majority | — | 64.1% | 98.3% | 2,915 | 93.5% |
 
-> Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528), so the majority-row all-inclusive accuracy uses the 4,471 non-tied evaluable variants as denominator — a different denominator from the single-model rows (all 4,999).
+> Table 1 footnotes: All-inclusive accuracy = VUS counted as error (clinical usability); conditional accuracy = accuracy restricted to committed calls; expert-panel stratum = 100 variants within the test set whose labels were produced by expert panels (ClinGen VCEP / guideline committees). Wilson 95% CIs: Qwen [70.4, 72.9], Kimi [65.6, 68.2], MiMo [64.7, 67.4], V4-pro [60.5, 63.1], chat [48.0, 50.8], coder [47.8, 50.6]. Majority voting operates on the three-way (P/B/VUS) semantics; ties excluded (n=528), so the majority-row all-inclusive accuracy uses the 4,471 non-tied evaluable variants as denominator (expert-panel stratum: 93 non-tied of 100) — a different denominator from the single-model rows (all 4,999).
 
 **Finding 1 (Generation gap).** New-generation flagship models (Qwen3.7-max, Kimi-K2.6, MiMo V2.5 Pro, DeepSeek V4-pro) outperform the previous generation (DeepSeek chat/coder) by **+12.4 to +22.4 percentage points (pp)** in all-inclusive accuracy (all current-vs-previous-generation pairs McNemar p ≤ 1.6×10⁻⁸⁶; within-generation Kimi vs. MiMo: p = 0.12, n.s.). The gap persists under the highest-confidence gold standard (expert-panel variants: 86–93% vs. 68–69%).
 
@@ -67,7 +67,7 @@ HGVS protein notation can itself reveal the answer class: nonsense (p.Xxx###Ter)
 
 | Model | P sensitivity, cued (n=1,671) | P sensitivity, uncued (n=828) | Gap |
 |---|---|---|---|
-| DeepSeek chat | 98.5% | 67.8% | −30.7 pp |
+| DeepSeek chat | 98.5% | 67.8% | −30.8 pp |
 | Kimi-K2.6 | 99.8% | 77.7% | −22.1 pp |
 | Qwen3.7-max | 99.4% | 83.6% | −15.8 pp |
 
@@ -135,7 +135,7 @@ To quantify clinical harm, we computed a Weighted Error Severity Index (WESI): B
 |---|---|---|---|---|
 | V4-pro | **0.585** | 711 (28.4%) | **716** | 24% |
 | Gemini | **0.577** | 694 (27.8%) | **712** | 9% |
-| MiMo | **0.461** | 557 (22.3%) | **573** | 22% |
+| MiMo | **0.460** | 557 (22.3%) | **573** | 22% |
 | GPT | **0.363** | 448 (17.9%) | **454** | 31% |
 | Qwen | 0.108 | 118 (4.7%) | 133 | 26% |
 | Claude | **0.086** | 97 (3.9%) | **107** | 29% |

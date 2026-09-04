@@ -87,7 +87,7 @@ checks = {
     'LB→B 53%': '53% of Likely benign' in full,
     'WESI-V4': '0.585' in full and '711 (28.4%)' in full and '716' in full,
     'WESI-Gemini': '0.577' in full and '694 (27.8%)' in full and '712' in full,
-    'WESI-MiMo': '0.461' in full and '557 (22.3%)' in full and '573' in full,
+    'WESI-MiMo': '0.460' in full and '557 (22.3%)' in full and '573' in full,
     'WESI-coder': '0.026' in full and '32 (1.3%)' in full and '33' in full,
     'WESI-权重2': 'unparseable output = weight 2' in full,
     '确定性-n200谱系': 'Kimi 96.0% > chat 92.5% > Claude 88.0% > Gemini 86.0% > GPT 78.0%' in full,
