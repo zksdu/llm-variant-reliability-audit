@@ -32,7 +32,7 @@ We find that label-leakage control reveals a large vendor gap (up to +22 pp amon
 
 ### Cohort and experimental scale
 
-We evaluated **6 LLMs from 4 vendors** (DeepSeek: v4-pro, chat, coder; Moonshot: Kimi-K2.6; Xiaomi: MiMo V2.5 Pro; Alibaba: Qwen3.7-max) on a **temporally-blinded test set of 5,000 ClinVar variants** (all LastEvaluated ≥ 2026-01 — after the training cutoff of all six domestic models; the international models’ later cutoffs are disclosed in Methods and controlled by a fully blinded stratum). In total, **30,000/30,000** domestic and **15,000/15,000** international variant-model pairs completed successfully (4 rows remain unparseable after automatic retry and are excluded from analysis). All analyses use binary Pathogenic vs. Benign evaluation with VUS treated as abstention (see Methods).
+We evaluated **6 LLMs from 4 vendors** (DeepSeek: v4-pro, chat, coder; Moonshot: Kimi-K2.6; Xiaomi: MiMo V2.5 Pro; Alibaba: Qwen3.7-max) on a **temporally-blinded test set of 5,000 ClinVar variants** (all LastEvaluated ≥ 2026-01 — after the training cutoff of all six domestic models; the international models’ later cutoffs are disclosed in Methods and controlled by a fully blinded stratum). In total, all 45,000 variant–model pairs produced archived outcomes; 44,938 calls yielded parseable classifications (29,959 domestic, 14,979 international), and the remaining 62 rows (58 unparseable outputs, 4 domestic network failures after retry) are retained and counted as errors under the all-inclusive convention rather than excluded (Methods). All analyses use binary Pathogenic vs. Benign evaluation with VUS treated as abstention (see Methods).
 
 ### Headline accuracy: models that speak are almost always right
 
@@ -166,7 +166,7 @@ Because a clinical system must return the *same* answer for the *same* variant, 
 
 ### International extension: three foreign flagships at full scale
 
-To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **complete temporally blinded test set** (5,000 variants each; identical prompts; research-context system prompt for all three; see Methods).
+To test whether the domestic findings generalize across training ecosystems, we evaluated Gemini 3 Flash, GPT-5.6-terra, and Claude Sonnet 5 on the **complete temporally blinded test set** (5,000 variants each; identical prompts; research-context system prompt for all three; see Methods). Parse-failure rates on the full set were handled identically to the domestic models (counted as errors): Gemini 0.38% (19/5,000; long unparseable reasoning text), Claude 0.04% (2/5,000; empty outputs), and GPT 0% (0/5,000).
 
 **Table S2. Nine-model comparison on the complete test set (n = 5,000 per model).**
 
@@ -340,7 +340,9 @@ data were involved; institutional review board approval was not required.
 All source data are publicly available: ClinVar variant_summary and VCF
 (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release
 (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The
-temporally blinded test sets, gold standards, all 45,000 raw model outputs (4 parse-failure rows excluded from analysis), the dedicated fully blinded set and its 6,000 raw outputs,
+temporally blinded test sets, gold standards, all 45,000 raw model outputs (four
+rows failed on relay/network errors and, per the all-inclusive convention, are
+counted as errors rather than excluded), the dedicated fully blinded set and its 6,000 raw outputs,
 and analysis scripts are available at https://github.com/zksdu/llm-acmg-variant-audit
 (archived on Zenodo, DOI: 10.5281/zenodo.22288477).
 

@@ -14,7 +14,15 @@ UA = {'User-Agent': 'ref-audit/1.0 (mailto:audit@local)'}
 
 def crossref(doi):
     req = urllib.request.Request(f'https://api.crossref.org/works/{doi}', headers=UA)
-    return json.load(urllib.request.urlopen(req, timeout=25))['message']
+    m = json.load(urllib.request.urlopen(req, timeout=25))['message']
+    # 引用惯例用期号年（print）；Crossref 默认年份可能是在线优先年
+    pp = m.get('published-print', {}).get('date-parts', [[None]])
+    if pp and pp[0][0]:
+        m['_year'] = pp[0][0]
+    else:
+        dp = m.get('published', {}).get('date-parts', [[None]])
+        m['_year'] = dp[0][0] if dp else None
+    return m
 
 
 def arxiv(aid):
@@ -43,7 +51,7 @@ def check(label, cited, meta, fields):
         print(f'    {k}: 引用[{cv}] vs 权威[{mv}] {mark}')
 
 
-t = MD.read_text(encoding='utf-8')
+t = open(MD, encoding='utf-8').read()
 refs = t[t.find('## References'):]
 
 # ============ Crossref 系列（DOI） ============
@@ -76,7 +84,7 @@ for label, doi, expect in cr_cases:
     try:
         m = crossref(doi)
         fams = [a.get('family', '?') for a in m.get('author', [])]
-        year = (m.get('issued') or m.get('published-print') or m.get('published-online') or {}).get('date-parts', [[None]])[0][0]
+        year = m.get('_year') or (m.get('published-print') or m.get('issued') or m.get('published-online') or {}).get('date-parts', [[None]])[0][0]
         vol = m.get('volume')
         page = m.get('page') or m.get('article-number')
         fields = {}
@@ -102,8 +110,8 @@ for label, doi, expect in cr_cases:
 ax_cases = [
     ('DeepSeek-AI 2024', '2412.19437', 'DeepSeek-AI', '2024', 'DeepSeek-V3 technical report'),
     ('Golchin 2023', '2308.08493', 'Golchin', '2023', 'Time Travel in LLMs: Tracing Data Contamination in Large Language Models'),
-    ('Moonshot 2025', '2507.20534', 'Moonshot', '2025', 'Kimi K2: Open Agentic Intelligence'),
-    ('Qwen 2025', '2505.09388', 'Qwen', '2025', 'Qwen3 technical report'),
+    ('Kimi Team 2025', '2507.20534', 'Kimi Team', '2025', 'Kimi K2: Open Agentic Intelligence'),
+    ('Yang 2025 (Qwen3)', '2505.09388', 'Yang', '2025', 'Qwen3 technical report'),
     ('Saadat 2026', '2604.00075', 'Saadat', '2026', 'Large Language Models for Variant-Centric Functional Evidence Mining'),
     ('Sainz 2023', '2310.18018', 'Sainz', '2023', 'NLP evaluation in trouble: on the need to measure LLM data contamination for each benchmark'),
 ]
@@ -123,9 +131,9 @@ for label, aid, fam, yr, ttl in ax_cases:
 # ============ Zenodo DOI（论文数据可用性声明） ============
 print()
 try:
-    req = urllib.request.Request('https://api.zenodo.org/api/records/22264400', headers=UA)
+    req = urllib.request.Request('https://api.zenodo.org/api/records/22288477', headers=UA)
     z = json.load(urllib.request.urlopen(req, timeout=25))
     md_ = z.get('metadata', {})
-    print(f'--- Zenodo 10.5281/zenodo.22264400: 标题[{md_.get("title","?")[:70]}] | 状态[{z.get("state")}] | doi[{z.get("doi")}]')
+    print(f'--- Zenodo 10.5281/zenodo.22288477: 标题[{md_.get("title","?")[:70]}] | 状态[{z.get("state")}] | doi[{z.get("doi")}]')
 except Exception as e:
-    print(f'--- Zenodo 22264400 获取失败: {type(e).__name__}: {e}')
+    print(f'--- Zenodo 22288477 获取失败: {type(e).__name__}: {e}')

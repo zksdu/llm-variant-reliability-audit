@@ -48,7 +48,7 @@ Not applicable. This study uses only publicly available database records (ClinVa
 **Consent for publication.** Not applicable.
 
 **Availability of data and materials.**
-All source data are publicly available: ClinVar variant_summary and VCF (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The temporally blinded test sets, gold standards, all 45,000 raw model outputs (4 parse-failure rows excluded from analysis), and analysis scripts are available at https://github.com/zksdu/llm-acmg-variant-audit (archived on Zenodo, DOI: 10.5281/zenodo.22288477).
+All source data are publicly available: ClinVar variant_summary and VCF (https://ftp.ncbi.nlm.nih.gov/pub/clinvar/), MaveDB Ensembl-mapped release (https://ftp.ensembl.org/pub/current_variation/MaveDB/), and mygene.info. The temporally blinded test sets, gold standards, all 45,000 raw model outputs (four rows failed on relay/network errors and, per the all-inclusive convention, are counted as errors rather than excluded), and analysis scripts are available at https://github.com/zksdu/llm-acmg-variant-audit (archived on Zenodo, DOI: 10.5281/zenodo.22288477).
 
 **Code availability.**
 Custom analysis code is available at https://github.com/zksdu/llm-acmg-variant-audit (archived on Zenodo, DOI: 10.5281/zenodo.22288477). The pipeline uses the Python 3 standard library only; sampling is byte-reproducible at seed 42.

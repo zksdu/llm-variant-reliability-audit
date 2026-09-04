@@ -120,7 +120,7 @@ checks = {
     '月度分布': 'Jan 2,097 / Feb 1,672' in full,
     '基因聚类': '2,050 genes' in full and 'NF1 n=83' in full,
     '抽样构成': '2,499 strict Pathogenic + 1 compound' in full,
-    '解析失败4行': '4 rows remain unparseable' in full,
+    '解析失败4行': '62 rows (58 unparseable outputs, 4 domestic network failures after retry)' in full and '44,938' in full,
     '专家面板日期': 'between 2026-01 and 2026-07' in full,
     'bootstrap': '1.6–2.4× (mean ≈1.9×)' in full,
     'Claude试点5/20': '5 of 20' in full,
