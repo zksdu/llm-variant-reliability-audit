@@ -158,7 +158,9 @@ def hbar_group(ax, models, s, title):
     ax.set_xlim(0, 108)
     ax.set_xlabel("Accuracy (%)")
     ax.set_title(title, fontsize=8.5, loc="left", pad=4)
-    ax.legend(loc="lower right", frameon=False)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.17), ncol=2,
+              frameon=False, fontsize=6.5, columnspacing=1.2,
+              handletextpad=0.5)
     ax.grid(axis="x", alpha=0.25, lw=0.5)
     ax.set_axisbelow(True)
 
@@ -235,7 +237,9 @@ def fig2():
     ax.set_ylabel("Benign sensitivity (%)")
     ax.set_title(f"A  AF ablation (9 models, n = {len([a for a in afres if goldmap.get(a) == 'B'])} Benign)",
                  fontsize=8.5, loc="left", pad=4)
-    ax.legend(frameon=False, fontsize=6, loc="lower right")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.30), ncol=2,
+              frameon=False, fontsize=6, columnspacing=1.2,
+              handletextpad=0.5)
     ax.grid(axis="y", alpha=0.25)
     ax.set_axisbelow(True)
 
@@ -264,7 +268,9 @@ def fig2():
     ax.set_ylim(0, 108)
     ax.set_ylabel("Accuracy (%)")
     ax.set_title("B  Pathogenic subset (n = 150)", fontsize=8.5, loc="left", pad=4)
-    ax.legend(frameon=False, fontsize=6.5, loc="lower right")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.18), ncol=2,
+              frameon=False, fontsize=6, columnspacing=1.2,
+              handletextpad=0.5)
     ax.grid(axis="y", alpha=0.25)
     ax.set_axisbelow(True)
 
@@ -441,7 +447,9 @@ def fig4(votes, gold):
     ax.set_xlabel("Share of gold-standard Benign variants (%, n = 2,500)")
     ax.set_title("Fate of Benign variants across nine models",
                  fontsize=8.5, loc="left", pad=4)
-    ax.legend(frameon=False, loc="lower right", fontsize=6.5)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=3,
+              frameon=False, fontsize=6.5, columnspacing=1.0,
+              handletextpad=0.5)
     fig.tight_layout()
     save(fig, "fig4")
 
