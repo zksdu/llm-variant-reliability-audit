@@ -132,7 +132,7 @@ checks = {
     '无GLM残留': 'GLM/MiMo' not in full,
     '投稿包摘要=正文摘要': _pkg_abstract_ok(),
     '关键词三方一致': _keywords_ok(),
-    'Zenodo DOI': '10.5281/zenodo.22288477' in full,
+    'Zenodo DOI': '10.5281/zenodo.22299737' in full,
 
     # ===== 参考文献（全部经权威元数据逐字段核实）=====
     'R-MaveDB': '10.1186/s13059-019-1845-6' in full and 'distribute and interpret' in full and '20, 223' in full,

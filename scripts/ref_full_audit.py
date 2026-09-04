@@ -131,9 +131,9 @@ for label, aid, fam, yr, ttl in ax_cases:
 # ============ Zenodo DOI（论文数据可用性声明） ============
 print()
 try:
-    req = urllib.request.Request('https://api.zenodo.org/api/records/22288477', headers=UA)
+    req = urllib.request.Request('https://api.zenodo.org/api/records/22299737', headers=UA)
     z = json.load(urllib.request.urlopen(req, timeout=25))
     md_ = z.get('metadata', {})
-    print(f'--- Zenodo 10.5281/zenodo.22288477: 标题[{md_.get("title","?")[:70]}] | 状态[{z.get("state")}] | doi[{z.get("doi")}]')
+    print(f'--- Zenodo 10.5281/zenodo.22299737: 标题[{md_.get("title","?")[:70]}] | 状态[{z.get("state")}] | doi[{z.get("doi")}]')
 except Exception as e:
-    print(f'--- Zenodo 22288477 获取失败: {type(e).__name__}: {e}')
+    print(f'--- Zenodo 22299737 获取失败: {type(e).__name__}: {e}')

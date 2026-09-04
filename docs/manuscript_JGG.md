@@ -344,12 +344,12 @@ temporally blinded test sets, gold standards, all 45,000 raw model outputs (four
 rows failed on relay/network errors and, per the all-inclusive convention, are
 counted as errors rather than excluded), the dedicated fully blinded set and its 6,000 raw outputs,
 and analysis scripts are available at https://github.com/zksdu/llm-acmg-variant-audit
-(archived on Zenodo, DOI: 10.5281/zenodo.22288477).
+(archived on Zenodo, DOI: 10.5281/zenodo.22299737).
 
 ## Code availability
 
 Custom analysis code is available at https://github.com/zksdu/llm-acmg-variant-audit
-(archived on Zenodo, DOI: 10.5281/zenodo.22288477). The pipeline uses the Python 3 standard library only;
+(archived on Zenodo, DOI: 10.5281/zenodo.22299737). The pipeline uses the Python 3 standard library only;
 sampling is byte-reproducible at seed 42.
 
 ## CRediT authorship contribution statement
